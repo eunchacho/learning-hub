@@ -498,7 +498,23 @@ ul.clean{margin:0;padding-left:1.2em;display:grid;gap:4px}
 .w-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .wcard .w{font-size:1.9rem;font-weight:700;letter-spacing:-.015em;line-height:1.2}
 .w-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
-.wcard .mean{font-size:1.15rem;font-weight:500;line-height:1.5;margin:0}
+.wcard .mean{font-size:1.4rem;font-weight:600;line-height:1.4;margin:0;letter-spacing:-.01em}
+.w-row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0;font-size:.92rem;line-height:1.7;min-width:0}
+.w-row .lbl{flex:none;font-size:.75rem;font-weight:600;color:var(--muted);min-width:2.2em}
+.fam-line .fm{white-space:nowrap}
+.fm b{font-family:var(--font-read);font-weight:600}
+.fm i{font-style:normal;font-size:.75rem;color:var(--muted);margin:0 6px 0 3px}
+.fam-line .sep{color:var(--muted);margin:0 8px}
+.wcard .example{padding-top:14px;border-top:1px solid var(--line)}
+.example mark.col{background:var(--accent-soft);color:inherit;padding:0 3px;border-radius:3px}
+.example .en b{font-weight:700}
+.w-foot{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;padding-top:12px;border-top:1px dashed var(--line)}
+.w-foot .mp{padding:2px 8px}
+.w-foot .mp b{font-size:.88rem}
+.w-foot .mp small{font-size:.7rem}
+.w-foot .colloc{font-size:.92rem}
+.wcard-quick{gap:12px}
+.wcard-quick .mean{font-size:1.6rem}
 .w-sec{display:grid;gap:8px;padding-top:16px;border-top:1px solid var(--line)}
 .w-sec h4{margin:0;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;line-height:1.2}
 .colloc{font-family:var(--font-read);font-size:1rem;margin:0}
@@ -1190,9 +1206,9 @@ function summaryHTML(res, title, extra) {
 }
 
 /* ---------- renderers: word & morph ---------- */
-function morphHTML(w) {
+function morphHTML(w, note = true) {
   if (!w.morph || !w.morph.length) return '';
-  return `<div class="morph">${w.morph.map((p, i) => `${i ? '<span class="plus">+</span>' : ''}<span class="mp mp-${esc(p.type)}"><b>${esc(p.part)}</b><small>${esc(p.meaning)}</small></span>`).join('')}</div>${w.morphNote ? `<div class="morph-note">${esc(w.morphNote)}</div>` : ''}`;
+  return `<div class="morph">${w.morph.map((p, i) => `${i ? '<span class="plus">+</span>' : ''}<span class="mp mp-${esc(p.type)}"><b>${esc(p.part)}</b><small>${esc(p.meaning)}</small></span>`).join('')}</div>${note && w.morphNote ? `<div class="morph-note">${esc(w.morphNote)}</div>` : ''}`;
 }
 /* ---------- program structure ---------- */
 /* Curricula group the daily modules by topic. Dates come from the schedule, so a module keeps its topic when the calendar moves. */
@@ -1774,20 +1790,51 @@ function inferenceBuild(q) {
 /* Word card: one column, read top to bottom. Word > meaning > labelled sections (parts, family, collocation, example). */
 /* US pronunciation (Wiktionary GA, normalised). IPA symbols use a system font: the UI font has no IPA glyphs. */
 const ipaHTML = w => w.ipa ? `<span class="ipa" lang="en-fonipa">${esc(w.ipa)}</span>` : '';
+/* Word card in three tiers: meaning (what to remember) > forms and example (Part 5, collocation in context) > word parts. */
 function wordCard(w) {
-  const r = S.srs[w.id];
-  const sec = (label, body) => `<section class="w-sec"><h4>${label}</h4>${body}</section>`;
+  const r = S.srs[w.id], rest = collocRest(w);
+  const foot = (w.morph && w.morph.length ? morphHTML(w, false) : '') + (rest.length ? `<span class="w-row"><span class="lbl">${T('Pairs', '짝')}</span><span class="colloc">${rest.map(esc).join(' · ')}</span></span>` : '');
   return `<article class="wcard">
-    <header class="w-head">
+    ${wordHead(w, r)}
+    <p class="mean">${esc(w.meaning)}</p>
+    ${famLine(w)}
+    ${w.example ? `<div class="example"><p class="en">${exampleHTML(w)}${speakBtn(w.example.en, '예문 듣기')}</p><p class="ko">${esc(w.example.ko)}</p></div>` : ''}
+    ${foot ? `<div class="w-foot">${foot}</div>` : ''}
+  </article>`;
+}
+/* Quick-round back: only what the round checks (meaning, then the family for Part 5). */
+function wordCardQuick(w) {
+  return `<article class="wcard wcard-quick">${wordHead(w, S.srs[w.id])}<p class="mean">${esc(w.meaning)}</p>${famLine(w)}</article>`;
+}
+function wordHead(w, r) {
+  return `<header class="w-head">
       <span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}
       <span class="w-tools">${r ? `<span class="boxdots" title="${T('Box', '박스')} ${r.box}">${[1, 2, 3, 4, 5].map(b => `<i class="${b <= r.box ? 'on' : ''}"></i>`).join('')}</span>` : ''}<button class="flag icon" type="button" data-fix="${esc(w.id)}">${T('Report', '수정 요청')}</button></span>
-    </header>
-    <p class="mean">${esc(w.meaning)}</p>
-    ${w.morph && w.morph.length ? sec(T('Word parts', '형태소 분해'), morphHTML(w)) : ''}
-    ${w.family && w.family.length ? sec(T('Word family', '품사 패밀리'), `<table class="fam">${w.family.map(f => `<tr><td>${esc(f.word)}</td><td class="muted">${esc(posLabel(f.pos))}</td><td>${esc(f.meaning)}</td></tr>`).join('')}</table>`) : ''}
-    ${w.collocation ? sec(T('Collocation', '자주 쓰는 짝'), `<p class="colloc">${esc(w.collocation)}</p>`) : ''}
-    ${w.example ? sec(T('Example', '예문'), `<div class="example"><p class="en">${esc(w.example.en)}${speakBtn(w.example.en, '예문 듣기')}</p><p class="ko">${esc(w.example.ko)}</p></div>`) : ''}
-  </article>`;
+    </header>`;
+}
+/* Family on one line: form, part of speech, first sense only. */
+function famLine(w) {
+  if (!w.family || !w.family.length) return '';
+  const short = m => String(m || '').split(/[;,]/)[0].trim();
+  return `<p class="w-row fam-line"><span class="lbl">${T('Forms', '품사')}</span><span>${w.family.map(f => `<span class="fm"><b>${esc(f.word)}</b><i>${esc(f.pos)}</i>${esc(short(f.meaning))}</span>`).join('<span class="sep">·</span>')}</span></p>`;
+}
+const collocList = w => String(w.collocation || '').split(/\s+·\s+/).map(c => c.trim()).filter(Boolean);
+const collocFind = c => c.replace(/[~…]|\b(sb|sth|A|B)\b/g, ' ').replace(/\s+/g, ' ').trim();
+const reEsc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+/* A pair matches its inflected form (reach → reached) and allows one extra word between (make a [final] decision). */
+const collocRe = c => { const t = collocFind(c).split(' ').filter(Boolean); return t.length > 1 ? new RegExp('\\b' + t.map(x => reEsc(esc(x.length > 3 ? x.replace(/(e|y)$/, '') : x)) + "[a-z]{0,3}").join("\\s+(?:[A-Za-z'-]+\\s+)?") + '\\b', 'i') : null; };
+/* Pairs not already visible in the example sentence. */
+function collocRest(w) {
+  const en = esc((w.example && w.example.en) || '');
+  return collocList(w).filter(c => { const re = collocRe(c); return !re || !re.test(en); });
+}
+/* Example with the pair highlighted and the target form in bold, so the sentence carries the collocation. */
+function exampleHTML(w) {
+  let h = esc(w.example.en);
+  for (const c of collocList(w)) { const re = collocRe(c); if (re) h = h.replace(re, m => `<mark class="col">${m}</mark>`); }
+  const z = clozeOf(w);
+  if (z) h = h.replace(new RegExp('\\b' + reEsc(esc(z.form)) + '\\b'), m => `<b>${m}</b>`);
+  return `<span>${h}</span>`;
 }
 
 /* unit 3: vocab. Default is one card at a time (front: word, back: everything else); a single-column list is one tap away. */
@@ -1796,17 +1843,17 @@ function unitVocab(el, d, id) {
   let i = 0, flipped = false, mode = 'card';
   const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
   const toolbar = () => `<div class="seg seg-inline" role="group" aria-label="${T('View', '보기 방식')}"><button type="button" data-mode="card" aria-pressed="${mode === 'card'}">${T('Cards', '카드 보기')}</button><button type="button" data-mode="list" aria-pressed="${mode === 'list'}">${T('List', '목록 보기')}</button></div>`;
-  const startBtn = `<button class="btn primary" type="button" data-go>${T(`Add ${n} terms and start check`, `${n}개 단어장 등록 · 확인 퀴즈`)}</button>`;
+  const startBtn = `<button class="btn primary" type="button" data-go>${T('Round 2: quick recall', '2회차: 빠르게 떠올리기')} →</button>`;
   const draw = () => {
     S.kbd = null;
-    const head = unitHead('vocab', T('Study each term with its word parts and family, then check word forms.', '단어마다 형태소 · 품사 패밀리 · 예문을 익힌 뒤, 품사 변형 퀴즈로 확인합니다.')) + `<div class="row" style="justify-content:space-between">${toolbar()}<span class="small muted">${n}${T(' terms', '개 단어')}</span></div>`;
+    const head = unitHead('vocab', T('Round 1: read each card once. Rounds 2 and 3 are quick recall.', '1회차: 카드를 한 장씩 읽으세요. 뜻 → 품사 → 예문 순서로 보면 돼요. 이어서 2 · 3회차는 단어만 보고 빠르게 떠올려요.')) + `<div class="row" style="justify-content:space-between">${toolbar()}<span class="small muted">${n}${T(' terms', '개 단어')}</span></div>`;
     if (mode === 'list') {
       el.innerHTML = head + `<div class="wlist">${words.map(w => wordCard(w)).join('')}</div><div class="row">${startBtn}</div>`;
     } else {
       const w = words[i], last = i === n - 1;
       el.innerHTML = head + `<div class="fc-wrap">
         <div class="fc-meta"><span>${i + 1} / ${n}</span><span class="bar accent"><i style="width:${Math.round((i + 1) / n * 100)}%"></i></span></div>
-        <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? wordCard(w) : front(w)}</div>
+        <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? (opts.back || wordCard)(w) : front(w)}</div>
         <div class="fc-nav">
           <button class="btn ghost" type="button" data-prev ${i ? '' : 'disabled'}>← ${T('Previous', '이전')}</button>
           <button class="btn" type="button" data-flip>${flipped ? T('Word only', '단어만 보기') : T('Show meaning', '뜻 보기')}</button>
@@ -1828,8 +1875,27 @@ function unitVocab(el, d, id) {
       S.kbd = e => { if (e.key === ' ') { e.preventDefault(); flip(); } else if (e.key === 'ArrowRight') move(1); else if (e.key === 'ArrowLeft') move(-1); };
     }
     el.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => { mode = b.dataset.mode; draw(); }));
-    el.querySelector('[data-go]')?.addEventListener('click', start);
+    el.querySelector('[data-go]')?.addEventListener('click', () => quick(2, shuffle(words)));
   };
+  /* Rounds 2 and 3: word only, about 3 seconds to recall, self-rated. "Again" brings the card back three cards later.
+     Several short passes beat one long read for recognition speed, which is what TOEIC tests. */
+  const quick = (round, list) => {
+    S.kbd = null; const miss = [];
+    el.innerHTML = unitHead('vocab', T('Recall the meaning within about 3 seconds, then rate yourself.', '단어만 보고 3초 안에 뜻을 떠올린 뒤 스스로 채점하세요. 모르면 "다시 볼래요"를 누르세요. 3장 뒤에 다시 나와요.')) + '<div id="vq"></div>';
+    cardSession(el.querySelector('#vq'), list, {label: T('Round ' + round, round + '회차'), back: wordCardQuick, hint: T('About 3 seconds. Tap to check.', '3초 안에 뜻을 떠올리고 카드를 누르세요.'),
+      onFirst: (w, ok) => { if (!ok) miss.push(w); },
+      onDone: () => {
+        const box = document.createElement('div'); box.className = 'stack';
+        const next = round === 2
+          ? `${miss.length ? `<button class="btn primary" type="button" data-r3="miss">${T('Round 3: missed only', '3회차: 다시 본 단어만')} (${miss.length})</button>` : ''}<button class="btn ${miss.length ? '' : 'primary'}" type="button" data-r3="all">${T('Round 3: all, reshuffled', '3회차: 전체 섞어서')}</button><button class="btn ghost" type="button" data-start>${T('Skip to check', '확인 퀴즈로 바로')}</button>`
+          : `<button class="btn primary" type="button" data-start>${T(`Add ${n} terms and start check`, `${n}개 단어장 등록 · 확인 퀴즈`)}</button>`;
+        box.innerHTML = `<div class="summary"><div class="eyebrow">${T('Round ' + round + ' done', round + '회차 완료')}</div><div class="row"><span class="score">${list.length - miss.length} / ${list.length}</span><span class="muted">${T('recalled on first try', '처음에 바로 떠올린 단어')}</span></div>${miss.length ? `<p class="small muted">${T('Again', '다시 본 단어')}: ${miss.map(w => esc(w.word)).join(' · ')}</p>` : ''}</div><div class="row">${next}</div>`;
+        el.innerHTML = unitHead('vocab'); el.appendChild(box);
+        box.querySelectorAll('[data-r3]').forEach(b => b.addEventListener('click', () => quick(3, shuffle(b.dataset.r3 === 'miss' ? miss : words))));
+        box.querySelectorAll('[data-start]').forEach(b => b.addEventListener('click', start));
+      }});
+  };
+
   const start = () => {
     S.kbd = null;
     const added = registerWords(id);
@@ -2273,13 +2339,13 @@ function cardSession(box, words, opts) {
   const queue = words.slice(), seen = new Set(); let flipped = false, done = 0, again = 0;
   const total = words.length;
   S.busy = true;
-  const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
+  const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${opts.hint || T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
   const draw = () => {
     if (!queue.length) { S.busy = false; S.kbd = null; return opts.onDone({total, again}); }
     const w = queue[0];
     box.innerHTML = `<div class="fc-wrap">
       <div class="fc-meta"><span>${done} / ${total}</span><span class="bar accent"><i style="width:${Math.round(done / total * 100)}%"></i></span><span class="chip">${esc(opts.label)}</span></div>
-      <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? wordCard(w) : front(w)}</div>
+      <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? (opts.back || wordCard)(w) : front(w)}</div>
       <div class="fc-nav">${flipped
         ? `<button class="btn" type="button" data-again>${T('Again', '다시 볼래요')}</button><span class="kbd">1 · 2</span><button class="btn primary" type="button" data-got>${T('Got it', '외웠어요')}</button>`
         : `${opts.knownBtn ? `<button class="btn" type="button" data-known title="${T('Skip: first review in 14 days', '바로 넘기고 14일 뒤에 한 번 확인합니다')}">${T('Already know', '이미 알아요')}</button>` : '<span></span>'}<button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button><span class="kbd">${opts.knownBtn ? T('0: already know', '0: 이미 알아요') : ''}</span>`}</div>
