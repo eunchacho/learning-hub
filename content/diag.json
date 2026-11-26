@@ -1,0 +1,730 @@
+{
+  "id": "diag",
+  "title": "진단 테스트",
+  "part5": [
+    {
+      "id": "diag-p5-01",
+      "area": "품사",
+      "type": "품사: 명사 자리",
+      "level": 1,
+      "q": "Ms. Chen accepted an ------- to speak at the regional sales conference in Busan.",
+      "options": [
+        "invite",
+        "invitation",
+        "invited",
+        "inviting"
+      ],
+      "answer": 1,
+      "clue": "빈칸 앞 관사 an · 타동사 accepted 의 목적어",
+      "why": "관사 an 뒤이고 타동사 accepted 의 목적어 자리 → 명사 자리 → -ation 으로 끝나는 invitation(초대) 이 정답",
+      "explain": [
+        "invite: 동사 원형으로 관사 뒤에 올 수 없다",
+        "정답",
+        "invited: 과거 · 과거분사로 명사 자리에 올 수 없다",
+        "inviting: 형용사(매력적인)로 쓰면 뒤에 꾸밀 명사가 필요한데 바로 to 부정사가 온다"
+      ]
+    },
+    {
+      "id": "diag-p5-02",
+      "area": "동사",
+      "type": "동사: 수 일치",
+      "level": 1,
+      "q": "The new copy machine on the fourth floor ------- double-sided printing.",
+      "options": [
+        "support",
+        "supporting",
+        "to support",
+        "supports"
+      ],
+      "answer": 3,
+      "clue": "주어 The new copy machine(단수) · 문장에 다른 동사가 없음",
+      "why": "문장에 동사가 없으므로 빈칸은 동사 자리다. 주어가 3인칭 단수 machine 이고 현재 사실을 말하므로 supports 가 정답",
+      "explain": [
+        "support: 복수 주어에 쓰는 형태로 단수 주어 machine 과 수가 맞지 않는다",
+        "supporting: -ing 형은 be 동사 없이 문장의 동사가 될 수 없다",
+        "to support: to 부정사는 문장의 동사가 될 수 없다",
+        "정답"
+      ]
+    },
+    {
+      "id": "diag-p5-03",
+      "area": "연결어 · 기타",
+      "type": "대명사: 소유격",
+      "level": 1,
+      "q": "Mr. Kwon asked ------- assistant to book a flight to Singapore for next Tuesday.",
+      "options": [
+        "his",
+        "he",
+        "him",
+        "himself"
+      ],
+      "answer": 0,
+      "clue": "빈칸 뒤 명사 assistant",
+      "why": "명사 assistant 앞에서 '누구의'를 나타내는 자리 → 소유격 → his 가 정답",
+      "explain": [
+        "정답",
+        "he: 주격으로 동사 앞 주어 자리에 쓴다",
+        "him: 목적격으로 명사 앞에 올 수 없다",
+        "himself: 재귀대명사로 명사를 꾸밀 수 없다"
+      ]
+    },
+    {
+      "id": "diag-p5-04",
+      "area": "품사",
+      "type": "품사: 형용사 자리",
+      "level": 1,
+      "q": "Delmar Transit runs ------- buses between the airport and the convention center.",
+      "options": [
+        "frequency",
+        "frequently",
+        "frequent",
+        "frequents"
+      ],
+      "answer": 2,
+      "clue": "빈칸 뒤 명사 buses",
+      "why": "명사 buses 앞에서 명사를 꾸미는 자리 → 형용사 자리 → frequent(잦은) 가 정답",
+      "explain": [
+        "frequency: 명사(빈도)로 buses 앞에 오면 '빈도 버스'가 되어 뜻이 통하지 않는다",
+        "frequently: 부사는 명사를 꾸밀 수 없다",
+        "정답",
+        "frequents: 동사(자주 가다)의 3인칭 단수형으로 명사 앞에 올 수 없다"
+      ]
+    },
+    {
+      "id": "diag-p5-05",
+      "area": "동사",
+      "type": "동사: 시제(과거)",
+      "level": 1,
+      "q": "Ms. Oyelaran ------- the Tokyo office last month to meet with potential clients.",
+      "options": [
+        "visits",
+        "visited",
+        "will visit",
+        "is visiting"
+      ],
+      "answer": 1,
+      "clue": "시간 표현 last month",
+      "why": "last month 는 과거를 나타내는 표현 → 과거 시제 → visited 가 정답",
+      "explain": [
+        "visits: 현재 시제로 습관 · 일반 사실에 쓴다",
+        "정답",
+        "will visit: 미래 시제로 last month 와 맞지 않는다",
+        "is visiting: 현재 진행 시제로 last month 와 맞지 않는다"
+      ]
+    },
+    {
+      "id": "diag-p5-06",
+      "area": "연결어 · 기타",
+      "type": "연결어: 전치사 vs 접속사",
+      "level": 1,
+      "q": "The outdoor company picnic was canceled ------- the heavy rain.",
+      "options": [
+        "because",
+        "although",
+        "because of",
+        "so"
+      ],
+      "answer": 2,
+      "clue": "빈칸 뒤 명사구 the heavy rain(동사 없음)",
+      "why": "뒤에 주어 · 동사가 없는 명사구가 온다 → 전치사 자리 → '~ 때문에' 뜻의 전치사 because of 가 정답",
+      "explain": [
+        "because: 접속사로 뒤에 주어 + 동사가 와야 한다",
+        "although: 접속사(비록 ~이지만)로 뒤에 절이 와야 하고 뜻도 맞지 않는다",
+        "정답",
+        "so: 접속사(그래서)로 뒤에 절이 와야 한다"
+      ]
+    },
+    {
+      "id": "diag-p5-07",
+      "area": "품사",
+      "type": "품사: 부사 자리",
+      "level": 1,
+      "q": "The front desk clerk answered all of the guest's questions -------.",
+      "options": [
+        "politely",
+        "polite",
+        "politeness",
+        "politer"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 완전한 문장(주어 clerk + 동사 answered + 목적어 questions)",
+      "why": "주어 · 동사 · 목적어가 다 갖춰진 문장 뒤에서 동사 answered 를 꾸미는 자리 → 부사 자리 → politely(공손하게) 가 정답",
+      "explain": [
+        "정답",
+        "polite: 형용사로 동사를 꾸밀 수 없다",
+        "politeness: 명사(공손함)로 완전한 문장 뒤에 덧붙을 수 없다",
+        "politer: 형용사 비교급으로 동사를 꾸밀 수 없다"
+      ]
+    },
+    {
+      "id": "diag-p5-08",
+      "area": "동사",
+      "type": "동사: 능동태 vs 수동태",
+      "level": 2,
+      "q": "All travel expense reports must ------- to the finance team within five business days.",
+      "options": [
+        "submit",
+        "submitting",
+        "have submitted",
+        "be submitted"
+      ],
+      "answer": 3,
+      "clue": "주어 reports(사물) · 빈칸 뒤 목적어 없이 전치사 to",
+      "why": "보고서는 스스로 제출하지 않고 '제출되는' 대상이다. 빈칸 뒤에 목적어도 없다 → 수동태 be + p.p. → be submitted 가 정답",
+      "explain": [
+        "submit: 능동태라 뒤에 목적어가 필요하고, 보고서가 제출하는 주체가 되어 뜻이 맞지 않는다",
+        "submitting: 조동사 must 뒤에는 동사 원형이 와야 한다",
+        "have submitted: 완료형 능동태로 목적어가 없고 보고서가 제출하는 주체가 된다",
+        "정답"
+      ]
+    },
+    {
+      "id": "diag-p5-09",
+      "area": "품사",
+      "type": "품사: 분사형 형용사",
+      "level": 2,
+      "q": "Please download the ------- version of the shuttle timetable, which was posted this morning.",
+      "options": [
+        "updated",
+        "update",
+        "updating",
+        "updates"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 관사 the · 뒤 명사 version",
+      "why": "관사와 명사 사이는 명사를 꾸미는 형용사 자리다. 시간표는 누군가가 수정한 대상이므로 수동 의미의 과거분사 updated(수정된, 최신의)가 정답",
+      "explain": [
+        "정답",
+        "update: 동사 원형이고, 명사로 보아도 update version 은 쓰지 않는 조합이다",
+        "updating: 현재분사는 능동 의미라 버전이 무언가를 수정한다는 뜻이 된다",
+        "updates: 복수 명사 또는 3인칭 단수 동사라 명사 version 앞에 올 수 없다"
+      ]
+    },
+    {
+      "id": "diag-p5-10",
+      "area": "연결어 · 기타",
+      "type": "관계대명사: 소유격 whose",
+      "level": 2,
+      "q": "Customers ------- orders were delayed by the snowstorm will receive a 20 percent discount coupon.",
+      "options": [
+        "who",
+        "whose",
+        "whom",
+        "which"
+      ],
+      "answer": 1,
+      "clue": "선행사 Customers(사람) · 빈칸 뒤 명사 orders + 동사 were",
+      "why": "빈칸 뒤에 명사 orders 가 바로 오고 '고객의 주문'이라는 소유 관계다 → 소유격 관계대명사 whose 가 정답",
+      "explain": [
+        "who: 주격 관계대명사로 뒤에 주어가 빠진 절(동사로 시작)이 와야 한다",
+        "정답",
+        "whom: 목적격 관계대명사로 뒤에 목적어가 빠진 절이 와야 한다",
+        "which: 사물 선행사에 쓰고, 소유 관계를 나타내지 못한다"
+      ]
+    },
+    {
+      "id": "diag-p5-11",
+      "area": "동사",
+      "type": "동사: 수 일치(수식어구)",
+      "level": 2,
+      "q": "The list of approved suppliers ------- updated at the beginning of every quarter.",
+      "options": [
+        "are",
+        "be",
+        "being",
+        "is"
+      ],
+      "answer": 3,
+      "clue": "주어 The list(단수) · of approved suppliers 는 수식어",
+      "why": "주어의 핵심은 list 이고 of approved suppliers 는 꾸미는 말이다 → 단수 주어 → is 가 정답",
+      "explain": [
+        "are: 바로 앞 suppliers 에 맞춘 복수 동사로, 수식어에 속는 함정이다",
+        "be: 동사 원형은 주어 뒤 동사 자리에 올 수 없다",
+        "being: -ing 형은 문장의 동사가 될 수 없다",
+        "정답"
+      ]
+    },
+    {
+      "id": "diag-p5-12",
+      "area": "품사",
+      "type": "품사: 동사 자리(to 부정사)",
+      "level": 2,
+      "q": "To ------- delays, please place your order at least three business days in advance.",
+      "options": [
+        "avoidance",
+        "avoidable",
+        "avoid",
+        "avoided"
+      ],
+      "answer": 2,
+      "clue": "빈칸 앞 To · 뒤 목적어 delays",
+      "why": "To 뒤에 목적어 delays 가 이어지므로 to 부정사(to + 동사 원형) 자리 → avoid(피하다) 가 정답",
+      "explain": [
+        "avoidance: 명사는 목적어 delays 를 바로 받을 수 없다",
+        "avoidable: 형용사로 to 부정사의 동사 자리에 올 수 없다",
+        "정답",
+        "avoided: to 뒤에는 동사 원형이 와야 한다"
+      ]
+    },
+    {
+      "id": "diag-p5-13",
+      "area": "연결어 · 기타",
+      "type": "연결어: 접속부사",
+      "level": 2,
+      "q": "The safety workshop was originally planned for Friday. -------, it has been moved to Monday morning.",
+      "options": [
+        "However",
+        "Although",
+        "Despite",
+        "Because"
+      ],
+      "answer": 0,
+      "clue": "앞 문장이 마침표로 끝남 · 빈칸 뒤 쉼표 · 앞뒤 내용이 반대(금요일 예정 → 월요일로 이동)",
+      "why": "마침표로 끝난 앞 문장과 뒤 문장을 뜻으로 이어 주는 자리 → 접속부사 자리. 예정과 다르게 일정이 이동했으므로 However(그러나) 가 정답",
+      "explain": [
+        "정답",
+        "Although: 접속사라 한 문장 안에서 두 절을 이어야 한다. 뒤에 절이 하나뿐이라 문장이 성립하지 않는다",
+        "Despite: 전치사로 뒤에 명사가 와야 한다",
+        "Because: 접속사라 뒤 절과 함께 쓰면 주절이 없는 문장이 되고 뜻도 맞지 않는다"
+      ]
+    },
+    {
+      "id": "diag-p5-14",
+      "area": "품사",
+      "type": "품사: 부사 자리(형용사 수식)",
+      "level": 2,
+      "q": "The Parkside Hotel offers ------- priced rooms for business travelers who stay longer than a week.",
+      "options": [
+        "reasonable",
+        "reason",
+        "reasoning",
+        "reasonably"
+      ],
+      "answer": 3,
+      "clue": "빈칸 뒤 분사 priced + 명사 rooms",
+      "why": "priced 는 명사 rooms 를 꾸미는 형용사(분사)다. 형용사를 꾸미는 말은 부사 → reasonably(적당하게) 가 정답. reasonably priced: 가격이 적당한",
+      "explain": [
+        "reasonable: 형용사는 형용사(분사) priced 를 꾸밀 수 없다. 뜻이 비슷해 선택하기 쉬운 함정이다",
+        "reason: 명사(이유)로 뜻이 이어지지 않는다",
+        "reasoning: 명사(추론)로 뜻이 이어지지 않는다",
+        "정답"
+      ]
+    },
+    {
+      "id": "diag-p5-15",
+      "area": "품사",
+      "type": "품사: 형용사를 꾸미는 부사",
+      "level": 3,
+      "q": "The marketing team found the survey results ------- informative, given the small number of respondents.",
+      "options": [
+        "surprise",
+        "surprising",
+        "surprisingly",
+        "surprised"
+      ],
+      "answer": 2,
+      "clue": "found + 목적어 the survey results + 빈칸 + 형용사 informative",
+      "why": "find + 목적어 + 형용사 구조에서 형용사 informative 는 이미 있다. 빈칸은 그 형용사를 꾸미는 자리라 부사 surprisingly(놀랍게도)가 정답",
+      "explain": [
+        "surprise: 명사 · 동사라 형용사 앞에서 꾸밀 수 없다",
+        "surprising: 형용사라 형용사 informative 를 꾸밀 수 없다. 형용사가 두 개 이어지려면 and 가 필요하다",
+        "정답",
+        "surprised: 과거분사(형용사)라 형용사를 꾸밀 수 없다"
+      ]
+    },
+    {
+      "id": "diag-p5-16",
+      "area": "동사",
+      "type": "동사: 가정법 과거완료 도치",
+      "level": 3,
+      "q": "Had the shipment ------- on time, the store would have been able to open as scheduled.",
+      "options": [
+        "arrive",
+        "arrived",
+        "arriving",
+        "arrives"
+      ],
+      "answer": 1,
+      "clue": "문장 앞 Had + 주어 · 뒤 절 would have been",
+      "why": "If 가 생략되고 Had 가 주어 앞으로 나간 가정법 과거완료 도치다(If the shipment had arrived). Had 뒤에는 과거분사가 오므로 arrived 가 정답",
+      "explain": [
+        "arrive: 동사 원형은 had 뒤에 올 수 없다",
+        "정답",
+        "arriving: had + -ing 형태는 없다",
+        "arrives: 3인칭 단수 현재형은 had 뒤에 올 수 없다"
+      ]
+    },
+    {
+      "id": "diag-p5-17",
+      "area": "연결어 · 기타",
+      "type": "연결어: 조건 접속사",
+      "level": 3,
+      "q": "The budget proposal will be approved ------- the projected costs remain within the agreed limit.",
+      "options": [
+        "despite",
+        "otherwise",
+        "whereas",
+        "provided"
+      ],
+      "answer": 3,
+      "clue": "빈칸 뒤 주어 the projected costs + 동사 remain (완전한 절)",
+      "why": "빈칸 뒤에 절이 오므로 접속사 자리다. \"비용이 한도 안에 있으면 승인된다\"는 조건 관계이므로 provided(that)(~라면)가 정답",
+      "explain": [
+        "despite: 전치사라 뒤에 절이 올 수 없다",
+        "otherwise: 접속부사라 두 절을 직접 연결하지 못한다",
+        "whereas: 접속사지만 \"반면에\"라는 대조 의미라 문맥에 맞지 않는다",
+        "정답"
+      ]
+    },
+    {
+      "id": "diag-p5-18",
+      "area": "품사",
+      "type": "품사: 소유격 뒤 명사",
+      "level": 3,
+      "q": "The director praised the team for its ------- to meet the tight deadline despite staff shortages.",
+      "options": [
+        "determined",
+        "determination",
+        "determine",
+        "determining"
+      ],
+      "answer": 1,
+      "clue": "빈칸 앞 소유격 its · 뒤 to부정사",
+      "why": "소유격 its 뒤는 명사 자리다. determination to do(~하려는 결의)가 정답. be determined to do 가 떠올라 determined 를 고르기 쉬운 함정이다",
+      "explain": [
+        "determined: 형용사라 소유격 뒤 명사 자리에 올 수 없다",
+        "정답",
+        "determine: 동사라 명사 자리에 올 수 없다",
+        "determining: 동명사는 소유격 뒤에 올 수 있지만 뒤에 목적어가 필요하고, to 부정사와 이어지지 않는다"
+      ]
+    },
+    {
+      "id": "diag-p5-19",
+      "area": "동사",
+      "type": "동사: 요구 · 제안 동사 + that 절",
+      "level": 3,
+      "q": "The board recommended that the merger proposal ------- until a full financial review is completed.",
+      "options": [
+        "be postponed",
+        "is postponed",
+        "postpones",
+        "will postpone"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 recommended that + 주어 the merger proposal",
+      "why": "recommend · suggest · require 뒤 that 절에서는 (should) + 동사원형을 쓴다. 제안서는 연기되는 대상이라 수동태 be postponed 가 정답",
+      "explain": [
+        "정답",
+        "is postponed: recommend that 절에는 직설법 현재가 아니라 동사원형을 쓴다",
+        "postpones: 동사원형이 아니고 능동이라 제안서가 무언가를 연기한다는 뜻이 된다",
+        "will postpone: 동사원형 자리에 올 수 없고 능동이다"
+      ]
+    },
+    {
+      "id": "diag-p5-20",
+      "area": "연결어 · 기타",
+      "type": "연결어: 복합관계대명사",
+      "level": 3,
+      "q": "The advanced presentation workshop is open to ------- wishes to improve their public speaking skills.",
+      "options": [
+        "anyone",
+        "whoever",
+        "whatever",
+        "whomever"
+      ],
+      "answer": 1,
+      "clue": "빈칸 앞 전치사 to · 뒤 동사 wishes (주어가 없는 절)",
+      "why": "빈칸 뒤 wishes 의 주어가 없으므로, 주어 역할을 하면서 절 전체를 전치사 to 의 목적어로 만드는 whoever(~하는 누구든)가 정답",
+      "explain": [
+        "anyone: 대명사라 뒤에 who 없이 동사 wishes 를 바로 이을 수 없다",
+        "정답",
+        "whatever: 사물을 가리켜 \"기술을 향상하고 싶은 사람\"이라는 뜻이 되지 않는다",
+        "whomever: 목적격이라 wishes 의 주어가 될 수 없다"
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "id": "diag-voc-01",
+      "word": "hire",
+      "pos": "v",
+      "source": "NGSL",
+      "options": [
+        "고용하다",
+        "해고하다",
+        "승진시키다",
+        "은퇴하다"
+      ],
+      "answer": 0,
+      "why": "hire: 고용하다(= employ). 예: Bexley Foods plans to hire ten new delivery drivers this spring."
+    },
+    {
+      "id": "diag-voc-02",
+      "word": "colleague",
+      "pos": "n",
+      "source": "NGSL",
+      "options": [
+        "고객",
+        "상사",
+        "동료",
+        "경쟁사"
+      ],
+      "answer": 2,
+      "why": "colleague: 같은 직장의 동료(= coworker). 예: Ms. Park introduced her new colleague at the team meeting."
+    },
+    {
+      "id": "diag-voc-03",
+      "word": "deliver",
+      "pos": "v",
+      "source": "NGSL",
+      "options": [
+        "주문하다",
+        "배달하다",
+        "포장하다",
+        "반품하다"
+      ],
+      "answer": 1,
+      "why": "deliver: 배달하다; (연설 · 발표를) 하다. 명사형은 delivery(배달). 예: The supplier will deliver the printer paper on Thursday."
+    },
+    {
+      "id": "diag-voc-04",
+      "word": "estimate",
+      "pos": "n",
+      "source": "NGSL",
+      "options": [
+        "영수증",
+        "계약서",
+        "청구서",
+        "견적(서), 추정치"
+      ],
+      "answer": 3,
+      "why": "estimate: 명사로 견적(서) · 추정치, 동사로 추정하다 · 견적을 내다. 예: The contractor sent us an estimate for the office renovation."
+    },
+    {
+      "id": "diag-voc-05",
+      "word": "ensure",
+      "pos": "v",
+      "source": "NGSL",
+      "options": [
+        "보험에 들다",
+        "확인을 요청하다",
+        "보장하다, 확실히 하다",
+        "거절하다"
+      ],
+      "answer": 2,
+      "why": "ensure: 보장하다, 반드시 ~하게 하다(= make sure). insure(보험에 들다)와 철자가 비슷하므로 주의한다. 예: Please ensure that all windows are closed before you leave the office."
+    },
+    {
+      "id": "diag-voc-06",
+      "word": "vacancy",
+      "pos": "n",
+      "source": "TSL",
+      "options": [
+        "공석, 빈방",
+        "휴가",
+        "예약 취소",
+        "임대료"
+      ],
+      "answer": 0,
+      "why": "vacancy: (일자리) 공석, (호텔) 빈방. 형용사 vacant(비어 있는)의 명사형이다. 예: We have a vacancy for a sales assistant at our Busan branch."
+    },
+    {
+      "id": "diag-voc-07",
+      "word": "reimburse",
+      "pos": "v",
+      "source": "TSL",
+      "options": [
+        "청구하다",
+        "공제하다",
+        "지불을 연기하다",
+        "(쓴 비용을) 상환하다, 환급하다"
+      ],
+      "answer": 3,
+      "why": "reimburse: 직원이 먼저 쓴 비용을 회사가 상환하다. 출장비 정산 상황에 자주 나온다. 예: The company will reimburse employees for taxi fares on business trips."
+    },
+    {
+      "id": "diag-voc-08",
+      "word": "prospective",
+      "pos": "a",
+      "source": "TSL",
+      "options": [
+        "과거의",
+        "장래의, 유망한",
+        "전문적인",
+        "임시의"
+      ],
+      "answer": 1,
+      "why": "prospective: 장래의, ~이 될 가능성이 있는. prospective clients(잠재 고객) · prospective employees(입사 예정자). 예: We will give a factory tour to prospective buyers next week."
+    },
+    {
+      "id": "diag-voc-09",
+      "word": "discrepancy",
+      "pos": "n",
+      "source": "TSL",
+      "options": [
+        "불일치, 차이",
+        "할인",
+        "지연",
+        "결함"
+      ],
+      "answer": 0,
+      "why": "discrepancy: 수치 · 기록 사이의 불일치. 예: The accountant found a discrepancy between the invoice and the delivery receipt."
+    },
+    {
+      "id": "diag-voc-10",
+      "word": "expedite",
+      "pos": "v",
+      "source": "TSL",
+      "options": [
+        "연기하다",
+        "수출하다",
+        "신속히 처리하다",
+        "검토하다"
+      ],
+      "answer": 2,
+      "why": "expedite: (업무 · 배송을) 신속히 처리하다. export(수출하다)와 앞부분만 같다. 예: For an extra fee, we can expedite your order so that it arrives tomorrow."
+    }
+  ],
+  "lc": [
+    {
+      "id": "diag-lc-01",
+      "part": 2,
+      "level": 1,
+      "prompt": "When does the shuttle bus to the convention center leave?",
+      "options": [
+        "(A) From the front entrance.",
+        "(B) At a quarter past nine.",
+        "(C) Yes, it's a short trip."
+      ],
+      "answer": 1,
+      "why": "When(언제)에 출발 시각(9시 15분)으로 직접 답했다",
+      "trap": "(A) 장소로 답해 When 이 아니라 Where 에 맞는 응답이다 · (C) 의문사 의문문에는 Yes 로 답할 수 없다"
+    },
+    {
+      "id": "diag-lc-02",
+      "part": 2,
+      "level": 1,
+      "prompt": "Who's going to take notes at today's budget meeting?",
+      "options": [
+        "(A) Ms. Han volunteered to do it.",
+        "(B) A notebook and a pen.",
+        "(C) In Conference Room B."
+      ],
+      "answer": 0,
+      "why": "Who(누가)에 사람 이름 Ms. Han 으로 직접 답했다",
+      "trap": "(B) notes 에서 연상되는 notebook 을 쓴 연상 단어 함정 · (C) 회의 장소로 답한 의문사 불일치(Where)"
+    },
+    {
+      "id": "diag-lc-03",
+      "part": 2,
+      "level": 1,
+      "prompt": "Where are the extra toner cartridges kept?",
+      "options": [
+        "(A) I'll keep that in mind.",
+        "(B) About twenty dollars each.",
+        "(C) In the cabinet next to the copier."
+      ],
+      "answer": 2,
+      "why": "Where(어디에)에 보관 장소(복사기 옆 캐비닛)로 직접 답했다",
+      "trap": "(A) kept 와 keep 의 유사 발음 함정 · (B) 가격으로 답한 의문사 불일치(How much)"
+    },
+    {
+      "id": "diag-lc-04",
+      "part": 2,
+      "level": 1,
+      "prompt": "How many people signed up for the sales workshop?",
+      "options": [
+        "(A) Yes, I signed it yesterday.",
+        "(B) Around thirty, so far.",
+        "(C) It's on the second floor."
+      ],
+      "answer": 1,
+      "why": "How many(몇 명)에 인원수(지금까지 약 30명)로 직접 답했다",
+      "trap": "(A) 의문사 의문문에 Yes 로 답했고 signed 를 반복한 함정 · (C) 장소로 답한 의문사 불일치(Where)"
+    },
+    {
+      "id": "diag-lc-05",
+      "part": 2,
+      "level": 2,
+      "prompt": "Why did the delivery truck arrive so late this morning?",
+      "options": [
+        "(A) Before nine o'clock.",
+        "(B) Yes, it's a large truck.",
+        "(C) Ms. Ortega in shipping would know."
+      ],
+      "answer": 2,
+      "why": "이유를 직접 말하지 않고 '배송팀 Ortega 씨가 알 것이다'라고 아는 사람을 알려 주는 간접 응답이다",
+      "trap": "(A) 시각으로 답한 의문사 불일치(When) · (B) 의문사 의문문에 Yes 로 답했고 truck 을 반복한 함정"
+    },
+    {
+      "id": "diag-lc-06",
+      "part": 2,
+      "level": 2,
+      "prompt": "Haven't the new business cards been printed yet?",
+      "options": [
+        "(A) They should be ready by Thursday.",
+        "(B) Yes, I'll print it out for you.",
+        "(C) A card from one of our clients."
+      ],
+      "answer": 0,
+      "why": "부정 의문문은 not 을 빼고 '새 명함이 인쇄됐나요?'로 이해한다. 목요일까지 준비된다고 답해 아직 안 됐다는 뜻을 간접적으로 전했다",
+      "trap": "(B) printed 와 print 를 반복한 유사 발음 함정이고, 무엇을 출력하는지(it)도 맞지 않는다 · (C) cards 와 card 를 반복한 함정"
+    },
+    {
+      "id": "diag-lc-07",
+      "part": 2,
+      "level": 2,
+      "prompt": "Mr. Ibarra is leading the factory tour, isn't he?",
+      "options": [
+        "(A) A tour of the new plant.",
+        "(B) Actually, he's out sick today.",
+        "(C) Yes, the factory produces auto parts."
+      ],
+      "answer": 1,
+      "why": "부가 의문문은 앞 문장 'Ibarra 씨가 공장 견학을 이끄나요?'에 답한다. 오늘 병가라고 말해 이끌지 못한다는 뜻을 간접적으로 전했다",
+      "trap": "(A) tour 를 반복한 함정 · (C) Yes 로 시작하지만 공장이 무엇을 만드는지 말해 질문과 맞지 않는 연상 단어(factory) 함정"
+    },
+    {
+      "id": "diag-lc-08",
+      "part": 2,
+      "level": 2,
+      "prompt": "Which supplier offered the lowest price?",
+      "options": [
+        "(A) The price of fuel went up again.",
+        "(B) By express mail.",
+        "(C) I haven't compared the bids yet."
+      ],
+      "answer": 2,
+      "why": "어느 업체인지 답하지 않고 '아직 입찰가를 비교하지 않았다', 즉 아직 모른다는 간접 응답이다",
+      "trap": "(A) price 를 반복한 함정 · (B) 방법으로 답한 의문사 불일치(How)"
+    },
+    {
+      "id": "diag-lc-09",
+      "part": 2,
+      "level": 3,
+      "prompt": "The projector in the main conference room keeps shutting off.",
+      "options": [
+        "(A) Let's use the laptop screen for now, then.",
+        "(B) Please shut the door behind you.",
+        "(C) In the main lobby."
+      ],
+      "answer": 0,
+      "why": "평서문으로 문제(프로젝터가 계속 꺼짐)를 알렸고, 정답은 원인이나 수리를 말하지 않고 '그럼 우선 노트북 화면을 쓰자'는 대안을 제시하는 우회 응답이다",
+      "trap": "(B) shutting 과 shut 의 유사 발음 함정 · (C) main 을 반복하고 장소로 답한 함정"
+    },
+    {
+      "id": "diag-lc-10",
+      "part": 2,
+      "level": 3,
+      "prompt": "Should we hold the retirement party at the office or at a restaurant?",
+      "options": [
+        "(A) Yes, it's a great restaurant.",
+        "(B) Let's see how many people are coming first.",
+        "(C) He's retiring at the end of the month."
+      ],
+      "answer": 1,
+      "why": "선택 의문문에 둘 중 하나를 선택하지 않고 '참석 인원부터 보자'며 결정을 미루는 우회 응답이다",
+      "trap": "(A) 선택 의문문에는 Yes 로 답할 수 없고 restaurant 를 반복한 함정 · (C) retirement 와 retiring 의 유사 발음 함정이며 장소 질문에 답하지 않는다"
+    }
+  ]
+}

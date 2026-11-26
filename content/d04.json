@@ -1,0 +1,2074 @@
+{
+  "id": "d04",
+  "day": 4,
+  "week": 1,
+  "date": "2026-11-19",
+  "title": "동사 · 부사 접미사 · 부사 자리와 동사 자리",
+  "workTitle": "Word Formation: Verb and Adverb Suffixes",
+  "affix": {
+    "title": "동사를 만드는 접미사 · 부사를 만드는 -ly",
+    "intro": "-ize · -ify · -en · -ate 는 형용사나 명사에 붙어 동사를 만들고, -ly 는 형용사에 붙어 부사를 만든다. Part 5 에서 조동사 뒤 · Please 뒤 빈칸이면 동사 접미사가 붙은 보기를, 동사 앞 · 형용사 앞 빈칸이면 -ly 보기를 먼저 찾는다. 다만 -ly 로 끝나도 형용사인 단어(costly · timely)와 -ate 로 끝나도 형용사인 단어(accurate · appropriate)가 함정으로 나온다.",
+    "items": [
+      {
+        "affix": "-ize",
+        "kind": "suffix",
+        "meaning": "동사: ~화하다 · ~하게 만들다",
+        "examples": [
+          {
+            "base": "final (a)",
+            "derived": "finalize (v)",
+            "ko": "마무리하다 · 확정하다"
+          },
+          {
+            "base": "priority (n)",
+            "derived": "prioritize (v)",
+            "ko": "우선순위를 정하다"
+          },
+          {
+            "base": "modern (a)",
+            "derived": "modernize (v)",
+            "ko": "현대화하다"
+          }
+        ],
+        "tip": "-ize 동사의 명사형은 -ization 이다 (organize → organization, finalize → finalization)"
+      },
+      {
+        "affix": "-ify · -fy",
+        "kind": "suffix",
+        "meaning": "동사: ~하게 만들다",
+        "examples": [
+          {
+            "base": "simple (a)",
+            "derived": "simplify (v)",
+            "ko": "간소화하다"
+          },
+          {
+            "base": "just (a)",
+            "derived": "justify (v)",
+            "ko": "정당화하다"
+          },
+          {
+            "base": "class (n)",
+            "derived": "classify (v)",
+            "ko": "분류하다"
+          }
+        ],
+        "tip": "-ify 동사의 명사형은 -ification 이다 (verify → verification, notify → notification)"
+      },
+      {
+        "affix": "-en",
+        "kind": "suffix",
+        "meaning": "동사: ~하게 하다 · ~을 갖게 하다",
+        "examples": [
+          {
+            "base": "wide (a)",
+            "derived": "widen (v)",
+            "ko": "넓히다"
+          },
+          {
+            "base": "strength (n)",
+            "derived": "strengthen (v)",
+            "ko": "강화하다"
+          },
+          {
+            "base": "short (a)",
+            "derived": "shorten (v)",
+            "ko": "줄이다 · 단축하다"
+          }
+        ],
+        "tip": "형용사 · 명사 끝에 붙는다. length → lengthen(늘이다)처럼 명사에 붙는 경우도 있다"
+      },
+      {
+        "affix": "en- · em-",
+        "kind": "prefix",
+        "meaning": "동사: ~하게 하다 (앞에 붙는 동사화 접두사)",
+        "examples": [
+          {
+            "base": "able (a)",
+            "derived": "enable (v)",
+            "ko": "가능하게 하다"
+          },
+          {
+            "base": "sure (a)",
+            "derived": "ensure (v)",
+            "ko": "보장하다 · 확실히 하다"
+          },
+          {
+            "base": "power (n)",
+            "derived": "empower (v)",
+            "ko": "권한을 부여하다"
+          }
+        ],
+        "tip": "b · p 앞에서는 em- 이 된다 (empower). enable A to do · ensure that 절 형태로 자주 나온다"
+      },
+      {
+        "affix": "-ate",
+        "kind": "suffix",
+        "meaning": "동사를 만든다 (형용사인 -ate 도 있어 주의)",
+        "examples": [
+          {
+            "base": "active (a)",
+            "derived": "activate (v)",
+            "ko": "활성화하다"
+          },
+          {
+            "base": "motive (n)",
+            "derived": "motivate (v)",
+            "ko": "동기를 부여하다"
+          },
+          {
+            "base": "origin (n)",
+            "derived": "originate (v)",
+            "ko": "비롯되다 · 시작되다"
+          }
+        ],
+        "tip": "accurate(정확한) · appropriate(적절한) · fortunate(운 좋은)는 -ate 로 끝나지만 형용사다. 부사형 -ately 가 있으면 형용사로 쓰이는 단어다"
+      },
+      {
+        "affix": "-ly",
+        "kind": "suffix",
+        "meaning": "형용사 + ly = 부사 (명사 + ly = 형용사는 함정)",
+        "examples": [
+          {
+            "base": "approximate (a)",
+            "derived": "approximately (ad)",
+            "ko": "대략"
+          },
+          {
+            "base": "temporary (a)",
+            "derived": "temporarily (ad)",
+            "ko": "일시적으로"
+          },
+          {
+            "base": "cost (n)",
+            "derived": "costly (a)",
+            "ko": "비용이 많이 드는 (명사 + ly 형용사)"
+          }
+        ],
+        "tip": "-y 로 끝나면 y 를 i 로 바꾼다 (temporary → temporarily). 앞부분이 명사(cost · time · friend · order)면 -ly 가 붙어도 형용사다"
+      }
+    ],
+    "traps": [
+      "costly · timely · friendly · likely · orderly 는 명사 + ly 형용사다. 명사 앞이나 be 동사 뒤에 쓰고, 동사를 꾸밀 때는 in a timely manner · in a friendly way 처럼 풀어 쓴다",
+      "accurate · appropriate · fortunate · considerate 는 -ate 로 끝나도 형용사다. 조동사 뒤 동사 자리에 넣으면 오답이고, 부사형은 accurately · appropriately 다",
+      "likely 는 be likely to do(~할 것 같다) 형태의 형용사로 주로 나온다. -ly 라고 부사로 보고 동사 앞에 넣지 않는다"
+    ]
+  },
+  "words": [
+    {
+      "id": "d04-01",
+      "word": "finalize",
+      "pos": "v",
+      "meaning": "마무리하다, 최종 확정하다",
+      "morph": [
+        {
+          "part": "final",
+          "type": "base",
+          "meaning": "마지막의 · 최종의"
+        },
+        {
+          "part": "-ize",
+          "type": "suffix",
+          "meaning": "동사: ~화하다"
+        }
+      ],
+      "morphNote": "최종(final) 상태로 만들다(-ize) → 마무리하다 · 확정하다",
+      "family": [
+        {
+          "word": "final",
+          "pos": "a",
+          "meaning": "최종의, 마지막의"
+        },
+        {
+          "word": "finally",
+          "pos": "ad",
+          "meaning": "마침내, 결국"
+        },
+        {
+          "word": "finalization",
+          "pos": "n",
+          "meaning": "마무리, 최종 확정"
+        }
+      ],
+      "collocation": "finalize a contract · finalize the details",
+      "example": {
+        "en": "We need to finalize the budget before the board meeting on Thursday.",
+        "ko": "목요일 이사회 전에 예산을 확정해야 한다."
+      },
+      "drill": {
+        "sentence": "Ms. Tanaka will ------- the travel itinerary by the end of the day.",
+        "options": [
+          "final",
+          "finally",
+          "finalize",
+          "finalization"
+        ],
+        "answer": 2,
+        "why": "조동사 will 뒤는 동사원형 자리이고 뒤에 목적어 the travel itinerary 가 있다. 동사 finalize"
+      }
+    },
+    {
+      "id": "d04-02",
+      "word": "prioritize",
+      "pos": "v",
+      "meaning": "우선순위를 정하다, 우선적으로 처리하다",
+      "morph": [
+        {
+          "part": "priority",
+          "type": "base",
+          "meaning": "우선 · 우선 사항"
+        },
+        {
+          "part": "-ize",
+          "type": "suffix",
+          "meaning": "동사: ~화하다"
+        }
+      ],
+      "morphNote": "우선(priority)으로 만들다(-ize) → 우선순위를 정하다 (y 는 떨어진다)",
+      "family": [
+        {
+          "word": "priority",
+          "pos": "n",
+          "meaning": "우선 사항, 우선권"
+        },
+        {
+          "word": "prior",
+          "pos": "a",
+          "meaning": "이전의 (prior to: ~ 전에)"
+        },
+        {
+          "word": "prioritization",
+          "pos": "n",
+          "meaning": "우선순위 지정"
+        }
+      ],
+      "collocation": "prioritize tasks · top priority",
+      "example": {
+        "en": "During the busy season, the support team prioritizes urgent customer requests.",
+        "ko": "성수기에는 지원팀이 긴급한 고객 요청을 우선 처리한다."
+      },
+      "drill": {
+        "sentence": "Team leaders should ------- complaints that involve damaged shipments.",
+        "options": [
+          "priority",
+          "prioritize",
+          "prioritization",
+          "prior"
+        ],
+        "answer": 1,
+        "why": "조동사 should 뒤는 동사원형 자리다. 목적어 complaints 를 받는 동사 prioritize"
+      }
+    },
+    {
+      "id": "d04-03",
+      "word": "organize",
+      "pos": "v",
+      "meaning": "(행사를) 준비하다 · 조직하다, 정리하다",
+      "morph": [
+        {
+          "part": "organ",
+          "type": "base",
+          "meaning": "기관 · 도구 (라틴어 organum)"
+        },
+        {
+          "part": "-ize",
+          "type": "suffix",
+          "meaning": "동사: ~화하다"
+        }
+      ],
+      "morphNote": "각 기관(organ)이 제 역할을 하게 만들다(-ize) → 짜임새 있게 조직하다 · 준비하다 (중세 라틴어 organizare 에서 들어온 말)",
+      "family": [
+        {
+          "word": "organization",
+          "pos": "n",
+          "meaning": "조직, 단체; 준비"
+        },
+        {
+          "word": "organizer",
+          "pos": "n",
+          "meaning": "주최자, 준비 담당"
+        },
+        {
+          "word": "organized",
+          "pos": "a",
+          "meaning": "정리된, 체계적인"
+        }
+      ],
+      "collocation": "organize an event · well organized",
+      "example": {
+        "en": "Ms. Liu organized the annual staff retreat at a resort near Busan.",
+        "ko": "Liu 씨가 부산 근처 리조트에서 열린 연례 직원 워크숍을 준비했다."
+      },
+      "drill": {
+        "sentence": "The ------- of the trade fair have asked exhibitors to arrive by 8 A.M.",
+        "options": [
+          "organize",
+          "organized",
+          "organizing",
+          "organizers"
+        ],
+        "answer": 3,
+        "why": "관사 The 와 전치사 of 사이는 명사 자리이고, 복수 동사 have 와 수가 맞아야 한다. 복수 명사 organizers"
+      }
+    },
+    {
+      "id": "d04-04",
+      "word": "simplify",
+      "pos": "v",
+      "meaning": "간소화하다, 단순화하다",
+      "morph": [
+        {
+          "part": "simple",
+          "type": "base",
+          "meaning": "단순한 · 간단한"
+        },
+        {
+          "part": "-ify",
+          "type": "suffix",
+          "meaning": "동사: ~하게 만들다"
+        }
+      ],
+      "morphNote": "간단하게(simple) 만들다(-ify) → 간소화하다",
+      "family": [
+        {
+          "word": "simple",
+          "pos": "a",
+          "meaning": "간단한, 단순한"
+        },
+        {
+          "word": "simply",
+          "pos": "ad",
+          "meaning": "간단히; 그저"
+        },
+        {
+          "word": "simplification",
+          "pos": "n",
+          "meaning": "간소화"
+        },
+        {
+          "word": "simplicity",
+          "pos": "n",
+          "meaning": "단순함, 간편함"
+        }
+      ],
+      "collocation": "simplify the process · a simplified form",
+      "example": {
+        "en": "The new software will simplify the expense reporting process.",
+        "ko": "새 소프트웨어가 경비 보고 절차를 간소화할 것이다."
+      },
+      "drill": {
+        "sentence": "To ------- the check-in process, guests can now register online before arrival.",
+        "options": [
+          "simplify",
+          "simple",
+          "simply",
+          "simplicity"
+        ],
+        "answer": 0,
+        "why": "to 부정사의 to 뒤는 동사원형 자리이고 뒤에 목적어 the check-in process 가 있다. 동사 simplify"
+      }
+    },
+    {
+      "id": "d04-05",
+      "word": "notify",
+      "pos": "v",
+      "meaning": "(공식적으로) 알리다, 통지하다",
+      "morph": [
+        {
+          "part": "noti",
+          "type": "root",
+          "meaning": "알려진 (라틴어 notus)"
+        },
+        {
+          "part": "-fy",
+          "type": "suffix",
+          "meaning": "동사: ~하게 만들다"
+        }
+      ],
+      "morphNote": "알려진(noti) 상태로 만들다(-fy) → 알리다 · 통지하다 (라틴어 notificare 에서 프랑스어를 거쳐 들어온 말)",
+      "family": [
+        {
+          "word": "notification",
+          "pos": "n",
+          "meaning": "통지, 알림"
+        },
+        {
+          "word": "notice",
+          "pos": "n",
+          "meaning": "공지, 통지 (같은 라틴어 뿌리)"
+        }
+      ],
+      "collocation": "notify A of B · notify customers of a delay",
+      "example": {
+        "en": "We will notify all passengers of any schedule changes by e-mail.",
+        "ko": "일정이 변경되면 모든 승객에게 이메일로 알릴 것이다."
+      },
+      "drill": {
+        "sentence": "Please ------- the front desk if you need a late checkout.",
+        "options": [
+          "notification",
+          "notified",
+          "notify",
+          "notifies"
+        ],
+        "answer": 2,
+        "why": "Please 로 시작하는 명령문이므로 빈칸은 동사원형 자리다. notify"
+      }
+    },
+    {
+      "id": "d04-06",
+      "word": "verify",
+      "pos": "v",
+      "meaning": "확인하다, 검증하다",
+      "morph": [
+        {
+          "part": "ver",
+          "type": "root",
+          "meaning": "참된 · 진실한 (라틴어 verus)"
+        },
+        {
+          "part": "-ify",
+          "type": "suffix",
+          "meaning": "동사: ~하게 만들다 (라틴어 facere 만들다)"
+        }
+      ],
+      "morphNote": "참(ver)으로 만들다(-ify) → 사실인지 확인하다 · 검증하다",
+      "family": [
+        {
+          "word": "verification",
+          "pos": "n",
+          "meaning": "확인, 검증"
+        },
+        {
+          "word": "verifiable",
+          "pos": "a",
+          "meaning": "검증할 수 있는"
+        }
+      ],
+      "collocation": "verify the information · verify one's identity",
+      "example": {
+        "en": "Staff at the front desk must verify each visitor's identity before issuing a pass.",
+        "ko": "안내 데스크 직원은 출입증을 발급하기 전에 방문객의 신원을 확인해야 한다."
+      },
+      "drill": {
+        "sentence": "Ms. Park asked for ------- of the shipping address before the order was processed.",
+        "options": [
+          "verify",
+          "verified",
+          "verifies",
+          "verification"
+        ],
+        "answer": 3,
+        "why": "전치사 for 뒤 · 전치사 of 앞은 명사 자리다. 명사 verification"
+      }
+    },
+    {
+      "id": "d04-07",
+      "word": "justify",
+      "pos": "v",
+      "meaning": "정당화하다, 정당한 이유를 대다",
+      "morph": [
+        {
+          "part": "just",
+          "type": "base",
+          "meaning": "올바른 · 정당한"
+        },
+        {
+          "part": "-ify",
+          "type": "suffix",
+          "meaning": "동사: ~하게 만들다"
+        }
+      ],
+      "morphNote": "정당하게(just) 만들다(-ify) → 정당화하다 · 정당한 이유를 대다",
+      "family": [
+        {
+          "word": "justification",
+          "pos": "n",
+          "meaning": "정당한 이유, 근거"
+        },
+        {
+          "word": "justified",
+          "pos": "a",
+          "meaning": "정당한, 타당한"
+        },
+        {
+          "word": "justifiable",
+          "pos": "a",
+          "meaning": "정당화할 수 있는"
+        }
+      ],
+      "collocation": "justify the cost · justify a decision",
+      "example": {
+        "en": "The manager had to justify the additional expense to the finance department.",
+        "ko": "관리자는 재무팀에 추가 비용의 정당성을 설명해야 했다."
+      },
+      "drill": {
+        "sentence": "Department heads must provide a written ------- for any purchase over $5,000.",
+        "options": [
+          "justify",
+          "justification",
+          "justified",
+          "justifies"
+        ],
+        "answer": 1,
+        "why": "관사 a 와 형용사 written 뒤는 명사 자리다. 명사 justification"
+      }
+    },
+    {
+      "id": "d04-08",
+      "word": "widen",
+      "pos": "v",
+      "meaning": "넓히다, 확대하다",
+      "morph": [
+        {
+          "part": "wide",
+          "type": "base",
+          "meaning": "넓은"
+        },
+        {
+          "part": "-en",
+          "type": "suffix",
+          "meaning": "동사: ~하게 하다"
+        }
+      ],
+      "morphNote": "넓게(wide) 하다(-en) → 넓히다 · 확대하다",
+      "family": [
+        {
+          "word": "wide",
+          "pos": "a",
+          "meaning": "넓은, 폭넓은"
+        },
+        {
+          "word": "widely",
+          "pos": "ad",
+          "meaning": "널리"
+        },
+        {
+          "word": "width",
+          "pos": "n",
+          "meaning": "폭, 너비"
+        }
+      ],
+      "collocation": "widen the road · widen the selection",
+      "example": {
+        "en": "The city plans to widen the road in front of the convention center.",
+        "ko": "시는 컨벤션 센터 앞 도로를 넓힐 계획이다."
+      },
+      "drill": {
+        "sentence": "The construction crew will ------- the entrance so that delivery trucks can pass through.",
+        "options": [
+          "widen",
+          "wide",
+          "widely",
+          "width"
+        ],
+        "answer": 0,
+        "why": "조동사 will 뒤는 동사원형 자리이고 뒤에 목적어 the entrance 가 있다. 동사 widen"
+      }
+    },
+    {
+      "id": "d04-09",
+      "word": "strengthen",
+      "pos": "v",
+      "meaning": "강화하다, 튼튼하게 하다",
+      "morph": [
+        {
+          "part": "strength",
+          "type": "base",
+          "meaning": "힘 · 강점"
+        },
+        {
+          "part": "-en",
+          "type": "suffix",
+          "meaning": "동사: ~하게 하다"
+        }
+      ],
+      "morphNote": "힘(strength)을 갖게 하다(-en) → 강화하다 (원래 -en 은 중세 영어 동사 어미였지만 지금은 strength + -en 으로 읽는다)",
+      "family": [
+        {
+          "word": "strength",
+          "pos": "n",
+          "meaning": "힘, 강점"
+        },
+        {
+          "word": "strong",
+          "pos": "a",
+          "meaning": "강한"
+        },
+        {
+          "word": "strongly",
+          "pos": "ad",
+          "meaning": "강하게, 강력히"
+        }
+      ],
+      "collocation": "strengthen relationships · strengthen security",
+      "example": {
+        "en": "The two companies signed an agreement to strengthen their partnership.",
+        "ko": "두 회사는 협력 관계를 강화하기 위해 협약을 체결했다."
+      },
+      "drill": {
+        "sentence": "The new partnership is expected to ------- the company's position in the Asian market.",
+        "options": [
+          "strong",
+          "strength",
+          "strengthen",
+          "strongly"
+        ],
+        "answer": 2,
+        "why": "be expected to 의 to 뒤는 동사원형 자리이고 뒤에 목적어 the company's position 이 있다. 동사 strengthen"
+      }
+    },
+    {
+      "id": "d04-10",
+      "word": "evaluate",
+      "pos": "v",
+      "meaning": "평가하다",
+      "morph": [
+        {
+          "part": "evalu",
+          "type": "base",
+          "meaning": "가치를 매김 (value 와 같은 뿌리)"
+        },
+        {
+          "part": "-ate",
+          "type": "suffix",
+          "meaning": "동사를 만든다"
+        }
+      ],
+      "morphNote": "명사 evaluation 에서 -ion 을 떼어 만든 동사(역성어)다. 가치(value)를 매기다 → 평가하다",
+      "family": [
+        {
+          "word": "evaluation",
+          "pos": "n",
+          "meaning": "평가"
+        },
+        {
+          "word": "evaluator",
+          "pos": "n",
+          "meaning": "평가자"
+        }
+      ],
+      "collocation": "evaluate performance · a performance evaluation",
+      "example": {
+        "en": "Supervisors evaluate each employee's performance twice a year.",
+        "ko": "관리자는 1년에 두 번 직원 각자의 성과를 평가한다."
+      },
+      "drill": {
+        "sentence": "All new hires receive an ------- after their first three months.",
+        "options": [
+          "evaluate",
+          "evaluation",
+          "evaluated",
+          "evaluates"
+        ],
+        "answer": 1,
+        "why": "관사 an 뒤 · 동사 receive 의 목적어 자리는 명사 자리다. 명사 evaluation"
+      }
+    },
+    {
+      "id": "d04-11",
+      "word": "negotiate",
+      "pos": "v",
+      "meaning": "협상하다, 교섭하다",
+      "morph": [
+        {
+          "part": "neg",
+          "type": "prefix",
+          "meaning": "아님 (라틴어 nec)"
+        },
+        {
+          "part": "oti",
+          "type": "root",
+          "meaning": "여가 · 한가함 (라틴어 otium)"
+        },
+        {
+          "part": "-ate",
+          "type": "suffix",
+          "meaning": "동사를 만든다"
+        }
+      ],
+      "morphNote": "여가(oti)가 아닌(neg) 것 = 일 · 거래(라틴어 negotium) → 거래하다(negotior) → 협상하다",
+      "family": [
+        {
+          "word": "negotiation",
+          "pos": "n",
+          "meaning": "협상"
+        },
+        {
+          "word": "negotiator",
+          "pos": "n",
+          "meaning": "협상 담당자"
+        },
+        {
+          "word": "negotiable",
+          "pos": "a",
+          "meaning": "협상 가능한"
+        }
+      ],
+      "collocation": "negotiate a contract · negotiate with suppliers",
+      "example": {
+        "en": "Our purchasing team negotiated a lower price with the new supplier.",
+        "ko": "구매팀이 새 공급업체와 더 낮은 가격으로 협상했다."
+      },
+      "drill": {
+        "sentence": "The terms of the lease are -------, so tenants may request a lower monthly rate.",
+        "options": [
+          "negotiate",
+          "negotiates",
+          "negotiation",
+          "negotiable"
+        ],
+        "answer": 3,
+        "why": "be 동사 are 뒤 보어 자리이고 주어 The terms 의 성질을 설명하므로 형용사가 온다. negotiable"
+      }
+    },
+    {
+      "id": "d04-12",
+      "word": "facilitate",
+      "pos": "v",
+      "meaning": "용이하게 하다, 촉진하다; (회의를) 진행하다",
+      "morph": [
+        {
+          "part": "facilit",
+          "type": "base",
+          "meaning": "쉽게 하다 (프랑스어 faciliter · 라틴어 facilis 쉬운)"
+        },
+        {
+          "part": "-ate",
+          "type": "suffix",
+          "meaning": "동사를 만든다"
+        }
+      ],
+      "morphNote": "쉽게(facilit) 만들다(-ate) → 일이 잘 되도록 돕다 · 촉진하다",
+      "family": [
+        {
+          "word": "facility",
+          "pos": "n",
+          "meaning": "시설; 쉬움"
+        },
+        {
+          "word": "facilitator",
+          "pos": "n",
+          "meaning": "진행자, 조력자"
+        },
+        {
+          "word": "facilitation",
+          "pos": "n",
+          "meaning": "촉진, 원활화"
+        }
+      ],
+      "collocation": "facilitate communication · facilitate a workshop",
+      "example": {
+        "en": "An outside consultant will facilitate the strategy workshop next Monday.",
+        "ko": "다음 주 월요일 전략 워크숍은 외부 컨설턴트가 진행한다."
+      },
+      "drill": {
+        "sentence": "The new booking system will ------- communication between the sales and shipping teams.",
+        "options": [
+          "facilitate",
+          "facility",
+          "facilitator",
+          "facilitation"
+        ],
+        "answer": 0,
+        "why": "조동사 will 뒤는 동사원형 자리이고 뒤에 목적어 communication 이 있다. 동사 facilitate"
+      }
+    },
+    {
+      "id": "d04-13",
+      "word": "approximately",
+      "pos": "ad",
+      "meaning": "대략, 약",
+      "morph": [
+        {
+          "part": "approximate",
+          "type": "base",
+          "meaning": "대략의 · 근사한"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "부사: 형용사 + ly"
+        }
+      ],
+      "morphNote": "대략의(approximate) + 부사(-ly) → 대략, 약",
+      "family": [
+        {
+          "word": "approximate",
+          "pos": "a",
+          "meaning": "대략의, 근사한"
+        },
+        {
+          "word": "approximation",
+          "pos": "n",
+          "meaning": "근사치, 어림"
+        }
+      ],
+      "collocation": "approximately 200 participants · an approximate cost",
+      "example": {
+        "en": "Approximately 300 guests are expected at the product launch.",
+        "ko": "제품 출시 행사에 약 300명의 손님이 올 것으로 예상된다."
+      },
+      "drill": {
+        "sentence": "The renovation of the lobby will take ------- three weeks.",
+        "options": [
+          "approximate",
+          "approximately",
+          "approximation",
+          "approximated"
+        ],
+        "answer": 1,
+        "why": "숫자 표현 three weeks 앞에서 '대략'이라는 뜻으로 수량을 꾸미는 것은 부사다. approximately"
+      }
+    },
+    {
+      "id": "d04-14",
+      "word": "immediately",
+      "pos": "ad",
+      "meaning": "즉시, 곧바로; 바로 (뒤 · 옆에)",
+      "morph": [
+        {
+          "part": "immediate",
+          "type": "base",
+          "meaning": "즉각적인 · 직속의"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "부사: 형용사 + ly"
+        }
+      ],
+      "morphNote": "즉각적인(immediate) + 부사(-ly) → 즉시",
+      "family": [
+        {
+          "word": "immediate",
+          "pos": "a",
+          "meaning": "즉각적인; 직속의 (immediate supervisor)"
+        },
+        {
+          "word": "immediacy",
+          "pos": "n",
+          "meaning": "즉각성, 긴급성"
+        }
+      ],
+      "collocation": "immediately after the meeting · take effect immediately",
+      "example": {
+        "en": "The revised dress code takes effect immediately.",
+        "ko": "수정된 복장 규정은 즉시 시행된다."
+      },
+      "drill": {
+        "sentence": "Please contact the IT department ------- if you notice any unusual activity on your account.",
+        "options": [
+          "immediate",
+          "immediacy",
+          "immediately",
+          "immediateness"
+        ],
+        "answer": 2,
+        "why": "동사 contact 와 목적어 the IT department 로 문장이 완전하다. 뒤에서 동사를 꾸미는 부사 immediately"
+      }
+    },
+    {
+      "id": "d04-15",
+      "word": "promptly",
+      "pos": "ad",
+      "meaning": "신속하게, 즉시; 정각에",
+      "morph": [
+        {
+          "part": "prompt",
+          "type": "base",
+          "meaning": "신속한 · 즉각적인"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "부사: 형용사 + ly"
+        }
+      ],
+      "morphNote": "신속한(prompt) + 부사(-ly) → 신속하게 · 정각에",
+      "family": [
+        {
+          "word": "prompt",
+          "pos": "a",
+          "meaning": "신속한, 즉각적인"
+        },
+        {
+          "word": "prompt",
+          "pos": "v",
+          "meaning": "촉구하다, 유도하다"
+        },
+        {
+          "word": "promptness",
+          "pos": "n",
+          "meaning": "신속함"
+        }
+      ],
+      "collocation": "respond promptly · promptly at 9 A.M.",
+      "example": {
+        "en": "Our customer service team responds promptly to all inquiries.",
+        "ko": "고객 서비스팀은 모든 문의에 신속하게 답변한다."
+      },
+      "drill": {
+        "sentence": "The meeting will begin ------- at 9:00 A.M., so please arrive a few minutes early.",
+        "options": [
+          "promptly",
+          "prompt",
+          "promptness",
+          "prompted"
+        ],
+        "answer": 0,
+        "why": "자동사 begin 뒤에서 동사를 꾸미는 자리이므로 부사가 온다. promptly(정각에)"
+      }
+    },
+    {
+      "id": "d04-16",
+      "word": "currently",
+      "pos": "ad",
+      "meaning": "현재, 지금",
+      "morph": [
+        {
+          "part": "current",
+          "type": "base",
+          "meaning": "현재의"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "부사: 형용사 + ly"
+        }
+      ],
+      "morphNote": "현재의(current) + 부사(-ly) → 현재",
+      "family": [
+        {
+          "word": "current",
+          "pos": "a",
+          "meaning": "현재의, 지금의"
+        },
+        {
+          "word": "current",
+          "pos": "n",
+          "meaning": "흐름, 경향"
+        }
+      ],
+      "collocation": "be currently unavailable · currently under review",
+      "example": {
+        "en": "The item you ordered is currently out of stock.",
+        "ko": "주문하신 상품은 현재 재고가 없다."
+      },
+      "drill": {
+        "sentence": "The position of marketing director is ------- vacant, but interviews will begin next week.",
+        "options": [
+          "current",
+          "currents",
+          "currency",
+          "currently"
+        ],
+        "answer": 3,
+        "why": "be 동사 is 와 형용사 vacant 사이에서 형용사를 꾸미는 자리는 부사다. currently"
+      }
+    },
+    {
+      "id": "d04-17",
+      "word": "previously",
+      "pos": "ad",
+      "meaning": "이전에, 앞서",
+      "morph": [
+        {
+          "part": "previous",
+          "type": "base",
+          "meaning": "이전의"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "부사: 형용사 + ly"
+        }
+      ],
+      "morphNote": "이전의(previous) + 부사(-ly) → 이전에",
+      "family": [
+        {
+          "word": "previous",
+          "pos": "a",
+          "meaning": "이전의, 앞의"
+        },
+        {
+          "word": "previous to",
+          "pos": "prep",
+          "meaning": "~ 이전에 (prior to 와 같은 뜻)"
+        }
+      ],
+      "collocation": "as previously announced · previously scheduled",
+      "example": {
+        "en": "Mr. Osei previously worked as a sales manager at a logistics firm.",
+        "ko": "Osei 씨는 이전에 물류 회사에서 영업 관리자로 일했다."
+      },
+      "drill": {
+        "sentence": "As ------- announced, the cafeteria will be closed for renovations next week.",
+        "options": [
+          "previous",
+          "previously",
+          "previousness",
+          "preview"
+        ],
+        "answer": 1,
+        "why": "As 와 과거분사 announced 사이에서 분사를 꾸미는 자리는 부사다. as previously announced(앞서 공지한 대로)"
+      }
+    },
+    {
+      "id": "d04-18",
+      "word": "temporarily",
+      "pos": "ad",
+      "meaning": "일시적으로, 임시로",
+      "morph": [
+        {
+          "part": "temporary",
+          "type": "base",
+          "meaning": "일시적인 · 임시의"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "부사: 형용사 + ly (y → i)"
+        }
+      ],
+      "morphNote": "임시의(temporary) + 부사(-ly) → 일시적으로 (y 가 i 로 바뀐다)",
+      "family": [
+        {
+          "word": "temporary",
+          "pos": "a",
+          "meaning": "일시적인, 임시의"
+        },
+        {
+          "word": "temporary",
+          "pos": "n",
+          "meaning": "임시 직원"
+        }
+      ],
+      "collocation": "be temporarily closed · temporarily unavailable",
+      "example": {
+        "en": "The online payment system will be temporarily unavailable on Sunday morning.",
+        "ko": "일요일 오전에는 온라인 결제 시스템을 일시적으로 이용할 수 없다."
+      },
+      "drill": {
+        "sentence": "The north parking lot will be ------- closed while the new lighting is installed.",
+        "options": [
+          "temporary",
+          "temporaries",
+          "temporarily",
+          "temporariness"
+        ],
+        "answer": 2,
+        "why": "be 와 과거분사 closed 사이는 부사 자리다. temporarily"
+      }
+    },
+    {
+      "id": "d04-19",
+      "word": "costly",
+      "pos": "a",
+      "meaning": "비용이 많이 드는, 대가가 큰",
+      "morph": [
+        {
+          "part": "cost",
+          "type": "base",
+          "meaning": "비용"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "형용사: 명사 + ly (부사 아님)"
+        }
+      ],
+      "morphNote": "비용(cost)이 + 드는 성질의(-ly) → 비용이 많이 드는 (명사 + ly 이므로 형용사)",
+      "family": [
+        {
+          "word": "cost",
+          "pos": "n",
+          "meaning": "비용"
+        },
+        {
+          "word": "cost",
+          "pos": "v",
+          "meaning": "(비용이) 들다"
+        },
+        {
+          "word": "cost-effective",
+          "pos": "a",
+          "meaning": "비용 효율이 높은"
+        }
+      ],
+      "collocation": "a costly mistake · costly repairs",
+      "example": {
+        "en": "Checking the figures twice can prevent costly mistakes.",
+        "ko": "수치를 두 번 확인하면 큰 비용이 드는 실수를 막을 수 있다."
+      },
+      "drill": {
+        "sentence": "Replacing the entire heating system would be too ------- for the small hotel.",
+        "options": [
+          "costly",
+          "cost",
+          "costing",
+          "costs"
+        ],
+        "answer": 0,
+        "why": "be 동사 뒤 보어 자리이고 부사 too 가 꾸미므로 형용사가 온다. -ly 로 끝나지만 형용사인 costly"
+      }
+    },
+    {
+      "id": "d04-20",
+      "word": "timely",
+      "pos": "a",
+      "meaning": "시기적절한, 때맞춘",
+      "morph": [
+        {
+          "part": "time",
+          "type": "base",
+          "meaning": "때 · 시간"
+        },
+        {
+          "part": "-ly",
+          "type": "suffix",
+          "meaning": "형용사: 명사 + ly (부사 아님)"
+        }
+      ],
+      "morphNote": "때(time)에 + 맞는 성질의(-ly) → 시기적절한 (명사 + ly 이므로 형용사)",
+      "family": [
+        {
+          "word": "time",
+          "pos": "n",
+          "meaning": "시간, 때"
+        },
+        {
+          "word": "timing",
+          "pos": "n",
+          "meaning": "시기 선택, 타이밍"
+        },
+        {
+          "word": "untimely",
+          "pos": "a",
+          "meaning": "때 이른, 시기가 나쁜"
+        }
+      ],
+      "collocation": "in a timely manner · timely delivery",
+      "example": {
+        "en": "Thank you for your timely response to our request.",
+        "ko": "저희 요청에 시기적절하게 답변해 주셔서 감사하다."
+      },
+      "drill": {
+        "sentence": "Customers who receive ------- responses to their inquiries are more likely to return.",
+        "options": [
+          "time",
+          "timing",
+          "times",
+          "timely"
+        ],
+        "answer": 3,
+        "why": "동사 receive 뒤 · 명사 responses 앞은 명사를 꾸미는 형용사 자리다. 명사 + ly 형용사 timely"
+      }
+    }
+  ],
+  "grammar": {
+    "title": "품사 자리 (4): 부사 자리 · 동사 자리",
+    "intro": "부사는 문장에서 빼도 문장이 성립하는 수식어다. 그래서 빈칸을 빼고 읽었을 때 문장이 완전하면 부사 자리일 가능성이 높다. 동사는 반대로 문장에 꼭 하나 있어야 하는 성분이므로, 문장에 동사가 없으면 빈칸이 동사 자리다.",
+    "sections": [
+      {
+        "heading": "부사 자리 (1): 일반동사 앞 · 목적어 뒤",
+        "body": "부사는 주어와 일반동사 사이에서 동사를 꾸민다.\n'동사 + 목적어'로 문장이 끝난 뒤에 와서 동사를 꾸미기도 한다. 자동사 바로 뒤도 부사 자리다.",
+        "examples": [
+          {
+            "en": "Mr. Diaz ------- reviews every invoice before payment.",
+            "answer": "carefully",
+            "ko": "Diaz 씨는 지불 전에 모든 송장을 꼼꼼히 검토한다.",
+            "note": "주어와 일반동사 reviews 사이는 부사 자리"
+          },
+          {
+            "en": "Please read the safety instructions -------.",
+            "answer": "carefully",
+            "ko": "안전 수칙을 주의 깊게 읽어 주세요.",
+            "note": "동사 + 목적어로 완전한 문장 뒤는 부사 자리"
+          }
+        ]
+      },
+      {
+        "heading": "부사 자리 (2): 형용사 · 부사 앞",
+        "body": "형용사나 다른 부사를 앞에서 꾸미는 것은 부사다.\nbe 동사 뒤에 '빈칸 + 형용사'가 오면 빈칸은 형용사를 꾸미는 부사다.",
+        "examples": [
+          {
+            "en": "The new printer is ------- reliable.",
+            "answer": "remarkably",
+            "ko": "새 프린터는 놀라울 정도로 믿을 만하다.",
+            "note": "형용사 reliable 앞은 부사 자리"
+          },
+          {
+            "en": "The shipment arrived ------- early.",
+            "answer": "surprisingly",
+            "ko": "화물이 놀랍게도 일찍 도착했다.",
+            "note": "부사 early 앞도 부사 자리"
+          }
+        ]
+      },
+      {
+        "heading": "부사 자리 (3): have 와 p.p. 사이 · be 와 -ing · p.p. 사이",
+        "body": "조동사(have · be · will 등)와 본동사 사이는 부사 자리다.\nhas ------- approved · is ------- being reviewed · was ------- completed 처럼 앞뒤가 모두 동사 형태면 빈칸은 부사다.",
+        "examples": [
+          {
+            "en": "The client has ------- approved the final design.",
+            "answer": "finally",
+            "ko": "고객이 마침내 최종 디자인을 승인했다.",
+            "note": "has 와 p.p. approved 사이는 부사 자리"
+          },
+          {
+            "en": "The north entrance is ------- closed for repairs.",
+            "answer": "temporarily",
+            "ko": "북쪽 출입구는 수리 때문에 임시로 폐쇄되어 있다.",
+            "note": "be 와 p.p. closed 사이는 부사 자리"
+          }
+        ]
+      },
+      {
+        "heading": "부사 자리 (4): 문장 맨 앞",
+        "body": "문장 맨 앞에서 쉼표와 함께 문장 전체를 꾸미는 것은 부사다.\n빈칸 뒤에 쉼표와 완전한 문장이 이어지면 부사를 고른다.",
+        "examples": [
+          {
+            "en": "-------, the conference room is unavailable this afternoon.",
+            "answer": "Unfortunately",
+            "ko": "안타깝게도 오늘 오후에는 회의실을 사용할 수 없다.",
+            "note": "쉼표 앞 문장 맨 앞은 부사 자리"
+          }
+        ]
+      },
+      {
+        "heading": "동사 자리: 주어 뒤 · 조동사 뒤 · 명령문",
+        "body": "주어 뒤에 동사가 없으면 빈칸이 동사 자리다. 이때 주어와 수 · 시제가 맞는지도 본다.\n조동사(will · can · must · should) 뒤와 to 부정사의 to 뒤는 동사원형이다.\nPlease 로 시작하거나 주어 없이 시작하는 명령문도 동사원형으로 시작한다.",
+        "examples": [
+          {
+            "en": "The committee ------- the proposal last week.",
+            "answer": "approved",
+            "ko": "위원회는 지난주에 그 제안을 승인했다.",
+            "note": "주어 뒤 동사 자리 · last week 이므로 과거"
+          },
+          {
+            "en": "Applicants must ------- their résumés by Friday.",
+            "answer": "submit",
+            "ko": "지원자는 금요일까지 이력서를 제출해야 한다.",
+            "note": "조동사 must 뒤는 동사원형"
+          },
+          {
+            "en": "Please ------- the attached form.",
+            "answer": "complete",
+            "ko": "첨부된 양식을 작성해 주세요.",
+            "note": "Please 뒤 명령문은 동사원형"
+          }
+        ]
+      },
+      {
+        "heading": "한 문장에 동사는 하나",
+        "body": "접속사나 관계사 없이 한 문장(절)에 동사가 두 개 올 수 없다.\n문장에 이미 동사가 있으면 빈칸에는 -ing · p.p. · to 부정사 같은 준동사가 오고, 동사가 없으면 빈칸이 동사다.\n관계절(who · that ~) 안의 동사는 문장의 본동사가 아니라는 점에 주의한다.",
+        "examples": [
+          {
+            "en": "The marketing team ------- to finalize the campaign by Friday.",
+            "answer": "plans",
+            "ko": "마케팅팀은 금요일까지 캠페인을 마무리할 계획이다.",
+            "note": "문장에 다른 동사가 없으므로 빈칸이 동사"
+          },
+          {
+            "en": "Staff members ------- in the training session will receive a certificate.",
+            "answer": "participating",
+            "ko": "교육에 참가하는 직원은 수료증을 받는다.",
+            "note": "이미 will receive 가 동사이므로 빈칸은 분사"
+          }
+        ]
+      }
+    ],
+    "summary": [
+      "빈칸을 빼도 문장이 완전하면 부사 자리다",
+      "부사 자리: 일반동사 앞 · 목적어 뒤 · 형용사와 부사 앞 · 조동사와 본동사 사이 · 문장 맨 앞",
+      "동사 자리: 주어 뒤 · 조동사와 to 뒤(동사원형) · Please 로 시작하는 명령문",
+      "한 절에 동사는 하나다. 동사가 이미 있으면 빈칸은 준동사, 없으면 동사다",
+      "-ly 라고 다 부사가 아니다. costly · timely 는 명사 + ly 형용사다"
+    ],
+    "strategy": "먼저 보기를 보고 품사 문제인지 확인한다. 그다음 빈칸 앞뒤 두 단어(조동사 · be · have · 형용사 · 쉼표)를 보고 자리를 정하고, 문장에 동사가 있는지 세어 본다. 마지막으로 접미사(-ize · -ify · -en · -ate · -ly)로 보기의 품사를 판별해 자리에 맞는 것을 고른다."
+  },
+  "inference": [
+    {
+      "id": "d04-inf-01",
+      "word": "modernize",
+      "parts": "modern(현대의) + -ize(~화하다)",
+      "question": "뜻으로 가장 알맞은 것은?",
+      "options": [
+        "현대적인 것",
+        "현대화하다",
+        "현대에",
+        "현대화된 상태"
+      ],
+      "answer": 1,
+      "pos": "v",
+      "why": "modern(현대의) + -ize(동사: ~화하다) → 현대화하다. -ize 는 동사 접미사이므로 동사 뜻을 고른다"
+    },
+    {
+      "id": "d04-inf-02",
+      "word": "clarify",
+      "parts": "clar(분명한) + -ify(~하게 만들다)",
+      "question": "뜻으로 가장 알맞은 것은?",
+      "options": [
+        "분명히 하다",
+        "분명함",
+        "깨끗한",
+        "분명하게"
+      ],
+      "answer": 0,
+      "pos": "v",
+      "why": "clar(분명한, clear 와 같은 뿌리) + -ify(동사: ~하게 만들다) → 분명히 하다 · 명확히 설명하다"
+    },
+    {
+      "id": "d04-inf-03",
+      "word": "shorten",
+      "parts": "short(짧은) + -en(~하게 하다)",
+      "question": "뜻으로 가장 알맞은 것은?",
+      "options": [
+        "부족",
+        "짧게",
+        "줄이다, 단축하다",
+        "짧은 것"
+      ],
+      "answer": 2,
+      "pos": "v",
+      "why": "short(짧은) + -en(동사: ~하게 하다) → 짧게 하다 · 단축하다"
+    },
+    {
+      "id": "d04-inf-04",
+      "word": "enlarge",
+      "parts": "en-(~하게 하다) + large(큰)",
+      "question": "뜻으로 가장 알맞은 것은?",
+      "options": [
+        "큰 규모",
+        "대부분",
+        "크게",
+        "확대하다"
+      ],
+      "answer": 3,
+      "pos": "v",
+      "why": "en-(동사: ~하게 하다) + large(큰) → 크게 하다 · 확대하다. en- 은 앞에 붙어 동사를 만든다"
+    },
+    {
+      "id": "d04-inf-05",
+      "word": "orderly",
+      "parts": "order(질서 · 순서) + -ly(명사 + ly = 형용사)",
+      "question": "뜻으로 가장 알맞은 것은?",
+      "options": [
+        "주문하다",
+        "정돈된, 질서 있는",
+        "순서대로 놓다",
+        "주문서"
+      ],
+      "answer": 1,
+      "pos": "a",
+      "why": "명사 order(질서) + -ly → 질서 있는 · 정돈된. 명사 + ly 이므로 부사가 아니라 형용사다 (an orderly line: 질서 정연한 줄)"
+    }
+  ],
+  "part5": [
+    {
+      "id": "d04-p5-01",
+      "type": "부사 자리: 일반동사 앞",
+      "level": 1,
+      "q": "Ms. Rivera ------- reviews all expense reports before they are sent to the accounting team.",
+      "options": [
+        "careful",
+        "care",
+        "carefully",
+        "carefulness"
+      ],
+      "answer": 2,
+      "clue": "빈칸 앞 주어 Ms. Rivera · 뒤 일반동사 reviews",
+      "why": "주어와 일반동사 사이에서 동사 reviews 를 꾸미는 자리는 부사다. 형용사 careful + ly 인 carefully 가 정답",
+      "explain": [
+        "careful: 형용사로 동사를 꾸밀 수 없다",
+        "care: 명사 · 동사로 동사 reviews 앞에 올 수 없다",
+        "정답",
+        "carefulness: 명사로 주어 뒤 동사 앞 수식어 자리에 올 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-02",
+      "type": "동사 자리: 조동사 뒤",
+      "level": 1,
+      "q": "All visitors must ------- at the security desk before entering the building.",
+      "options": [
+        "register",
+        "registration",
+        "registered",
+        "registering"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 조동사 must",
+      "why": "조동사 must 뒤는 동사원형 자리다. register 가 정답",
+      "explain": [
+        "정답",
+        "registration: 명사로 조동사 뒤에 올 수 없다",
+        "registered: 과거 · 과거분사로 조동사 바로 뒤에 올 수 없다",
+        "registering: -ing 형으로 조동사 바로 뒤에 올 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-03",
+      "type": "부사 자리: 형용사 앞",
+      "level": 1,
+      "q": "The new conference room is ------- larger than the one on the second floor.",
+      "options": [
+        "significant",
+        "significance",
+        "signify",
+        "significantly"
+      ],
+      "answer": 3,
+      "clue": "빈칸 앞 be 동사 is · 뒤 형용사 비교급 larger",
+      "why": "형용사 larger 를 앞에서 꾸미는 자리이므로 부사가 온다. significantly 가 정답",
+      "explain": [
+        "significant: 형용사로 다른 형용사 larger 를 꾸밀 수 없다",
+        "significance: 명사로 be 동사와 형용사 사이에 올 수 없다",
+        "signify: 동사로 be 동사 뒤에 올 수 없다",
+        "정답"
+      ]
+    },
+    {
+      "id": "d04-p5-04",
+      "type": "동사 자리: 명령문",
+      "level": 1,
+      "q": "Please ------- the enclosed survey and return it in the prepaid envelope.",
+      "options": [
+        "completion",
+        "complete",
+        "completely",
+        "completed"
+      ],
+      "answer": 1,
+      "clue": "빈칸 앞 Please · 뒤 목적어 the enclosed survey · and return 과 병렬",
+      "why": "Please 로 시작하는 명령문은 동사원형으로 시작한다. and 뒤 return 과도 형태가 맞는 complete 가 정답",
+      "explain": [
+        "completion: 명사로 명령문의 동사 자리에 올 수 없다",
+        "정답",
+        "completely: 부사로 목적어를 받을 수 없다",
+        "completed: 과거 · 과거분사로 명령문에 쓸 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-05",
+      "type": "부사 자리: have 와 p.p. 사이",
+      "level": 1,
+      "q": "Mr. Hasegawa has ------- accepted the position of regional sales manager.",
+      "options": [
+        "official",
+        "officially",
+        "office",
+        "officials"
+      ],
+      "answer": 1,
+      "clue": "빈칸 앞 has · 뒤 과거분사 accepted",
+      "why": "현재완료 has 와 과거분사 accepted 사이는 부사 자리다. officially 가 정답",
+      "explain": [
+        "official: 형용사 · 명사로 has 와 p.p. 사이에 올 수 없다",
+        "정답",
+        "office: 명사로 동사 사이에 올 수 없다",
+        "officials: 복수 명사로 동사 사이에 올 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-06",
+      "type": "부사 자리: be 와 p.p. 사이",
+      "level": 2,
+      "q": "The annual safety inspection was ------- completed ahead of schedule.",
+      "options": [
+        "success",
+        "successful",
+        "succeed",
+        "successfully"
+      ],
+      "answer": 3,
+      "clue": "빈칸 앞 be 동사 was · 뒤 과거분사 completed",
+      "why": "수동태 was 와 completed 사이는 부사 자리다. successfully 가 정답",
+      "explain": [
+        "success: 명사로 was 와 p.p. 사이에 올 수 없다",
+        "successful: 형용사로 과거분사를 앞에서 꾸밀 수 없다",
+        "succeed: 동사원형으로 was 뒤에 올 수 없다",
+        "정답"
+      ]
+    },
+    {
+      "id": "d04-p5-07",
+      "type": "동사 자리: 주어 뒤 · 수 일치",
+      "level": 2,
+      "q": "The marketing department ------- a new advertising campaign every spring.",
+      "options": [
+        "launches",
+        "launching",
+        "to launch",
+        "launch"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 단수 주어 The marketing department · 문장에 다른 동사 없음 · every spring(반복)",
+      "why": "문장에 동사가 없으므로 빈칸이 동사 자리다. 단수 주어이고 every spring 으로 습관을 나타내므로 현재 3인칭 단수 launches 가 정답",
+      "explain": [
+        "정답",
+        "launching: -ing 형은 단독으로 문장의 동사가 될 수 없다",
+        "to launch: to 부정사는 문장의 동사가 될 수 없다",
+        "launch: 동사원형은 단수 주어 department 와 수가 맞지 않는다"
+      ]
+    },
+    {
+      "id": "d04-p5-08",
+      "type": "부사 자리: 문장 맨 앞",
+      "level": 2,
+      "q": "-------, the keynote speaker's flight was delayed, so the opening session will start at 11 A.M.",
+      "options": [
+        "Unfortunate",
+        "Fortune",
+        "Unfortunately",
+        "Misfortune"
+      ],
+      "answer": 2,
+      "clue": "빈칸 뒤 쉼표 · 이어지는 완전한 문장",
+      "why": "쉼표 뒤에 주어와 동사를 갖춘 완전한 문장이 오므로 빈칸은 문장 전체를 꾸미는 부사 자리다. Unfortunately 가 정답",
+      "explain": [
+        "Unfortunate: 형용사로 문장 전체를 꾸밀 수 없다",
+        "Fortune: 명사로 문장 앞 수식어 자리에 올 수 없다",
+        "정답",
+        "Misfortune: 명사로 문장 앞 수식어 자리에 올 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-09",
+      "type": "부사 자리: 목적어 뒤",
+      "level": 2,
+      "q": "The technician repaired the copier -------, so the staff could print the handouts on time.",
+      "options": [
+        "efficient",
+        "efficiency",
+        "efficiencies",
+        "efficiently"
+      ],
+      "answer": 3,
+      "clue": "빈칸 앞 동사 repaired + 목적어 the copier 로 완전한 절",
+      "why": "동사와 목적어로 절이 완전하므로 빈칸은 동사 repaired 를 뒤에서 꾸미는 부사 자리다. efficiently 가 정답",
+      "explain": [
+        "efficient: 형용사로 동사를 꾸밀 수 없다. 목적격 보어를 받는 동사(make · keep)도 아니다",
+        "efficiency: 명사로 완전한 절 뒤에 붙을 수 없다",
+        "efficiencies: 복수 명사로 완전한 절 뒤에 붙을 수 없다",
+        "정답"
+      ]
+    },
+    {
+      "id": "d04-p5-10",
+      "type": "동사 자리: 한 문장 한 동사",
+      "level": 2,
+      "q": "Employees who wish to attend the workshop ------- their supervisors by Wednesday.",
+      "options": [
+        "notifying",
+        "should notify",
+        "notification",
+        "to notify"
+      ],
+      "answer": 1,
+      "clue": "주어 Employees 뒤 관계절 who wish to attend the workshop · 문장 본동사 없음",
+      "why": "wish 는 관계절 who ~ 안의 동사이고 주어 Employees 의 본동사가 없다. 따라서 빈칸이 동사 자리이고, 목적어 their supervisors 를 받는 should notify 가 정답",
+      "explain": [
+        "notifying: -ing 형은 단독으로 본동사가 될 수 없다",
+        "정답",
+        "notification: 명사로 동사 자리에 올 수 없다",
+        "to notify: to 부정사는 본동사가 될 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-11",
+      "type": "복습: 명사 자리 (-ation)",
+      "level": 2,
+      "q": "The ------- of the merger agreement took longer than both companies expected.",
+      "options": [
+        "negotiation",
+        "negotiate",
+        "negotiable",
+        "negotiated"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 관사 The · 뒤 전치사 of",
+      "why": "관사 The 와 전치사 of 사이는 명사 자리다. 동사 negotiate 에 -ion 이 붙은 명사 negotiation 이 정답",
+      "explain": [
+        "정답",
+        "negotiate: 동사로 관사 뒤 명사 자리에 올 수 없다",
+        "negotiable: 형용사로 뒤에 꾸밀 명사가 없다",
+        "negotiated: 과거 · 과거분사로 명사 자리에 올 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-12",
+      "type": "복습: 형용사 자리 (명사 + ly)",
+      "level": 3,
+      "q": "Repeated delays at the port have proven ------- for the furniture importer.",
+      "options": [
+        "cost",
+        "costs",
+        "costly",
+        "costing"
+      ],
+      "answer": 2,
+      "clue": "빈칸 앞 2형식 동사 have proven · 뒤 전치사구 for",
+      "why": "prove 는 '~임이 드러나다'라는 뜻으로 뒤에 형용사 보어를 받는다. 명사 cost + ly 로 만든 형용사 costly 가 정답",
+      "explain": [
+        "cost: 명사 · 동사로 prove 뒤 형용사 보어 자리에 맞지 않다",
+        "costs: 복수 명사 · 3인칭 동사로 보어 자리에 맞지 않다",
+        "정답",
+        "costing: -ing 형으로 have proven 뒤 보어가 될 수 없다"
+      ]
+    },
+    {
+      "id": "d04-p5-13",
+      "type": "형용사 자리: -ly 형용사 함정",
+      "level": 3,
+      "q": "Ridgeway Logistics guarantees that all orders will be processed in a ------- manner.",
+      "options": [
+        "timely",
+        "promptly",
+        "time",
+        "timing"
+      ],
+      "answer": 0,
+      "clue": "빈칸 앞 관사 a · 뒤 명사 manner",
+      "why": "관사와 명사 사이는 명사를 꾸미는 형용사 자리다. -ly 로 끝나지만 명사 + ly 형용사인 timely 가 정답 (in a timely manner: 적시에)",
+      "explain": [
+        "정답",
+        "promptly: 형용사 + ly 부사로 명사 manner 를 꾸밀 수 없다",
+        "time: 명사로 a time manner 는 성립하지 않는다",
+        "timing: 명사로 manner 를 꾸미는 형용사 역할을 하지 못한다"
+      ]
+    },
+    {
+      "id": "d04-p5-14",
+      "type": "복습: 형용사 자리 (-ate 형용사)",
+      "level": 3,
+      "q": "The employee handbook explains which forms are ------- for each type of leave request.",
+      "options": [
+        "appropriately",
+        "appropriation",
+        "appropriateness",
+        "appropriate"
+      ],
+      "answer": 3,
+      "clue": "빈칸 앞 be 동사 are · 뒤 전치사 for",
+      "why": "be 동사 뒤 보어 자리이고 주어 which forms 의 성질(적절한)을 설명하므로 형용사가 온다. -ate 로 끝나도 형용사인 appropriate 가 정답",
+      "explain": [
+        "appropriately: 부사로 be 동사 뒤 보어가 될 수 없다",
+        "appropriation: 명사(충당 · 전용)로 '양식 = 충당'이 되어 뜻이 맞지 않다",
+        "appropriateness: 명사(적절성)로 '양식 = 적절성'이 되어 뜻이 맞지 않다",
+        "정답"
+      ]
+    },
+    {
+      "id": "d04-p5-15",
+      "type": "복습: 명사 자리 (소유격 · 형용사 뒤)",
+      "level": 3,
+      "q": "Improving delivery times remains the company's top ------- for the coming year.",
+      "options": [
+        "prioritize",
+        "priority",
+        "prior",
+        "prioritized"
+      ],
+      "answer": 1,
+      "clue": "빈칸 앞 소유격 the company's + 형용사 top · 뒤 전치사 for",
+      "why": "소유격과 형용사 뒤는 명사 자리이고, 2형식 동사 remains 의 보어로 주어와 같은 대상을 가리킨다. 명사 priority 가 정답",
+      "explain": [
+        "prioritize: 동사로 소유격 뒤 명사 자리에 올 수 없다",
+        "정답",
+        "prior: 형용사로 뒤에 꾸밀 명사가 없다",
+        "prioritized: 과거 · 과거분사로 명사 자리에 올 수 없다"
+      ]
+    }
+  ],
+  "lcGuide": {
+    "focus": "Part 1 종합(사람 · 사물 혼합 사진) · Part 2 Yes/No 의문문 · 부정의문문 · 부가의문문 (Yes/No 를 생략한 간접 응답)",
+    "steps": [
+      "Part 1 은 음원을 듣기 전에 사진을 보고 사람의 동작 1개와 사물의 위치 · 상태 1개를 영어로 말해 본다",
+      "문제를 풀고 스크립트로 오답 보기의 함정(사진에 없는 동작 · 사람이 없는데 being p.p. · 사물 이름만 같은 보기)을 표시한다",
+      "Part 2 는 질문 앞 3단어(Have you · Didn't you · ..., right?)를 받아쓰고, Yes/No 없이 답한 정답 보기를 따로 모아 소리 내어 읽는다",
+      "정답 문장을 한 문장씩 멈추며 3번 쉐도잉한다"
+    ],
+    "keyPatterns": [
+      {
+        "en": "is + -ing / are being + p.p.",
+        "ko": "사람이 지금 하는 동작 · 사물이 지금 ~되는 중. being p.p. 는 사진에 동작하는 사람이 있을 때만 정답이 된다"
+      },
+      {
+        "en": "has been + p.p. / is + p.p. (is stacked · is placed)",
+        "ko": "사물이 이미 ~된 상태. 사람이 없는 사진에서 자주 정답이 된다"
+      },
+      {
+        "en": "is leaning against · is propped against · is lying on",
+        "ko": "사물 위치 표현: ~에 기대어 있다 · ~ 위에 놓여 있다"
+      },
+      {
+        "en": "Didn't you ~? / Haven't you ~? / Isn't it ~?",
+        "ko": "부정의문문. 부정어를 빼고 일반 의문문처럼 듣는다. 사실이면 Yes, 아니면 No"
+      },
+      {
+        "en": "~, isn't it? / ~, don't you? / ~, right?",
+        "ko": "부가의문문. 확인하는 질문이며 앞 문장 내용에 대해 일반 의문문처럼 답한다"
+      },
+      {
+        "en": "Not yet · I'm still waiting for ~ · Actually, ~ · Let me check",
+        "ko": "Yes/No 를 생략한 간접 응답. 토익에서 정답으로 자주 나온다"
+      }
+    ]
+  },
+  "lc": [
+    {
+      "id": "d04-lc-01",
+      "part": 1,
+      "scene": "창고에서 한 남성이 지게차를 운전하고 있다. 옆 금속 선반에는 상자들이 여러 층으로 쌓여 있다.",
+      "options": [
+        "(A) A man is lifting a box onto a shelf.",
+        "(B) Some boxes are being unloaded from a truck.",
+        "(C) Boxes have been stacked on the shelves.",
+        "(D) The man is repairing a forklift."
+      ],
+      "answer": 2,
+      "why": "선반에 상자가 쌓여 있는 상태를 have been stacked(현재완료 수동)로 정확히 묘사했다",
+      "trap": "(A) 손으로 상자를 드는 동작은 없다 · (B) 사진에 없는 트럭 · (D) forklift 를 들려주지만 수리하는 동작은 없다"
+    },
+    {
+      "id": "d04-lc-02",
+      "part": 1,
+      "scene": "두 여성이 회의실 탁자에 마주 앉아 노트북 화면을 보고 있다. 창가에 화분 하나가 놓여 있다.",
+      "options": [
+        "(A) A potted plant has been placed near the window.",
+        "(B) The women are arranging some chairs.",
+        "(C) One of the women is closing a laptop.",
+        "(D) Some flowers are being watered."
+      ],
+      "answer": 0,
+      "why": "창가에 화분이 놓여 있는 상태를 has been placed 로 묘사했다",
+      "trap": "(B) 의자를 정리하는 동작은 없다 · (C) laptop 은 있지만 닫는 동작이 아니다 · (D) 물 주는 사람이 없는데 being p.p. 를 썼다"
+    },
+    {
+      "id": "d04-lc-03",
+      "part": 1,
+      "scene": "식당 야외 테라스에 빈 테이블들이 놓여 있고, 테이블마다 파라솔이 펼쳐져 있다. 한 직원이 행주로 테이블을 닦고 있다.",
+      "options": [
+        "(A) Some customers are ordering food.",
+        "(B) The umbrellas are being folded.",
+        "(C) A server is carrying a tray of drinks.",
+        "(D) A worker is wiping a table."
+      ],
+      "answer": 3,
+      "why": "직원이 테이블을 닦는 동작을 is wiping 으로 정확히 묘사했다",
+      "trap": "(A) 테이블이 비어 있어 손님이 없다 · (B) 파라솔은 펼쳐진 상태이지 접히는 중이 아니다 · (C) 식당에서 연상되는 동작이지만 사진에는 없다"
+    },
+    {
+      "id": "d04-lc-04",
+      "part": 1,
+      "scene": "공항 탑승구 대기 구역에서 여행객 몇 명이 의자에 앉아 있다. 한 남성이 바퀴 달린 여행 가방을 끌고 통로를 걸어가고 있다.",
+      "options": [
+        "(A) Passengers are boarding a plane.",
+        "(B) A man is pulling a suitcase.",
+        "(C) Some luggage is being weighed.",
+        "(D) All of the seats are occupied."
+      ],
+      "answer": 1,
+      "why": "남성이 여행 가방을 끌고 가는 동작을 is pulling a suitcase 로 묘사했다",
+      "trap": "(A) 공항에서 연상되는 동작이지만 탑승 장면이 아니다 · (C) 저울에 짐을 다는 사람이 없다 · (D) All 처럼 전체를 말하는 보기는 빈자리가 하나라도 있으면 오답이다"
+    },
+    {
+      "id": "d04-lc-05",
+      "part": 1,
+      "scene": "사무실 로비에서 한 작업자가 사다리 위에 서서 천장 조명을 교체하고 있다. 바닥에는 공구 상자가 열린 채 놓여 있다.",
+      "options": [
+        "(A) The worker is painting the ceiling.",
+        "(B) A toolbox is being carried into the lobby.",
+        "(C) A man is standing on a ladder.",
+        "(D) Some ladders are leaning against the wall."
+      ],
+      "answer": 2,
+      "why": "작업자가 사다리 위에 서 있는 상태를 is standing on a ladder 로 묘사했다",
+      "trap": "(A) ceiling 은 맞지만 페인트칠이 아니다 · (B) 공구 상자는 바닥에 놓여 있고 옮기는 중이 아니다 · (D) 사다리는 하나이고 벽에 기대어 있지 않다"
+    },
+    {
+      "id": "d04-lc-06",
+      "part": 2,
+      "prompt": "Have you finalized the agenda for tomorrow's meeting?",
+      "options": [
+        "(A) In the main conference room.",
+        "(B) I'm still waiting for Mr. Cho's input.",
+        "(C) Yes, the meeting went well."
+      ],
+      "answer": 1,
+      "why": "Yes/No 를 생략하고 '아직 조 씨의 의견을 기다리는 중'이라고 답해 아직 확정하지 않았음을 간접적으로 알린다",
+      "trap": "(A) Where 에 맞는 장소 응답 · (C) meeting 반복, 내일 회의인데 과거 시제(went)로 답했다"
+    },
+    {
+      "id": "d04-lc-07",
+      "part": 2,
+      "prompt": "Isn't the shipment supposed to arrive today?",
+      "options": [
+        "(A) It's been delayed until Friday.",
+        "(B) A shipping label.",
+        "(C) No, he arrived yesterday."
+      ],
+      "answer": 0,
+      "why": "부정의문문이지만 '오늘 도착하기로 되어 있지 않나?'라는 확인 질문이다. 금요일로 연기되었다는 간접 응답이 정답",
+      "trap": "(B) shipment 와 비슷한 shipping 을 쓴 연상 단어 · (C) arrive 반복, 주어 he 가 shipment 와 맞지 않는다"
+    },
+    {
+      "id": "d04-lc-08",
+      "part": 2,
+      "prompt": "You're attending the trade show in Chicago, aren't you?",
+      "options": [
+        "(A) I showed him the way.",
+        "(B) Yes, I've already traded it.",
+        "(C) My manager hasn't approved it yet."
+      ],
+      "answer": 2,
+      "why": "부가의문문에 Yes/No 없이 '관리자가 아직 승인하지 않았다'고 답해 참석이 확정되지 않았음을 알린다",
+      "trap": "(A) show 와 발음이 비슷한 showed · (B) trade 를 반복한 유사 발음, 내용이 맞지 않는다"
+    },
+    {
+      "id": "d04-lc-09",
+      "part": 2,
+      "prompt": "Do you know if the printer on the third floor is working?",
+      "options": [
+        "(A) I work on the second floor.",
+        "(B) Yes, about fifty copies.",
+        "(C) A technician fixed it this morning."
+      ],
+      "answer": 2,
+      "why": "'오늘 아침 기술자가 고쳤다'고 답해 지금은 작동한다는 것을 간접적으로 알린다",
+      "trap": "(A) working 과 work, third floor 와 second floor 를 이용한 반복 함정 · (B) printer 에서 연상되는 copies, Yes 뒤 내용이 질문과 맞지 않는다"
+    },
+    {
+      "id": "d04-lc-10",
+      "part": 2,
+      "prompt": "Didn't Ms. Alvarez send the revised contract?",
+      "options": [
+        "(A) Yes, it's in your inbox.",
+        "(B) A two-year contract.",
+        "(C) Send it to the front desk."
+      ],
+      "answer": 0,
+      "why": "부정어를 빼고 '보냈나?'로 들으면 된다. 보냈으므로 Yes 로 답하고 받은편지함에 있다고 덧붙였다",
+      "trap": "(B) contract 반복 · (C) send 반복, 질문에 대한 답이 아니라 지시다"
+    },
+    {
+      "id": "d04-lc-11",
+      "part": 2,
+      "prompt": "The new parking rules take effect next week, right?",
+      "options": [
+        "(A) To the left of the building.",
+        "(B) That's what the memo said.",
+        "(C) Yes, it was very effective."
+      ],
+      "answer": 1,
+      "why": "'메모에 그렇게 적혀 있었다'고 답해 Yes 를 간접적으로 표현했다",
+      "trap": "(A) right 를 방향(오른쪽)으로 착각하게 하는 연상 · (C) effect 와 발음이 비슷한 effective"
+    },
+    {
+      "id": "d04-lc-12",
+      "part": 2,
+      "prompt": "Should we order more office supplies now?",
+      "options": [
+        "(A) Let's check the inventory first.",
+        "(B) In alphabetical order.",
+        "(C) Yes, they surprised me."
+      ],
+      "answer": 0,
+      "why": "지금 주문할지 묻는 질문에 '먼저 재고를 확인하자'고 답했다. Yes/No 없이 다음 행동을 제안하는 간접 응답",
+      "trap": "(B) order 의 다른 뜻(순서)을 이용한 함정 · (C) supplies 와 발음이 비슷한 surprised"
+    },
+    {
+      "id": "d04-lc-13",
+      "part": 2,
+      "prompt": "Haven't you met our new regional manager?",
+      "options": [
+        "(A) The meeting room on the left.",
+        "(B) A new region.",
+        "(C) Not yet, but I will at lunch today."
+      ],
+      "answer": 2,
+      "why": "'만나 봤나?'라는 질문에 Not yet(아직)이라고 답하고 점심에 만난다고 덧붙였다",
+      "trap": "(A) met 와 비슷한 meeting · (B) regional 과 비슷한 region, new 반복"
+    },
+    {
+      "id": "d04-lc-14",
+      "part": 2,
+      "prompt": "This report needs to be submitted by Thursday, doesn't it?",
+      "options": [
+        "(A) He reported the problem yesterday.",
+        "(B) Actually, the deadline was moved to Monday.",
+        "(C) A submission form."
+      ],
+      "answer": 1,
+      "why": "부가의문문에 Actually(사실은)로 시작해 마감이 월요일로 변경되었다고 답했다. No 를 생략한 간접 응답",
+      "trap": "(A) report 반복, 주어 He 가 맞지 않는다 · (C) submitted 와 비슷한 submission"
+    },
+    {
+      "id": "d04-lc-15",
+      "part": 2,
+      "prompt": "Is the client meeting still scheduled for three o'clock?",
+      "options": [
+        "(A) Mr. Diaz would know.",
+        "(B) About thirty minutes.",
+        "(C) Yes, I met the client."
+      ],
+      "answer": 0,
+      "why": "'Diaz 씨가 알 것이다'라고 다른 사람에게 확인을 넘기는 응답이다. 모른다는 뜻의 간접 응답도 정답이 된다",
+      "trap": "(B) three o'clock 에서 연상되는 시간 길이(How long 응답) · (C) client 반복, met 와 meeting 의 유사 발음"
+    }
+  ],
+  "colloc": [
+    {
+      "id": "d04-col-01",
+      "kind": "동사 + 전치사",
+      "q": "Please notify us ------- any changes to your address.",
+      "options": [
+        "to",
+        "of",
+        "at",
+        "with"
+      ],
+      "answer": 1,
+      "full": "notify A of B",
+      "ko": "A에게 B를 알리다",
+      "note": "inform A of B 와 같은 형식 · notify A that 절도 쓴다"
+    },
+    {
+      "id": "d04-col-02",
+      "kind": "동사 + 전치사",
+      "q": "Our team will negotiate ------- the supplier next week.",
+      "options": [
+        "for",
+        "to",
+        "with",
+        "at"
+      ],
+      "answer": 2,
+      "full": "negotiate with",
+      "ko": "~와 협상하다",
+      "note": "negotiate a contract(타동사로 협상 대상을 바로 쓴다)"
+    },
+    {
+      "id": "d04-col-03",
+      "kind": "동사 + 명사",
+      "q": "Guests must ------- their identity at the front desk.",
+      "options": [
+        "verify",
+        "justify",
+        "notify",
+        "simplify"
+      ],
+      "answer": 0,
+      "full": "verify one's identity",
+      "ko": "신원을 확인하다",
+      "note": "verify the information(정보를 확인하다) · verify that 절"
+    },
+    {
+      "id": "d04-col-04",
+      "kind": "동사 + 명사",
+      "q": "Both sides hope to ------- the contract by Friday.",
+      "options": [
+        "widen",
+        "notify",
+        "facilitate",
+        "finalize"
+      ],
+      "answer": 3,
+      "full": "finalize a contract",
+      "ko": "계약을 마무리하다",
+      "note": "finalize the details(세부 사항을 확정하다)"
+    },
+    {
+      "id": "d04-col-05",
+      "kind": "동사 + 명사",
+      "q": "Please ------- your tasks, starting with the most urgent.",
+      "options": [
+        "notify",
+        "prioritize",
+        "widen",
+        "justify"
+      ],
+      "answer": 1,
+      "full": "prioritize tasks",
+      "ko": "업무의 우선순위를 정하다",
+      "note": "top priority(최우선 순위) · give priority to"
+    },
+    {
+      "id": "d04-col-06",
+      "kind": "전치사 + 명사",
+      "q": "The seminar will begin promptly ------- 9 A.M.",
+      "options": [
+        "on",
+        "in",
+        "at",
+        "by"
+      ],
+      "answer": 2,
+      "full": "promptly at 9 A.M.",
+      "ko": "오전 9시 정각에",
+      "note": "시각은 at · 날짜 · 요일은 on · 기한은 by"
+    },
+    {
+      "id": "d04-col-07",
+      "kind": "전치사 + 명사",
+      "q": "Please submit the form immediately ------- the meeting.",
+      "options": [
+        "after",
+        "later",
+        "since",
+        "until"
+      ],
+      "answer": 0,
+      "full": "immediately after",
+      "ko": "~ 직후에",
+      "note": "immediately before(~ 직전에) · shortly after(~ 직후에)"
+    },
+    {
+      "id": "d04-col-08",
+      "kind": "전치사 + 명사",
+      "q": "All orders are shipped ------- a timely manner.",
+      "options": [
+        "at",
+        "on",
+        "by",
+        "in"
+      ],
+      "answer": 3,
+      "full": "in a timely manner",
+      "ko": "시기적절하게, 제때",
+      "note": "in an efficient manner 처럼 manner 앞은 in"
+    },
+    {
+      "id": "d04-col-09",
+      "kind": "전치사 + 명사",
+      "q": "The budget proposal is currently ------- review.",
+      "options": [
+        "on",
+        "at",
+        "under",
+        "for"
+      ],
+      "answer": 2,
+      "full": "under review",
+      "ko": "검토 중인",
+      "note": "under construction · under discussion 도 under"
+    },
+    {
+      "id": "d04-col-10",
+      "kind": "동사 + 명사",
+      "q": "The new parking policy will take ------- immediately.",
+      "options": [
+        "effect",
+        "affect",
+        "effort",
+        "effective"
+      ],
+      "answer": 0,
+      "full": "take effect",
+      "ko": "시행되다, 효력이 생기다",
+      "note": "go into effect 와 같은 뜻 · affect 는 동사(영향을 주다)"
+    }
+  ]
+}

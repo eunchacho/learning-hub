@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updated": "2026-11-26",
+  "days": [
+    { "id": "d01",
+      "date": "2026-11-26",
+      "week": 1,
+      "title": "명사형 접미사 (1) · 명사 자리",
+      "workTitle": "Word Formation: Noun Suffixes I"
+    },
+    { "id": "d02",
+      "date": "2026-11-27",
+      "week": 1,
+      "title": "명사형 접미사 (2) · 사람 명사와 가산 · 불가산",
+      "workTitle": "Word Formation: Noun Suffixes II"
+    },
+    { "id": "d03",
+      "date": "2026-11-30",
+      "week": 2,
+      "title": "형용사 접미사 · 형용사 자리",
+      "workTitle": "Word Formation: Adjective Suffixes"
+    },
+    { "id": "d04",
+      "date": "2026-12-01",
+      "week": 2,
+      "title": "동사 · 부사 접미사 · 부사 자리와 동사 자리",
+      "workTitle": "Word Formation: Verb and Adverb Suffixes"
+    },
+    { "id": "d05",
+      "date": "2026-12-02",
+      "week": 2,
+      "title": "분사형 형용사 · 혼동 형용사 · 문장 형식",
+      "workTitle": "Word Formation: Participial and Confusable Adjectives"
+    }
+  ]
+}
