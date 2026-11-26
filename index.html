@@ -1405,7 +1405,8 @@ function dayTypeText(e) {
 function homeNotice(nm) {
   const e = entryOf(S.today), behind = behindCount(), diagDone = !!(S.diag && S.diag.result);
   if (!available(nm.day)) return notice(T(`Module ${nm.n} is being prepared. Practice and missed items are open meanwhile.`, `${nm.n}일차(${nm.day}) 콘텐츠가 아직 없습니다. Claude 세션에서 "다음 주 콘텐츠 추가"를 요청해 주세요. 그동안은 복습을 진행할 수 있습니다.`), `<a class="btn" href="#review">${T('Practice', '복습하기')}</a>`);
-  if (!diagDone && S.diagContent && nm.n === 1 && !unitsDoneN(nm.day)) return notice(T('Complete the placement check (about 25 minutes) before Module 1. It sets the difficulty of upcoming modules.', '1일차를 시작하기 전에 진단 테스트(약 25분)를 먼저 풀어 주세요. 결과로 다음 과정의 난이도 비율을 정합니다.'), `<a class="btn" href="#diag">${T('Start placement check', '진단 테스트 시작')}</a>`);
+  /* Shown until the placement check is done, whatever the module progress. */
+  if (!diagDone && S.diagContent) return notice(T('Take the placement check (about 35 minutes). It sets the difficulty of upcoming modules.', '진단 테스트(약 35분)를 아직 풀지 않았어요. 결과로 다음 과정(12/3~)의 난이도 비율을 정하니, 이번 주 안에 풀어 주세요.'), `<a class="btn" href="#diag">${T('Start placement check', '진단 테스트 시작')}</a>`);
   if (behind > 1 || (behind === 1 && nm.date !== S.today)) return notice(T(`${behind} modules are past their target date. Continue in order from the module below.`, `계획보다 ${behind}개 모듈이 밀려 있습니다. 아래 모듈부터 순서대로 하면 됩니다. 하루에 2개를 몰아서 하기보다 복습을 빼먹지 않는 쪽이 점수에 유리합니다.`));
   if (e && e.type === 'light') return notice(T('Light day: review only.', '가벼운 학습일입니다. 새 진도는 나가지 않고 단어 복습 10~20개만 합니다.'), `<a class="btn" href="#review">${T('Practice', '복습 시작')}</a>`);
   if (e && e.type === 'weekend') return notice(T('No module is scheduled today.', '주말이라 학습 일정이 없습니다. 공부하신다면 복습 · 오답 위주로 하세요.'), `<a class="btn" href="#review">${T('Practice', '복습')}</a>`, 'info');
