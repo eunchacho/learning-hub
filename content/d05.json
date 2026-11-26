@@ -161,6 +161,7 @@
       "id": "d05-01",
       "word": "qualified",
       "pos": "a",
+      "ipa": "/ˈkwɑlɪfaɪd/",
       "meaning": "자격을 갖춘, 적격의",
       "morph": [
         {
@@ -208,6 +209,7 @@
       "id": "d05-02",
       "word": "experienced",
       "pos": "a",
+      "ipa": "/ɪkˈspɪriənst/",
       "meaning": "경험이 풍부한, 숙련된",
       "morph": [
         {
@@ -255,6 +257,7 @@
       "id": "d05-03",
       "word": "detailed",
       "pos": "a",
+      "ipa": "/dɪˈteɪld/",
       "meaning": "상세한, 자세한",
       "morph": [
         {
@@ -302,6 +305,7 @@
       "id": "d05-04",
       "word": "complicated",
       "pos": "a",
+      "ipa": "/ˈkɑmplɪˌkeɪtɪd/",
       "meaning": "복잡한",
       "morph": [
         {
@@ -359,6 +363,7 @@
       "id": "d05-05",
       "word": "limited",
       "pos": "a",
+      "ipa": "/ˈlɪmɪtɪd/",
       "meaning": "제한된, 한정된",
       "morph": [
         {
@@ -411,6 +416,7 @@
       "id": "d05-06",
       "word": "satisfied",
       "pos": "a",
+      "ipa": "/ˈsætɪsfaɪd/",
       "meaning": "만족한",
       "morph": [
         {
@@ -473,6 +479,7 @@
       "id": "d05-07",
       "word": "attached",
       "pos": "a",
+      "ipa": "/əˈtætʃt/",
       "meaning": "첨부된; 부착된",
       "morph": [
         {
@@ -520,6 +527,7 @@
       "id": "d05-08",
       "word": "dedicated",
       "pos": "a",
+      "ipa": "/ˈdɛdɪkeɪtɪd/",
       "meaning": "헌신적인; 전용의",
       "morph": [
         {
@@ -577,6 +585,7 @@
       "id": "d05-09",
       "word": "revised",
       "pos": "a",
+      "ipa": "/rɪˈvaɪzd/",
       "meaning": "수정된, 개정된",
       "morph": [
         {
@@ -629,6 +638,7 @@
       "id": "d05-10",
       "word": "enclosed",
       "pos": "a",
+      "ipa": "/ɪnˈkloʊzd/",
       "meaning": "동봉된",
       "morph": [
         {
@@ -676,6 +686,7 @@
       "id": "d05-11",
       "word": "economical",
       "pos": "a",
+      "ipa": "/ˌɛkəˈnɑmɪkəl/",
       "meaning": "경제적인, 절약하는, 비용이 적게 드는",
       "morph": [
         {
@@ -733,6 +744,7 @@
       "id": "d05-12",
       "word": "respectful",
       "pos": "a",
+      "ipa": "/rɪˈspɛktfəl/",
       "meaning": "존중하는, 공손한",
       "morph": [
         {
@@ -790,6 +802,7 @@
       "id": "d05-13",
       "word": "sensitive",
       "pos": "a",
+      "ipa": "/ˈsɛnsɪtɪv/",
       "meaning": "민감한; 기밀의",
       "morph": [
         {
@@ -842,6 +855,7 @@
       "id": "d05-14",
       "word": "complimentary",
       "pos": "a",
+      "ipa": "/ˌkɑmplɪˈmɛntəri/",
       "meaning": "무료의; 칭찬하는",
       "morph": [
         {
@@ -889,6 +903,7 @@
       "id": "d05-15",
       "word": "dependable",
       "pos": "a",
+      "ipa": "/dɪˈpɛndəbəl/",
       "meaning": "믿을 수 있는, 신뢰할 만한",
       "morph": [
         {
@@ -951,6 +966,7 @@
       "id": "d05-16",
       "word": "favorable",
       "pos": "a",
+      "ipa": "/ˈfeɪvərəbəl/",
       "meaning": "호의적인; 유리한",
       "morph": [
         {
@@ -1003,6 +1019,7 @@
       "id": "d05-17",
       "word": "eligible",
       "pos": "a",
+      "ipa": "/ˈɛlədʒəbəl/",
       "meaning": "(~할) 자격이 있는, 적격인",
       "morph": [
         {
@@ -1050,6 +1067,7 @@
       "id": "d05-18",
       "word": "informative",
       "pos": "a",
+      "ipa": "/ɪnˈfɔrmətɪv/",
       "meaning": "유익한, 정보를 주는",
       "morph": [
         {
@@ -1107,6 +1125,7 @@
       "id": "d05-19",
       "word": "preventive",
       "pos": "a",
+      "ipa": "/prɪˈvɛntɪv/",
       "meaning": "예방의, 예방을 위한",
       "morph": [
         {
@@ -1164,6 +1183,7 @@
       "id": "d05-20",
       "word": "persuasive",
       "pos": "a",
+      "ipa": "/pɚˈsweɪsɪv/",
       "meaning": "설득력 있는",
       "morph": [
         {

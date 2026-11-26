@@ -159,6 +159,7 @@
       "id": "d03-01",
       "word": "affordable",
       "pos": "a",
+      "ipa": "/əˈfɔrdəbəl/",
       "meaning": "가격이 적당한, 감당할 수 있는",
       "morph": [
         {
@@ -211,6 +212,7 @@
       "id": "d03-02",
       "word": "accessible",
       "pos": "a",
+      "ipa": "/əkˈsɛsɪbəl/",
       "meaning": "접근 가능한, 이용할 수 있는",
       "morph": [
         {
@@ -263,6 +265,7 @@
       "id": "d03-03",
       "word": "reliable",
       "pos": "a",
+      "ipa": "/rɪˈlaɪəbəl/",
       "meaning": "믿을 수 있는, 신뢰할 만한",
       "morph": [
         {
@@ -320,6 +323,7 @@
       "id": "d03-04",
       "word": "extensive",
       "pos": "a",
+      "ipa": "/ɪkˈstɛnsɪv/",
       "meaning": "광범위한, 폭넓은",
       "morph": [
         {
@@ -377,6 +381,7 @@
       "id": "d03-05",
       "word": "numerous",
       "pos": "a",
+      "ipa": "/ˈnumərəs/",
       "meaning": "수많은",
       "morph": [
         {
@@ -429,6 +434,7 @@
       "id": "d03-06",
       "word": "spacious",
       "pos": "a",
+      "ipa": "/ˈspeɪʃəs/",
       "meaning": "넓은, 널찍한",
       "morph": [
         {
@@ -476,6 +482,7 @@
       "id": "d03-07",
       "word": "successful",
       "pos": "a",
+      "ipa": "/səkˈsɛsfəl/",
       "meaning": "성공한, 성공적인; 합격한",
       "morph": [
         {
@@ -533,6 +540,7 @@
       "id": "d03-08",
       "word": "beneficial",
       "pos": "a",
+      "ipa": "/ˌbɛnɪˈfɪʃəl/",
       "meaning": "유익한, 이로운",
       "morph": [
         {
@@ -580,6 +588,7 @@
       "id": "d03-09",
       "word": "additional",
       "pos": "a",
+      "ipa": "/əˈdɪʃənəl/",
       "meaning": "추가의, 부가적인",
       "morph": [
         {
@@ -632,6 +641,7 @@
       "id": "d03-10",
       "word": "professional",
       "pos": "a",
+      "ipa": "/prəˈfɛʃənəl/",
       "meaning": "전문적인, 직업의 (명사로 전문가)",
       "morph": [
         {
@@ -684,6 +694,7 @@
       "id": "d03-11",
       "word": "confident",
       "pos": "a",
+      "ipa": "/ˈkɑnfɪdənt/",
       "meaning": "자신 있는, 확신하는",
       "morph": [
         {
@@ -741,6 +752,7 @@
       "id": "d03-12",
       "word": "significant",
       "pos": "a",
+      "ipa": "/sɪɡˈnɪfɪkənt/",
       "meaning": "상당한, 중요한",
       "morph": [
         {
@@ -798,6 +810,7 @@
       "id": "d03-13",
       "word": "necessary",
       "pos": "a",
+      "ipa": "/ˈnɛsəˌsɛri/",
       "meaning": "필요한, 필수의",
       "morph": [
         {
@@ -855,6 +868,7 @@
       "id": "d03-14",
       "word": "mandatory",
       "pos": "a",
+      "ipa": "/ˈmændəˌtɔri/",
       "meaning": "의무적인, 필수의",
       "morph": [
         {
@@ -902,6 +916,7 @@
       "id": "d03-15",
       "word": "innovative",
       "pos": "a",
+      "ipa": "/ˈɪnəˌveɪtɪv/",
       "meaning": "혁신적인",
       "morph": [
         {
@@ -954,6 +969,7 @@
       "id": "d03-16",
       "word": "comprehensive",
       "pos": "a",
+      "ipa": "/ˌkɑmprəˈhɛnsɪv/",
       "meaning": "종합적인, 포괄적인",
       "morph": [
         {
@@ -1006,6 +1022,7 @@
       "id": "d03-17",
       "word": "flexible",
       "pos": "a",
+      "ipa": "/ˈflɛksɪbəl/",
       "meaning": "유연한, 융통성 있는",
       "morph": [
         {
@@ -1058,6 +1075,7 @@
       "id": "d03-18",
       "word": "durable",
       "pos": "a",
+      "ipa": "/ˈdʊrəbəl/",
       "meaning": "내구성이 있는, 오래가는",
       "morph": [
         {
@@ -1105,6 +1123,7 @@
       "id": "d03-19",
       "word": "considerable",
       "pos": "a",
+      "ipa": "/kənˈsɪdərəbəl/",
       "meaning": "상당한, 꽤 많은",
       "morph": [
         {
@@ -1162,6 +1181,7 @@
       "id": "d03-20",
       "word": "valuable",
       "pos": "a",
+      "ipa": "/ˈvæljuəbəl/",
       "meaning": "귀중한, 가치 있는",
       "morph": [
         {

@@ -113,6 +113,7 @@
       "id": "d01-01",
       "word": "application",
       "pos": "n",
+      "ipa": "/ˌæplɪˈkeɪʃən/",
       "meaning": "지원(서), 신청(서); 적용",
       "morph": [
         {
@@ -165,6 +166,7 @@
       "id": "d01-02",
       "word": "decision",
       "pos": "n",
+      "ipa": "/dɪˈsɪʒən/",
       "meaning": "결정",
       "morph": [
         {
@@ -217,6 +219,7 @@
       "id": "d01-03",
       "word": "reservation",
       "pos": "n",
+      "ipa": "/ˌrɛzɚˈveɪʃən/",
       "meaning": "예약; 의구심",
       "morph": [
         {
@@ -264,6 +267,7 @@
       "id": "d01-04",
       "word": "expansion",
       "pos": "n",
+      "ipa": "/ɪkˈspænʃən/",
       "meaning": "확장, 확대",
       "morph": [
         {
@@ -316,6 +320,7 @@
       "id": "d01-05",
       "word": "registration",
       "pos": "n",
+      "ipa": "/ˌrɛdʒɪˈstreɪʃən/",
       "meaning": "등록",
       "morph": [
         {
@@ -363,6 +368,7 @@
       "id": "d01-06",
       "word": "promotion",
       "pos": "n",
+      "ipa": "/prəˈmoʊʃən/",
       "meaning": "승진; 판촉, 홍보",
       "morph": [
         {
@@ -410,6 +416,7 @@
       "id": "d01-07",
       "word": "agreement",
       "pos": "n",
+      "ipa": "/əˈɡrimənt/",
       "meaning": "합의, 계약(서); 동의",
       "morph": [
         {
@@ -457,6 +464,7 @@
       "id": "d01-08",
       "word": "shipment",
       "pos": "n",
+      "ipa": "/ˈʃɪpmənt/",
       "meaning": "배송(품), 선적",
       "morph": [
         {
@@ -504,6 +512,7 @@
       "id": "d01-09",
       "word": "requirement",
       "pos": "n",
+      "ipa": "/rɪˈkwaɪrmənt/",
       "meaning": "요구 사항, 필요 조건",
       "morph": [
         {
@@ -551,6 +560,7 @@
       "id": "d01-10",
       "word": "announcement",
       "pos": "n",
+      "ipa": "/əˈnaʊnsmənt/",
       "meaning": "발표, 공지",
       "morph": [
         {
@@ -603,6 +613,7 @@
       "id": "d01-11",
       "word": "replacement",
       "pos": "n",
+      "ipa": "/rɪˈpleɪsmənt/",
       "meaning": "교체(품); 후임자",
       "morph": [
         {
@@ -655,6 +666,7 @@
       "id": "d01-12",
       "word": "investment",
       "pos": "n",
+      "ipa": "/ɪnˈvɛstmənt/",
       "meaning": "투자",
       "morph": [
         {
@@ -702,6 +714,7 @@
       "id": "d01-13",
       "word": "attendance",
       "pos": "n",
+      "ipa": "/əˈtɛndəns/",
       "meaning": "출석, 참석; 참석자 수",
       "morph": [
         {
@@ -754,6 +767,7 @@
       "id": "d01-14",
       "word": "reference",
       "pos": "n",
+      "ipa": "/ˈrɛfərəns/",
       "meaning": "추천서, 추천인; 참고, 언급",
       "morph": [
         {
@@ -806,6 +820,7 @@
       "id": "d01-15",
       "word": "performance",
       "pos": "n",
+      "ipa": "/pɚˈfɔrməns/",
       "meaning": "성과, 실적; 공연; 성능",
       "morph": [
         {
@@ -853,6 +868,7 @@
       "id": "d01-16",
       "word": "maintenance",
       "pos": "n",
+      "ipa": "/ˈmeɪntənəns/",
       "meaning": "유지 보수, 관리",
       "morph": [
         {
@@ -900,6 +916,7 @@
       "id": "d01-17",
       "word": "compliance",
       "pos": "n",
+      "ipa": "/kəmˈplaɪəns/",
       "meaning": "(법 · 규정) 준수",
       "morph": [
         {
@@ -947,6 +964,7 @@
       "id": "d01-18",
       "word": "preference",
       "pos": "n",
+      "ipa": "/ˈprɛfərəns/",
       "meaning": "선호(도)",
       "morph": [
         {
@@ -1004,6 +1022,7 @@
       "id": "d01-19",
       "word": "confirmation",
       "pos": "n",
+      "ipa": "/ˌkɑnfɚˈmeɪʃən/",
       "meaning": "확인(서), 확정",
       "morph": [
         {
@@ -1056,6 +1075,7 @@
       "id": "d01-20",
       "word": "assignment",
       "pos": "n",
+      "ipa": "/əˈsaɪnmənt/",
       "meaning": "(할당된) 업무, 과제; 배정",
       "morph": [
         {

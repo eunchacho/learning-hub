@@ -159,6 +159,7 @@
       "id": "d04-01",
       "word": "finalize",
       "pos": "v",
+      "ipa": "/ˈfaɪnəlaɪz/",
       "meaning": "마무리하다, 최종 확정하다",
       "morph": [
         {
@@ -211,6 +212,7 @@
       "id": "d04-02",
       "word": "prioritize",
       "pos": "v",
+      "ipa": "/praɪˈɔrətaɪz/",
       "meaning": "우선순위를 정하다, 우선적으로 처리하다",
       "morph": [
         {
@@ -263,6 +265,7 @@
       "id": "d04-03",
       "word": "organize",
       "pos": "v",
+      "ipa": "/ˈɔrɡənaɪz/",
       "meaning": "(행사를) 준비하다 · 조직하다, 정리하다",
       "morph": [
         {
@@ -315,6 +318,7 @@
       "id": "d04-04",
       "word": "simplify",
       "pos": "v",
+      "ipa": "/ˈsɪmplɪfaɪ/",
       "meaning": "간소화하다, 단순화하다",
       "morph": [
         {
@@ -372,6 +376,7 @@
       "id": "d04-05",
       "word": "notify",
       "pos": "v",
+      "ipa": "/ˈnoʊtɪfaɪ/",
       "meaning": "(공식적으로) 알리다, 통지하다",
       "morph": [
         {
@@ -419,6 +424,7 @@
       "id": "d04-06",
       "word": "verify",
       "pos": "v",
+      "ipa": "/ˈvɛrɪfaɪ/",
       "meaning": "확인하다, 검증하다",
       "morph": [
         {
@@ -466,6 +472,7 @@
       "id": "d04-07",
       "word": "justify",
       "pos": "v",
+      "ipa": "/ˈdʒʌstɪfaɪ/",
       "meaning": "정당화하다, 정당한 이유를 대다",
       "morph": [
         {
@@ -518,6 +525,7 @@
       "id": "d04-08",
       "word": "widen",
       "pos": "v",
+      "ipa": "/ˈwaɪdən/",
       "meaning": "넓히다, 확대하다",
       "morph": [
         {
@@ -570,6 +578,7 @@
       "id": "d04-09",
       "word": "strengthen",
       "pos": "v",
+      "ipa": "/ˈstrɛŋθən/",
       "meaning": "강화하다, 튼튼하게 하다",
       "morph": [
         {
@@ -622,6 +631,7 @@
       "id": "d04-10",
       "word": "evaluate",
       "pos": "v",
+      "ipa": "/ɪˈvæljuˌeɪt/",
       "meaning": "평가하다",
       "morph": [
         {
@@ -669,6 +679,7 @@
       "id": "d04-11",
       "word": "negotiate",
       "pos": "v",
+      "ipa": "/nəˈɡoʊʃieɪt/",
       "meaning": "협상하다, 교섭하다",
       "morph": [
         {
@@ -726,6 +737,7 @@
       "id": "d04-12",
       "word": "facilitate",
       "pos": "v",
+      "ipa": "/fəˈsɪlɪteɪt/",
       "meaning": "용이하게 하다, 촉진하다; (회의를) 진행하다",
       "morph": [
         {
@@ -778,6 +790,7 @@
       "id": "d04-13",
       "word": "approximately",
       "pos": "ad",
+      "ipa": "/əˈprɑksɪmətli/",
       "meaning": "대략, 약",
       "morph": [
         {
@@ -825,6 +838,7 @@
       "id": "d04-14",
       "word": "immediately",
       "pos": "ad",
+      "ipa": "/ɪˈmidiɪtli/",
       "meaning": "즉시, 곧바로; 바로 (뒤 · 옆에)",
       "morph": [
         {
@@ -872,6 +886,7 @@
       "id": "d04-15",
       "word": "promptly",
       "pos": "ad",
+      "ipa": "/ˈprɑmptli/",
       "meaning": "신속하게, 즉시; 정각에",
       "morph": [
         {
@@ -924,6 +939,7 @@
       "id": "d04-16",
       "word": "currently",
       "pos": "ad",
+      "ipa": "/ˈkɝəntli/",
       "meaning": "현재, 지금",
       "morph": [
         {
@@ -971,6 +987,7 @@
       "id": "d04-17",
       "word": "previously",
       "pos": "ad",
+      "ipa": "/ˈpriviəsli/",
       "meaning": "이전에, 앞서",
       "morph": [
         {
@@ -1018,6 +1035,7 @@
       "id": "d04-18",
       "word": "temporarily",
       "pos": "ad",
+      "ipa": "/ˌtɛmpəˈrɛrəli/",
       "meaning": "일시적으로, 임시로",
       "morph": [
         {
@@ -1065,6 +1083,7 @@
       "id": "d04-19",
       "word": "costly",
       "pos": "a",
+      "ipa": "/ˈkɔstli/",
       "meaning": "비용이 많이 드는, 대가가 큰",
       "morph": [
         {
@@ -1117,6 +1136,7 @@
       "id": "d04-20",
       "word": "timely",
       "pos": "a",
+      "ipa": "/ˈtaɪmli/",
       "meaning": "시기적절한, 때맞춘",
       "morph": [
         {

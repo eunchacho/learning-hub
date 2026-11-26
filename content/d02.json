@@ -159,6 +159,7 @@
       "id": "d02-01",
       "word": "security",
       "pos": "n",
+      "ipa": "/səˈkjʊrɪti/",
       "meaning": "보안, 경비; 안전",
       "morph": [
         {
@@ -211,6 +212,7 @@
       "id": "d02-02",
       "word": "availability",
       "pos": "n",
+      "ipa": "/əˌveɪləˈbɪlɪti/",
       "meaning": "이용 가능성, 재고 여부; (사람의) 시간 여유",
       "morph": [
         {
@@ -258,6 +260,7 @@
       "id": "d02-03",
       "word": "capacity",
       "pos": "n",
+      "ipa": "/kəˈpæsɪti/",
       "meaning": "수용력, 용량; 생산 능력; 자격",
       "morph": [
         {
@@ -310,6 +313,7 @@
       "id": "d02-04",
       "word": "awareness",
       "pos": "n",
+      "ipa": "/əˈwɛrnəs/",
       "meaning": "인식, 의식",
       "morph": [
         {
@@ -357,6 +361,7 @@
       "id": "d02-05",
       "word": "productivity",
       "pos": "n",
+      "ipa": "/ˌproʊdʌkˈtɪvəti/",
       "meaning": "생산성",
       "morph": [
         {
@@ -414,6 +419,7 @@
       "id": "d02-06",
       "word": "approval",
       "pos": "n",
+      "ipa": "/əˈpruvəl/",
       "meaning": "승인, 찬성",
       "morph": [
         {
@@ -466,6 +472,7 @@
       "id": "d02-07",
       "word": "proposal",
       "pos": "n",
+      "ipa": "/prəˈpoʊzəl/",
       "meaning": "제안(서), 제의",
       "morph": [
         {
@@ -513,6 +520,7 @@
       "id": "d02-08",
       "word": "renewal",
       "pos": "n",
+      "ipa": "/rɪˈnuəl/",
       "meaning": "갱신, 연장; 재개발",
       "morph": [
         {
@@ -565,6 +573,7 @@
       "id": "d02-09",
       "word": "procedure",
       "pos": "n",
+      "ipa": "/prəˈsidʒɚ/",
       "meaning": "절차, 방법",
       "morph": [
         {
@@ -617,6 +626,7 @@
       "id": "d02-10",
       "word": "expenditure",
       "pos": "n",
+      "ipa": "/ɪkˈspɛndɪtʃɚ/",
       "meaning": "지출, 경비",
       "morph": [
         {
@@ -674,6 +684,7 @@
       "id": "d02-11",
       "word": "shortage",
       "pos": "n",
+      "ipa": "/ˈʃɔrtɪdʒ/",
       "meaning": "부족, 결핍",
       "morph": [
         {
@@ -726,6 +737,7 @@
       "id": "d02-12",
       "word": "coverage",
       "pos": "n",
+      "ipa": "/ˈkʌvərɪdʒ/",
       "meaning": "(보험) 보장 범위; 보도; (서비스) 적용 범위",
       "morph": [
         {
@@ -773,6 +785,7 @@
       "id": "d02-13",
       "word": "partnership",
       "pos": "n",
+      "ipa": "/ˈpɑrtnɚʃɪp/",
       "meaning": "제휴, 협력 관계, 동업",
       "morph": [
         {
@@ -820,6 +833,7 @@
       "id": "d02-14",
       "word": "employee",
       "pos": "n",
+      "ipa": "/ˌɛmplɔɪˈi/",
       "meaning": "직원, 종업원",
       "morph": [
         {
@@ -872,6 +886,7 @@
       "id": "d02-15",
       "word": "supervisor",
       "pos": "n",
+      "ipa": "/ˈsupɚˌvaɪzɚ/",
       "meaning": "감독관, 관리자, 상사",
       "morph": [
         {
@@ -929,6 +944,7 @@
       "id": "d02-16",
       "word": "consultant",
       "pos": "n",
+      "ipa": "/kənˈsʌltənt/",
       "meaning": "컨설턴트, 자문 위원, 상담가",
       "morph": [
         {
@@ -981,6 +997,7 @@
       "id": "d02-17",
       "word": "trainee",
       "pos": "n",
+      "ipa": "/treɪˈni/",
       "meaning": "수습 직원, 연수생",
       "morph": [
         {
@@ -1033,6 +1050,7 @@
       "id": "d02-18",
       "word": "representative",
       "pos": "n",
+      "ipa": "/ˌrɛprɪˈzɛntətɪv/",
       "meaning": "직원, 담당자; 대표(자)",
       "morph": [
         {
@@ -1085,6 +1103,7 @@
       "id": "d02-19",
       "word": "specialist",
       "pos": "n",
+      "ipa": "/ˈspɛʃəlɪst/",
       "meaning": "전문가",
       "morph": [
         {
@@ -1142,6 +1161,7 @@
       "id": "d02-20",
       "word": "participant",
       "pos": "n",
+      "ipa": "/pɑrˈtɪsəpənt/",
       "meaning": "참가자",
       "morph": [
         {
