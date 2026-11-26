@@ -20,7 +20,7 @@
   --accent:#1f6f5c; --accent-ink:#ffffff; --accent-soft:#e1efe9;
   --ok:#1e7a46; --ok-soft:#e3f3e8; --bad:#b42318; --bad-soft:#fbe9e7; --warn:#8a5a00; --warn-soft:#fbf0d4;
   --band1:#1d2b27; --band1-text:#f2f5f3; --band1-muted:#a9b8b1; --band1-hover:rgba(255,255,255,.08);
-  --band2:#26483e; --band2-text:#ffffff;
+  --band2:#26483e; --band2-text:#ffffff; --strip:#1d2b27; --band1-line:transparent;
   --side:#ffffff; --side-text:#1c211f; --side-muted:#5b6560; --side-head:#e7ebe6; --side-line:#d8ddd6; --side-on:#1f6f5c; --side-on-ink:#ffffff;
   --notice:#fbf0d4; --notice-text:#4d3400; --notice-line:#ead08c;
   --thumb-a:#1c382f; --thumb-b:#2c6353; --thumb-ink:#cfeadf; --thumb-line:rgba(255,255,255,.10);
@@ -40,7 +40,7 @@
     --accent:#62c6a8; --accent-ink:#0c1a15; --accent-soft:#183a30;
     --ok:#54c78d; --ok-soft:#13301f; --bad:#f2806f; --bad-soft:#3a1c18; --warn:#e2b552; --warn-soft:#382d12;
     --band1:#0b100e; --band1-text:#e4e9e6; --band1-muted:#8fa39a; --band1-hover:rgba(255,255,255,.06);
-    --band2:#15241f; --band2-text:#e4e9e6;
+    --band2:#15241f; --band2-text:#e4e9e6; --strip:#0b100e;
     --side:#19201d; --side-text:#e4e9e6; --side-muted:#9aa7a0; --side-head:#222a26; --side-line:#303a35; --side-on:#62c6a8; --side-on-ink:#0c1a15;
     --notice:#382d12; --notice-text:#f0d58f; --notice-line:#5a4a1e;
     --thumb-a:#12241e; --thumb-b:#21463a; --thumb-ink:#bfe3d4; --thumb-line:rgba(255,255,255,.08);
@@ -57,7 +57,7 @@
   --accent:#62c6a8; --accent-ink:#0c1a15; --accent-soft:#183a30;
   --ok:#54c78d; --ok-soft:#13301f; --bad:#f2806f; --bad-soft:#3a1c18; --warn:#e2b552; --warn-soft:#382d12;
   --band1:#0b100e; --band1-text:#e4e9e6; --band1-muted:#8fa39a; --band1-hover:rgba(255,255,255,.06);
-  --band2:#15241f; --band2-text:#e4e9e6;
+  --band2:#15241f; --band2-text:#e4e9e6; --strip:#0b100e;
   --side:#19201d; --side-text:#e4e9e6; --side-muted:#9aa7a0; --side-head:#222a26; --side-line:#303a35; --side-on:#62c6a8; --side-on-ink:#0c1a15;
   --notice:#382d12; --notice-text:#f0d58f; --notice-line:#5a4a1e;
   --thumb-a:#12241e; --thumb-b:#21463a; --thumb-ink:#bfe3d4; --thumb-line:rgba(255,255,255,.08);
@@ -73,9 +73,9 @@
   --bg:#eef1f6; --surface:#ffffff; --surface-2:#f3f4f6; --line:#dcdfe4; --text:#1b1d21; --muted:#5c6370;
   --accent:#1a62a8; --accent-ink:#ffffff; --accent-soft:#e7f0fa;
   --ok:#2e844a; --ok-soft:#ebf7e6; --bad:#b3091a; --bad-soft:#fdeeec; --warn:#7a4300; --warn-soft:#fef1d9;
-  --band1:#1c3b63; --band1-text:#ffffff; --band1-muted:#c3d3e8; --band1-hover:rgba(255,255,255,.10);
-  --band2:#115dad; --band2-text:#ffffff;
-  --side:#115dad; --side-text:#ffffff; --side-muted:#cfe0f4; --side-head:#0c4f97; --side-line:rgba(255,255,255,.14); --side-on:#0c3d76; --side-on-ink:#ffffff;
+  --band1:#194877; --band1-text:#ffffff; --band1-muted:#c6d6ea; --band1-hover:rgba(255,255,255,.10); --band1-line:#d4d4d4;
+  --band2:#005fb2; --band2-text:#ffffff; --strip:#164a85;
+  --side:#005fb2; --side-text:#ffffff; --side-muted:#cfe2f6; --side-head:#004f95; --side-line:rgba(255,255,255,.14); --side-on:#0c3d76; --side-on-ink:#ffffff;
   --notice:#f9c418; --notice-text:#2a2100; --notice-line:#e1ad00;
   --thumb-a:#06264d; --thumb-b:#0b3c74; --thumb-ink:#5db7ef; --thumb-line:rgba(255,255,255,.07);
   --pill-course:#115dad; --pill-curr:#6f1e9a; --pill-ink:#ffffff;
@@ -100,7 +100,7 @@ p{margin:0}
 .wrap{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
 /* ===== global header (band 1) ===== */
-.gh{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--band1);color:var(--band1-text)}
+.gh{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--band1);color:var(--band1-text);border-bottom:1px solid var(--band1-line,transparent)}
 .gh .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--band1-text);flex:none}
 .brand svg{width:50px;height:50px;flex:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
@@ -231,7 +231,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 .notice.info .btn{color:var(--accent);border-color:var(--accent)}
 
 /* section header strip ("Current Assignments") */
-.sec-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--band1);color:var(--band1-text);border-radius:var(--radius) var(--radius) 0 0;font-weight:600}
+.sec-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--strip,var(--band1));color:var(--band1-text);border-radius:var(--radius) var(--radius) 0 0;font-weight:600}
 .sec-strip small{font-weight:400;color:var(--band1-muted)}
 .sec-body{background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:0 0 var(--radius) var(--radius);padding:16px;display:grid;gap:16px;min-width:0}
 
