@@ -726,5 +726,256 @@
       "why": "선택 의문문에 둘 중 하나를 선택하지 않고 '참석 인원부터 보자'며 결정을 미루는 우회 응답이다",
       "trap": "(A) 선택 의문문에는 Yes 로 답할 수 없고 restaurant 를 반복한 함정 · (C) retirement 와 retiring 의 유사 발음 함정이며 장소 질문에 답하지 않는다"
     }
-  ]
+  ],
+  "p6": {
+    "id": "diag-p6",
+    "kind": "E-mail",
+    "head": "To: All Staff\nFrom: Facilities Management\nDate: December 1\nSubject: North garage closure",
+    "passage": "Please be advised that the north parking garage will be closed for resurfacing from Monday, December 7, through Friday, December 11. During this period, employees [1] to park in the south lot on Harbor Avenue. Shuttle buses will run between the south lot and the main entrance every ten minutes. [2]\n\nWe recognize that this change may be [3] for some of you, particularly those who arrive early. [4], we have arranged for the cafeteria to open thirty minutes earlier than usual throughout the week.",
+    "items": [
+      {
+        "id": "diag-p6-01",
+        "n": 1,
+        "type": "동사: 시제 · 태 (문맥)",
+        "level": 2,
+        "options": [
+          "asked",
+          "are asking",
+          "will be asked",
+          "have asked"
+        ],
+        "answer": 2,
+        "clue": "During this period(12/7~12/11, 아직 오지 않은 기간) · 주어 employees",
+        "why": "공지 날짜가 12/1이고 공사 기간은 그 뒤라 미래 시제가 맞다. 직원은 주차를 '요청받는' 대상이라 수동태 will be asked 가 정답",
+        "explain": [
+          "asked: 과거 시제라 아직 오지 않은 공사 기간과 맞지 않는다",
+          "are asking: 능동이라 직원이 무언가를 요청하는 뜻이 된다",
+          "정답",
+          "have asked: 현재완료 능동이라 시제와 태가 모두 맞지 않는다"
+        ]
+      },
+      {
+        "id": "diag-p6-02",
+        "n": 2,
+        "type": "문장 삽입",
+        "level": 2,
+        "options": [
+          "The south lot will also be closed during this period.",
+          "Please allow extra time to reach your desk in the morning.",
+          "Our new cafeteria menu will be announced soon.",
+          "Employees who drive to work were surveyed last month."
+        ],
+        "answer": 1,
+        "clue": "앞 문장: 남쪽 주차장과 정문 사이 셔틀이 10분마다 운행",
+        "why": "셔틀을 타고 정문까지 와야 하므로 '아침에 자리까지 오는 시간을 넉넉히 잡으라'는 안내가 바로 앞 문장(셔틀 운행)과 자연스럽게 이어진다. 주제가 같아 보여도 앞뒤 문장과 이어지지 않으면 오답이다",
+        "explain": [
+          "남쪽 주차장도 닫힌다는 말은 바로 앞에서 남쪽 주차장을 쓰라고 한 안내와 모순된다",
+          "정답",
+          "식당 메뉴 발표는 주차 안내 흐름에서 벗어난다. 뒤 문단의 cafeteria 를 이용한 함정이다",
+          "운전 직원 설문은 주제(주차)와 관련은 있지만 셔틀 안내 다음에 이어질 내용이 아니다"
+        ]
+      },
+      {
+        "id": "diag-p6-03",
+        "n": 3,
+        "type": "품사: be 동사 뒤 형용사",
+        "level": 1,
+        "options": [
+          "inconvenient",
+          "inconvenience",
+          "inconveniently",
+          "inconvenienced"
+        ],
+        "answer": 0,
+        "clue": "빈칸 앞 may be · 주어 this change",
+        "why": "be 동사 뒤 보어 자리이고, 변경 사항이 '불편한' 것이므로 형용사 inconvenient 가 정답",
+        "explain": [
+          "정답",
+          "inconvenience: 명사라 '변경이 곧 불편함 그 자체'라는 어색한 뜻이 된다",
+          "inconveniently: 부사는 be 동사의 보어가 될 수 없다",
+          "inconvenienced: '불편을 겪은'이라는 뜻이라 사람이 주어일 때 쓴다. 변경 사항이 불편을 겪을 수는 없다"
+        ]
+      },
+      {
+        "id": "diag-p6-04",
+        "n": 4,
+        "type": "연결어: 접속부사 (문맥)",
+        "level": 2,
+        "options": [
+          "Even so",
+          "Otherwise",
+          "To make up for this",
+          "Similarly"
+        ],
+        "answer": 2,
+        "clue": "앞: 일찍 오는 직원에게 불편할 수 있다 · 뒤: 식당을 30분 일찍 연다(대책)",
+        "why": "앞 문장의 불편(일찍 오는 직원의 불편)을 보상하려고 식당을 일찍 여는 것이므로 '이를 보완하기 위해'라는 To make up for this 가 정답",
+        "explain": [
+          "Even so: '그렇다 해도'라는 양보라 뒤에 보상 조치가 오는 흐름과 맞지 않는다",
+          "Otherwise: '그렇지 않으면'이라 조건 관계가 된다",
+          "정답",
+          "Similarly: '마찬가지로'라 앞 내용과 같은 종류의 내용을 덧붙일 때 쓴다. 식당 운영은 불편과 같은 종류가 아니라 그 대책이다"
+        ]
+      }
+    ]
+  },
+  "p7": {
+    "id": "diag-p7",
+    "kind": "Notice",
+    "head": "Greenfield Public Library: Community Room Reservations",
+    "passage": "Starting January 4, local organizations may reserve the library's Community Room for meetings and workshops. The room seats up to 40 people and is equipped with a projector and a sound system.\n\nReservations must be made at least one week in advance through the library's Web site. Each organization may book the room for up to three hours per week. There is no charge for nonprofit groups; businesses will be charged $25 per hour.\n\nFood and drinks are permitted, but groups are responsible for cleaning the room after use. For questions, contact Dana Morales at the front desk.",
+    "items": [
+      {
+        "id": "diag-p7-01",
+        "q": "What is the purpose of the notice?",
+        "type": "주제 · 목적",
+        "level": 1,
+        "options": [
+          "To announce a new service",
+          "To report a change in library hours",
+          "To request volunteers for an event",
+          "To advertise a job opening"
+        ],
+        "answer": 0,
+        "why": "첫 문장 Starting January 4, local organizations may reserve ... 에서 1월 4일부터 새로 회의실 예약을 받는다는 것을 알 수 있다",
+        "explain": [
+          "정답",
+          "운영 시간 변경은 나오지 않는다",
+          "자원봉사자 모집은 나오지 않는다",
+          "채용 공고가 아니다. 담당자 Dana Morales 는 문의처일 뿐이다"
+        ]
+      },
+      {
+        "id": "diag-p7-02",
+        "q": "What is indicated about the Community Room?",
+        "type": "사실 확인 (패러프레이즈)",
+        "level": 2,
+        "options": [
+          "It can be reserved by phone.",
+          "It has audiovisual equipment.",
+          "It can hold more than 50 people.",
+          "It is closed on weekends."
+        ],
+        "answer": 1,
+        "why": "equipped with a projector and a sound system(프로젝터와 음향 장비)을 audiovisual equipment(시청각 장비)로 바꿔 말한 것이 정답",
+        "explain": [
+          "예약은 웹사이트로 한다(through the library's Web site)",
+          "정답",
+          "최대 40명이다(seats up to 40 people)",
+          "주말 휴관은 나오지 않는다"
+        ]
+      },
+      {
+        "id": "diag-p7-03",
+        "q": "What is NOT mentioned as a condition for using the room?",
+        "type": "NOT 문제 (조건 대조)",
+        "level": 3,
+        "options": [
+          "Booking at least a week ahead",
+          "Cleaning up after the event",
+          "Using it for no more than three hours a week",
+          "Submitting a list of attendees"
+        ],
+        "answer": 3,
+        "why": "(A) at least one week in advance, (B) responsible for cleaning the room, (C) up to three hours per week 는 모두 지문에 있다. 참석자 명단 제출은 어디에도 없다",
+        "explain": [
+          "둘째 문단 Reservations must be made at least one week in advance 에 있다",
+          "셋째 문단 groups are responsible for cleaning the room after use 에 있다",
+          "둘째 문단 up to three hours per week 에 있다",
+          "정답"
+        ]
+      }
+    ]
+  },
+  "lc3": {
+    "id": "diag-lc3",
+    "lines": [
+      {
+        "s": "W",
+        "text": "Hi, I'm calling about a printer I ordered from your Web site last week. It arrived yesterday, but the paper tray is cracked."
+      },
+      {
+        "s": "M",
+        "text": "I'm sorry about that. Could you give me your order number? I can arrange a replacement right away."
+      },
+      {
+        "s": "W",
+        "text": "Sure, it's 4-8-2-7-1. The thing is, I need to print handouts for a client presentation on Thursday."
+      },
+      {
+        "s": "M",
+        "text": "I see. A replacement normally takes five business days, but I'll upgrade your delivery to express shipping at no extra cost."
+      },
+      {
+        "s": "W",
+        "text": "That would be great. Do I need to send the damaged one back first?"
+      },
+      {
+        "s": "M",
+        "text": "No, a courier will pick it up when the new one is delivered. The new one should arrive by Wednesday morning."
+      }
+    ],
+    "items": [
+      {
+        "id": "diag-lc3-01",
+        "q": "Why is the woman calling?",
+        "type": "Part 3 목적",
+        "level": 1,
+        "options": [
+          "To place an order",
+          "To report a damaged item",
+          "To ask about a price",
+          "To cancel a delivery"
+        ],
+        "answer": 1,
+        "why": "the paper tray is cracked(용지함이 깨졌다)를 damaged item(파손된 물건)으로 바꿔 말했다",
+        "explain": [
+          "주문은 지난주에 이미 했다",
+          "정답",
+          "가격 문의는 없다",
+          "배송 취소가 아니라 교체를 원한다"
+        ]
+      },
+      {
+        "id": "diag-lc3-02",
+        "q": "Why does the woman say, \"The thing is, I need to print handouts for a client presentation on Thursday\"?",
+        "type": "Part 3 화자 의도",
+        "level": 3,
+        "options": [
+          "To explain why the matter is urgent",
+          "To request a different model",
+          "To change the date of a meeting",
+          "To ask for a discount"
+        ],
+        "answer": 0,
+        "why": "교체에 보통 5일이 걸리는 상황에서 목요일에 꼭 인쇄해야 한다고 말한 것은 '급하다'는 뜻이다. 그래서 남자가 바로 빠른 배송으로 바꿔 준다",
+        "explain": [
+          "정답",
+          "다른 모델을 원한다는 말은 없다. 같은 제품의 교체(replacement)다",
+          "회의 날짜를 바꾸려는 것이 아니라 날짜에 맞춰야 한다는 것이다",
+          "할인 요청은 없다. 추가 비용 없는 배송 변경은 남자가 먼저 제안했다"
+        ]
+      },
+      {
+        "id": "diag-lc3-03",
+        "q": "According to the man, what will happen when the new printer is delivered?",
+        "type": "Part 3 세부 사항 (패러프레이즈)",
+        "level": 2,
+        "options": [
+          "The woman will receive a discount code.",
+          "A courier will collect the damaged printer.",
+          "A technician will install the printer.",
+          "The woman will sign a service contract."
+        ],
+        "answer": 1,
+        "why": "a courier will pick it up when the new one is delivered 의 pick it up 을 collect 로 바꿔 말했다",
+        "explain": [
+          "할인 코드는 나오지 않는다",
+          "정답",
+          "설치 기사는 나오지 않는다",
+          "계약서 서명은 나오지 않는다"
+        ]
+      }
+    ]
+  }
 }
