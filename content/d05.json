@@ -7,7 +7,7 @@
   "workTitle": "Word Formation: Participial and Confusable Adjectives",
   "affix": {
     "title": "분사형 형용사 · 같은 어근의 혼동 형용사",
-    "intro": "지금까지 배운 접미사가 품사를 정했다면, 오늘은 둘 다 형용사인 보기 중 하나를 의미로 고르는 법을 익힌다. 같은 동사에서 나온 -ed 와 -ing(satisfied · satisfying), 같은 어근에서 나온 형용사 쌍(economic · economical)이 Part 5 보기에 함께 나온다. 이메일 · 공지 지문에는 attached · enclosed · qualified 같은 -ed 형용사가 자주 나온다.",
+    "intro": "지금까지 배운 접미사가 품사를 정했다면, 오늘은 둘 다 형용사인 보기 중 하나를 의미로 고르는 법을 익혀요. 같은 동사에서 나온 -ed 와 -ing(satisfied · satisfying), 같은 어근에서 나온 형용사 쌍(economic · economical)이 Part 5 보기에 함께 나와요. 이메일 · 공지 지문에는 attached · enclosed · qualified 같은 -ed 형용사가 자주 나와요.",
     "items": [
       {
         "affix": "-ed (감정)",
@@ -30,7 +30,7 @@
             "ko": "관심 있는"
           }
         ],
-        "tip": "감정 동사는 '감정을 느끼게 하다'라는 뜻이다. 그래서 사람이 감정을 받는 쪽이면 수동의 -ed 를 쓴다 (The client was satisfied.)"
+        "tip": "감정 동사는 '감정을 느끼게 하다'라는 뜻이에요. 그래서 사람이 감정을 받는 쪽이면 수동의 -ed 를 써요 (The client was satisfied.)"
       },
       {
         "affix": "-ing (감정)",
@@ -53,7 +53,7 @@
             "ko": "혼란스러운"
           }
         ],
-        "tip": "주어 · 수식 대상이 결과 · 제품 · 소식처럼 감정을 주는 쪽이면 -ing 를 쓴다 (The sales results were disappointing.)"
+        "tip": "주어 · 수식 대상이 결과 · 제품 · 소식처럼 감정을 주는 쪽이면 -ing 를 써요 (The sales results were disappointing.)"
       },
       {
         "affix": "-ed (상태 · 완료)",
@@ -76,7 +76,7 @@
             "ko": "첨부된"
           }
         ],
-        "tip": "enclosed(동봉된) · detailed(상세한) · limited(제한된) 도 같은 유형이다. 명사 앞에서 '~된'으로 해석되면 -ed 를 고른다"
+        "tip": "enclosed(동봉된) · detailed(상세한) · limited(제한된) 도 같은 유형이에요. 명사 앞에서 '~된'으로 해석되면 -ed 를 고르세요"
       },
       {
         "affix": "-ic · -ical",
@@ -99,7 +99,7 @@
             "ko": "역사적으로 중요한"
           }
         ],
-        "tip": "economic 은 '경제 분야의'(economic growth), economical 은 '돈이 적게 드는'(an economical car)이다"
+        "tip": "economic 은 '경제 분야의'(economic growth), economical 은 '돈이 적게 드는'(an economical car)이에요"
       },
       {
         "affix": "-ful · -ive · -able (respect)",
@@ -122,7 +122,7 @@
             "ko": "존경할 만한; 상당한"
           }
         ],
-        "tip": "their respective departments(각자의 부서)처럼 소유격 + respective + 복수 명사 형태가 토익에 자주 나온다"
+        "tip": "their respective departments(각자의 부서)처럼 소유격 + respective + 복수 명사 형태가 토익에 자주 나와요"
       },
       {
         "affix": "-ive · -ible · -ent (혼동 쌍)",
@@ -145,14 +145,14 @@
             "ko": "의존하는 (on)"
           }
         ],
-        "tip": "dependable(믿을 수 있는)은 남이 의지할 수 있다는 뜻이고, dependent(의존하는)는 스스로 남에게 의지한다는 뜻이다"
+        "tip": "dependable(믿을 수 있는)은 남이 의지할 수 있다는 뜻이고, dependent(의존하는)는 스스로 남에게 의지한다는 뜻이에요"
       }
     ],
     "traps": [
       "economic(경제의) · economical(절약하는): economic growth · an economical choice",
       "respectful(공손한) · respective(각각의) · respectable(존경할 만한, 상당한)",
       "sensitive(민감한, 기밀의) · sensible(분별 있는, 합리적인): sensitive information · a sensible decision",
-      "complimentary(무료의, 칭찬하는) · complementary(보완하는): 철자 i 와 e 한 글자 차이다. complimentary breakfast · complementary skills",
+      "complimentary(무료의, 칭찬하는) · complementary(보완하는): 철자 i 와 e 한 글자 차이예요. complimentary breakfast · complementary skills",
       "dependable(믿을 수 있는) · dependent(의존하는, on 과 함께): a dependable supplier · be dependent on exports"
     ]
   },
@@ -201,7 +201,7 @@
           "qualifies"
         ],
         "answer": 2,
-        "why": "관사 a 와 형용사 valid 뒤, 동사 hold 의 목적어 자리이므로 명사 qualification(자격증)이 온다"
+        "why": "관사 a 와 형용사 valid 뒤, 동사 hold 의 목적어 자리라서 명사 qualification(자격증)이 와요"
       }
     },
     {
@@ -248,7 +248,7 @@
           "experiencing"
         ],
         "answer": 0,
-        "why": "be 동사 뒤 부사 highly 가 꾸미는 보어 자리이므로 형용사가 온다. '경험이 풍부한'은 experienced"
+        "why": "be 동사 뒤 부사 highly 가 꾸미는 보어 자리라서 형용사가 와요. '경험이 풍부한'은 experienced"
       }
     },
     {
@@ -295,7 +295,7 @@
           "detailed"
         ],
         "answer": 3,
-        "why": "관사 a 와 명사 description 사이는 형용사 자리다. '상세한 설명'이므로 detailed"
+        "why": "관사 a 와 명사 description 사이는 형용사 자리예요. '상세한 설명'이므로 detailed"
       }
     },
     {
@@ -352,7 +352,7 @@
           "complicating"
         ],
         "answer": 1,
-        "why": "조동사 could 뒤는 동사원형 자리다. 목적어 the delivery 를 받는 complicate"
+        "why": "조동사 could 뒤는 동사원형 자리예요. 목적어 the delivery 를 받는 complicate"
       }
     },
     {
@@ -404,7 +404,7 @@
           "limits"
         ],
         "answer": 0,
-        "why": "전치사 Due to 뒤 명사 parking space 를 꾸미는 형용사 자리다. '제한된 주차 공간'이므로 limited"
+        "why": "전치사 Due to 뒤 명사 parking space 를 꾸미는 형용사 자리예요. '제한된 주차 공간'이므로 limited"
       }
     },
     {
@@ -513,7 +513,7 @@
           "attaches"
         ],
         "answer": 1,
-        "why": "관사 the 와 전치사 to 사이는 명사 자리다. 동사 open 의 목적어가 되는 attachment(첨부 파일)"
+        "why": "관사 the 와 전치사 to 사이는 명사 자리예요. 동사 open 의 목적어가 되는 attachment(첨부 파일)"
       }
     },
     {
@@ -570,7 +570,7 @@
           "dedicates"
         ],
         "answer": 2,
-        "why": "전치사 of 뒤는 명사 자리다. '회사에 대한 20년의 헌신'이므로 dedication"
+        "why": "전치사 of 뒤는 명사 자리예요. '회사에 대한 20년의 헌신'이므로 dedication"
       }
     },
     {
@@ -642,7 +642,7 @@
           "meaning": "형용사: ~된 상태의"
         }
       ],
-      "morphNote": "안에 넣어 둘러싼(enclose + -ed) 상태 → 동봉된 (enclose 는 프랑스어 enclore 에서 왔고 include 와 어원이 같다)",
+      "morphNote": "안에 넣어 둘러싼(enclose + -ed) 상태 → 동봉된 (enclose 는 프랑스어 enclore 에서 왔고 include 와 어원이 같아요)",
       "family": [
         {
           "word": "enclose",
@@ -669,7 +669,7 @@
           "enclosing"
         ],
         "answer": 0,
-        "why": "Please 로 시작하는 명령문이므로 동사원형 자리다. 목적어 a copy 를 받는 enclose"
+        "why": "Please 로 시작하는 명령문이라서 동사원형 자리예요. 목적어 a copy 를 받는 enclose"
       }
     },
     {
@@ -726,7 +726,7 @@
           "economic"
         ],
         "answer": 1,
-        "why": "operate 는 목적어 없는 1형식 동사이므로 more 뒤는 동사를 꾸미는 부사 자리다. economically"
+        "why": "operate 는 목적어 없는 1형식 동사라서 more 뒤는 동사를 꾸미는 부사 자리예요. economically"
       }
     },
     {
@@ -783,7 +783,7 @@
           "respective"
         ],
         "answer": 2,
-        "why": "speak 는 1형식 동사이므로 뒤는 동사를 꾸미는 부사 자리다. respectfully"
+        "why": "speak 는 1형식 동사라서 뒤는 동사를 꾸미는 부사 자리예요. respectfully"
       }
     },
     {
@@ -835,7 +835,7 @@
           "sense"
         ],
         "answer": 0,
-        "why": "형용사 great 뒤, 동사 showed 의 목적어 자리이므로 명사다. '우려에 대한 세심함'이므로 sensitivity"
+        "why": "형용사 great 뒤, 동사 showed 의 목적어 자리라서 명사예요. '우려에 대한 세심함'이므로 sensitivity"
       }
     },
     {
@@ -882,7 +882,7 @@
           "complimenting"
         ],
         "answer": 2,
-        "why": "주어 Mr. Tanaka 뒤에 동사가 없으므로 동사 자리다. 3인칭 단수 주어에 맞는 과거형 complimented"
+        "why": "주어 Mr. Tanaka 뒤에 동사가 없어서 동사 자리예요. 3인칭 단수 주어에 맞는 과거형 complimented"
       }
     },
     {
@@ -944,7 +944,7 @@
           "dependent"
         ],
         "answer": 3,
-        "why": "be 동사 뒤 보어 자리이므로 형용사이고, 뒤에 on 이 오므로 '~에 의존하는' dependent 다. dependable 은 on 과 쓰지 않는다"
+        "why": "be 동사 뒤 보어 자리라서 형용사이고, 뒤에 on 이 오므로 '~에 의존하는' dependent 예요. dependable 은 on 과 쓰지 않아요"
       }
     },
     {
@@ -996,7 +996,7 @@
           "favored"
         ],
         "answer": 2,
-        "why": "be 동사 was 와 과거분사 received 사이는 부사 자리다. favorably"
+        "why": "be 동사 was 와 과거분사 received 사이는 부사 자리예요. favorably"
       }
     },
     {
@@ -1043,7 +1043,7 @@
           "Ineligibility"
         ],
         "answer": 1,
-        "why": "동사 is 앞 주어 자리이므로 명사다. 명사 중 '여비 수당을 받을 자격'이 뜻에 맞는 Eligibility"
+        "why": "동사 is 앞 주어 자리라서 명사예요. 명사 중 '여비 수당을 받을 자격'이 뜻에 맞는 Eligibility"
       }
     },
     {
@@ -1100,7 +1100,7 @@
           "informed"
         ],
         "answer": 2,
-        "why": "Please 로 시작하는 명령문이므로 동사원형 자리다. 목적어 the front desk 를 받는 inform"
+        "why": "Please 로 시작하는 명령문이라서 동사원형 자리예요. 목적어 the front desk 를 받는 inform"
       }
     },
     {
@@ -1157,7 +1157,7 @@
           "prevented"
         ],
         "answer": 0,
-        "why": "to 부정사의 to 뒤는 동사원형 자리다. 목적어 equipment failures 를 받는 prevent"
+        "why": "to 부정사의 to 뒤는 동사원형 자리예요. 목적어 equipment failures 를 받는 prevent"
       }
     },
     {
@@ -1177,7 +1177,7 @@
           "meaning": "형용사: ~하는 성질의"
         }
       ],
-      "morphNote": "설득하는(persuade) 성질의(-ive) → 설득력 있는 (-de 가 -s 로 바뀐다)",
+      "morphNote": "설득하는(persuade) 성질의(-ive) → 설득력 있는 (-de 가 -s 로 바뀌어요)",
       "family": [
         {
           "word": "persuade",
@@ -1209,17 +1209,17 @@
           "persuasively"
         ],
         "answer": 3,
-        "why": "spoke 는 1형식 동사이므로 뒤는 동사를 꾸미는 부사 자리다. persuasively"
+        "why": "spoke 는 1형식 동사라서 뒤는 동사를 꾸미는 부사 자리예요. persuasively"
       }
     }
   ],
   "grammar": {
     "title": "문장 형식 · 품사 자리 종합",
-    "intro": "1주차를 마무리하는 날이다. 동사가 몇 형식으로 쓰이는지 알면 동사 뒤 빈칸에 무엇이 와야 하는지 바로 정해진다. 오늘은 문장 5형식과 1주차에 배운 품사 자리를 한 번에 정리한다.",
+    "intro": "1주차를 마무리하는 날이에요. 동사가 몇 형식으로 쓰이는지 알면 동사 뒤 빈칸에 무엇이 와야 하는지 바로 정해져요. 오늘은 문장 5형식과 1주차에 배운 품사 자리를 정리해요.",
     "sections": [
       {
         "heading": "1형식: 주어 + 동사 (arrive)",
-        "body": "arrive · occur · rise · proceed · operate 처럼 목적어 없이 문장이 완성되는 동사다.\n동사 뒤에 명사가 바로 올 수 없고 부사나 전치사구가 붙는다. 그래서 1형식 동사 바로 뒤 빈칸은 부사 자리인 경우가 많다.",
+        "body": "arrive · occur · rise · proceed · operate 처럼 목적어 없이 문장이 완성되는 동사예요.\n동사 뒤에 명사가 바로 올 수 없고 부사나 전치사구가 붙어요. 그래서 1형식 동사 바로 뒤 빈칸은 부사 자리일 때가 많아요.",
         "examples": [
           {
             "en": "All of the shipments arrived ------- despite the heavy storm.",
@@ -1231,7 +1231,7 @@
       },
       {
         "heading": "2형식: 주어 + 동사 + 주격 보어 (become)",
-        "body": "be · become · remain · seem · stay 는 뒤에 주어를 설명하는 보어가 온다.\n보어 자리에는 형용사(상태)나 명사(신분 · 정체)가 온다. 부사는 보어가 될 수 없으므로 보기의 -ly 는 함정이다.",
+        "body": "be · become · remain · seem · stay 는 뒤에 주어를 설명하는 보어가 와요.\n보어 자리에는 형용사(상태)나 명사(신분 · 정체)가 와요. 부사는 보어가 될 수 없어서 보기의 -ly 는 함정이에요.",
         "examples": [
           {
             "en": "The new parking policy will become ------- next Monday.",
@@ -1249,7 +1249,7 @@
       },
       {
         "heading": "3형식: 주어 + 동사 + 목적어 (send)",
-        "body": "send · review · discuss · attend 는 목적어 하나를 받는다.\n목적어 자리에는 명사 · 대명사 · 동명사가 온다. discuss · attend 는 전치사 없이 바로 목적어를 받는다(discuss about 은 틀린 표현이다).",
+        "body": "send · review · discuss · attend 는 목적어 하나를 받아요.\n목적어 자리에는 명사 · 대명사 · 동명사가 와요. discuss · attend 는 전치사 없이 바로 목적어를 받아요(discuss about 은 틀린 표현이에요).",
         "examples": [
           {
             "en": "Please send the signed ------- to the legal department by Friday.",
@@ -1261,7 +1261,7 @@
       },
       {
         "heading": "4형식: 주어 + 동사 + 간접목적어 + 직접목적어 (give)",
-        "body": "give · offer · send · award 는 '누구에게(간접목적어) 무엇을(직접목적어)' 두 목적어를 받는다.\n두 목적어 자리 모두 명사다. 3형식으로 바꾸면 give A to B 가 된다.",
+        "body": "give · offer · send · award 는 '누구에게(간접목적어) 무엇을(직접목적어)' 두 목적어를 받아요.\n두 목적어 자리 모두 명사예요. 3형식으로 바꾸면 give A to B 가 돼요.",
         "examples": [
           {
             "en": "The manager gave the new staff a brief ------- of the safety rules.",
@@ -1273,7 +1273,7 @@
       },
       {
         "heading": "5형식: 주어 + 동사 + 목적어 + 목적격 보어 (make · keep · find)",
-        "body": "make · keep · find · consider · leave 는 목적어 뒤에 목적어의 상태를 설명하는 보어가 온다.\n목적격 보어 자리에는 형용사가 오고 부사는 올 수 없다. '목적어 = 보어' 관계가 성립하는지 확인한다(find the manual helpful: 설명서가 유용하다).\n목적어가 to부정사처럼 길면 가목적어 it 을 쓴다: make it possible to ~.",
+        "body": "make · keep · find · consider · leave 는 목적어 뒤에 목적어의 상태를 설명하는 보어가 와요.\n목적격 보어 자리에는 형용사가 오고 부사는 올 수 없어요. '목적어 = 보어' 관계가 성립하는지 확인하세요(find the manual helpful: 설명서가 유용하다).\n목적어가 to부정사처럼 길면 가목적어 it 을 써요: make it possible to ~.",
         "examples": [
           {
             "en": "The new filing system makes documents ------- to locate.",
@@ -1327,7 +1327,7 @@
       "5형식(make · keep · find) + 목적어 뒤는 형용사 보어 자리다. -ly 부사는 함정이다",
       "감정 형용사는 사람이 느끼면 -ed, 감정을 주는 대상이면 -ing 다"
     ],
-    "strategy": "1) 보기 4개를 먼저 보고 어근이 같고 끝만 다르면 품사 문제로 판단한다. 2) 빈칸 앞뒤 1~2단어(관사 · 전치사 · be 동사 · 동사의 형식)에서 단서를 찾는다. 3) 단서로 명사 · 형용사 · 부사 · 동사 중 자리를 결정한다. 4) 같은 품사 보기가 2개 남으면 의미(economic · economical), 수(단수 · 복수), 태(능동 · 수동, -ed · -ing)로 하나를 고른다."
+    "strategy": "1) 보기 4개를 먼저 보고 어근이 같고 끝만 다르면 품사 문제로 판단하세요. 2) 빈칸 앞뒤 1~2단어(관사 · 전치사 · be 동사 · 동사의 형식)에서 단서를 찾으세요. 3) 단서로 명사 · 형용사 · 부사 · 동사 중 자리를 정하세요. 4) 같은 품사 보기가 2개 남으면 의미(economic · economical), 수(단수 · 복수), 태(능동 · 수동, -ed · -ing)로 하나를 고르세요."
   },
   "inference": [
     {
@@ -1403,7 +1403,7 @@
       ],
       "answer": 1,
       "pos": "a",
-      "why": "reward(보상하다) + -ing(그런 느낌을 주는) → 보상받는 느낌을 주는, 보람 있는. 사람이 느끼는 감정이 아니라 일 · 경험을 꾸민다"
+      "why": "reward(보상하다) + -ing(그런 느낌을 주는) → 보상받는 느낌을 주는, 보람 있는. 사람이 느끼는 감정이 아니라 일 · 경험을 꾸며요"
     }
   ],
   "part5": [
@@ -1420,7 +1420,7 @@
       ],
       "answer": 2,
       "clue": "빈칸 앞 2형식 동사 remain · 뒤 접속사 until",
-      "why": "remain 은 2형식 동사이므로 뒤는 주어의 상태를 설명하는 보어 자리다. '닫힌 상태로 남다'이므로 형용사 closed",
+      "why": "remain 은 2형식 동사라서 뒤는 주어의 상태를 설명하는 보어 자리예요. '닫힌 상태로 남다'이므로 형용사 closed",
       "explain": [
         "closes: 동사 3인칭 단수로 remain 뒤 보어가 될 수 없다",
         "closure: 명사(폐쇄)로 회의실 = 폐쇄 관계가 성립하지 않는다",
@@ -1441,7 +1441,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 앞 1형식 동사 arrived · 뒤 전치사 for",
-      "why": "arrive 는 목적어를 받지 않는 1형식 동사다. 문장이 이미 완성되었으므로 동사를 꾸미는 부사 promptly(제시간에)",
+      "why": "arrive 는 목적어를 받지 않는 1형식 동사예요. 문장이 이미 완성됐으므로 동사를 꾸미는 부사 promptly(제시간에)",
       "explain": [
         "정답",
         "prompt: 형용사 · 동사로 1형식 동사 뒤에서 동사를 꾸밀 수 없다",
@@ -1462,7 +1462,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 관사 a · 형용사 written, 뒤 전치사 of",
-      "why": "sent 의 목적어 자리이고 a written 뒤 of 앞이므로 명사 자리다. confirmation(확인서)",
+      "why": "sent 의 목적어 자리이고 a written 뒤 of 앞이므로 명사 자리예요. confirmation(확인서)",
       "explain": [
         "confirm: 동사원형으로 관사 뒤에 올 수 없다",
         "confirmed: 과거 · 과거분사로 명사 자리에 올 수 없다",
@@ -1483,7 +1483,7 @@
       ],
       "answer": 1,
       "clue": "4형식 동사 gave + 간접목적어 the new interns · 빈칸 앞 형용사 clear",
-      "why": "gave 뒤에 '누구에게(the new interns)'가 나왔으므로 빈칸은 '무엇을'에 해당하는 직접목적어 자리다. 형용사 clear 의 꾸밈을 받는 명사 instructions",
+      "why": "gave 뒤에 '누구에게(the new interns)'가 나왔으니 빈칸은 '무엇을'에 해당하는 직접목적어 자리예요. 형용사 clear 의 꾸밈을 받는 명사 instructions",
       "explain": [
         "instruct: 동사원형으로 형용사 뒤 목적어 자리에 올 수 없다",
         "정답",
@@ -1504,7 +1504,7 @@
       ],
       "answer": 2,
       "clue": "5형식 동사 found + 목적어 the workshop · 빈칸 앞 부사 very",
-      "why": "find + 목적어 + 보어 구조로 '워크숍이 유익하다고 생각했다'는 뜻이다. 목적격 보어 자리이고 very 의 꾸밈을 받으므로 형용사 informative",
+      "why": "find + 목적어 + 보어 구조로 '워크숍이 유익하다고 생각했다'는 뜻이에요. 목적격 보어 자리이고 very 의 꾸밈을 받으므로 형용사 informative",
       "explain": [
         "inform: 동사원형으로 보어 자리에 올 수 없다",
         "information: 명사로 very 의 꾸밈을 받을 수 없고 워크숍 = 정보 관계도 어색하다",
@@ -1525,7 +1525,7 @@
       ],
       "answer": 1,
       "clue": "빈칸 앞 be 동사 are not · 뒤 전치사 with, 주어 Customers(사람)",
-      "why": "be 동사 뒤 보어 자리이므로 형용사다. 고객(사람)이 만족을 느끼는 쪽이므로 -ed 형태 satisfied, be satisfied with 로 굳어진 표현이다",
+      "why": "be 동사 뒤 보어 자리라서 형용사예요. 고객(사람)이 만족을 느끼는 쪽이므로 -ed 형태 satisfied 이고, be satisfied with 로 굳어진 표현이에요",
       "explain": [
         "satisfying: 만족을 '주는' 대상에 쓴다. 사람 주어가 느끼는 감정에는 맞지 않는다",
         "정답",
@@ -1546,7 +1546,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 앞 be 동사 were · 주어 The quarterly sales figures(사물)",
-      "why": "be 동사 뒤 보어 자리이므로 형용사다. 판매 수치는 이사회에 고무적인 느낌을 주는 대상이므로 -ing 형태 encouraging",
+      "why": "be 동사 뒤 보어 자리라서 형용사예요. 판매 수치는 이사회에 고무적인 느낌을 주는 대상이므로 -ing 형태 encouraging",
       "explain": [
         "정답",
         "encouraged: 감정을 느끼는 사람에게 쓴다. 수치가 격려받는 것이 아니다",
@@ -1567,7 +1567,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 주어 The facilities manager · 뒤 목적어 the heating system, 문장에 동사가 없다",
-      "why": "주어 뒤에 동사가 없으므로 동사 자리다. 3인칭 단수 주어와 반복 동작(every October)에 맞는 현재형 inspects",
+      "why": "주어 뒤에 동사가 없어서 동사 자리예요. 3인칭 단수 주어와 반복 동작(every October)에 맞는 현재형 inspects",
       "explain": [
         "inspection: 명사(점검)로 동사 자리에 올 수 없다",
         "inspector: 명사(점검관)로 동사 자리에 올 수 없다",
@@ -1588,7 +1588,7 @@
       ],
       "answer": 2,
       "clue": "5형식 동사 keep + 목적어 their passwords · 빈칸 뒤 문장 끝",
-      "why": "keep + 목적어 + 목적격 보어 구조로 '비밀번호를 안전한 상태로 유지하다'는 뜻이다. 보어 자리이므로 형용사 secure",
+      "why": "keep + 목적어 + 목적격 보어 구조로 '비밀번호를 안전한 상태로 유지하다'는 뜻이에요. 보어 자리이므로 형용사 secure",
       "explain": [
         "securely: 부사는 목적격 보어 자리에 올 수 없다",
         "security: 명사로 비밀번호 = 보안 관계가 성립하지 않는다",
@@ -1609,7 +1609,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 뒤 형용사 different · 앞 be 동사 is",
-      "why": "is 뒤 보어는 이미 형용사 different 이다. 형용사 앞에서 정도를 나타내는 부사 자리이므로 significantly",
+      "why": "is 뒤 보어는 이미 형용사 different 예요. 형용사 앞에서 정도를 나타내는 부사 자리이므로 significantly",
       "explain": [
         "정답",
         "significant: 형용사로 다른 형용사 different 를 꾸밀 수 없다",
@@ -1630,7 +1630,7 @@
       ],
       "answer": 1,
       "clue": "빈칸 앞 be 동사 is more · 뒤 than renting a car(비용 비교)",
-      "why": "is more 뒤 보어 자리이므로 형용사다. 렌터카와 비용을 비교하므로 '돈이 적게 드는' economical",
+      "why": "is more 뒤 보어 자리라서 형용사예요. 렌터카와 비용을 비교하므로 '돈이 적게 드는' economical",
       "explain": [
         "economic: 형용사지만 '경제의'라는 뜻으로 비용 비교에 맞지 않는다",
         "정답",
@@ -1651,7 +1651,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 소유격 their · 뒤 복수 명사 teams, 주어 the two department heads",
-      "why": "소유격과 명사 사이는 형용사 자리다. 두 부서장이 '각자의' 팀을 맡는다는 뜻이므로 respective",
+      "why": "소유격과 명사 사이는 형용사 자리예요. 두 부서장이 '각자의' 팀을 맡는다는 뜻이므로 respective",
       "explain": [
         "respectful: 형용사지만 '공손한'이라는 뜻으로 teams 와 의미가 맞지 않는다",
         "respectable: 형용사지만 '존경할 만한'이라는 뜻으로 문맥에 맞지 않는다",
@@ -1672,7 +1672,7 @@
       ],
       "answer": 0,
       "clue": "5형식 동사 made + 가목적어 it · 뒤 진목적어 for staff to book",
-      "why": "make + it(가목적어) + 보어 + to부정사(진목적어) 구조다. 목적격 보어 자리이므로 형용사 easy",
+      "why": "make + it(가목적어) + 보어 + to부정사(진목적어) 구조예요. 목적격 보어 자리이므로 형용사 easy",
       "explain": [
         "정답",
         "easily: 부사는 목적격 보어 자리에 올 수 없다. made 를 꾸민다고 착각하기 쉬운 함정",
@@ -1693,7 +1693,7 @@
       ],
       "answer": 2,
       "clue": "빈칸 앞 관사 a · 뒤 명사 bottle, 문맥: 스위트 예약 고객에게 주는 혜택",
-      "why": "관사와 명사 사이는 형용사 자리다. 예약 고객에게 주는 혜택이므로 '무료의' complimentary",
+      "why": "관사와 명사 사이는 형용사 자리예요. 예약 고객에게 주는 혜택이므로 '무료의' complimentary",
       "explain": [
         "complementary: 형용사지만 '보완하는'이라는 뜻으로 와인 혜택에 맞지 않는다",
         "compliment: 명사 · 동사(칭찬)로 bottle 을 꾸미는 형용사 자리에 맞지 않는다",
@@ -1714,7 +1714,7 @@
       ],
       "answer": 1,
       "clue": "빈칸 앞 관사 a · 뒤 명사 partner, 문맥: built a reputation(평판을 쌓다)",
-      "why": "관사와 명사 사이는 형용사 자리다. 좋은 평판을 쌓은 협력 업체이므로 '믿을 수 있는' dependable",
+      "why": "관사와 명사 사이는 형용사 자리예요. 좋은 평판을 쌓은 협력 업체이므로 '믿을 수 있는' dependable",
       "explain": [
         "dependent: 형용사지만 '의존하는'이라는 뜻으로 좋은 평판과 맞지 않는다",
         "정답",
@@ -1726,10 +1726,10 @@
   "lcGuide": {
     "focus": "Part 2 선택의문문(A or B) · 제안 · 요청(Why don't we, Could you) · 평서문 응답, Part 1 1주차 복습(사람 · 사물 사진)",
     "steps": [
-      "Part 1 사진 문제를 풀고 사람 사진은 is -ing, 사람 없는 사진은 has been p.p. · is p.p. 인지 다시 확인한다",
-      "Part 2 음원을 듣고 첫 3~4단어(Would you · Why don't · Could you · A or B)로 유형을 먼저 판단한 뒤 답을 고른다",
-      "스크립트를 보며 오답 보기의 함정(반복 단어 · 유사 발음 · Yes/No · Because)을 표시한다",
-      "정답 문장을 3번씩 소리 내어 쉐도잉한다"
+      "Part 1 사진 문제를 풀고 사람 사진은 is -ing, 사람 없는 사진은 has been p.p. · is p.p. 인지 다시 확인하세요",
+      "Part 2 음원을 듣고 첫 3~4단어(Would you · Why don't · Could you · A or B)로 유형을 먼저 판단한 뒤 답을 고르세요",
+      "스크립트를 보며 오답 보기의 함정(반복 단어 · 유사 발음 · Yes/No · Because)을 표시하세요",
+      "정답 문장을 3번씩 소리 내어 쉐도잉하세요"
     ],
     "keyPatterns": [
       {
@@ -1766,8 +1766,8 @@
         "(D) Some lamps are being stacked on the floor."
       ],
       "answer": 1,
-      "why": "남성이 사다리 위에서 천장 조명을 교체하는 동작을 그대로 묘사한다",
-      "trap": "(A) 사다리를 계단으로 바꾼 보기, (C) 공구 상자는 바닥에 놓여 있을 뿐 옮겨지는 중이 아니다, (D) 조명에서 연상한 lamps"
+      "why": "남성이 사다리 위에서 천장 조명을 교체하는 동작을 묘사해요",
+      "trap": "(A) 사다리를 계단으로 바꾼 보기, (C) 공구 상자는 바닥에 놓여 있을 뿐 옮겨지는 중이 아니에요, (D) 조명에서 연상한 lamps"
     },
     {
       "id": "d05-lc-02",
@@ -1780,8 +1780,8 @@
         "(D) Some chairs have been pushed under a table."
       ],
       "answer": 3,
-      "why": "사람 없는 사진에서 의자가 밀어 넣어진 상태를 has been p.p. 로 묘사한다",
-      "trap": "(A) 사진에 없는 사람, (B)(C) is being p.p. 는 사람이 동작 중일 때만 쓴다"
+      "why": "사람 없는 사진에서 의자가 밀어 넣어진 상태를 has been p.p. 로 묘사해요",
+      "trap": "(A) 사진에 없는 사람, (B)(C) is being p.p. 는 사람이 동작 중일 때만 써요"
     },
     {
       "id": "d05-lc-03",
@@ -1794,8 +1794,8 @@
         "(D) The women are unpacking some merchandise."
       ],
       "answer": 0,
-      "why": "한 여성이 상자를 들고 있는 동작을 정확히 묘사한다",
-      "trap": "(B) 상점에서 연상한 계산 동작, (C) 진열대는 설치 중이 아니다, (D) 상자에서 연상한 포장 풀기 동작"
+      "why": "한 여성이 상자를 들고 있는 동작을 묘사해요",
+      "trap": "(B) 상점에서 연상한 계산 동작, (C) 진열대는 설치 중이 아니에요, (D) 상자에서 연상한 포장 풀기 동작"
     },
     {
       "id": "d05-lc-04",
@@ -1808,7 +1808,7 @@
         "(D) A bridge is being built over the water."
       ],
       "answer": 2,
-      "why": "배가 부두에 정박해 있는 상태를 묘사한다",
+      "why": "배가 부두에 정박해 있는 상태를 묘사해요",
       "trap": "(A) 정박한 배를 항해 중으로 바꾼 보기, (B) 사진에 없는 사람, (D) 사진에 없는 다리와 공사 동작"
     },
     {
@@ -1822,8 +1822,8 @@
         "(D) A woman is turning off a computer monitor."
       ],
       "answer": 1,
-      "why": "여성이 복사기 덮개를 여는 동작을 묘사한다",
-      "trap": "(A) 서류에서 연상한 정리 동작, (C) 서류는 쌓여 있을 뿐 버려지는 중이 아니다, (D) 사진에 없는 모니터"
+      "why": "여성이 복사기 덮개를 여는 동작을 묘사해요",
+      "trap": "(A) 서류에서 연상한 정리 동작, (C) 서류는 쌓여 있을 뿐 버려지는 중이 아니에요, (D) 사진에 없는 모니터"
     },
     {
       "id": "d05-lc-06",
@@ -1835,7 +1835,7 @@
         "(C) In the main conference room."
       ],
       "answer": 0,
-      "why": "선택의문문에 둘 중 하나(Wednesday)를 골라 답한다",
+      "why": "선택의문문에 둘 중 하나(Wednesday)를 골라 답해요",
       "trap": "(B) 선택의문문에 Yes 응답, meet 와 비슷한 met 반복, (C) 언제가 아니라 장소로 답한 의문사 불일치"
     },
     {
@@ -1848,7 +1848,7 @@
         "(C) That's a good idea. I'll call the café."
       ],
       "answer": 2,
-      "why": "Why don't we 는 제안이므로 수락하고 다음 행동을 말한 응답이 맞다",
+      "why": "Why don't we 는 제안이라서 수락하고 다음 행동을 말한 응답이 맞아요",
       "trap": "(A) Why 를 이유 질문으로 착각하게 하는 Because, session 반복, (B) training 반복과 장소 응답"
     },
     {
@@ -1861,8 +1861,8 @@
         "(C) He sent it at noon."
       ],
       "answer": 1,
-      "why": "요청에 Sure 로 수락하고 바로 보내겠다고 답한다",
-      "trap": "(A) budget 반복, (C) send 와 비슷한 sent · noon 반복, 주어 He 가 맞지 않는다"
+      "why": "요청에 Sure 로 수락하고 바로 보내겠다고 답해요",
+      "trap": "(A) budget 반복, (C) send 와 비슷한 sent · noon 반복, 주어 He 가 맞지 않아요"
     },
     {
       "id": "d05-lc-09",
@@ -1874,7 +1874,7 @@
         "(C) I'll just show them on the screen."
       ],
       "answer": 2,
-      "why": "선택의문문에 화면으로 보여 주겠다는 쪽을 골라 답한다",
+      "why": "선택의문문에 화면으로 보여 주겠다는 쪽을 골라 답해요",
       "trap": "(A) 선택의문문에 Yes 응답, print 와 비슷한 printer, (B) screen 반복"
     },
     {
@@ -1887,7 +1887,7 @@
         "(C) In alphabetical order."
       ],
       "answer": 0,
-      "why": "고장 소식을 알리는 평서문에 해결책(관리팀에 연락)으로 답한다",
+      "why": "고장 소식을 알리는 평서문에 해결책(관리팀에 연락)으로 답해요",
       "trap": "(B) east side 에서 연상한 위치 응답, (C) order 반복"
     },
     {
@@ -1900,7 +1900,7 @@
         "(C) Please turn it off after use."
       ],
       "answer": 1,
-      "why": "오후에 쉬라는 제안에 감사 인사와 함께 거절 사유를 말한다",
+      "why": "오후에 쉬라는 제안에 감사 인사와 함께 거절 사유를 말해요",
       "trap": "(A) Why 에 Because 로 답하게 하는 함정, (C) off 반복"
     },
     {
@@ -1913,7 +1913,7 @@
         "(C) Sure, just give me a minute."
       ],
       "answer": 2,
-      "why": "도와 달라는 요청에 잠시 후 돕겠다고 수락한다",
+      "why": "도와 달라는 요청에 잠시 후 돕겠다고 수락해요",
       "trap": "(A) Yes 로 시작하지만 lobby 반복일 뿐 요청과 무관, (B) move 와 비슷한 moved"
     },
     {
@@ -1926,7 +1926,7 @@
         "(C) The windows were cleaned this morning."
       ],
       "answer": 0,
-      "why": "선택의문문에 '둘 다 괜찮다'(Either)로 답한다",
+      "why": "선택의문문에 '둘 다 괜찮다'(Either)로 답해요",
       "trap": "(B) seat 반복, (C) window 와 비슷한 windows"
     },
     {
@@ -1939,7 +1939,7 @@
         "(C) For a two-year term."
       ],
       "answer": 1,
-      "why": "계약서를 못 찾겠다는 평서문에 찾아볼 곳을 되묻는 응답이다",
+      "why": "계약서를 못 찾겠다는 평서문에 찾아볼 곳을 되묻는 응답이에요",
       "trap": "(A) signed 와 비슷한 sign, (C) contract 에서 연상한 계약 기간"
     },
     {
@@ -1952,7 +1952,7 @@
         "(C) Not at all. Just leave it on my desk."
       ],
       "answer": 2,
-      "why": "Would you mind 요청에 Not at all(괜찮다)로 수락하고 방법을 알려 준다",
+      "why": "Would you mind 요청에 Not at all(괜찮다)로 수락하고 방법을 알려 줘요",
       "trap": "(A) submit 와 비슷한 submitted, 주어 He 불일치, (B) reviewing 과 비슷한 review"
     }
   ],
@@ -2075,7 +2075,7 @@
       "answer": 2,
       "full": "be experienced in",
       "ko": "~에 경험이 많다",
-      "note": "have experience in 과 함께 외운다"
+      "note": "have experience in 과 함께 외우세요"
     },
     {
       "id": "d05-col-09",
@@ -2090,7 +2090,7 @@
       "answer": 0,
       "full": "be respectful of",
       "ko": "~을 존중하다",
-      "note": "respective(각각의)와 혼동하지 않는다"
+      "note": "respective(각각의)와 혼동하지 마세요"
     },
     {
       "id": "d05-col-10",

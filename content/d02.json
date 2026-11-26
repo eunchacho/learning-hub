@@ -7,7 +7,7 @@
   "workTitle": "Word Formation: Noun Suffixes II",
   "affix": {
     "title": "명사를 만드는 접미사 (2)",
-    "intro": "어제 배운 -tion · -ment · -ance 에 이어 성질 · 상태 · 관계를 나타내는 명사 접미사와 사람을 나타내는 접미사를 익힌다. 토익 Part 5 는 같은 어근에서 나온 사람 명사(applicant)와 행위 명사(application)를 보기에 함께 내는 일이 많다. 접미사로 품사를 먼저 가르고, 사람인지 일 · 사물인지를 의미로 한 번 더 확인하면 답이 하나로 좁혀진다.",
+    "intro": "어제 배운 -tion · -ment · -ance 에 이어 성질 · 상태 · 관계를 나타내는 명사 접미사와 사람을 나타내는 접미사를 익혀요. 토익 Part 5 는 같은 어근에서 나온 사람 명사(applicant)와 행위 명사(application)를 보기에 함께 자주 내요. 접미사로 품사를 먼저 가르고, 사람인지 일 · 사물인지 의미로 한 번 더 확인하면 답이 하나로 좁혀져요.",
     "items": [
       {
         "affix": "-ity · -ty",
@@ -30,7 +30,7 @@
             "ko": "생산성"
           }
         ],
-        "tip": "대부분 형용사 뒤에 붙는다. -able · -ible 은 -ability · -ibility 로 바뀐다 (responsible → responsibility)"
+        "tip": "대부분 형용사 뒤에 붙어요. -able · -ible 은 -ability · -ibility 로 바뀌어요 (responsible → responsibility)"
       },
       {
         "affix": "-ness",
@@ -53,7 +53,7 @@
             "ko": "의향, 기꺼이 하는 마음"
           }
         ],
-        "tip": "형용사 + ness 는 거의 그대로 명사가 된다. -y 로 끝나는 형용사는 -iness 로 쓴다 (empty → emptiness)"
+        "tip": "형용사 + ness 는 거의 그대로 명사가 돼요. -y 로 끝나는 형용사는 -iness 로 써요 (empty → emptiness)"
       },
       {
         "affix": "-al (명사)",
@@ -76,7 +76,7 @@
             "ko": "갱신"
           }
         ],
-        "tip": "명사 + al 은 형용사(professional, additional)지만 동사 + al 은 명사다. 끝만 보지 말고 앞이 동사인지 확인한다"
+        "tip": "명사 + al 은 형용사(professional, additional)지만 동사 + al 은 명사예요. 끝만 보지 말고 앞이 동사인지 확인하세요"
       },
       {
         "affix": "-ure · -age",
@@ -99,7 +99,7 @@
             "ko": "보장 범위, 보도"
           }
         ],
-        "tip": "-ure 는 동사 뒤(depart → departure), -age 는 동사 · 형용사 · 명사 뒤(store → storage, short → shortage)에 붙는다"
+        "tip": "-ure 는 동사 뒤(depart → departure), -age 는 동사 · 형용사 · 명사 뒤(store → storage, short → shortage)에 붙어요"
       },
       {
         "affix": "-ship",
@@ -122,7 +122,7 @@
             "ko": "회원 자격, 회원권"
           }
         ],
-        "tip": "사람 명사 뒤에 붙어 그 사람의 관계 · 자격을 나타낸다. 사람 명사(partner)와 -ship 명사(partnership)를 의미로 구분한다"
+        "tip": "사람 명사 뒤에 붙어 그 사람의 관계 · 자격을 나타내요. 사람 명사(partner)와 -ship 명사(partnership)는 의미로 구분하세요"
       },
       {
         "affix": "-er · -or / -ee / -ant · -ent / -ist",
@@ -145,13 +145,13 @@
             "ko": "전문가"
           }
         ],
-        "tip": "-er · -or 는 하는 사람, -ee 는 받는 사람(employer 고용주 · employee 직원), -ant · -ent 는 하는 사람, -ist 는 전문가다. 사람 명사는 가산 명사라 단수일 때 a · the · each 같은 한정사가 꼭 붙는다"
+        "tip": "-er · -or 는 하는 사람, -ee 는 받는 사람(employer 고용주 · employee 직원), -ant · -ent 는 하는 사람, -ist 는 전문가예요. 사람 명사는 가산 명사라 단수일 때 a · the · each 같은 한정사가 꼭 붙어요"
       }
     ],
     "traps": [
-      "-al 은 형용사 신호로 많이 쓰이지만 동사 + al 은 명사다: approval · proposal · renewal · arrival · refusal. 'the approval of', 'a proposal for' 처럼 관사 뒤 명사 자리에 온다",
-      "-ive 는 형용사 신호지만 representative(직원 · 대표자) · executive(임원) · objective(목표)는 명사로도 쓴다. 'a sales representative', 'a senior executive' 처럼 관사 뒤에 오면 가산 명사다",
-      "-ant · -ent 는 사람 명사(applicant, participant, resident)와 형용사(significant, efficient, relevant)가 모두 있다. 관사 뒤 명사 자리인지, 명사 앞 수식 자리인지로 판단한다"
+      "-al 은 형용사 신호로 많이 쓰이지만 동사 + al 은 명사예요: approval · proposal · renewal · arrival · refusal. 'the approval of', 'a proposal for' 처럼 관사 뒤 명사 자리에 와요",
+      "-ive 는 형용사 신호지만 representative(직원 · 대표자) · executive(임원) · objective(목표)는 명사로도 써요. 'a sales representative', 'a senior executive' 처럼 관사 뒤에 오면 가산 명사예요",
+      "-ant · -ent 는 사람 명사(applicant, participant, resident)와 형용사(significant, efficient, relevant)가 모두 있어요. 관사 뒤 명사 자리인지, 명사 앞 수식 자리인지로 판단하세요"
     ]
   },
   "words": [
@@ -172,7 +172,7 @@
           "meaning": "명사: 성질 · 상태"
         }
       ],
-      "morphNote": "안전한(secure) 상태(-ity) → 보안 · 안전. secure 는 라틴어 sē(없이) + cūra(걱정)에서 왔다",
+      "morphNote": "안전한(secure) 상태(-ity) → 보안 · 안전. secure 는 라틴어 sē(없이) + cūra(걱정)에서 왔어요",
       "family": [
         {
           "word": "secure",
@@ -204,7 +204,7 @@
           "secured"
         ],
         "answer": 1,
-        "why": "타동사 improve 뒤는 목적어 자리이므로 명사가 온다. 명사 security(보안)가 정답"
+        "why": "타동사 improve 뒤는 목적어 자리라서 명사가 와요. 명사 security(보안)가 정답"
       }
     },
     {
@@ -224,7 +224,7 @@
           "meaning": "명사: 성질 · 상태"
         }
       ],
-      "morphNote": "이용할 수 있는(available) 상태(-ity) → 이용 가능성. -able 이 -ability 로 바뀐다",
+      "morphNote": "이용할 수 있는(available) 상태(-ity) → 이용 가능성. -able 이 -ability 로 바뀌어요",
       "family": [
         {
           "word": "available",
@@ -251,7 +251,7 @@
           "availabilities"
         ],
         "answer": 2,
-        "why": "subject to 의 to 는 전치사이므로 뒤는 명사 자리다. subject to availability(상황 · 재고에 따라)는 굳은 표현이라 단수형 availability 가 정답"
+        "why": "subject to 의 to 는 전치사라서 뒤는 명사 자리예요. subject to availability(상황 · 재고에 따라)는 굳은 표현이라 단수형 availability 가 정답"
       }
     },
     {
@@ -271,7 +271,7 @@
           "meaning": "명사: 성질 · 능력"
         }
       ],
-      "morphNote": "담을(cap) 수 있는 성질(-acity) → 수용력 · 용량. 라틴어 capere(담다, 잡다)에서 왔다",
+      "morphNote": "담을(cap) 수 있는 성질(-acity) → 수용력 · 용량. 라틴어 capere(담다, 잡다)에서 왔어요",
       "family": [
         {
           "word": "capable",
@@ -303,7 +303,7 @@
           "incapable"
         ],
         "answer": 0,
-        "why": "형용사 full 뒤는 명사 자리다. at full capacity(최대 가동으로)는 굳은 표현이라 capacity 가 정답"
+        "why": "형용사 full 뒤는 명사 자리예요. at full capacity(최대 가동으로)는 굳은 표현이라 capacity 가 정답"
       }
     },
     {
@@ -350,7 +350,7 @@
           "awareness"
         ],
         "answer": 3,
-        "why": "소유격 employees' 뒤 · 전치사 of 앞은 명사 자리다. 명사 awareness(인식)가 정답"
+        "why": "소유격 employees' 뒤 · 전치사 of 앞은 명사 자리예요. 명사 awareness(인식)가 정답"
       }
     },
     {
@@ -370,7 +370,7 @@
           "meaning": "명사: 성질 · 상태"
         }
       ],
-      "morphNote": "생산적인(productive) 성질(-ity) → 생산성. produce → productive → productivity 순서로 품사가 바뀐다",
+      "morphNote": "생산적인(productive) 성질(-ity) → 생산성. produce → productive → productivity 순서로 품사가 바뀌어요",
       "family": [
         {
           "word": "produce",
@@ -407,7 +407,7 @@
           "produce"
         ],
         "answer": 1,
-        "why": "타동사 boosted 의 목적어 자리이고 앞의 team 과 복합 명사를 이루므로 명사가 온다. productivity 가 정답"
+        "why": "타동사 boosted 의 목적어 자리이고 앞의 team 과 복합 명사를 이루니 명사가 와요. productivity 가 정답"
       }
     },
     {
@@ -427,7 +427,7 @@
           "meaning": "명사: 행위"
         }
       ],
-      "morphNote": "승인하는(approve) 행위(-al) → 승인. 동사 + al 은 명사다",
+      "morphNote": "승인하는(approve) 행위(-al) → 승인. 동사 + al 은 명사예요",
       "family": [
         {
           "word": "approve",
@@ -459,7 +459,7 @@
           "approved"
         ],
         "answer": 0,
-        "why": "형용사 Final 뒤 · 전치사 of 앞은 주어가 되는 명사 자리다. -al 로 끝나는 명사 approval 이 정답"
+        "why": "형용사 Final 뒤 · 전치사 of 앞은 주어가 되는 명사 자리예요. -al 로 끝나는 명사 approval 이 정답"
       }
     },
     {
@@ -506,7 +506,7 @@
           "proposes"
         ],
         "answer": 2,
-        "why": "관사 the 뒤 · 접속사 because 앞은 목적어가 되는 명사 자리다. 동사 + al 로 만든 명사 proposal 이 정답"
+        "why": "관사 the 뒤 · 접속사 because 앞은 목적어가 되는 명사 자리예요. 동사 + al 로 만든 명사 proposal 이 정답"
       }
     },
     {
@@ -526,7 +526,7 @@
           "meaning": "명사: 행위"
         }
       ],
-      "morphNote": "갱신하는(renew) 행위(-al) → 갱신. renew 는 re(다시) + new(새로운)이다",
+      "morphNote": "갱신하는(renew) 행위(-al) → 갱신. renew 는 re(다시) + new(새로운)이에요",
       "family": [
         {
           "word": "renew",
@@ -558,7 +558,7 @@
           "renewal"
         ],
         "answer": 3,
-        "why": "소유격 their 뒤 · 명사 date 앞은 복합 명사의 앞 명사 자리다. renewal date(갱신일)가 정답"
+        "why": "소유격 their 뒤 · 명사 date 앞은 복합 명사의 앞 명사 자리예요. renewal date(갱신일)가 정답"
       }
     },
     {
@@ -583,7 +583,7 @@
           "meaning": "명사: 행위 · 과정"
         }
       ],
-      "morphNote": "앞으로(pro) 나아가는(ced) 과정(-ure) → 일을 진행하는 순서 · 절차. 라틴어 procedere(앞으로 나아가다)에서 왔다",
+      "morphNote": "앞으로(pro) 나아가는(ced) 과정(-ure) → 일을 진행하는 순서 · 절차. 라틴어 procedere(앞으로 나아가다)에서 왔어요",
       "family": [
         {
           "word": "proceed",
@@ -610,7 +610,7 @@
           "proceeded"
         ],
         "answer": 1,
-        "why": "타동사 review 의 목적어 자리이고 emergency evacuation 과 복합 명사를 이루므로 명사가 온다. procedures 가 정답"
+        "why": "타동사 review 의 목적어 자리이고 emergency evacuation 과 복합 명사를 이루니 명사가 와요. procedures 가 정답"
       }
     },
     {
@@ -635,7 +635,7 @@
           "meaning": "명사: 행위 · 결과"
         }
       ],
-      "morphNote": "밖으로(ex) 달아서 내주는(pend) 일(-iture) → 돈을 내보내는 것 · 지출. 라틴어 expendere(달아서 지불하다)에서 왔다",
+      "morphNote": "밖으로(ex) 달아서 내주는(pend) 일(-iture) → 돈을 내보내는 것 · 지출. 라틴어 expendere(달아서 지불하다)에서 왔어요",
       "family": [
         {
           "word": "expend",
@@ -667,7 +667,7 @@
           "expensively"
         ],
         "answer": 0,
-        "why": "형용사 additional 뒤 · 전치사 on 앞은 목적어가 되는 명사 자리다. expenditure on(~에 대한 지출)이 정답"
+        "why": "형용사 additional 뒤 · 전치사 on 앞은 목적어가 되는 명사 자리예요. expenditure on(~에 대한 지출)이 정답"
       }
     },
     {
@@ -719,7 +719,7 @@
           "shorten"
         ],
         "answer": 2,
-        "why": "관사 a 뒤 · 전치사 of 앞은 명사 자리다. 명사 shortage(부족)가 정답"
+        "why": "관사 a 뒤 · 전치사 of 앞은 명사 자리예요. 명사 shortage(부족)가 정답"
       }
     },
     {
@@ -766,7 +766,7 @@
           "coverage"
         ],
         "answer": 3,
-        "why": "소유격 The newspaper's 뒤 · 전치사 of 앞은 주어가 되는 명사 자리이고 단수 동사 was 와 맞아야 한다. coverage(보도)가 정답"
+        "why": "소유격 The newspaper's 뒤 · 전치사 of 앞은 주어가 되는 명사 자리이고, 단수 동사 was 와 맞아야 해요. coverage(보도)가 정답"
       }
     },
     {
@@ -813,7 +813,7 @@
           "partnered"
         ],
         "answer": 0,
-        "why": "관사 a 뒤는 단수 명사 자리다. enter into 는 계약 · 관계를 맺는다는 뜻이므로 사람 · 업체인 partner 가 아니라 관계를 나타내는 partnership 이 정답"
+        "why": "관사 a 뒤는 단수 명사 자리예요. enter into 는 계약 · 관계를 맺는다는 뜻이라 사람 · 업체인 partner 가 아니라 관계를 나타내는 partnership 이 정답"
       }
     },
     {
@@ -865,7 +865,7 @@
           "employment"
         ],
         "answer": 1,
-        "why": "Each 뒤에는 단수 가산 명사가 온다. 주차권을 받는 주체는 사람이므로 employee 가 정답"
+        "why": "Each 뒤에는 단수 가산 명사가 와요. 주차권을 받는 주체는 사람이라서 employee 가 정답"
       }
     },
     {
@@ -922,7 +922,7 @@
           "supervisor"
         ],
         "answer": 3,
-        "why": "소유격 your + 형용사 immediate 뒤는 명사 자리이고, by 뒤에는 승인하는 사람이 와야 한다. 사람 명사 supervisor(직속 상사)가 정답"
+        "why": "소유격 your + 형용사 immediate 뒤는 명사 자리이고, by 뒤에는 승인하는 사람이 와야 해요. 사람 명사 supervisor(직속 상사)가 정답"
       }
     },
     {
@@ -974,7 +974,7 @@
           "consulted"
         ],
         "answer": 2,
-        "why": "a + 형용사 financial 뒤는 단수 명사 자리이고, worked as 뒤에는 직업 · 사람이 온다. 사람 명사 consultant 가 정답"
+        "why": "a + 형용사 financial 뒤는 단수 명사 자리이고, worked as 뒤에는 직업 · 사람이 와요. 사람 명사 consultant 가 정답"
       }
     },
     {
@@ -1026,7 +1026,7 @@
           "training"
         ],
         "answer": 0,
-        "why": "The 뒤 주어 자리이고, 선배 직원을 따라다니며 배우는(shadow) 주체는 교육받는 사람이다. their 로 받으니 복수형 trainees 가 정답"
+        "why": "The 뒤 주어 자리이고, 선배 직원을 따라다니며 배우는(shadow) 주체는 교육받는 사람이에요. their 로 받으니 복수형 trainees 가 정답"
       }
     },
     {
@@ -1046,7 +1046,7 @@
           "meaning": "~하는 (사람)"
         }
       ],
-      "morphNote": "회사를 대표하는(represent) 사람(-ative) → 담당 직원 · 대표. -ive 로 끝나지만 명사로 쓴다",
+      "morphNote": "회사를 대표하는(represent) 사람(-ative) → 담당 직원 · 대표. -ive 로 끝나지만 명사로 써요",
       "family": [
         {
           "word": "represent",
@@ -1078,7 +1078,7 @@
           "represented"
         ],
         "answer": 1,
-        "why": "a sales 뒤는 복합 명사를 이루는 단수 명사 자리이고, 연락할 대상은 사람이다. 사람 명사 representative 가 정답"
+        "why": "a sales 뒤는 복합 명사를 이루는 단수 명사 자리이고, 연락할 대상은 사람이에요. 사람 명사 representative 가 정답"
       }
     },
     {
@@ -1135,7 +1135,7 @@
           "specialist"
         ],
         "answer": 3,
-        "why": "관사 a 뒤 · 전치사 in 앞은 명사 자리이고, 주어 Ms. Pham 과 같은 사람을 가리켜야 한다. 사람 명사 specialist 가 정답"
+        "why": "관사 a 뒤 · 전치사 in 앞은 명사 자리이고, 주어 Ms. Pham 과 같은 사람을 가리켜야 해요. 사람 명사 specialist 가 정답"
       }
     },
     {
@@ -1182,17 +1182,17 @@
           "Participated"
         ],
         "answer": 2,
-        "why": "문장 처음 주어 자리이고 상품권을 받는 주체는 사람이다. 관사 없이 쓸 수 있는 복수 사람 명사 Participants 가 정답"
+        "why": "문장 처음 주어 자리이고 상품권을 받는 주체는 사람이에요. 관사 없이 쓸 수 있는 복수 사람 명사 Participants 가 정답"
       }
     }
   ],
   "grammar": {
     "title": "품사 자리 (2): 사람 명사 · 사물 명사, 가산 · 불가산",
-    "intro": "명사 자리를 찾은 뒤에도 보기에 명사가 2개 이상 남는 문제가 많다. 이때는 사람 명사인지 행위 · 사물 명사인지, 가산인지 불가산인지를 보고 하나를 고른다. 단서는 빈칸 앞 한정사(a, each, many, much)와 동사의 수, 그리고 문장의 의미다.",
+    "intro": "명사 자리를 찾은 뒤에도 보기에 명사가 2개 이상 남는 문제가 많아요. 이때는 사람 명사인지 행위 · 사물 명사인지, 가산인지 불가산인지 보고 하나를 고르세요. 단서는 빈칸 앞 한정사(a, each, many, much)와 동사의 수, 문장의 의미예요.",
     "sections": [
       {
         "heading": "사람 명사 vs 행위 · 사물 명사",
-        "body": "같은 어근에서 사람 명사(applicant, participant, supervisor)와 행위 · 사물 명사(application, participation, supervision)가 함께 나온다. 둘 다 명사 자리에 들어가므로 품사만으로는 고를 수 없다.\n1) 의미: 동사의 동작을 하는 주체가 사람인지(submit, attend, approve) 확인한다.\n2) 관사 · 수: 사람 명사는 가산 명사라서 단수형이면 a · the · each 같은 한정사가 꼭 필요하다. 관사 없는 단수형이 들어갈 자리라면 불가산 행위 명사가 답이다.",
+        "body": "같은 어근에서 사람 명사(applicant, participant, supervisor)와 행위 · 사물 명사(application, participation, supervision)가 함께 나와요. 둘 다 명사 자리에 들어가니 품사만으로는 고를 수 없어요.\n1) 의미: 동사의 동작을 하는 주체가 사람인지(submit, attend, approve) 확인하세요.\n2) 관사 · 수: 사람 명사는 가산 명사라서 단수형이면 a · the · each 같은 한정사가 꼭 필요해요. 관사 없는 단수형이 들어갈 자리라면 불가산 행위 명사가 답이에요.",
         "examples": [
           {
             "en": "All ------- must submit their documents by Friday.",
@@ -1204,19 +1204,19 @@
             "en": "Your ------- will be reviewed within two weeks.",
             "answer": "application",
             "ko": "귀하의 지원서는 2주 안에 검토된다.",
-            "note": "검토되는 대상은 서류다. applicant 도 명사지만 의미가 맞지 않는다"
+            "note": "검토되는 대상은 서류예요. applicant 도 명사지만 의미가 맞지 않아요"
           },
           {
             "en": "------- in the wellness program is free for all staff.",
             "answer": "Participation",
             "ko": "건강 프로그램 참가는 전 직원에게 무료다.",
-            "note": "관사 없는 단수 주어 자리. 가산 명사 participant 는 관사 없이 단수로 쓸 수 없다"
+            "note": "관사 없는 단수 주어 자리. 가산 명사 participant 는 관사 없이 단수로 쓸 수 없어요"
           }
         ]
       },
       {
         "heading": "가산 · 불가산과 한정사",
-        "body": "a · an · each · every · another 뒤에는 단수 가산 명사가 온다. many · several · few · a number of 뒤에는 복수 가산 명사, much · little · a great deal of 뒤에는 불가산 명사가 온다. a lot of · some · any · most 는 둘 다 받는다.\na number of(많은) + 복수 명사 + 복수 동사, the number of(~의 수) + 복수 명사 + 단수 동사로 구분한다.",
+        "body": "a · an · each · every · another 뒤에는 단수 가산 명사가 와요. many · several · few · a number of 뒤에는 복수 가산 명사, much · little · a great deal of 뒤에는 불가산 명사가 와요. a lot of · some · any · most 는 둘 다 받아요.\na number of(많은) + 복수 명사 + 복수 동사, the number of(~의 수) + 복수 명사 + 단수 동사로 구분하세요.",
         "examples": [
           {
             "en": "Every ------- is required to wear a name tag.",
@@ -1240,13 +1240,13 @@
       },
       {
         "heading": "토익 빈출 불가산 명사",
-        "body": "equipment(장비) · information(정보) · furniture(가구) · baggage · luggage(수하물) · merchandise(상품) · machinery(기계류) · advice(조언) · feedback(의견) · clothing(의류) · stationery(문구류)는 불가산 명사다.\na · an 을 붙이지 않고 -s 를 붙이지 않으며, 주어일 때 단수 동사를 쓴다. 개수를 셀 때는 a piece of · an item of 를 쓴다.",
+        "body": "equipment(장비) · information(정보) · furniture(가구) · baggage · luggage(수하물) · merchandise(상품) · machinery(기계류) · advice(조언) · feedback(의견) · clothing(의류) · stationery(문구류)는 불가산 명사예요.\na · an 과 -s 를 붙이지 않고, 주어일 때 단수 동사를 써요. 개수를 셀 때는 a piece of · an item of 를 써요.",
         "examples": [
           {
             "en": "All office ------- must be returned before the lease ends.",
             "answer": "equipment",
             "ko": "모든 사무 장비는 임대 기간이 종료되기 전에 반납해야 한다.",
-            "note": "불가산이라 -s 없이 쓴다"
+            "note": "불가산이라 -s 없이 써요"
           },
           {
             "en": "The ------- in the lobby was replaced last month.",
@@ -1258,7 +1258,7 @@
             "en": "Passengers may bring two pieces of ------- on board.",
             "answer": "baggage",
             "ko": "승객은 수하물 두 개를 기내에 가지고 탈 수 있다.",
-            "note": "불가산 명사는 pieces of 로 센다"
+            "note": "불가산 명사는 pieces of 로 세어요"
           },
           {
             "en": "All ------- is shipped within two business days.",
@@ -1270,7 +1270,7 @@
       },
       {
         "heading": "복합 명사",
-        "body": "명사 + 명사가 한 단어처럼 쓰인다(sales representative, safety regulations, registration deadline). 앞 명사는 형용사처럼 뒤 명사를 꾸미며 보통 단수형이다(sales · savings 처럼 원래 -s 가 붙은 말은 예외).\n빈칸 뒤에 명사가 있다고 형용사만 답이 되는 것은 아니다. 보기에 알맞은 형용사가 없으면 복합 명사의 앞 명사 자리로 본다. 수 일치는 뒤 명사를 기준으로 한다.",
+        "body": "명사 + 명사가 한 단어처럼 쓰여요(sales representative, safety regulations, registration deadline). 앞 명사는 형용사처럼 뒤 명사를 꾸미며 보통 단수형이에요(sales · savings 처럼 원래 -s 가 붙은 말은 예외).\n빈칸 뒤에 명사가 있다고 형용사만 답이 되지는 않아요. 보기에 알맞은 형용사가 없으면 복합 명사의 앞 명사 자리로 보세요. 수 일치는 뒤 명사가 기준이에요.",
         "examples": [
           {
             "en": "Please contact our sales ------- for a price quote.",
@@ -1300,7 +1300,7 @@
       "equipment · information · furniture · baggage · merchandise 는 -s 없이 단수 동사와 쓴다",
       "명사 앞 빈칸도 복합 명사(sales representative)의 앞 명사 자리일 수 있다"
     ],
-    "strategy": "먼저 빈칸 앞뒤로 명사 자리인지 확인한다. 보기에 명사가 여러 개면 빈칸 앞 한정사와 동사의 수로 단수 · 복수 · 불가산을 가르고, 마지막으로 동작의 주체가 사람인지 일 · 사물인지 의미로 확인한다."
+    "strategy": "먼저 빈칸 앞뒤로 명사 자리인지 확인하세요. 보기에 명사가 여러 개면 빈칸 앞 한정사와 동사의 수로 단수 · 복수 · 불가산을 가르고, 마지막으로 동작의 주체가 사람인지 일 · 사물인지 의미로 확인하세요."
   },
   "inference": [
     {
@@ -1316,7 +1316,7 @@
       ],
       "answer": 1,
       "pos": "n",
-      "why": "-ee 는 동작을 받는 사람이다. interview(면접하다) + -ee → 면접을 받는 사람. 면접관은 interviewer"
+      "why": "-ee 는 동작을 받는 사람이에요. interview(면접하다) + -ee → 면접을 받는 사람. 면접관은 interviewer"
     },
     {
       "id": "d02-inf-02",
@@ -1361,7 +1361,7 @@
       ],
       "answer": 2,
       "pos": "n",
-      "why": "ready(준비된) + -ness(상태) → 준비가 된 상태. -y 로 끝나는 형용사는 -iness 로 바뀐다"
+      "why": "ready(준비된) + -ness(상태) → 준비가 된 상태. -y 로 끝나는 형용사는 -iness 로 바뀌어요"
     },
     {
       "id": "d02-inf-05",
@@ -1376,7 +1376,7 @@
       ],
       "answer": 1,
       "pos": "n",
-      "why": "동사 withdraw(돈을 찾다) + -al 은 형용사가 아니라 명사다 → 인출. a cash withdrawal(현금 인출)처럼 쓴다"
+      "why": "동사 withdraw(돈을 찾다) + -al 은 형용사가 아니라 명사예요 → 인출. a cash withdrawal(현금 인출)처럼 써요"
     }
   ],
   "part5": [
@@ -1393,7 +1393,7 @@
       ],
       "answer": 2,
       "clue": "빈칸 앞 All · 뒤 동사 must submit",
-      "why": "All 뒤 · 동사 앞은 주어 자리이므로 명사가 온다. 포트폴리오를 제출하는 주체는 사람이고 All 뒤에는 복수형이 와야 하므로 applicants 가 정답",
+      "why": "All 뒤 · 동사 앞은 주어 자리라서 명사가 와요. 포트폴리오를 제출하는 주체는 사람이고 All 뒤에는 복수형이 와야 하니 applicants 가 정답",
       "explain": [
         "applies: 동사라 주어 자리에 올 수 없다",
         "application: 명사지만 단수형이라 All 뒤에 맞지 않고, 포트폴리오를 제출하는 주체가 될 수 없다",
@@ -1414,7 +1414,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 앞 한정사 Each",
-      "why": "Each 뒤에는 단수 가산 명사가 온다. 이름표를 받는 것은 사람이므로 participant 가 정답",
+      "why": "Each 뒤에는 단수 가산 명사가 와요. 이름표를 받는 것은 사람이라서 participant 가 정답",
       "explain": [
         "정답",
         "participants: each 뒤에는 복수형이 올 수 없다",
@@ -1435,7 +1435,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 All the office · 뒤 동사 will be moved",
-      "why": "All the office 뒤는 주어가 되는 명사 자리다. furniture 는 불가산 명사라 -s 를 붙이지 않으므로 furniture 가 정답",
+      "why": "All the office 뒤는 주어가 되는 명사 자리예요. furniture 는 불가산 명사라 -s 를 붙이지 않아요. furniture 가 정답",
       "explain": [
         "furnitures: 불가산 명사에 -s 를 붙인 틀린 형태",
         "furnish: 동사(가구를 갖추다)라 명사 자리에 올 수 없다",
@@ -1456,7 +1456,7 @@
       ],
       "answer": 1,
       "clue": "빈칸 앞 수량 형용사 many",
-      "why": "many 뒤에는 복수 가산 명사가 온다. complaint 의 복수형 complaints 가 정답",
+      "why": "many 뒤에는 복수 가산 명사가 와요. complaint 의 복수형 complaints 가 정답",
       "explain": [
         "complain: 동사라 many 뒤에 올 수 없다",
         "정답",
@@ -1477,7 +1477,7 @@
       ],
       "answer": 2,
       "clue": "빈칸 앞 A number of · 뒤 복수 동사 have",
-      "why": "a number of(많은) 뒤에는 복수 명사가 오고 동사도 복수 have 를 쓴다. 워크숍에 신청하는 주체는 사람이므로 employees 가 정답",
+      "why": "a number of(많은) 뒤에는 복수 명사가 오고 동사도 복수 have 를 써요. 워크숍에 신청하는 주체는 사람이라서 employees 가 정답",
       "explain": [
         "employ: 동사라 명사 자리에 올 수 없다",
         "employer: 사람 명사지만 단수형이라 a number of 와 have 에 맞지 않는다",
@@ -1498,7 +1498,7 @@
       ],
       "answer": 1,
       "clue": "빈칸 앞 전치사 For · 수량 형용사 more",
-      "why": "전치사 For 뒤 more 다음은 명사 자리다. information 은 불가산 명사라 -s 없이 쓰므로 information 이 정답",
+      "why": "전치사 For 뒤 more 다음은 명사 자리예요. information 은 불가산 명사라 -s 없이 써요. information 이 정답",
       "explain": [
         "inform: 동사라 명사 자리에 올 수 없다",
         "정답",
@@ -1519,7 +1519,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 a legal · 뒤 to review (asked + 사람 + to 부정사)",
-      "why": "a + 형용사 legal 뒤는 단수 가산 명사 자리다. ask + 목적어 + to do 구조라 계약 조건을 검토할 사람이 와야 하므로 advisor 가 정답",
+      "why": "a + 형용사 legal 뒤는 단수 가산 명사 자리예요. ask + 목적어 + to do 구조라 계약 조건을 검토할 사람이 와야 하니 advisor 가 정답",
       "explain": [
         "advice: 불가산 명사라 a 와 함께 쓸 수 없고, 검토하는 주체가 될 수 없다",
         "advisable: 형용사(바람직한)라 명사 자리에 올 수 없다",
@@ -1540,7 +1540,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 앞 Every piece of",
-      "why": "piece of 는 불가산 명사를 셀 때 쓴다. baggage 는 불가산 명사이므로 baggage 가 정답",
+      "why": "piece of 는 불가산 명사를 셀 때 써요. baggage 는 불가산 명사라서 baggage 가 정답",
       "explain": [
         "정답",
         "baggages: 불가산 명사에 -s 를 붙인 틀린 형태",
@@ -1561,7 +1561,7 @@
       ],
       "answer": 2,
       "clue": "빈칸 앞 All · 뒤 purchased through our online store (구매되는 대상)",
-      "why": "All 뒤 주어 자리는 명사이고, 온라인으로 구매되어 반품되는 것은 상품이다. merchandise 는 불가산 명사라 -s 없이 쓰므로 merchandise 가 정답",
+      "why": "All 뒤 주어 자리는 명사이고, 온라인으로 구매되어 반품되는 것은 상품이에요. merchandise 는 불가산 명사라 -s 없이 써요. merchandise 가 정답",
       "explain": [
         "merchandises: 불가산 명사에 -s 를 붙인 틀린 형태",
         "merchant: 사람 명사(상인)라 구매 · 반품 대상이 될 수 없고, 단수형이라 All 뒤에도 맞지 않는다",
@@ -1582,7 +1582,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 promoted to senior sales (승진한 직책)",
-      "why": "promoted to 뒤에는 직책 · 사람 명사가 온다. senior sales 와 함께 복합 명사를 이루는 사람 명사는 representative 다. -ive 로 끝나지만 명사로 쓰는 함정 단어",
+      "why": "promoted to 뒤에는 직책 · 사람 명사가 와요. senior sales 와 함께 복합 명사를 이루는 사람 명사는 representative 예요. -ive 로 끝나지만 명사로 쓰는 함정 단어",
       "explain": [
         "represent: 동사라 명사 자리에 올 수 없다",
         "representation: 행위 명사(대표, 표현)라 승진한 직책이 될 수 없다",
@@ -1603,7 +1603,7 @@
       ],
       "answer": 1,
       "clue": "빈칸 앞 소유격 The board's · 뒤 전치사 of",
-      "why": "소유격과 전치사 of 사이는 명사 자리다. 동사 + al 로 만든 명사 approval(승인)이 정답",
+      "why": "소유격과 전치사 of 사이는 명사 자리예요. 동사 + al 로 만든 명사 approval(승인)이 정답",
       "explain": [
         "approve: 동사라 소유격 뒤에 올 수 없다",
         "정답",
@@ -1624,7 +1624,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 앞 관사 a + 형용사 senior · served as(직책을 맡다)",
-      "why": "a senior 뒤는 명사 자리이고, served as 뒤에는 직책을 맡은 사람이 온다. -ive 로 끝나지만 명사로 쓰는 executive(임원)가 정답",
+      "why": "a senior 뒤는 명사 자리이고, served as 뒤에는 직책을 맡은 사람이 와요. -ive 로 끝나지만 명사로 쓰는 executive(임원)가 정답",
       "explain": [
         "정답",
         "execution: 명사지만 행위(실행)라 직책이 될 수 없다",
@@ -1645,7 +1645,7 @@
       ],
       "answer": 3,
       "clue": "빈칸 앞 동명사 monitoring · 형용사 departmental",
-      "why": "동명사 monitoring 의 목적어이면서 형용사 departmental 의 꾸밈을 받는 자리이므로 명사가 온다. expenditures(지출)가 정답",
+      "why": "동명사 monitoring 의 목적어이면서 형용사 departmental 의 꾸밈을 받는 자리라서 명사가 와요. expenditures(지출)가 정답",
       "explain": [
         "expend: 동사라 형용사 뒤 명사 자리에 올 수 없다",
         "expensive: 형용사라 형용사 departmental 뒤에서 목적어가 될 수 없다",
@@ -1666,7 +1666,7 @@
       ],
       "answer": 2,
       "clue": "빈칸 앞 A severe · 뒤 전치사 of · 단수 동사 has",
-      "why": "관사 A + 형용사 severe 뒤, 전치사 of 앞은 명사 자리다. 관사 A 와 단수 동사 has 에 맞는 단수형 shortage 가 정답",
+      "why": "관사 A + 형용사 severe 뒤, 전치사 of 앞은 명사 자리예요. 관사 A 와 단수 동사 has 에 맞는 단수형 shortage 가 정답",
       "explain": [
         "short: 형용사라 형용사 severe 뒤 명사 자리에 올 수 없다",
         "shortly: 부사(곧)라 명사 자리에 올 수 없다",
@@ -1687,7 +1687,7 @@
       ],
       "answer": 0,
       "clue": "빈칸 앞 a free · 뒤 with one of our tax advisors",
-      "why": "a + 형용사 free 뒤는 단수 가산 명사 자리다. 세무 상담사와 함께 하는 것은 상담(행위)이므로 consultation 이 정답",
+      "why": "a + 형용사 free 뒤는 단수 가산 명사 자리예요. 세무 상담사와 함께 하는 것은 상담(행위)이라서 consultation 이 정답",
       "explain": [
         "정답",
         "consultant: 사람 명사라 '상담사와 함께하는 무료 상담사'가 되어 의미가 맞지 않는다",
@@ -1699,10 +1699,10 @@
   "lcGuide": {
     "focus": "Part 1 2인 이상 사진(주어가 They · Some people · One of the women 일 때 누구의 동작인지 확인) · Part 2 When · What · Which 의문문",
     "steps": [
-      "Part 1: 음원을 듣기 전에 사진 속 사람마다 동작을 한 단어로 정리한다(보기 · 앉기 · 가리키기 등)",
-      "Part 1: 보기의 주어를 먼저 듣는다. They · Some people 이면 모두의 공통 동작, One of ~ 이면 한 사람의 동작인지 확인한다",
-      "Part 2: 첫 단어(When · What · Which)를 놓치지 않는다. What · Which 는 바로 뒤 명사(What time, Which room)까지 듣는다",
-      "틀린 문제는 스크립트를 확인하고 받아쓰기 → 쉐도잉 순서로 3번 반복한다"
+      "Part 1: 음원을 듣기 전에 사진 속 사람마다 동작을 한 단어로 정리하세요(보기 · 앉기 · 가리키기 등)",
+      "Part 1: 보기의 주어를 먼저 들으세요. They · Some people 이면 모두의 공통 동작, One of ~ 이면 한 사람의 동작인지 확인하세요",
+      "Part 2: 첫 단어(When · What · Which)를 놓치지 마세요. What · Which 는 바로 뒤 명사(What time, Which room)까지 들으세요",
+      "틀린 문제는 스크립트를 확인하고 받아쓰기 → 쉐도잉 순서로 3번 반복하세요"
     ],
     "keyPatterns": [
       {
@@ -1743,7 +1743,7 @@
         "(D) They're arranging chairs around the table."
       ],
       "answer": 1,
-      "why": "두 사람 모두 서류를 보고 있으므로 They 를 주어로 한 공통 동작 묘사가 맞다",
+      "why": "두 사람 모두 서류를 보고 있으니 They 를 주어로 한 공통 동작 묘사가 맞아요",
       "trap": "(A) 마주 앉은 장면에서 연상되는 악수 · (C) 사진에 있는 노트북을 이용한 없는 동작 · (D) 사진에 없는 동작"
     },
     {
@@ -1757,7 +1757,7 @@
         "(D) One of the women is picking up a suitcase."
       ],
       "answer": 3,
-      "why": "가방을 들어 올리는 사람은 한 여성뿐이므로 One of the women 을 주어로 한 보기가 맞다",
+      "why": "가방을 들어 올리는 사람은 한 여성뿐이라서 One of the women 을 주어로 한 보기가 맞아요",
       "trap": "(A) 한 명의 동작을 They're all 로 바꾼 주어 함정 · (B) 공항에서 연상되는 동작 · (C) 사진에 없는 수리 동작"
     },
     {
@@ -1771,7 +1771,7 @@
         "(D) Some shoppers are waiting in a long line."
       ],
       "answer": 0,
-      "why": "계산대 뒤의 여성이 물건을 봉투에 담고 있으므로 (A) 가 맞다",
+      "why": "계산대 뒤의 여성이 물건을 봉투에 담고 있으니 (A) 가 맞아요",
       "trap": "(B) 한 명만 계산대 뒤에 있는데 both 로 묘사한 위치 함정 · (C) 상점에서 연상되는 동작 · (D) 사진에 없는 긴 줄"
     },
     {
@@ -1785,7 +1785,7 @@
         "(D) One of the men is folding a blueprint."
       ],
       "answer": 2,
-      "why": "세 사람 모두 이미 안전모를 쓴 상태이므로 상태를 나타내는 wearing 이 맞다",
+      "why": "세 사람 모두 이미 안전모를 쓴 상태라서 상태를 나타내는 wearing 이 맞아요",
       "trap": "(A) 사진에 있는 사다리를 이용한 없는 동작 · (B) 쓰는 동작 putting on 과 쓴 상태 wearing 혼동 · (D) 도면을 가리키는 동작을 접는 동작으로 바꾼 함정"
     },
     {
@@ -1799,7 +1799,7 @@
         "(D) Some people are eating outdoors."
       ],
       "answer": 3,
-      "why": "여러 사람이 야외에서 식사하고 있으므로 Some people 을 주어로 한 (D) 가 맞다",
+      "why": "여러 사람이 야외에서 식사하고 있으니 Some people 을 주어로 한 (D) 가 맞아요",
       "trap": "(A) 한 명만 벤치에 앉았는데 all 로 묘사한 함정 · (B) 공원에서 연상되는 동작 · (C) 사진에 없는 동작"
     },
     {
@@ -1812,7 +1812,7 @@
         "(C) Yes, it prints in color."
       ],
       "answer": 0,
-      "why": "When 으로 배송 시점을 물었으므로 시점으로 답한 (A) 가 맞다",
+      "why": "When 으로 배송 시점을 물었으니 시점으로 답한 (A) 가 맞아요",
       "trap": "(B) Where 에 맞는 장소 응답 · (C) 의문사 의문문에 Yes 응답, printer 와 prints 의 연상 단어"
     },
     {
@@ -1825,7 +1825,7 @@
         "(C) Right after lunch."
       ],
       "answer": 2,
-      "why": "What time 으로 시작 시각을 물었으므로 '점심 직후'라는 시점 응답이 맞다",
+      "why": "What time 으로 시작 시각을 물었으니 '점심 직후'라는 시점 응답이 맞아요",
       "trap": "(A) Where 에 맞는 장소 응답 · (B) 질문의 training 을 반복한 같은 단어 함정"
     },
     {
@@ -1838,7 +1838,7 @@
         "(C) For three nights."
       ],
       "answer": 1,
-      "why": "Which hotel 로 어느 호텔인지 물었으므로 the one 으로 대상을 가리킨 (B) 가 맞다",
+      "why": "Which hotel 로 어느 호텔인지 물었으니 the one 으로 대상을 가리킨 (B) 가 맞아요",
       "trap": "(A) 동사 book(예약하다)을 명사 book(책)으로 바꾼 다의어 함정과 Yes 응답 · (C) How long 에 맞는 기간 응답"
     },
     {
@@ -1851,7 +1851,7 @@
         "(C) Let me check with the finance team."
       ],
       "answer": 2,
-      "why": "마감 시점을 바로 말하지 않고 '재무팀에 확인해 보겠다'고 답한 간접 응답이다",
+      "why": "마감 시점을 바로 말하지 않고 '재무팀에 확인해 보겠다'고 답한 간접 응답이에요",
       "trap": "(A) report 에서 연상되는 분량 응답 · (B) due 와 do 의 유사 발음, 의문사 의문문에 Yes 응답"
     },
     {
@@ -1864,7 +1864,7 @@
         "(C) I think so, too."
       ],
       "answer": 0,
-      "why": "새 로고에 대한 의견을 물었으므로 '색이 좋았다'는 의견 응답이 맞다",
+      "why": "새 로고에 대한 의견을 물었으니 '색이 좋았다'는 의견 응답이 맞아요",
       "trap": "(B) design 과 designer 의 파생어 함정, Who 에 맞는 사람 응답 · (C) think 를 반복한 동의 표현"
     },
     {
@@ -1877,8 +1877,8 @@
         "(C) We ordered it last week."
       ],
       "answer": 1,
-      "why": "Which 로 의자를 골라 달라고 했으므로 the gray ones 로 고른 대상을 가리킨 (B) 가 맞다",
-      "trap": "(A) lobby 를 반복한 장소 응답 · (C) order 를 반복했지만 시제와 대상(it)이 맞지 않는다"
+      "why": "Which 로 의자를 골라 달라고 했으니 the gray ones 로 고른 대상을 가리킨 (B) 가 맞아요",
+      "trap": "(A) lobby 를 반복한 장소 응답 · (C) order 를 반복했지만 시제와 대상(it)이 맞지 않아요"
     },
     {
       "id": "d02-lc-12",
@@ -1890,7 +1890,7 @@
         "(C) I'd love to join you."
       ],
       "answer": 0,
-      "why": "입사 시점을 '나보다 조금 뒤'라는 상대적 시점으로 답한 (A) 가 맞다",
+      "why": "입사 시점을 '나보다 조금 뒤'라는 상대적 시점으로 답한 (A) 가 맞아요",
       "trap": "(B) Where 에 맞는 부서 응답 · (C) join 을 반복한 같은 단어 함정"
     },
     {
@@ -1903,7 +1903,7 @@
         "(C) Hasn't it been postponed?"
       ],
       "answer": 2,
-      "why": "가져갈 물건을 말하지 않고 '회의가 연기되지 않았느냐'고 되묻는 간접 응답이다",
+      "why": "가져갈 물건을 말하지 않고 '회의가 연기되지 않았느냐'고 되묻는 간접 응답이에요",
       "trap": "(A) meeting 을 반복했지만 시제가 과거 · (B) bring 을 반복한 같은 단어 함정"
     },
     {
@@ -1916,7 +1916,7 @@
         "(C) At two o'clock."
       ],
       "answer": 1,
-      "why": "Which room 으로 장소를 물었으므로 방 번호로 답한 (B) 가 맞다",
+      "why": "Which room 으로 장소를 물었으니 방 번호로 답한 (B) 가 맞아요",
       "trap": "(A) interview 에서 연상되는 candidate · (C) When 에 맞는 시점 응답"
     },
     {
@@ -1929,7 +1929,7 @@
         "(C) The office manager."
       ],
       "answer": 0,
-      "why": "When 으로 시점을 물었으므로 '다음 달이 되어서야'라는 시점 응답이 맞다",
+      "why": "When 으로 시점을 물었으니 '다음 달이 되어서야'라는 시점 응답이 맞아요",
       "trap": "(B) repaint 와 paint 의 연상 단어, How 에 맞는 방법 응답 · (C) office 를 반복한 Who 응답"
     }
   ],
@@ -1977,7 +1977,7 @@
       "answer": 3,
       "full": "expenditure on",
       "ko": "~에 대한 지출",
-      "note": "spend money on · spending on 도 on 을 쓴다"
+      "note": "spend money on · spending on 도 on 을 써요"
     },
     {
       "id": "d02-col-04",
@@ -2007,7 +2007,7 @@
       "answer": 0,
       "full": "in partnership with",
       "ko": "~와 제휴하여",
-      "note": "in cooperation with · in collaboration with 도 in 을 쓴다"
+      "note": "in cooperation with · in collaboration with 도 in 을 써요"
     },
     {
       "id": "d02-col-06",
@@ -2067,7 +2067,7 @@
       "answer": 0,
       "full": "report to",
       "ko": "~에게 보고하다, ~의 지휘를 받다",
-      "note": "report on(~에 대해 보고하다) 과 구분한다"
+      "note": "report on(~에 대해 보고하다) 과 구분하세요"
     },
     {
       "id": "d02-col-10",
@@ -2082,7 +2082,7 @@
       "answer": 3,
       "full": "participate in",
       "ko": "~에 참가하다",
-      "note": "take part in 과 같은 뜻 · attend 는 타동사라 전치사 없이 쓴다"
+      "note": "take part in 과 같은 뜻 · attend 는 타동사라 전치사 없이 써요"
     }
   ]
 }
