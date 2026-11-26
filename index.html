@@ -672,8 +672,8 @@ const INTERVAL = {1: 1, 2: 3, 3: 7, 4: 14, 5: 30};
 const WD = ['일', '월', '화', '수', '목', '금', '토'];
 const UNITS = [
   {k: 'review', w: 'Warm-up: Vocabulary Review', ws: 'Vocabulary Review', f: '단어 복습', min: 15},
-  {k: 'affix', w: 'Word Formation', f: '접사 학습', min: 15},
-  {k: 'vocab', w: 'Key Terms', f: '새 단어', min: 25},
+  {k: 'affix', w: 'Word Formation', f: '접사 학습', min: 10},
+  {k: 'vocab', w: 'Key Terms', f: '새 단어', min: 30},
   {k: 'grammar', w: 'Grammar Concepts', f: '문법', min: 20},
   {k: 'colloc', w: 'Quick Recall', f: '1초 문제 (연어 · 전치사)', fs: '1초 문제', min: 10},
   {k: 'part5', w: 'Knowledge Check', f: 'Part 5 실전', min: 25},
@@ -1152,7 +1152,7 @@ function mcq(el, c) {
       if (j === c.answer) b.classList.add('right'); else if (j === i) b.classList.add('wrong');
     });
     const ex = el.querySelector('.q-explain');
-    ex.innerHTML = `<div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? T('Correct', '정답') : T('Incorrect', '오답')} · ${T('Answer', '정답')} (${letters[c.answer]})${late ? ' · ' + T('over time', '시간 초과') : ''}${ok && unsure ? ' · ' + T('marked unsure: added to missed items', '모름 표시: 오답노트에 추가') : ''}</div>` + (c.explain ? (S.skin === 'work' ? `<details class="disc"><summary>${T('Show explanation', '해설 보기')}</summary><div class="stack" style="gap:10px;margin-top:10px">${c.explain(i, ok)}</div></details>` : c.explain(i, ok)) : '');
+    ex.innerHTML = `<div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? T('Correct', '정답') : T('Incorrect', '오답')} · ${T('Answer', '정답')} (${letters[c.answer]})${late ? ' · ' + T('over time', '시간 초과') : ''}${ok && unsure ? ' · ' + T('marked unsure: added to missed items', '모름 표시: 오답노트에 추가') : ''}</div>` + (c.explain ? `<div class="stack" style="gap:10px;margin-top:10px">${c.explain(i, ok)}</div>` : '');
     ex.hidden = false; el.querySelector('.q-actions').hidden = false;
     el.querySelector('[data-next]').focus({preventScroll: true});
     c.onAnswer && c.onAnswer(ok, i, ms, late, unsure);
@@ -1747,16 +1747,26 @@ function unitAffix(el, d, id) {
       <div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div>
       ${it.tip ? `<div class="tip">${esc(it.tip)}</div>` : ''}</div>`).join('')}</div>
     ${a.traps && a.traps.length ? `<div class="trap"><b>${T('Watch out', '함정')}</b><ul class="clean">${a.traps.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}
-    <div class="row"><button class="btn primary" data-go>${T('Start inference check', '추론 퀴즈 시작')} (${(d.inference || []).length})</button></div>`;
+    <p class="small muted">${T('The word-part inference check comes after Key Terms, so you can use the new terms as bases.', '접사 추론 퀴즈는 다음 단원(새 단어)을 익힌 뒤에 나와요. 오늘 배운 접미사와 새 단어를 재료로 처음 보는 단어를 추론해요.')}</p>
+    <div class="row"><button class="btn primary" data-go>${T('Done: go to Key Terms', '다 읽었어요 · 새 단어로')}</button></div>`;
   el.querySelector('[data-go]').addEventListener('click', () => {
-    const box = document.createElement('div'); el.innerHTML = unitHead('affix', T('Guess meaning from word parts.', '처음 보는 단어를 쪼개서 뜻을 추론합니다.')); el.appendChild(box);
-    runQuiz(box, d.inference || [], {
-      build: q => ({tag: T('Inference', '접사 추론') + ' · ' + posLabel(q.pos), prompt: `<div class="row"><span class="big">${esc(q.word)}</span>${speakBtn(q.word)}</div><div class="muted small">${esc(q.question || '')}</div><details><summary class="small">${T('Hint: word parts', '힌트: 분해 보기')}</summary><div class="small">${esc(q.parts)}</div></details>`,
-        options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Parts', '분해')}</dt><dd>${esc(q.parts)}</dd><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd></dl>`}),
-      onAnswer: (q, ok, idx, ms, u) => { if (!ok || u) recordWrong(q.id, id, 'inference', '접사 추론', idx, q.answer, ok && u); },
-      onFinish: res => { const c = res.filter(r => r.ok).length; logPatch(l => addScore(l, 'inf', c, res.length)); finishUnit(el, id, 'affix', {score: [c, res.length]}, summaryHTML(res, T('Inference result', '추론 퀴즈 결과'))); },
-    });
+    finishUnit(el, id, 'affix', {});
+    location.hash = '#' + id + '-vocab';
   });
+}
+
+/* Prefixes are taught from course 2. An inference item may still use one earlier; its meaning is shown with the word,
+   so the item checks the suffix and the base just learned instead of a guess. */
+const PREFIXES = new Set(['non', 'dis', 're', 'pre', 'un', 'in', 'im', 'il', 'ir', 'mis', 'over', 'under', 'co', 'com', 'con', 'inter', 'sub', 'trans', 'ex', 'de', 'post', 'out', 'fore', 'anti', 'multi', 'semi', 'super', 'en', 'em', 'counter', 'self']);
+function prefixGloss(q) {
+  const day = String(q.id || '').slice(0, 3), known = new Set();
+  for (const [k, d] of Object.entries(S.days || {})) if (k <= day) for (const a of (d.affix && d.affix.items) || []) if (a.kind === 'prefix') a.affix.split(/[·,\s]+/).forEach(x => { x = x.replace(/-/g, '').toLowerCase(); if (x) known.add(x); });
+  const out = String(q.parts || '').split(' + ').map(seg => { const m = seg.trim().match(/^([a-z]+)-?\((.+)\)$/i); const k = m && m[1].toLowerCase(); return k && PREFIXES.has(k) && !known.has(k) ? `${m[1]}-(${m[2]})` : null; }).filter(Boolean);
+  return out.length ? `<div class="small"><span class="chip">${T('Prefix', '접두사')}</span> ${out.map(esc).join(' · ')}</div>` : '';
+}
+function inferenceBuild(q) {
+  return {tag: T('Inference', '접사 추론') + ' · ' + posLabel(q.pos), prompt: `<div class="row"><span class="big">${esc(q.word)}</span>${speakBtn(q.word)}</div>${prefixGloss(q)}<div class="muted small">${esc(q.question || '')}</div><details><summary class="small">${T('Hint: word parts', '힌트: 분해 보기')}</summary><div class="small">${esc(q.parts)}</div></details>`,
+    options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Parts', '분해')}</dt><dd>${esc(q.parts)}</dd><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd></dl>`};
 }
 
 /* Word card: one column, read top to bottom. Word > meaning > labelled sections (parts, family, collocation, example). */
@@ -1825,7 +1835,18 @@ function unitVocab(el, d, id) {
       build: w => ({tag: w.word, prompt: `<div class="en">${blank(w.drill.sentence)}</div>`, options: w.drill.options, answer: w.drill.answer,
         explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(w.drill.why)}</dd></dl>`}),
       onFinish: res => { const c = res.filter(r => r.ok).length; logPatch(l => addScore(l, 'drill', c, res.length));
-        finishUnit(el, id, 'vocab', {score: [c, res.length]}, summaryHTML(res, T('Word form check', '품사 변형 결과'), res.filter(r => !r.ok || r.unsure).length ? `<p class="small muted">${T('Missed', '틀린 단어 · 모름')}: ${res.filter(r => !r.ok || r.unsure).map(r => esc(r.it.word)).join(' · ')}</p>` : '')); },
+        const sum1 = summaryHTML(res, T('Word form check', '품사 변형 결과'), res.filter(r => !r.ok || r.unsure).length ? `<p class="small muted">${T('Missed', '틀린 단어 · 모름')}: ${res.filter(r => !r.ok || r.unsure).map(r => esc(r.it.word)).join(' · ')}</p>` : '');
+        const inf = d.inference || [];
+        if (!inf.length) return finishUnit(el, id, 'vocab', {score: [c, res.length]}, sum1);
+        /* Inference comes after the cards: the bases (comply, assign...) and today's suffixes are now known, so it is transfer, not guessing. */
+        const box2 = document.createElement('div'); el.innerHTML = unitHead('vocab', T('New words, built from parts you know. Guess the meaning.', '방금 익힌 단어와 오늘 배운 접미사로 만든 처음 보는 단어예요. 쪼개서 뜻을 추론하세요.')); el.appendChild(box2);
+        runQuiz(box2, inf, {
+          build: inferenceBuild,
+          onAnswer: (q, ok, idx, ms, u) => { if (!ok || u) recordWrong(q.id, id, 'inference', '접사 추론', idx, q.answer, ok && u); },
+          onFinish: r2 => { const c2 = r2.filter(r => r.ok).length; logPatch(l => addScore(l, 'inf', c2, r2.length));
+            finishUnit(el, id, 'vocab', {score: [c, res.length], inf: [c2, r2.length]}, sum1 + summaryHTML(r2, T('Inference result', '추론 퀴즈 결과'))); },
+        });
+      },
     });
   };
   draw();
@@ -2376,7 +2397,7 @@ function wrongBuild({f}) {
   if (f.kind === 'p7') return p7Build(f.set)(q);
   if (f.kind === 'lc3') return lc3Build(f.set, true)(q);
   if (f.kind === 'part5') return {tag: q.type, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: p5Explain(q)};
-  if (f.kind === 'inference') return {tag: T('Inference', '접사 추론'), prompt: `<span class="big">${esc(q.word)}</span>`, options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Parts', '분해')}</dt><dd>${esc(q.parts)}</dd><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd></dl>`};
+  if (f.kind === 'inference') return inferenceBuild(q);
   if (f.kind === 'vocab') return {tag: T('Vocabulary', '어휘'), prompt: `<span class="big">${esc(q.word)}</span>`, options: q.options, answer: q.answer, explain: () => q.why ? `<p>${esc(q.why)}</p>` : ''};
   if (f.kind === 'colloc') return {tag: q.kind, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: collocExplain(q)};
   return {tag: 'Part ' + q.part, prompt: q.part === 1 ? `<div class="scene">${esc(q.scene)}</div>` : `<div class="en">${esc(q.prompt)}</div>`, options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd>${q.trap ? `<dt>${T('Trap', '함정')}</dt><dd>${esc(q.trap)}</dd>` : ''}</dl>`};
