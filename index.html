@@ -575,6 +575,9 @@ ul.clean{margin:0;padding-left:1.2em;display:grid;gap:4px}
 .opt.right b{background:var(--ok);color:#ffffff}
 .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
 .opt.wrong b{background:var(--bad);color:#ffffff}
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.pick{display:grid;gap:10px;align-content:start;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.pick .big{font-size:2.4rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .passage{background:var(--surface-2);border-radius:var(--radius-sm);padding:16px 20px;display:grid;gap:10px;font-size:1rem;line-height:1.75}
 .passage p{margin:0}
 .p-head{font-size:.875rem;color:var(--muted);line-height:1.6;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -1269,7 +1272,7 @@ function renderChrome() {
   document.documentElement.dataset.skin = S.skin;
   const r = route(), dd = diffDays(S.today, EXAM), nm = nextModule();
   document.getElementById('brand').innerHTML = MARK + `<span class="bt"><b>${T('Learning Camp', 'TOEIC 800')}</b><small>${T('Learner Portal', '시험 1/16 (토)')}</small></span>`;
-  const items = [['home', T('Home', '홈')], ['catalog', T('Browse Catalog', '전체 과정')], [nm.day, T('My Module', '오늘 학습')], ['review', T('Practice', '복습')], ['notes', T('Library', '노트')], ['plan', T('Schedule', '계획')]];
+  const items = [['home', T('Home', '홈')], ['catalog', T('Browse Catalog', '전체 과정')], [nm.day, T('My Module', '오늘 학습')], ['review', T('Practice', '단어 학습')], ['notes', T('Library', '노트')], ['plan', T('Schedule', '계획')]];
   document.getElementById('nav').innerHTML = items.map(([h, l]) => {
     const cur = (h === 'notes' && r.startsWith('notes')) || (h === nm.day && /^d\d\d/.test(r)) || r === h;
     return `<a href="#${h}" ${cur ? 'aria-current="page"' : ''}>${esc(l)}</a>`;
@@ -1285,7 +1288,7 @@ function renderChrome() {
   sy.title = sy.textContent;
   applyLayout();
   const nmTab = nextModule().day;
-  document.getElementById('tabbar').innerHTML = [['home', 'home', T('Home', '홈')], ['catalog', 'catalog', T('Catalog', '전체 과정')], [nmTab, 'today', T('My Module', '오늘 학습')], ['review', 'review', T('Practice', '복습')], ['notes', 'notes', T('Library', '노트')], ['plan', 'plan', T('Schedule', '계획')]].map(([h, ic, l]) => {
+  document.getElementById('tabbar').innerHTML = [['home', 'home', T('Home', '홈')], ['catalog', 'catalog', T('Catalog', '전체 과정')], [nmTab, 'today', T('My Module', '오늘 학습')], ['review', 'review', T('Practice', '단어')], ['notes', 'notes', T('Library', '노트')], ['plan', 'plan', T('Schedule', '계획')]].map(([h, ic, l]) => {
     const cur = (h === 'notes' && r.startsWith('notes')) || (ic === 'today' && /^d\d\d/.test(r)) || r === h;
     return `<a href="#${h}" ${cur ? 'aria-current="page"' : ''}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_ICON[ic]}</svg><span>${esc(l)}</span></a>`;
   }).join('');
@@ -1346,6 +1349,8 @@ function viewHome() {
     </article>`;
   /* Home holds only today's work: one alert, one module, one button. Missed items appear as a single line only when they exist. */
   const extra = wrongOpen ? `<p class="small muted home-extra">${T(`${wrongOpen} missed item(s) are due and included in the warm-up.`, `오늘 차례인 오답 ${wrongOpen}개는 1단원(복습)에서 단어와 함께 다시 풉니다.`)} <a href="#notes-wrong">${T('See list', '목록 보기')}</a></p>` : '';
+  /* A smaller fallback keeps the daily habit alive on busy days. */
+  const quick = `<p class="small home-extra">${T('Short on time today?', '오늘 시간이 부족하다면')} <a href="#review">${T('Do a 5-minute word session', '단어만 5분 하기')} →</a> <span class="muted">${T('Due reviews first, then upcoming terms.', '복습 차례 단어부터, 시간이 남으면 다음 모듈 단어를 미리 익힙니다.')}</span></p>`;
   view().innerHTML = `
     <section class="home-top"><div class="wrap">
       <div class="welcome"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1.3-3.6 4.2-5.4 7.5-5.4s6.2 1.8 7.5 5.4"/></svg></span>
@@ -1354,7 +1359,7 @@ function viewHome() {
     </div></section>
     <div class="wrap home-main">
       <div class="sec-strip"><span>${T('Current Assignments', '오늘 할 일')}</span><small>${md(S.today)} (${WD[pd(S.today).getDay()]})</small></div>
-      <div class="sec-body">${homeNotice(nm)}${featured}${extra}</div>
+      <div class="sec-body">${homeNotice(nm)}${featured}${quick}${extra}</div>
       ${footHTML()}
     </div>`;
 }
@@ -2117,22 +2122,99 @@ function diagResult(el, r) {
 }
 
 /* ----- review page ----- */
+/* ----- practice: words only (short sessions, phone- and tablet-friendly) -----
+   1) Due review: Leitner boxes 1·3·7·14·30 days, i.e. each word comes back just before it would be forgotten.
+   2) Relearn: words missed in the review come back as cards in the same sitting until marked known (short-term relearning step).
+   3) Preview: the next words of upcoming modules, registered as box 1 so tomorrow's review picks them up. */
+function upcomingWords(n) {
+  const out = [], have = new Set(Object.values(S.srs).map(r => r.w));
+  for (const d of (S.index && S.index.days) || []) {
+    const day = S.days[d.id]; if (!day) continue;
+    for (const w of day.words || []) { if (!S.srs[w.id] && !have.has(w.word)) { out.push(w); have.add(w.word); } if (out.length >= n) return out; }
+  }
+  return out;
+}
+function registerWord(w) {
+  if (S.srs[w.id] || Object.values(S.srs).some(r => r.w === w.word)) return false;
+  Store.put('srs', w.id, {id: w.id, w: w.word, pos: w.pos, m: w.meaning, d: w.id.slice(0, 3), box: 1, next: addDays(S.today, 1), added: S.today, ok: 0, ng: 0, last: null});
+  return true;
+}
+/* Card session with self-rating. "Again" puts the card back three cards later; "Got it" retires it for today. */
+function cardSession(box, words, opts) {
+  const queue = words.slice(), seen = new Set(); let flipped = false, done = 0, again = 0;
+  const total = words.length;
+  S.busy = true;
+  const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span><span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
+  const draw = () => {
+    if (!queue.length) { S.busy = false; S.kbd = null; return opts.onDone({total, again}); }
+    const w = queue[0];
+    box.innerHTML = `<div class="fc-wrap">
+      <div class="fc-meta"><span>${done} / ${total}</span><span class="bar accent"><i style="width:${Math.round(done / total * 100)}%"></i></span><span class="chip">${esc(opts.label)}</span></div>
+      <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? wordCard(w) : front(w)}</div>
+      <div class="fc-nav">${flipped
+        ? `<button class="btn" type="button" data-again>${T('Again', '다시 볼래요')}</button><span class="kbd">1 · 2</span><button class="btn primary" type="button" data-got>${T('Got it', '외웠어요')}</button>`
+        : `<span></span><button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button><span></span>`}</div>
+    </div>`;
+    const flip = () => { flipped = !flipped; draw(); };
+    const rate = ok => {
+      queue.shift();
+      if (!seen.has(w.id)) { seen.add(w.id); opts.onFirst && opts.onFirst(w, ok); }
+      if (ok) done++; else { again++; queue.splice(Math.min(3, queue.length), 0, w); }
+      flipped = false; draw();
+    };
+    const fc = box.querySelector('#fc');
+    fc.addEventListener('click', e => { if (!e.target.closest('[data-say],[data-fix]')) flip(); });
+    box.querySelector('[data-flip]')?.addEventListener('click', flip);
+    box.querySelector('[data-again]')?.addEventListener('click', () => rate(false));
+    box.querySelector('[data-got]')?.addEventListener('click', () => rate(true));
+    let x0 = null;
+    fc.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive: true});
+    fc.addEventListener('touchend', e => { if (x0 == null || !flipped) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 60) rate(dx > 0); }, {passive: true});
+    S.kbd = e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } else if (flipped && e.key === '1') rate(false); else if (flipped && e.key === '2') rate(true); };
+  };
+  draw();
+}
 function viewReview() {
   const due = dueWords(), e = entryOf(S.today), light = e && e.type === 'light';
-  const cap = light ? 20 : 999;
+  const up = upcomingWords(40), wd = dueWrong().length;
+  const boxes = [1, 2, 3, 4, 5].map(b => Object.values(S.srs).filter(r => r.box === b).length), known = Object.keys(S.srs).length;
   view().innerHTML = `<div class="stack">
     <section class="card stack" id="rv">
-      <div class="unit-head"><div class="stack" style="gap:4px"><span class="eyebrow">${T('Practice', 'Leitner 복습')}</span><h2>${T('Vocabulary Practice', '단어 복습')}</h2></div></div>
-      <p>${T('Due today', '오늘 복습 대상')} <b>${due.length}</b>${light ? ' · ' + T('light day: up to 20', '가벼운 학습일: 최대 20개') : ''}</p>
-      <div class="tbl-wrap"><table><tr><th>Box</th><th class="num">${T('Terms', '단어 수')}</th><th>${T('Interval', '복습 간격')}</th></tr>${[1, 2, 3, 4, 5].map(b => `<tr><td>${b}</td><td class="num">${Object.values(S.srs).filter(r => r.box === b).length}</td><td>${INTERVAL[b]}${T(' days', '일')}</td></tr>`).join('')}</table></div>
-      <div class="row">${due.length ? `<button class="btn primary" data-go="${cap}">${T('Start', '복습 시작')} (${Math.min(cap, due.length)})</button>${due.length > 20 && !light ? `<button class="btn" data-go="20">${T('Quick 20', '20개만')}</button>` : ''}` : `<span class="muted">${T('Nothing due today.', '오늘 복습할 단어가 없습니다.')}</span>`}</div>
+      <div class="unit-head"><div class="stack" style="gap:4px"><span class="eyebrow">${T('Practice', '단어만 학습')}</span><h2>${T('Vocabulary Practice', '짧은 시간에 단어만')}</h2><p class="muted small">${T('Review what is due, then preview upcoming terms. Five minutes is enough.', '전체 학습을 못 하는 날에도 5~10분이면 됩니다. 복습 차례인 단어를 먼저 하고, 시간이 남으면 다음 모듈 단어를 미리 익힙니다.')}</p></div></div>
+      <div class="pick-grid">
+        <div class="pick">
+          <span class="eyebrow">${T('1. Due review', '1. 오늘 복습 차례')}</span><span class="big">${due.length}</span>
+          <p class="small muted">${T('Words come back just before you would forget them: 1, 3, 7, 14, then 30 days. Missed words return as cards right away.', '잊어버리기 직전에 다시 보도록 1 · 3 · 7 · 14 · 30일 간격으로 돌아옵니다. 틀린 단어는 그 자리에서 카드로 한 번 더 익힙니다.')}</p>
+          <div class="row">${due.length ? `<button class="btn primary" type="button" data-go="${light ? 20 : 999}">${T('Start', '복습 시작')} (${light ? Math.min(20, due.length) : due.length})</button>${due.length > 20 && !light ? `<button class="btn" type="button" data-go="20">${T('Quick 20', '20개만')}</button>` : ''}` : `<span class="muted small">${known ? T('Nothing due. Come back tomorrow.', '오늘 복습할 단어가 없습니다. 내일 다시 오세요.') : T('No terms yet. Start with a preview.', '아직 등록한 단어가 없습니다. 오른쪽에서 미리 익히기로 시작하세요.')}</span>`}</div>
+        </div>
+        <div class="pick">
+          <span class="eyebrow">${T('2. Preview upcoming terms', '2. 새 단어 미리 익히기')}</span><span class="big">${up.length}${up.length >= 40 ? '+' : ''}</span>
+          <p class="small muted">${T('Next terms from upcoming modules, in order. They join tomorrow\'s review; the module will skip them.', '다음 모듈 순서대로 아직 안 배운 단어입니다. 익힌 단어는 단어장에 등록되어 내일부터 복습에 나오고, 모듈 3단원에서는 등록을 건너뜁니다.')}</p>
+          <div class="row">${up.length ? [5, 10, 20].filter(n => n <= Math.max(5, up.length)).map((n, i) => `<button class="btn ${i === 1 || (i === 0 && up.length < 10) ? 'primary' : ''}" type="button" data-new="${n}">${n}${T('', '개')}</button>`).join('') : `<span class="muted small">${T('All available terms are registered.', '준비된 단어를 모두 등록했습니다.')}</span>`}</div>
+        </div>
+      </div>
+      ${wd ? `<p class="small">${T(`${wd} missed question(s) are also due.`, `오답 ${wd}개도 다시 풀 차례입니다.`)} <a href="#notes-wrong">${T('Open', '오답노트')}</a></p>` : ''}
+      <details class="disc"><summary>${T('Boxes', '박스별 단어 수')} · ${known}${T(' terms', '개')}</summary>
+        <div class="tbl-wrap"><table><tr><th>Box</th><th class="num">${T('Terms', '단어 수')}</th><th>${T('Next review after', '맞히면 다음 복습')}</th></tr>${boxes.map((c, i) => `<tr><td>${i + 1}</td><td class="num">${c}</td><td>${INTERVAL[i + 1]}${T(' days', '일 뒤')}</td></tr>`).join('')}</table></div>
+      </details>
     </section>${footHTML()}</div>`;
-  view().querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
-    const box = document.getElementById('rv');
-    box.innerHTML = `<span class="eyebrow">${T('Practice', '단어 복습')}</span><div id="rvq"></div>`;
+  const rv = document.getElementById('rv');
+  const finish = html => { rv.innerHTML = html + `<div class="row"><button class="btn primary" type="button" data-more>${T('Back to practice', '단어 학습으로')}</button><a class="btn ghost" href="#home">${T('Home', '홈')}</a></div>`; rv.querySelector('[data-more]').addEventListener('click', viewReview); };
+  rv.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+    rv.innerHTML = `<span class="eyebrow">${T('Due review', '복습 차례 단어')}</span><div id="rvq"></div>`;
     reviewSession(document.getElementById('rvq'), +b.dataset.go, res => {
-      box.innerHTML = summaryHTML(res, T('Review result', '복습 결과'), `${res.filter(r => !r.ok).length ? `<p class="small">${T('Back to box 1', '1번 박스로 돌아간 단어')}: ${res.filter(r => !r.ok).map(r => esc(r.it.w.word)).join(' · ')}</p>` : ''}<div class="row"><a class="btn primary" href="#home">${T('Home', '홈으로')}</a></div>`);
+      const missed = res.filter(r => !r.ok || r.unsure).map(r => r.it.w);
+      const sum = summaryHTML(res, T('Review result', '복습 결과'));
+      if (!missed.length) return finish(sum);
+      rv.innerHTML = `<span class="eyebrow">${T('Relearn missed terms', '틀린 단어 한 번 더')}</span><p class="small muted">${T('These went back to box 1. Go through them until each one sticks.', '1번 박스로 돌아간 단어입니다. 기억날 때까지 카드로 한 번 더 봅니다.')}</p><div id="rvq"></div>`;
+      cardSession(document.getElementById('rvq'), missed, {label: T('Relearn', '재학습'), onDone: () => finish(sum + `<p class="small muted">${T('Relearned', '다시 익힌 단어')}: ${missed.map(w => esc(w.word)).join(' · ')}</p>`)});
     });
+  }));
+  rv.querySelectorAll('[data-new]').forEach(b => b.addEventListener('click', () => {
+    const words = upcomingWords(+b.dataset.new); let added = 0;
+    rv.innerHTML = `<span class="eyebrow">${T('Preview', '새 단어 미리 익히기')}</span><div id="rvq"></div>`;
+    cardSession(document.getElementById('rvq'), words, {label: T('New', '새 단어'), onFirst: w => { if (registerWord(w)) added++; },
+      onDone: r => { if (added) logPatch(l => { l.newWords = (l.newWords || 0) + added; l.preview = (l.preview || 0) + added; }); finish(`<div class="summary"><div class="eyebrow">${T('Preview done', '미리 익히기 완료')}</div><div class="row"><span class="score">${added}</span><span class="muted">${T('terms added to your list', '개 단어장 등록 · 내일 첫 복습')}</span></div>${r.again ? `<p class="small muted">${T('Cards repeated', '다시 본 횟수')} ${r.again}</p>` : ''}</div>`); }});
   }));
 }
 
