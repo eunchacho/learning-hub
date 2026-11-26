@@ -886,8 +886,19 @@ async function loadDay(id) {
 }
 const loadDays = ids => Promise.all([...new Set(ids)].map(loadDay));
 const loadAllDays = () => loadDays((S.index?.days || []).map(d => d.id));
-function findWord(id) { const d = S.days[id.slice(0, 3)]; return d && d.words.find(w => w.id === id); }
-function wordPool() { return Object.values(S.days).flatMap(d => d.words || []); }
+function findWord(id) { if (id[0] === 't') return S.tslMap && S.tslMap[id]; const d = S.days[id.slice(0, 3)]; return d && d.words.find(w => w.id === id); }
+function wordPool() { return [...Object.values(S.days).flatMap(d => d.words || []), ...(S.tsl || [])]; }
+/* Speed track: light cards for the TOEIC Service List (TSL 1.2) words the modules do not cover, in TSL rank order. */
+async function loadTsl() {
+  if (S.tsl) return S.tsl;
+  try {
+    const r = await fetch('content/tsl.json', {cache: 'no-cache'}); if (!r.ok) throw 0;
+    const arr = await r.json();
+    S.tsl = arr.map(c => ({id: 't' + String(c.r).padStart(4, '0'), word: c.w, pos: c.pos, meaning: c.m, example: {en: c.ex, ko: c.ko}, tsl: c.r}));
+  } catch (e) { S.tsl = []; }
+  S.tslMap = Object.fromEntries(S.tsl.map(w => [w.id, w]));
+  return S.tsl;
+}
 async function loadDiag() {
   if (S.diagContent !== undefined) return S.diagContent;
   try { const r = await fetch('content/diag.json', {cache: 'no-cache'}); S.diagContent = r.ok ? await r.json() : null; } catch (e) { S.diagContent = null; }
@@ -2157,9 +2168,11 @@ function upcomingWords(n) {
   }
   return out;
 }
-function registerWord(w) {
+/* box 4 = "already known": first check comes 14 days later instead of tomorrow. */
+function registerWord(w, box) {
   if (S.srs[w.id] || Object.values(S.srs).some(r => r.w === w.word)) return false;
-  Store.put('srs', w.id, {id: w.id, w: w.word, pos: w.pos, m: w.meaning, d: w.id.slice(0, 3), box: 1, next: addDays(S.today, 1), added: S.today, ok: 0, ng: 0, last: null});
+  box = box || 1;
+  Store.put('srs', w.id, {id: w.id, w: w.word, pos: w.pos, m: w.meaning, d: w.id[0] === 't' ? 'tsl' : w.id.slice(0, 3), box, next: addDays(S.today, INTERVAL[box]), added: S.today, ok: 0, ng: 0, last: null, ...(box > 1 ? {known: true} : {})});
   return true;
 }
 /* Card session with self-rating. "Again" puts the card back three cards later; "Got it" retires it for today. */
@@ -2176,7 +2189,7 @@ function cardSession(box, words, opts) {
       <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? wordCard(w) : front(w)}</div>
       <div class="fc-nav">${flipped
         ? `<button class="btn" type="button" data-again>${T('Again', '다시 볼래요')}</button><span class="kbd">1 · 2</span><button class="btn primary" type="button" data-got>${T('Got it', '외웠어요')}</button>`
-        : `<span></span><button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button><span></span>`}</div>
+        : `${opts.knownBtn ? `<button class="btn" type="button" data-known title="${T('Skip: first review in 14 days', '바로 넘기고 14일 뒤에 한 번 확인합니다')}">${T('Already know', '이미 알아요')}</button>` : '<span></span>'}<button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button><span class="kbd">${opts.knownBtn ? T('0: already know', '0: 이미 알아요') : ''}</span>`}</div>
     </div>`;
     const flip = () => { flipped = !flipped; draw(); };
     const rate = ok => {
@@ -2185,6 +2198,8 @@ function cardSession(box, words, opts) {
       if (ok) done++; else { again++; queue.splice(Math.min(3, queue.length), 0, w); }
       flipped = false; draw();
     };
+    const known = () => { queue.shift(); if (!seen.has(w.id)) { seen.add(w.id); opts.onKnown && opts.onKnown(w); } done++; flipped = false; draw(); };
+    box.querySelector('[data-known]')?.addEventListener('click', known);
     const fc = box.querySelector('#fc');
     fc.addEventListener('click', e => { if (!e.target.closest('[data-say],[data-fix]')) flip(); });
     box.querySelector('[data-flip]')?.addEventListener('click', flip);
@@ -2193,13 +2208,17 @@ function cardSession(box, words, opts) {
     let x0 = null;
     fc.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive: true});
     fc.addEventListener('touchend', e => { if (x0 == null || !flipped) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 60) rate(dx > 0); }, {passive: true});
-    S.kbd = e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } else if (flipped && e.key === '1') rate(false); else if (flipped && e.key === '2') rate(true); };
+    S.kbd = e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } else if (!flipped && opts.knownBtn && e.key === '0') known(); else if (flipped && e.key === '1') rate(false); else if (flipped && e.key === '2') rate(true); };
   };
   draw();
 }
 function viewReview() {
   const due = dueWords(), e = entryOf(S.today), light = e && e.type === 'light';
   const up = upcomingWords(40), wd = dueWrong().length;
+  const have = new Set(Object.values(S.srs).map(r => r.w));
+  const tslAll = S.tsl || [], tslLeft = tslAll.filter(w => !S.srs[w.id] && !have.has(w.word));
+  const daysLeft = Math.max(1, S.schedule.filter(x => x.date >= S.today && x.type !== 'weekend').length);
+  const perDay = Math.ceil(tslLeft.length / daysLeft), speedToday = (S.logs[S.today] && S.logs[S.today].speed) || 0;
   const boxes = [1, 2, 3, 4, 5].map(b => Object.values(S.srs).filter(r => r.box === b).length), known = Object.keys(S.srs).length;
   view().innerHTML = `<div class="stack">
     <section class="card stack" id="rv">
@@ -2215,6 +2234,12 @@ function viewReview() {
           <p class="small muted">${T('Next terms from upcoming modules, in order. They join tomorrow\'s review; the module will skip them.', '다음 모듈 순서대로 아직 안 배운 단어입니다. 익힌 단어는 단어장에 등록되어 내일부터 복습에 나오고, 모듈 3단원에서는 등록을 건너뜁니다.')}</p>
           <div class="row">${up.length ? [5, 10, 20].filter(n => n <= Math.max(5, up.length)).map((n, i) => `<button class="btn ${i === 1 || (i === 0 && up.length < 10) ? 'primary' : ''}" type="button" data-new="${n}">${n}${T('', '개')}</button>`).join('') : `<span class="muted small">${T('All available terms are registered.', '준비된 단어를 모두 등록했습니다.')}</span>`}</div>
         </div>
+        ${tslAll.length ? `<div class="pick">
+          <span class="eyebrow">${T('3. TOEIC word list (speed track)', '3. 토익 빈출 단어 (속도 트랙)')}</span><span class="big">${tslAll.length - tslLeft.length}<small class="muted" style="font-size:.45em;font-weight:500"> / ${tslAll.length}</small></span>
+          <span class="bar accent"><i style="width:${Math.round((tslAll.length - tslLeft.length) / tslAll.length * 100)}%"></i></span>
+          <p class="small muted">${T(`Light cards in TOEIC frequency order. Mark words you already know to skip them for 14 days. About ${perDay} a day finishes the list before the test.`, `토익 빈출 순서대로 뜻 · 예문만 보는 가벼운 카드입니다. 아는 단어는 "이미 알아요"로 넘기면 14일 뒤에 한 번만 확인합니다. 시험 전까지 모두 보려면 하루 약 ${perDay}개입니다.`)}${speedToday ? ` <b>${T('Today', '오늘')} ${speedToday}${T('', '개 완료')}</b>` : ''}</p>
+          <div class="row">${tslLeft.length ? [20, 30].map((n, i) => `<button class="btn ${i === 0 ? 'primary' : ''}" type="button" data-speed="${n}">${n}${T('', '개')}</button>`).join('') : `<span class="muted small">${T('All done.', '모두 봤습니다.')}</span>`}</div>
+        </div>` : ''}
       </div>
       ${wd ? `<p class="small">${T(`${wd} missed question(s) are also due.`, `오답 ${wd}개도 다시 풀 차례입니다.`)} <a href="#notes-wrong">${T('Open', '오답노트')}</a></p>` : ''}
       <details class="disc"><summary>${T('Boxes', '박스별 단어 수')} · ${known}${T(' terms', '개')}</summary>
@@ -2232,6 +2257,15 @@ function viewReview() {
       rv.innerHTML = `<span class="eyebrow">${T('Relearn missed terms', '틀린 단어 한 번 더')}</span><p class="small muted">${T('These went back to box 1. Go through them until each one sticks.', '1번 박스로 돌아간 단어입니다. 기억날 때까지 카드로 한 번 더 봅니다.')}</p><div id="rvq"></div>`;
       cardSession(document.getElementById('rvq'), missed, {label: T('Relearn', '재학습'), onDone: () => finish(sum + `<p class="small muted">${T('Relearned', '다시 익힌 단어')}: ${missed.map(w => esc(w.word)).join(' · ')}</p>`)});
     });
+  }));
+  rv.querySelectorAll('[data-speed]').forEach(b => b.addEventListener('click', () => {
+    const words = tslLeft.slice(0, +b.dataset.speed); let learned = 0, knownN = 0;
+    rv.innerHTML = `<span class="eyebrow">${T('TOEIC word list', '토익 빈출 단어')}</span><div id="rvq"></div>`;
+    cardSession(document.getElementById('rvq'), words, {label: T('Speed track', '속도 트랙'), knownBtn: true,
+      onKnown: w => { if (registerWord(w, 4)) knownN++; },
+      onFirst: w => { if (registerWord(w, 1)) learned++; },
+      onDone: r => { const n = learned + knownN; if (n) logPatch(l => { l.speed = (l.speed || 0) + n; l.newWords = (l.newWords || 0) + learned; });
+        finish(`<div class="summary"><div class="eyebrow">${T('Speed track done', '속도 트랙 완료')}</div><div class="row"><span class="score">${learned}</span><span class="muted">${T('new terms · first review tomorrow', '개 새로 익힘 · 내일 첫 복습')}</span></div><p class="small muted">${T(`Already known: ${knownN} (checked again in 14 days)`, `이미 아는 단어 ${knownN}개 (14일 뒤 한 번 확인)`)}${r.again ? ` · ${T('cards repeated', '다시 본 횟수')} ${r.again}` : ''}</p></div>`); }});
   }));
   rv.querySelectorAll('[data-new]').forEach(b => b.addEventListener('click', () => {
     const words = upcomingWords(+b.dataset.new); let added = 0;
@@ -2433,7 +2467,7 @@ document.getElementById('stopBtn').addEventListener('click', () => {
   document.documentElement.dataset.skin = S.skin;
   setInterval(() => { const t = ds(new Date()); if (t !== S.today) { S.today = t; passiveRefresh(); } }, 60000);
   await loadIndex();
-  await Promise.all([loadDiag(), loadAllDays()]);
+  await Promise.all([loadDiag(), loadAllDays(), loadTsl()]);
   let booted = false;
   const ttsP = (async () => { try { return window.claude?.use ? await window.claude.use('tts') : null; } catch (e) { return null; } })();
   await Store.init(() => { if (booted) passiveRefresh(); });
