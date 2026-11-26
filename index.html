@@ -323,6 +323,13 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 /* home */
 .home-top{background:var(--band2);color:var(--band2-text)}
 .home-top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap;max-width:1080px}
+.kpis{display:flex;align-items:flex-end;gap:clamp(16px,3.2vw,48px);flex-wrap:wrap}
+.kpi{display:grid;justify-items:center;text-align:center;color:var(--band2-text);text-decoration:none;min-width:64px;border-radius:var(--radius-sm);padding:4px 6px}
+.kpi:hover{background:rgba(255,255,255,.1)}
+.kpi b{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kpi sup{font-size:.55em;vertical-align:top;position:relative;top:.1em;margin-left:1px}
+.kpi span{font-size:.8rem;line-height:1.3;margin-top:8px;white-space:nowrap}
+@media (max-width:700px){.kpis{width:100%;justify-content:space-between;gap:8px}.kpi{min-width:0}.kpi span{font-size:.72rem;white-space:normal}}
 .dchip{display:flex;align-items:baseline;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:var(--band2-text);text-decoration:none;font-size:.85rem;white-space:nowrap}
 .dchip b{font-size:1rem;font-variant-numeric:tabular-nums}
 .dchip span{opacity:.85}
@@ -1330,6 +1337,22 @@ function homeNotice(nm) {
   if (e && e.type === 'weekend') return notice(T('No module is scheduled today.', '주말이라 학습 일정이 없습니다. 공부하신다면 복습 · 오답 위주로 하세요.'), `<a class="btn" href="#review">${T('Practice', '복습')}</a>`, 'info');
   return '';
 }
+/* Header metrics, read left to right: how far along, how much is done, how much is left, how long until the test. */
+function homeKpis() {
+  const ns = normals(), total = ns.length, dd = Math.max(0, diffDays(S.today, EXAM));
+  const done = ns.filter(e => modDone(e.day)).length;
+  const pctAll = total ? Math.round(ns.reduce((a, e) => a + coursePct(e.day), 0) / total) : 0;
+  const planned = ns.filter(e => e.date <= S.today).length, gap = done - planned;
+  const terms = Object.keys(S.srs).length;
+  const k = (val, sup, label, href, title) => `<a class="kpi" href="${href}" title="${esc(title || label)}"><b>${val}${sup ? `<sup>${sup}</sup>` : ""}</b><span>${esc(label)}</span></a>`;
+  return `<div class="kpis" role="list">
+    ${k(pctAll, "%", T("Completion", "진도율"), "#plan", T(`Plan: ${planned} of ${total} modules by today`, `오늘까지 계획 ${planned}개 · 완료 ${done}개 (${gap >= 0 ? "계획대로" : -gap + "개 밀림"})`))}
+    ${k(done, "", T("Completed Courses", "완료 모듈"), "#catalog")}
+    ${k(total - done, "", T("Incomplete Courses", "남은 모듈"), "#catalog")}
+    ${k(terms, "", T("Terms Learned", "등록 단어"), "#notes")}
+    ${k("D-" + dd, "", T("Days to Assessment", "시험까지"), "#plan", T("Assessment", "시험") + " " + md(EXAM))}
+  </div>`;
+}
 function viewHome() {
   const nm = nextModule(), dd = diffDays(S.today, EXAM), due = dueWords().length;
   const wrongOpen = dueWrong().length;
@@ -1355,7 +1378,7 @@ function viewHome() {
     <section class="home-top"><div class="wrap">
       <div class="welcome"><span class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1.3-3.6 4.2-5.4 7.5-5.4s6.2 1.8 7.5 5.4"/></svg></span>
         <div style="min-width:0"><h1>${T('Welcome back!', '오늘도 이어서 해 볼까요')}</h1><p>${T("Let's get ready to learn.", dayTypeText(entryOf(S.today)))}</p></div></div>
-      <a class="dchip" href="#plan" title="${T('View schedule', '일정 보기')}"><b>D-${Math.max(0, dd)}</b><span>${T('Assessment', '시험')} ${md(EXAM)} (${WD[pd(EXAM).getDay()]})</span></a>
+      ${homeKpis()}
     </div></section>
     <div class="wrap home-main">
       <div class="sec-strip"><span>${T('Current Assignments', '오늘 할 일')}</span><small>${md(S.today)} (${WD[pd(S.today).getDay()]})</small></div>
