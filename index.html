@@ -586,6 +586,11 @@ ul.clean{margin:0;padding-left:1.2em;display:grid;gap:4px}
 .pick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .pick{display:grid;gap:10px;align-content:start;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
 .pick .big{font-size:2.4rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cloze-mean{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px;font-size:1.05rem}
+.cloze-line{font-size:1.15rem;line-height:1.8;margin:0 0 6px}
+.cloze-blank{min-width:4em;letter-spacing:.12em;font-weight:600}
+.cloze-in input{flex:1;min-width:180px;font-size:1.05rem;min-height:46px}
+mark.hit{background:var(--ok-soft);color:var(--ok);border-radius:3px;padding:0 3px;font-weight:600}
 .passage{background:var(--surface-2);border-radius:var(--radius-sm);padding:16px 20px;display:grid;gap:10px;font-size:1rem;line-height:1.75}
 .passage p{margin:0}
 .p-head{font-size:.875rem;color:var(--muted);line-height:1.6;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -1042,7 +1047,65 @@ async function say(lines) {
 document.addEventListener('click', e => { const b = e.target.closest('[data-say]'); if (b) say(b.dataset.say); });
 
 /* ---------- quiz engine ---------- */
+/* Cloze (production) question: see the Korean meaning and translation, type the English word into the example's blank.
+   Recalling the form is stronger practice than recognising it among options. */
+function clozeOf(w) {
+  const en = w.example && w.example.en; if (!en) return null;
+  const base = String(w.word).toLowerCase(); if (/\s/.test(base)) return null;
+  const stem = base.replace(/(e|y)$/, ''), last = base.slice(-1);
+  const SUF = ['', 's', 'es', 'd', 'ed', 'ing', 'ies', 'ied', 'er', 'ers', 'ly'];
+  const re = /[A-Za-zÀ-ÿ'-]+/g; let m;
+  while ((m = re.exec(en))) {
+    const t = m[0].toLowerCase();
+    const ok = t === base || SUF.includes(t.slice(base.length)) && t.startsWith(base)
+      || (stem.length >= 3 && t.startsWith(stem) && SUF.includes(t.slice(stem.length)))
+      || (t.startsWith(base + last) && ['ed', 'ing', 'er'].includes(t.slice(base.length + 1)));
+    if (ok) return {before: en.slice(0, m.index), form: m[0], after: en.slice(m.index + m[0].length)};
+  }
+  return null;
+}
+function clozeQ(el, c) {
+  clearTimers();
+  const z = c.cloze, w = c.word, letters = z.form.length;
+  const hint = `${esc(z.form[0])}${'_'.repeat(Math.max(0, letters - 1)).split('').join(' ')}`;
+  el.innerHTML = `<div class="q">
+    <div class="q-top"><span>${esc(c.progress || '')}</span><span class="chip accent">${T('Fill in the word', '빈칸 채우기')}</span><span class="q-flags"><button class="flag" type="button" data-unsure aria-pressed="false">${T('Unsure', '모름')}</button><button class="flag" type="button" data-fix="${esc(c.qid || '')}">${T('Report issue', '수정 요청')}</button></span></div>
+    <div class="q-prompt">
+      <div class="cloze-mean"><span class="chip">${esc(posLabel(w.pos))}</span> <b>${esc(w.meaning)}</b></div>
+      <p class="en cloze-line">${esc(z.before)}<span class="blank cloze-blank">${hint}</span>${esc(z.after)}</p>
+      ${w.example.ko ? `<p class="small muted">${esc(w.example.ko)}</p>` : ''}
+    </div>
+    <div class="row cloze-in"><input type="search" id="cz" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="${T(`${letters} letters, starts with "${z.form[0]}"`, `${letters}글자 · "${z.form[0]}" 로 시작`)}" aria-label="${T('Your answer', '답 입력')}"><button class="btn primary" type="button" data-check>${T('Check', '확인')}</button><button class="btn ghost" type="button" data-giveup>${T("Don't know", '모르겠어요')}</button></div>
+    <div class="q-explain" hidden></div>
+    <div class="q-actions" hidden><span class="kbd">Enter</span><button class="btn primary" type="button" data-next>${esc(c.nextLabel || T('Next', '다음'))}</button></div>
+  </div>`;
+  const t0 = performance.now(); let locked = false, unsure = false;
+  const ub = el.querySelector('[data-unsure]'), input = el.querySelector('#cz');
+  ub.addEventListener('click', () => { if (locked) return; unsure = !unsure; ub.setAttribute('aria-pressed', unsure); });
+  const norm = s => String(s).trim().toLowerCase().replace(/[‘’]/g, "'");
+  const finish = given => {
+    if (locked) return; locked = true; ub.disabled = true;
+    const g = norm(given), exact = g === norm(z.form), baseOk = g === norm(w.word);
+    const ok = exact || baseOk;
+    input.readOnly = true; input.value = given;
+    el.querySelector('.cloze-blank').outerHTML = `<mark class="${ok ? 'hit' : 'miss'}">${esc(z.form)}</mark>`;
+    el.querySelector('.cloze-in').querySelectorAll('button').forEach(b => { b.disabled = true; });
+    const ex = el.querySelector('.q-explain');
+    ex.innerHTML = `<div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? T('Correct', '정답') : T('Incorrect', '오답')} · ${esc(z.form)}${!exact && baseOk ? ` · ${T(`the sentence needs "${z.form}"`, `문장에서는 "${z.form}" 형태예요`)}` : ''}${ok && unsure ? ' · ' + T('marked unsure', '모름 표시') : ''}</div>
+      <div class="row" style="gap:8px">${speakBtn(w.example.en, '예문 듣기')}<span class="en">${esc(w.example.en)}</span></div>` + (c.explain ? c.explain() : '');
+    ex.hidden = false; el.querySelector('.q-actions').hidden = false;
+    el.querySelector('[data-next]').focus({preventScroll: true});
+    c.onAnswer && c.onAnswer(ok, ok ? 0 : 1, Math.round(performance.now() - t0), false, unsure);
+  };
+  el.querySelector('[data-check]').addEventListener('click', () => { if (input.value.trim()) finish(input.value); else input.focus(); });
+  el.querySelector('[data-giveup]').addEventListener('click', () => finish(''));
+  input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); if (!locked) { if (input.value.trim()) finish(input.value); } else el.querySelector('[data-next]').click(); } });
+  el.querySelector('[data-next]').addEventListener('click', () => { S.kbd = null; c.onNext && c.onNext(); });
+  S.kbd = e => { if (locked && e.key === 'Enter') { e.preventDefault(); el.querySelector('[data-next]').click(); } };
+  setTimeout(() => input.focus({preventScroll: true}), 30);
+}
 function mcq(el, c) {
+  if (c.cloze) return clozeQ(el, c);
   clearTimers();
   const letters = 'ABCD';
   const strip = o => String(o).replace(/^\([A-D]\)\s*/, '');
@@ -1649,13 +1712,17 @@ async function reviewSession(box, cap, onFinish) {
 }
 function buildReviewQ(it, pool) {
   const w = it.w, r = it.r;
-  const kinds = ['meaning', 'reverse', 'form'];
-  let kind = kinds[((r.ok || 0) + (r.ng || 0) + r.box) % 3];
-  if (kind === 'form' && !(w.drill && w.drill.options)) kind = 'meaning';
+  /* Rotate four types per word: meaning, reverse, word form, cloze (typed recall). Missing data falls back to meaning. */
+  const kinds = ['cloze', 'meaning', 'reverse', 'form'];
+  let kind = kinds[((r.ok || 0) + (r.ng || 0) + r.box) % 4];
+  if (kind === 'form' && !(w.drill && w.drill.options)) kind = 'cloze';
+  const cz = kind === 'cloze' ? clozeOf(w) : null;
+  if (kind === 'cloze' && !cz) kind = 'meaning';
   const others = shuffle(pool.filter(x => x.id !== w.id && x.meaning !== w.meaning));
   const same = others.filter(x => x.pos === w.pos), rest = others.filter(x => x.pos !== w.pos);
   const distract = [...same, ...rest].slice(0, 3);
   const explain = () => `<div>${morphHTML(w)}</div>${w.family ? `<div class="small">${w.family.map(f => `<b>${esc(f.word)}</b> <span class="muted">${esc(posLabel(f.pos))}</span> ${esc(f.meaning)}`).join(' · ')}</div>` : ''}${w.example ? `<div class="example"><div class="en">${esc(w.example.en)}</div><div class="ko">${esc(w.example.ko)}</div></div>` : ''}`;
+  if (kind === 'cloze') return {cloze: cz, word: w, explain};
   if (kind === 'form') {
     return {tag: T('Word form', '품사 변형'), prompt: `<div class="en">${blank(w.drill.sentence)}</div>`, options: w.drill.options, answer: w.drill.answer,
       explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(w.drill.why)}</dd></dl>` + explain()};
