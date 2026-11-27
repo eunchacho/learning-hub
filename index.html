@@ -1142,7 +1142,7 @@ function mcq(el, c) {
   const letters = 'ABCD';
   const strip = o => String(o).replace(/^\([A-D]\)\s*/, '');
   el.innerHTML = `<div class="q">
-    <div class="q-top"><span>${esc(c.progress || '')}</span>${c.tag ? `<span class="chip accent">${esc(S.skin === 'work' && /[가-힣]/.test(c.tag) ? 'Knowledge Check' : c.tag)}</span>` : ''}${c.timer ? `<span class="q-time" data-time>${c.timer}s</span>` : c.block ? `<span class="q-time" data-time></span>` : ''}<span class="q-flags"><button class="flag" type="button" data-unsure aria-pressed="false" title="${T('Mark as unsure (M)', '확신 없이 고른 답이면 누르세요. 맞혀도 오답노트에 들어갑니다 (M 키)')}">${T('Unsure', '모름')}</button><button class="flag" type="button" data-fix="${esc(c.qid || '')}">${T('Report issue', '수정 요청')}</button></span></div>
+    <div class="q-top"><span>${esc(c.progress || '')}</span>${c.tag ? `<span class="chip accent">${esc(S.skin === 'work' && /[가-힣]/.test(c.tag) ? 'Knowledge Check' : c.tag)}</span>` : ''}${c.block ? `<span class="q-time" data-time></span>` : ''}<span class="q-flags"><button class="flag" type="button" data-unsure aria-pressed="false" title="${T('Mark as unsure (M)', '확신 없이 고른 답이면 누르세요. 맞혀도 오답노트에 들어갑니다 (M 키)')}">${T('Unsure', '모름')}</button><button class="flag" type="button" data-fix="${esc(c.qid || '')}">${T('Report issue', '수정 요청')}</button></span></div>
     ${c.timer || c.block ? '<div class="timebar"><i></i></div>' : ''}
     <div class="q-prompt">${c.prompt}</div>
     <div class="opts">${c.options.map((o, i) => `<button class="opt" type="button" data-i="${i}"><b>${letters[i]}</b><span>${c.hideText ? '' : (c.raw ? o : esc(strip(o)))}</span></button>`).join('')}</div>
@@ -1154,14 +1154,12 @@ function mcq(el, c) {
   const toggleUnsure = () => { if (locked) return; unsure = !unsure; ub.setAttribute('aria-pressed', unsure ? 'true' : 'false'); };
   ub.addEventListener('click', toggleUnsure);
   if (c.timer) {
-    const bar = el.querySelector('.timebar i'), lab = el.querySelector('[data-time]');
-    let left = c.timer;
-    requestAnimationFrame(() => { bar.style.transform = `scaleX(${(left - 1) / c.timer})`; });
-    timers.push(setInterval(() => {
-      if (locked) return; left--;
-      if (left <= 0) { late = true; lab.textContent = T('Time up', '시간 초과'); lab.classList.add('late'); el.querySelector('.timebar').classList.add('late'); bar.style.transform = 'scaleX(1)'; clearTimers(); return; }
-      lab.textContent = left + 's'; bar.style.transform = `scaleX(${(left - 1) / c.timer})`;
-    }, 1000));
+    /* Recall drill (1-second items): no answer within the limit means the phrase is not memorized yet,
+       so the item is graded wrong and the answer is shown. Answering after the limit would be reasoning, not recall. */
+    const tb = el.querySelector('.timebar'), bar = tb.querySelector('i');
+    bar.style.transition = `transform ${c.timer}s linear`;
+    requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.transform = 'scaleX(0)'; }));
+    timers.push(setTimeout(() => { if (locked) return; late = true; tb.classList.add('late'); bar.style.transition = 'none'; bar.style.transform = 'scaleX(1)'; pick(-1); }, c.timer * 1000));
   }
   if (c.block) {
     const bar = el.querySelector('.timebar i'), lab = el.querySelector('[data-time]'), tb = el.querySelector('.timebar');
@@ -1184,7 +1182,7 @@ function mcq(el, c) {
       if (j === c.answer) b.classList.add('right'); else if (j === i) b.classList.add('wrong');
     });
     const ex = el.querySelector('.q-explain');
-    ex.innerHTML = `<div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? T('Correct', '정답') : T('Incorrect', '오답')} · ${T('Answer', '정답')} (${letters[c.answer]})${late ? ' · ' + T('over time', '시간 초과') : ''}${ok && unsure ? ' · ' + T('marked unsure: added to missed items', '모름 표시: 오답노트에 추가') : ''}</div>` + (c.explain ? `<div class="stack" style="gap:10px;margin-top:10px">${c.explain(i, ok)}</div>` : '');
+    ex.innerHTML = `<div class="verdict ${ok ? 'ok' : 'bad'}">${i < 0 ? T('Time up · Incorrect', '시간 초과 · 오답') : ok ? T('Correct', '정답') : T('Incorrect', '오답')} · ${T('Answer', '정답')} (${letters[c.answer]})${late && i >= 0 ? ' · ' + T('over time', '시간 초과') : ''}${ok && unsure ? ' · ' + T('marked unsure: added to missed items', '모름 표시: 오답노트에 추가') : ''}</div>` + (c.explain ? `<div class="stack" style="gap:10px;margin-top:10px">${c.explain(i, ok)}</div>` : '');
     ex.hidden = false; el.querySelector('.q-actions').hidden = false;
     el.querySelector('[data-next]').focus({preventScroll: true});
     c.onAnswer && c.onAnswer(ok, i, ms, late, unsure);
@@ -1962,7 +1960,7 @@ function unitColloc(el, d, id) {
     el.querySelector('[data-skip]').addEventListener('click', () => finishUnit(el, id, 'colloc', {}));
     return;
   }
-  el.innerHTML = unitHead('colloc', T('5 seconds per item. Memorized phrases, not translation.', '문항당 5초. 연어 · 전치사 짝은 해석이 아니라 암기입니다. 외워 두면 시험장에서 1초 만에 풀리는 문제입니다.')) +
+  el.innerHTML = unitHead('colloc', T('5 seconds per item. No answer in time counts as incorrect.', '문항당 5초. 연어 · 전치사 짝은 해석이 아니라 암기입니다. 5초 안에 고르지 못하면 아직 외우지 못한 것으로 보고 오답 처리하고 정답을 보여 줍니다.')) +
     `<div class="tbl-wrap"><table><tr><th>${T('Phrase', '오늘의 짝')}</th><th>${T('Meaning', '뜻')}</th></tr>${qs.map(q => `<tr><td style="font-family:var(--font-read);font-weight:600">${esc(q.full)}</td><td>${esc(q.ko)}</td></tr>`).join('')}</table></div>
     <p class="small muted">${T('Read the list aloud twice, then start.', '표를 소리 내어 두 번 읽고 시작하세요. 퀴즈 중에는 표가 보이지 않습니다.')}</p>
     <div class="row"><button class="btn primary" data-go>${T('Start', '시작')} (${qs.length})</button></div>`;
@@ -1971,7 +1969,8 @@ function unitColloc(el, d, id) {
     runQuiz(box, shuffle(qs), {
       build: q => ({tag: q.kind, timer: 5, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: collocExplain(q)}),
       onAnswer: (q, ok, idx, ms, u) => { if (!ok || u) recordWrong(q.id, id, 'colloc', q.kind, idx, q.answer, ok && u); },
-      onFinish: res => { const c = res.filter(r => r.ok).length; logPatch(l => addScore(l, 'colloc', c, res.length)); finishUnit(el, id, 'colloc', {score: [c, res.length]}, summaryHTML(res, T('Quick recall', '1초 문제 결과'))); },
+      onFinish: res => { const c = res.filter(r => r.ok).length; logPatch(l => addScore(l, 'colloc', c, res.length)); const up = res.filter(r => r.idx < 0).length;
+        finishUnit(el, id, 'colloc', {score: [c, res.length]}, summaryHTML(res, T('Quick recall', '1초 문제 결과'), up ? `<p class="small muted">${T(`${up} timed out (counted as incorrect)`, `시간 초과 ${up}개: 오답으로 처리해 오답노트에 등록했습니다`)}</p>` : '')); },
     });
   });
 }
@@ -2505,7 +2504,7 @@ function wrongBuild({f}) {
   if (f.kind === 'part5') return {tag: q.type, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: p5Explain(q)};
   if (f.kind === 'inference') return inferenceBuild(q);
   if (f.kind === 'vocab') return {tag: T('Vocabulary', '어휘'), prompt: `<span class="big">${esc(q.word)}</span>`, options: q.options, answer: q.answer, explain: () => q.why ? `<p>${esc(q.why)}</p>` : ''};
-  if (f.kind === 'colloc') return {tag: q.kind, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: collocExplain(q)};
+  if (f.kind === 'colloc') return {tag: q.kind, timer: 5, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: collocExplain(q)};
   return {tag: 'Part ' + q.part, prompt: q.part === 1 ? `<div class="scene">${esc(q.scene)}</div>` : `<div class="en">${esc(q.prompt)}</div>`, options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd>${q.trap ? `<dt>${T('Trap', '함정')}</dt><dd>${esc(q.trap)}</dd>` : ''}</dl>`};
 }
 function wrongQuiz(box, items, onFinish) {
