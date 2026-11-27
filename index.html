@@ -530,6 +530,20 @@ ul.clean{margin:0;padding-left:1.2em;display:grid;gap:4px}
 .fc-front .ipa{font-size:1.15rem;margin-top:-10px}
 .fc-front .hint{font-size:.88rem;color:var(--muted);margin:0}
 .fc-nav{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.fc-nav .btn{justify-content:center;white-space:nowrap}
+.fc-nav > .btn:first-child,.fc-nav > .btn:last-child{width:12.5rem;max-width:100%}
+.fc-nav .kbd{text-align:center}
+.fc.fixed > .fc-front,.fc.fixed > .wcard{height:100%}
+.fc.fixed > .wcard{align-content:start}
+.fc-measure{position:absolute;left:-9999px;top:0;visibility:hidden;pointer-events:none}
+.fc > .fc-front,.fc > .wcard{animation:fc-in .15s ease-out}
+@keyframes fc-in{from{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fc > .fc-front,.fc > .wcard{animation:none}}
+:root[data-layout="compact"] .fc-nav{position:sticky;bottom:calc(var(--nav-bottom,0px) + env(safe-area-inset-bottom,0px));z-index:5;background:var(--surface);padding-block:10px;margin-inline:-4px;padding-inline:4px}
+:root[data-layout="compact"] body:not(.in-player) .fc-nav{--nav-bottom:66px}
+:root[data-layout="compact"] .fc-nav{grid-template-columns:repeat(3,minmax(0,1fr))}
+:root[data-layout="compact"] .fc-nav > *{justify-self:stretch}
+:root[data-layout="compact"] .fc-nav .btn{min-height:52px;width:100%;white-space:normal;line-height:1.25}
 .fc-nav > :first-child{justify-self:start}
 .fc-nav > :last-child{justify-self:end}
 .seg.seg-inline{margin:0;display:inline-flex;border-color:var(--line)}
@@ -1843,11 +1857,13 @@ function unitVocab(el, d, id) {
   let i = 0, flipped = false, mode = 'card';
   const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
   const toolbar = () => `<div class="seg seg-inline" role="group" aria-label="${T('View', '보기 방식')}"><button type="button" data-mode="card" aria-pressed="${mode === 'card'}">${T('Cards', '카드 보기')}</button><button type="button" data-mode="list" aria-pressed="${mode === 'list'}">${T('List', '목록 보기')}</button></div>`;
+  const fit = cardFitter(words, wordCard, front);
   const startBtn = `<button class="btn primary" type="button" data-go>${T('Round 2: quick recall', '2회차: 빠르게 떠올리기')} →</button>`;
   const draw = () => {
     S.kbd = null;
     const head = unitHead('vocab', T('Round 1: read each card once. Rounds 2 and 3 are quick recall.', '1회차: 카드를 한 장씩 읽으세요. 뜻 → 품사 → 예문 순서로 보면 돼요. 이어서 2 · 3회차는 단어만 보고 빠르게 떠올려요.')) + `<div class="row" style="justify-content:space-between">${toolbar()}<span class="small muted">${n}${T(' terms', '개 단어')}</span></div>`;
     if (mode === 'list') {
+      S.fit = null;
       el.innerHTML = head + `<div class="wlist">${words.map(w => wordCard(w)).join('')}</div><div class="row">${startBtn}</div>`;
       if (i) el.querySelectorAll('.wlist .wcard')[i]?.scrollIntoView({block: 'start'});
     } else {
@@ -1857,12 +1873,13 @@ function unitVocab(el, d, id) {
         <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? wordCard(w) : front(w)}</div>
         <div class="fc-nav">
           <button class="btn ghost" type="button" data-prev ${i ? '' : 'disabled'}>← ${T('Previous', '이전')}</button>
-          <button class="btn" type="button" data-flip>${flipped ? T('Word only', '단어만 보기') : T('Show meaning', '뜻 보기')}</button>
-          ${last && flipped ? startBtn : `<button class="btn ${flipped ? 'primary' : ''}" type="button" data-next ${last ? 'disabled' : ''}>${T('Next', '다음')} →</button>`}
+          ${flipped ? `<button class="btn ghost" type="button" data-flip>${T('Word only', '단어만 보기')}</button>` : `<button class="btn ghost" type="button" data-next ${last ? 'disabled' : ''}>${T('Skip', '건너뛰기')} →</button>`}
+          ${flipped ? (last ? startBtn : `<button class="btn primary" type="button" data-next>${T('Next', '다음')} →</button>`) : `<button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button>`}
         </div>
         <p class="kbd" style="text-align:center">${T('Space or Enter: flip · ← →: move', 'Space · Enter: 뒤집기 · ← →: 이동')}</p>
       </div>`;
       const fc = el.querySelector('#fc');
+      S.fit = () => fit(el.querySelector('.fc-wrap')); S.fit();
       const flip = () => { flipped = !flipped; draw(); };
       const move = k => { const j = i + k; if (j < 0 || j >= n) return; i = j; flipped = false; draw(); };
       fc.addEventListener('click', e => { if (!e.target.closest('[data-say],[data-fix]')) flip(); });
@@ -2335,20 +2352,38 @@ function registerWord(w, box) {
   return true;
 }
 /* Card session with self-rating. "Again" puts the card back three cards later; "Got it" retires it for today. */
+/* One card height per set: the tallest face (front or back) of all words at the current width.
+   Flipping or moving to the next word then never changes the card height, so the buttons stay put. */
+function cardFitter(words, back, front) {
+  let width = 0, h = 0;
+  return wrap => {
+    const fc = wrap && wrap.querySelector('.fc'); if (!fc) return;
+    const wd = fc.clientWidth; if (!wd) return;
+    if (wd !== width) {
+      const m = document.createElement('div'); m.className = 'fc-measure'; m.style.width = wd + 'px';
+      m.innerHTML = [...new Set(words)].map(w => `<div class="fc is-back">${back(w)}</div><div class="fc">${front(w)}</div>`).join('');
+      document.body.appendChild(m);
+      h = Math.max(...[...m.children].map(c => c.offsetHeight)); m.remove(); width = wd;
+    }
+    fc.style.height = h + 'px'; fc.classList.add('fixed');
+  };
+}
+window.addEventListener('resize', () => { if (S.fit) S.fit(); });
 function cardSession(box, words, opts) {
   const queue = words.slice(), seen = new Set(); let flipped = false, done = 0, again = 0;
   const total = words.length;
   S.busy = true;
   const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${opts.hint || T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
+  const fit = cardFitter(words, opts.back || wordCard, front);
   const draw = () => {
-    if (!queue.length) { S.busy = false; S.kbd = null; return opts.onDone({total, again}); }
+    if (!queue.length) { S.busy = false; S.kbd = null; S.fit = null; return opts.onDone({total, again}); }
     const w = queue[0];
     box.innerHTML = `<div class="fc-wrap">
       <div class="fc-meta"><span>${done} / ${total}</span><span class="bar accent"><i style="width:${Math.round(done / total * 100)}%"></i></span><span class="chip">${esc(opts.label)}</span></div>
       <div class="fc ${flipped ? 'is-back' : ''}" id="fc" role="button" tabindex="0" aria-label="${flipped ? T('Show the word only', '단어만 보기') : T('Show meaning', '뜻 보기')}">${flipped ? (opts.back || wordCard)(w) : front(w)}</div>
       <div class="fc-nav">${flipped
         ? `<button class="btn" type="button" data-again>${T('Again', '다시 볼래요')}</button><span class="kbd">1 · 2</span><button class="btn primary" type="button" data-got>${T('Got it', '외웠어요')}</button>`
-        : `${opts.knownBtn ? `<button class="btn" type="button" data-known title="${T('Skip: first review in 14 days', '바로 넘기고 14일 뒤에 한 번 확인합니다')}">${T('Already know', '이미 알아요')}</button>` : '<span></span>'}<button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button><span class="kbd">${opts.knownBtn ? T('0: already know', '0: 이미 알아요') : ''}</span>`}</div>
+        : `${opts.knownBtn ? `<button class="btn" type="button" data-known title="${T('Skip: first review in 14 days', '바로 넘기고 14일 뒤에 한 번 확인합니다')}">${T('Already know', '이미 알아요')}</button>` : '<span></span>'}<span class="kbd">${opts.knownBtn ? T('0: already know', '0: 이미 알아요') : 'Space'}</span><button class="btn primary" type="button" data-flip>${T('Show meaning', '뜻 보기')}</button>`}</div>
     </div>`;
     const flip = () => { flipped = !flipped; draw(); };
     const rate = ok => {
@@ -2357,6 +2392,7 @@ function cardSession(box, words, opts) {
       if (ok) done++; else { again++; queue.splice(Math.min(3, queue.length), 0, w); }
       flipped = false; draw();
     };
+    S.fit = () => fit(box.querySelector('.fc-wrap')); S.fit();
     const known = () => { queue.shift(); if (!seen.has(w.id)) { seen.add(w.id); opts.onKnown && opts.onKnown(w); } done++; flipped = false; draw(); };
     box.querySelector('[data-known]')?.addEventListener('click', known);
     const fc = box.querySelector('#fc');
