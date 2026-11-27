@@ -2103,13 +2103,26 @@ function unitLC(el, d, id) {
   };
   el.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => run(b.dataset.step)));
 }
-const normWords = s => String(s).toLowerCase().replace(/[‘’]/g, "'").replace(/[^a-z0-9'\s-]/g, ' ').replace(/-/g, ' ').split(/\s+/).filter(Boolean);
+/* Dictation treats a contraction and its full form as the same words (He's = He is · He has, don't = do not),
+   so writing out what was heard is not marked wrong. Possessive 's (the manager's) is left alone. */
+const CLITIC = {"'s": ['is', 'has'], "'re": ['are'], "'ve": ['have'], "'ll": ['will'], "'d": ['would', 'had'], "'m": ['am'], "n't": ['not']};
+const S_HOST = /^(he|she|it|that|there|what|who|where|here|how|when|why|everyone|someone|nobody|everything|something|nothing)$/;
+function splitWord(w) {
+  const fixed = {"can't": ['can', "n't"], "won't": ['will', "n't"], "shan't": ['shall', "n't"], cannot: ['can', 'not'], "let's": ['let', 'us']};
+  if (fixed[w]) return fixed[w];
+  let m = w.match(/^(.+)(n't)$/) || w.match(/^(.+)('re|'ve|'ll|'d|'m)$/);
+  if (m) return [m[1], m[2]];
+  m = w.match(/^(.+)'s$/);
+  return m && S_HOST.test(m[1]) ? [m[1], "'s"] : [w];
+}
+const wordEq = (a, b) => a === b || (CLITIC[a] || []).includes(b) || (CLITIC[b] || []).includes(a);
+const normWords = s => String(s).toLowerCase().replace(/[‘’]/g, "'").replace(/[^a-z0-9'\s-]/g, ' ').replace(/-/g, ' ').split(/\s+/).map(w => w.replace(/^'+|'+$/g, '')).filter(Boolean).flatMap(splitWord);
 function diffWords(exp, got) {
   const a = normWords(exp), b = normWords(got), n = a.length, m = b.length;
   const L = Array.from({length: n + 1}, () => new Array(m + 1).fill(0));
-  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = a[i] === b[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = wordEq(a[i], b[j]) ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
   const hit = new Array(n).fill(false); let i = 0, j = 0;
-  while (i < n && j < m) { if (a[i] === b[j]) { hit[i] = true; i++; j++; } else if (L[i + 1][j] >= L[i][j + 1]) i++; else j++; }
+  while (i < n && j < m) { if (wordEq(a[i], b[j])) { hit[i] = true; i++; j++; } else if (L[i + 1][j] >= L[i][j + 1]) i++; else j++; }
   return {hitN: hit.filter(Boolean).length, total: n, hit};
 }
 function dictation(box, sents, onDone) {
@@ -2129,11 +2142,13 @@ function dictation(box, sents, onDone) {
     const go = () => {
       if (checked) { i++; step(); return; }
       checked = true;
-      const r = diffWords(s.en, ta.value); got += r.hitN; tot += r.total;
-      let k = 0;
-      const shown = s.en.split(/\s+/).map(w => { const parts = normWords(w).length; const ok = parts ? r.hit.slice(k, k + parts).every(Boolean) : true; k += parts; return ok ? esc(w) : `<mark class="miss">${esc(w)}</mark>`; }).join(' ');
+      const r = diffWords(s.en, ta.value);
+      /* Scored per written word, so He's counts as one word whether typed as He's or He is. */
+      let k = 0, wHit = 0, wTot = 0;
+      const shown = s.en.split(/\s+/).map(w => { const parts = normWords(w).length; const ok = parts ? r.hit.slice(k, k + parts).every(Boolean) : true; k += parts; if (parts) { wTot++; if (ok) wHit++; } return ok ? esc(w) : `<mark class="miss">${esc(w)}</mark>`; }).join(' ');
+      got += wHit; tot += wTot;
       const dr = box.querySelector('#dr');
-      dr.innerHTML = `<div class="verdict ${r.hitN === r.total ? 'ok' : 'bad'}">${r.hitN} / ${r.total} ${T('words', '단어')}</div><div class="dict-line">${shown}</div>${s.ko ? `<div class="small muted">${esc(s.ko)}</div>` : ''}`;
+      dr.innerHTML = `<div class="verdict ${wHit === wTot ? 'ok' : 'bad'}">${wHit} / ${wTot} ${T('words', '단어')}</div><div class="dict-line">${shown}</div>${s.ko ? `<div class="small muted">${esc(s.ko)}</div>` : ''}`;
       dr.hidden = false; ta.readOnly = true;
       btn.textContent = i === sents.length - 1 ? T('See results', '결과 보기') : T('Next', '다음');
       btn.focus({preventScroll: true});
