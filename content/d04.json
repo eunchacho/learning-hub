@@ -76,7 +76,11 @@
             "base": "strength (n)",
             "baseKo": "힘 · 강점",
             "derived": "strengthen (v)",
-            "ko": "강화하다"
+            "ko": "강화하다",
+            "chain": {
+              "word": "strong (a)",
+              "ko": "강한"
+            }
           },
           {
             "base": "short (a)",
@@ -128,7 +132,12 @@
             "base": "motive (n)",
             "baseKo": "동기",
             "derived": "motivate (v)",
-            "ko": "동기를 부여하다"
+            "ko": "동기를 부여하다",
+            "root": "mot(움직이다)",
+            "kin": [
+              "promote",
+              "motion"
+            ]
           },
           {
             "base": "origin (n)",

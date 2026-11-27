@@ -18,7 +18,11 @@
             "base": "satisfy (v)",
             "baseKo": "만족시키다",
             "derived": "satisfied (a)",
-            "ko": "만족한"
+            "ko": "만족한",
+            "root": "satis(충분히) + fy(만들다)",
+            "kin": [
+              "satisfactory"
+            ]
           },
           {
             "base": "disappoint (v)",
@@ -122,7 +126,12 @@
             "base": "respect (n · v)",
             "baseKo": "존경 · 존중하다",
             "derived": "respectful (a)",
-            "ko": "공손한, 존중하는"
+            "ko": "공손한, 존중하는",
+            "root": "re(뒤로) + spect(보다)",
+            "kin": [
+              "inspect",
+              "expect"
+            ]
           },
           {
             "base": "respect (n · v)",

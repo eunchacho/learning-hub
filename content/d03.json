@@ -50,13 +50,23 @@
             "base": "attract (v)",
             "baseKo": "끌어들이다",
             "derived": "attractive (a)",
-            "ko": "매력적인"
+            "ko": "매력적인",
+            "root": "ad(~쪽으로) + tract(끌다)",
+            "kin": [
+              "contract",
+              "distract"
+            ]
           },
           {
             "base": "extend (v)",
             "baseKo": "연장하다 · 넓히다",
             "derived": "extensive (a)",
-            "ko": "광범위한"
+            "ko": "광범위한",
+            "root": "ex(밖으로) + tend(뻗다)",
+            "kin": [
+              "attend",
+              "extension"
+            ]
           }
         ],
         "tip": "-ate 동사는 -ative 로(innovate → innovative), -d · -de 로 끝나는 동사는 주로 -sive 로 바뀌어요(extend → extensive, decide → decisive)"
@@ -134,7 +144,12 @@
             "base": "depend (v)",
             "baseKo": "의존하다 · 달려 있다",
             "derived": "dependent (a)",
-            "ko": "의존하는"
+            "ko": "의존하는",
+            "root": "de(아래로) + pend(매달리다)",
+            "kin": [
+              "pending",
+              "suspend"
+            ]
           }
         ],
         "tip": "명사 -ance · -ence 와 짝을 이뤄요(significant · significance, confident · confidence). 같은 -ant · -ent 가 사람 명사도 만들어요(applicant, assistant: 2일차)"

@@ -487,8 +487,10 @@ body.in-player::before{background:var(--hero-bg)}
 .affix-item:first-child{border-top:0}
 .affix-tag{font-family:var(--font-read);font-size:1.25rem;font-weight:600;color:var(--suf)}
 .affix-tag.prefix{color:var(--pre)} .affix-tag.root{color:var(--root)}
-.ex-list{display:flex;flex-wrap:wrap;gap:8px}
-.ex-list span{background:var(--surface-2);border-radius:var(--radius-sm);padding:4px 10px;font-size:.9rem}
+.ex-list{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.ex-list > span{background:var(--surface-2);border-radius:var(--radius-sm);padding:4px 10px;font-size:.9rem}
+.ex-list .muted{margin:0 4px}
+.ex-list .ex-root{display:block;margin:2px 0 0;font-size:.8rem;color:var(--muted)}
 .tip{background:var(--accent-soft);color:var(--text);border-radius:var(--radius-sm);padding:10px 12px;font-size:.92rem}
 .trap{background:var(--warn-soft);border-radius:var(--radius-sm);padding:10px 12px;font-size:.92rem}
 .g-sec{display:grid;gap:10px;padding:18px 0;border-top:1px solid var(--line)}
@@ -1226,6 +1228,14 @@ function summaryHTML(res, title, extra) {
 }
 
 /* ---------- renderers: word & morph ---------- */
+/* Affix example: base (meaning) → derived (meaning). Only transparent words carry a root line (2~3 a day), and kin words
+   are mostly ones the course already teaches, so the line links what is known instead of adding new items. */
+function exHTML(x) {
+  const ko = s => s ? `<span class="muted">${esc(s)}</span>` : '';
+  const chain = x.chain ? `${esc(x.chain.word)}${ko(x.chain.ko)}→ ` : '';
+  const root = x.root || x.kin ? `<span class="ex-root">${x.root ? esc(x.root) : ''}${x.root && x.kin ? ' · ' : ''}${x.kin ? T('Same root: ', '같은 뿌리: ') + esc(x.kin.join(' · ')) : ''}</span>` : '';
+  return `<span>${chain}${esc(x.base)}${ko(x.baseKo)}→ <b>${esc(x.derived)}</b>${ko(x.ko)}${root}</span>`;
+}
 function morphHTML(w, note = true) {
   if (!w.morph || !w.morph.length) return '';
   return `<div class="morph">${w.morph.map((p, i) => `${i ? '<span class="plus">+</span>' : ''}<span class="mp mp-${esc(p.type)}"><b>${esc(p.part)}</b><small>${esc(p.meaning)}</small></span>`).join('')}</div>${note && w.morphNote ? `<div class="morph-note">${esc(w.morphNote)}</div>` : ''}`;
@@ -1792,7 +1802,7 @@ function unitAffix(el, d, id) {
   el.innerHTML = unitHead('affix', esc(a.title || '')) + `
     ${a.intro ? `<p>${nl(a.intro)}</p>` : ''}
     <div>${(a.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div>
-      <div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)}${x.baseKo ? ` <span class="muted">${esc(x.baseKo)}</span>` : ''} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div>
+      <div class="ex-list">${(it.examples || []).map(exHTML).join('')}</div>
       ${it.tip ? `<div class="tip">${esc(it.tip)}</div>` : ''}</div>`).join('')}</div>
     ${a.traps && a.traps.length ? `<div class="trap"><b>${T('Watch out', '함정')}</b><ul class="clean">${a.traps.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}
     <p class="small muted">${T('The word-part inference check comes after Key Terms, so you can use the new terms as bases.', '접사 추론 퀴즈는 다음 단원(새 단어)을 익힌 뒤에 나와요. 오늘 배운 접미사와 새 단어를 재료로 처음 보는 단어를 추론해요.')}</p>
@@ -2631,7 +2641,7 @@ function notesWrong(head) {
 function notesAffix(head) {
   const days = Object.values(S.days).sort((a, b) => a.id < b.id ? -1 : 1);
   view().innerHTML = `<div class="stack">${head}${days.map(d => `<section class="card stack"><div class="eyebrow">${T('Module', '')} ${d.day}${T('', '일차')} · ${esc(d.affix?.title || '')}</div>
-    ${(d.affix?.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div><div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)}${x.baseKo ? ` <span class="muted">${esc(x.baseKo)}</span>` : ''} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div></div>`).join('')}</section>`).join('') || '<div class="empty">콘텐츠가 없습니다.</div>'}${footHTML()}</div>`;
+    ${(d.affix?.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div><div class="ex-list">${(it.examples || []).map(exHTML).join('')}</div></div>`).join('')}</section>`).join('') || '<div class="empty">콘텐츠가 없습니다.</div>'}${footHTML()}</div>`;
 }
 
 const LINKS = [

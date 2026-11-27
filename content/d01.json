@@ -30,7 +30,12 @@
             "base": "promote (v)",
             "baseKo": "승진시키다 · 홍보하다",
             "derived": "promotion (n)",
-            "ko": "승진 · 판촉"
+            "ko": "승진 · 판촉",
+            "root": "pro(앞으로) + mote(움직이다)",
+            "kin": [
+              "motion",
+              "motivate"
+            ]
           }
         ],
         "tip": "동사 끝이 -d · -de 이면 -sion 으로 바뀌는 경우가 많아요(decide → decision, expand → expansion). -te 로 끝나는 동사는 e 를 빼고 -ion 을 붙여요(promote → promotion)."
@@ -96,7 +101,12 @@
             "base": "attend (v)",
             "baseKo": "참석하다",
             "derived": "attendance (n)",
-            "ko": "출석 · 참석"
+            "ko": "출석 · 참석",
+            "root": "ad(~쪽으로) + tend(뻗다)",
+            "kin": [
+              "extend",
+              "attention"
+            ]
           },
           {
             "base": "perform (v)",
@@ -108,7 +118,12 @@
             "base": "refer (v)",
             "baseKo": "참고하다 · 언급하다",
             "derived": "reference (n)",
-            "ko": "참고 · 추천서"
+            "ko": "참고 · 추천서",
+            "root": "re(뒤로) + fer(나르다)",
+            "kin": [
+              "transfer",
+              "offer"
+            ]
           }
         ],
         "tip": "y 로 끝나는 동사는 y 를 i 로 바꿔요(comply → compliance). 짝이 되는 -ant · -ent 는 형용사(compliant)나 사람 명사(attendant)라서 끝 글자까지 확인하세요."
