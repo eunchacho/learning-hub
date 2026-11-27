@@ -35,11 +35,7 @@
               "word": "produce (v)",
               "ko": "생산하다"
             },
-            "root": "pro(앞으로) + duce(이끌다)",
-            "kin": [
-              "product",
-              "introduce"
-            ]
+            "root": "pro(앞으로) + duce(이끌다)"
           }
         ],
         "tip": "대부분 형용사 뒤에 붙어요. -able · -ible 은 -ability · -ibility 로 바뀌어요 (responsible → responsibility)"
@@ -86,11 +82,7 @@
             "baseKo": "제안하다",
             "derived": "proposal (n)",
             "ko": "제안(서)",
-            "root": "pro(앞에) + pose(놓다)",
-            "kin": [
-              "purpose",
-              "expose"
-            ]
+            "root": "pro(앞에) + pose(놓다)"
           },
           {
             "base": "renew (v)",
@@ -129,11 +121,7 @@
             "baseKo": "진행하다",
             "derived": "procedure (n)",
             "ko": "절차",
-            "root": "pro(앞으로) + ceed(가다)",
-            "kin": [
-              "exceed",
-              "access"
-            ]
+            "root": "pro(앞으로) + ceed(가다)"
           },
           {
             "base": "short (a)",

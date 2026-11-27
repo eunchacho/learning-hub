@@ -133,11 +133,7 @@
             "baseKo": "동기",
             "derived": "motivate (v)",
             "ko": "동기를 부여하다",
-            "root": "mot(움직이다)",
-            "kin": [
-              "promote",
-              "motion"
-            ]
+            "root": "mot(움직이다)"
           },
           {
             "base": "origin (n)",

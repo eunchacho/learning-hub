@@ -1229,12 +1229,11 @@ function summaryHTML(res, title, extra) {
 }
 
 /* ---------- renderers: word & morph ---------- */
-/* Affix example: base (meaning) → derived (meaning). Only transparent words carry a root line (2~3 a day), and kin words
-   are mostly ones the course already teaches, so the line links what is known instead of adding new items. */
+/* Affix example: base (meaning) → derived (meaning). Only transparent words carry a root line: the word's own parts, 2~3 a day. */
 function exHTML(x) {
   const ko = s => s ? `<span class="muted">${esc(s)}</span>` : '';
   const chain = x.chain ? `${esc(x.chain.word)}${ko(x.chain.ko)}→ ` : '';
-  const root = x.root || x.kin ? `<span class="ex-root">${x.root ? esc(x.root) : ''}${x.root && x.kin ? ' · ' : ''}${x.kin ? T('Same root: ', '같은 뿌리: ') + esc(x.kin.join(' · ')) : ''}</span>` : '';
+  const root = x.root ? `<span class="ex-root">${esc(x.root)}</span>` : '';
   return `<span>${chain}${esc(x.base)}${ko(x.baseKo)}→ <b>${esc(x.derived)}</b>${ko(x.ko)}${root}</span>`;
 }
 /* A look-alike suffix shown beside the item for contrast (e.g. noun -al vs adjective -al). */
