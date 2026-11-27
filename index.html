@@ -490,6 +490,7 @@ body.in-player::before{background:var(--hero-bg)}
 .ex-list{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
 .ex-list > span{background:var(--surface-2);border-radius:var(--radius-sm);padding:4px 10px;font-size:.9rem}
 .ex-list .muted{margin:0 4px}
+.ex-compare{display:grid;gap:6px;margin-top:10px;padding-left:12px;border-left:3px solid var(--line)}
 .ex-list .ex-root{display:block;margin:2px 0 0;font-size:.8rem;color:var(--muted)}
 .tip{background:var(--accent-soft);color:var(--text);border-radius:var(--radius-sm);padding:10px 12px;font-size:.92rem}
 .trap{background:var(--warn-soft);border-radius:var(--radius-sm);padding:10px 12px;font-size:.92rem}
@@ -1236,6 +1237,11 @@ function exHTML(x) {
   const root = x.root || x.kin ? `<span class="ex-root">${x.root ? esc(x.root) : ''}${x.root && x.kin ? ' · ' : ''}${x.kin ? T('Same root: ', '같은 뿌리: ') + esc(x.kin.join(' · ')) : ''}</span>` : '';
   return `<span>${chain}${esc(x.base)}${ko(x.baseKo)}→ <b>${esc(x.derived)}</b>${ko(x.ko)}${root}</span>`;
 }
+/* A look-alike suffix shown beside the item for contrast (e.g. noun -al vs adjective -al). */
+function compareHTML(it) {
+  const c = it.compare; if (!c) return '';
+  return `<div class="ex-compare"><div class="row"><span class="small muted">${T('Compare', '비교')}</span><span class="affix-tag ${esc(c.kind || it.kind || 'suffix')}">${esc(c.affix)}</span><span class="small">${esc(c.meaning || '')}</span></div><div class="ex-list">${(c.examples || []).map(exHTML).join('')}</div></div>`;
+}
 function morphHTML(w, note = true) {
   if (!w.morph || !w.morph.length) return '';
   return `<div class="morph">${w.morph.map((p, i) => `${i ? '<span class="plus">+</span>' : ''}<span class="mp mp-${esc(p.type)}"><b>${esc(p.part)}</b><small>${esc(p.meaning)}</small></span>`).join('')}</div>${note && w.morphNote ? `<div class="morph-note">${esc(w.morphNote)}</div>` : ''}`;
@@ -1803,6 +1809,7 @@ function unitAffix(el, d, id) {
     ${a.intro ? `<p>${nl(a.intro)}</p>` : ''}
     <div>${(a.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div>
       <div class="ex-list">${(it.examples || []).map(exHTML).join('')}</div>
+      ${compareHTML(it)}
       ${it.tip ? `<div class="tip">${esc(it.tip)}</div>` : ''}</div>`).join('')}</div>
     ${a.traps && a.traps.length ? `<div class="trap"><b>${T('Watch out', '함정')}</b><ul class="clean">${a.traps.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}
     <p class="small muted">${T('The word-part inference check comes after Key Terms, so you can use the new terms as bases.', '접사 추론 퀴즈는 다음 단원(새 단어)을 익힌 뒤에 나와요. 오늘 배운 접미사와 새 단어를 재료로 처음 보는 단어를 추론해요.')}</p>
@@ -2641,7 +2648,7 @@ function notesWrong(head) {
 function notesAffix(head) {
   const days = Object.values(S.days).sort((a, b) => a.id < b.id ? -1 : 1);
   view().innerHTML = `<div class="stack">${head}${days.map(d => `<section class="card stack"><div class="eyebrow">${T('Module', '')} ${d.day}${T('', '일차')} · ${esc(d.affix?.title || '')}</div>
-    ${(d.affix?.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div><div class="ex-list">${(it.examples || []).map(exHTML).join('')}</div></div>`).join('')}</section>`).join('') || '<div class="empty">콘텐츠가 없습니다.</div>'}${footHTML()}</div>`;
+    ${(d.affix?.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div><div class="ex-list">${(it.examples || []).map(exHTML).join('')}</div>${compareHTML(it)}</div>`).join('')}</section>`).join('') || '<div class="empty">콘텐츠가 없습니다.</div>'}${footHTML()}</div>`;
 }
 
 const LINKS = [

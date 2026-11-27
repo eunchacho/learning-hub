@@ -99,7 +99,25 @@
             "ko": "갱신"
           }
         ],
-        "tip": "명사 + al 은 형용사(professional, additional)지만 동사 + al 은 명사예요. 끝만 보지 말고 앞이 동사인지 확인하세요"
+        "compare": {
+          "affix": "-al (형용사)",
+          "meaning": "명사에 붙어 ~의 · ~에 관한",
+          "examples": [
+            {
+              "base": "profession (n)",
+              "baseKo": "직업 · 전문직",
+              "derived": "professional (a)",
+              "ko": "전문적인"
+            },
+            {
+              "base": "addition (n)",
+              "baseKo": "추가",
+              "derived": "additional (a)",
+              "ko": "추가의"
+            }
+          ]
+        },
+        "tip": "앞부분이 동사면 명사(approve → approval), 명사면 형용사(profession → professional)예요. professional(전문가) · official(공무원)처럼 명사와 형용사로 다 쓰는 단어도 있으니, 마지막에는 문장 속 자리로 확인하세요. 형용사 -al 은 3일차에 자세히 다뤄요"
       },
       {
         "affix": "-ure · -age",
