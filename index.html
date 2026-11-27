@@ -601,7 +601,6 @@ ul.clean{margin:0;padding-left:1.2em;display:grid;gap:4px}
 .timebar{height:4px;background:var(--surface-2);border-radius:999px;overflow:hidden}
 .timebar i{display:block;height:100%;width:100%;background:var(--accent);transform-origin:left;transition:transform 1s linear}
 .timebar.late i{background:var(--bad)}
-.q-late{color:var(--bad);margin:6px 0 0}
 .q-prompt{font-size:1.12rem}
 .q-prompt .en{font-size:1.15rem;line-height:1.65}
 .q-prompt .big{font-size:2rem;font-weight:700;letter-spacing:-.015em;line-height:1.2}
@@ -1160,8 +1159,7 @@ function mcq(el, c) {
     const tb = el.querySelector('.timebar'), bar = tb.querySelector('i');
     bar.style.transition = `transform ${c.timer}s linear`;
     requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.transform = 'scaleX(0)'; }));
-    timers.push(setTimeout(() => { if (locked) return; late = true; tb.classList.add('late'); bar.style.transition = 'none'; bar.style.transform = 'scaleX(1)';
-      tb.insertAdjacentHTML('afterend', `<p class="small q-late">${T('Time up. You can still answer; it will be saved as missed.', '시간 초과: 계속 풀 수 있지만, 아직 외우지 못한 것으로 보고 오답으로 기록해요.')}</p>`); }, c.timer * 1000));
+    timers.push(setTimeout(() => { if (locked) return; late = true; tb.classList.add('late'); bar.style.transition = 'none'; bar.style.transform = 'scaleX(1)'; }, c.timer * 1000));
   }
   if (c.block) {
     const bar = el.querySelector('.timebar i'), lab = el.querySelector('[data-time]'), tb = el.querySelector('.timebar');
