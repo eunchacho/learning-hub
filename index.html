@@ -1525,14 +1525,20 @@ function currCard(c) {
     <div class="foot-row"><span class="pill curr">${T('Curriculum', '커리큘럼')}</span><a href="#catalog" data-curr="${c.id}">${T('Details', '상세 보기')}</a></div>
   </article>`;
 }
+/* Item count, time and progress come from the placement content and the saved draft, not fixed numbers. */
+function diagProgress() {
+  const g = S.diagContent, secs = g ? diagSections(g) : [], dr = diagDraft(g);
+  const total = secs.reduce((a, s) => a + s.n, 0), doneItems = dr ? secs.filter(s => dr[s.k]).reduce((a, s) => a + s.n, 0) : 0;
+  return {total, doneItems, left: dr ? secs.filter(s => !dr[s.k]).length : secs.length, draft: !!dr, pct: total ? Math.round(doneItems / total * 100) : 0};
+}
 function checkCard() {
-  const done = !!(S.diag && S.diag.result);
+  const done = !!(S.diag && S.diag.result), p = diagProgress(), pc = done ? 100 : p.pct;
   return `<article class="ccard ${done ? 'done-thumb' : 'is-cur'}">
     <a href="#diag" tabindex="-1" aria-hidden="true">${thumb('✓', T('PLACEMENT', '진단'), 'check')}</a>
-    <div class="ccard-title"><a class="t" href="#diag">${T('Placement Check', '진단 테스트')}</a><a class="btn sm ${done ? '' : 'primary'}" href="#diag">${done ? T('Result', '결과 보기') : diagDraft(S.diagContent) ? T('Resume', '이어서') : T('Start', '시작')}</a></div>
-    <div class="meta"><span>40 ${T('items', '문항')}</span><span class="sep"></span><span>~25${T('m', '분')}</span><span class="sep"></span>${ring(done ? 100 : 0)}<span>${done ? 100 : 0}%</span></div>
-    <p class="desc">${T('Grammar, vocabulary and listening. Sets the difficulty mix of the modules that follow.', 'Part 5 20문항 · 어휘 10문항 · LC 10문항. 결과로 다음 과정의 쉬움 · 보통 · 어려움 비율을 정합니다. 1일차 전에 한 번 풉니다.')}</p>
-    <div class="foot-row"><span class="pill">${T('Course', '과정')}</span>${done ? `<span class="small muted">${md(S.diag.result.date)}</span>` : `<span class="small"><b style="color:var(--accent)">${T('Start here', '여기서 시작')}</b></span>`}</div>
+    <div class="ccard-title"><a class="t" href="#diag">${T('Placement Check', '진단 테스트')}</a><a class="btn sm ${done ? '' : 'primary'}" href="#diag">${done ? T('Result', '결과 보기') : p.draft ? T('Resume', '이어서') : T('Start', '시작')}</a></div>
+    <div class="meta"><span>${p.total} ${T('items', '문항')}</span><span class="sep"></span><span>~35${T('m', '분')}</span><span class="sep"></span>${ring(pc)}<span>${pc}%</span></div>
+    <p class="desc">${T('Grammar, reading, vocabulary and listening. Sets the difficulty mix of the modules that follow.', 'Part 5 · 6 · 7, 어휘, LC Part 2 · 3. 결과로 다음 과정의 쉬움 · 보통 · 어려움 비율을 정합니다.')}</p>
+    <div class="foot-row"><span class="pill">${T('Course', '과정')}</span>${done ? `<span class="small muted">${md(S.diag.result.date)}</span>` : `<span class="small"><b style="color:var(--accent)">${p.draft ? T(`${p.left} sections left`, `${p.left}개 영역 남음`) : T('Start here', '여기서 시작')}</b></span>`}</div>
   </article>`;
 }
 
@@ -1543,7 +1549,7 @@ function catItems() {
   const wordHit = id => (S.days[id] && S.days[id].words || []).some(w => hit(w.word) || hit(w.meaning));
   const okQ = q.length >= 3;
   const items = [];
-  if (S.diagContent) items.push({type: 'course', html: checkCard(), status: S.diag && S.diag.result ? 'done' : 'todo', curr: null, weeks: [], text: T('Placement Check', '진단 테스트')});
+  if (S.diagContent) items.push({type: 'course', html: checkCard(), status: S.diag && S.diag.result ? 'done' : diagProgress().draft ? 'progress' : 'todo', curr: null, weeks: [], text: T('Placement Check', '진단 테스트')});
   CURR.forEach(c => { const cs = coursesOf(c); items.push({type: 'curr', html: currCard(c), status: currStatus(c), curr: c.id, weeks: [...new Set(cs.map(e => e.week))], text: c.w + ' ' + c.f + ' ' + c.wd + ' ' + c.fd, days: cs.map(e => e.day)}); });
   normals().forEach(e => items.push({type: 'course', html: courseCard(e, nm.day), status: courseStatus(e.day), curr: currOfDay(e.day).id, weeks: [e.week], text: courseTitle(e.day) + ' ' + courseDesc(e.day) + ' ' + (indexEntry(e.day) ? indexEntry(e.day).title + ' ' + indexEntry(e.day).workTitle : ''), days: [e.day]}));
   return items.filter(it => (f.type === 'all' || it.type === f.type)
