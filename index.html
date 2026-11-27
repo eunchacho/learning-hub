@@ -475,6 +475,12 @@ body.in-player::before{background:var(--hero-bg)}
 .banner p{flex:1;min-width:200px}
 .unit-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 .unit-head h2{font-size:1.3rem}
+.steps{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0;padding:0;font-size:.88rem;color:var(--muted)}
+.steps li{display:flex;align-items:center;gap:6px}
+.steps .no{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);font-size:.72rem;font-variant-numeric:tabular-nums}
+.steps .done .no{background:var(--ok);border-color:transparent;color:var(--surface)}
+.steps .cur{color:var(--text);font-weight:600}
+.steps .cur .no{border-color:var(--accent);color:var(--accent)}
 
 /* lesson blocks */
 .affix-item{display:grid;gap:8px;padding:16px 0;border-top:1px solid var(--line)}
@@ -1850,16 +1856,23 @@ function exampleHTML(w) {
 }
 
 /* unit 3: vocab. Default is one card at a time (front: word, back: everything else); a single-column list is one tap away. */
+/* Unit 3 steps, shown in place of the instruction line so the learner always sees what is left before the unit completes. */
+function vocabSteps(cur, round) {
+  const names = [T('Read cards', '카드 읽기'), T('Recall', '떠올리기') + (round ? ' ' + T('R' + round, round + '회차') : ''), T('Word forms', '품사 변형'), T('Word parts', '접사 추론')];
+  return `<ol class="steps">${names.map((n, k) => `<li class="${k < cur ? 'done' : k === cur ? 'cur' : ''}"${k === cur ? ' aria-current="step"' : ''}><span class="no">${k < cur ? '✓' : k + 1}</span>${esc(n)}</li>`).join('')}</ol>`;
+}
 function unitVocab(el, d, id) {
   const words = d.words || [], n = words.length;
   let i = 0, flipped = false, mode = 'card';
   const front = w => `<div class="fc-front"><span class="w">${esc(w.word)}</span>${ipaHTML(w)}<span class="row" style="gap:8px;justify-content:center"><span class="chip accent">${esc(posLabel(w.pos))}</span>${speakBtn(w.word)}</span><p class="hint">${T('Recall the meaning, then tap the card or press Space.', '뜻을 먼저 떠올린 뒤 카드를 누르거나 Space 키를 누르세요.')}</p></div>`;
   const toolbar = () => `<div class="seg seg-inline" role="group" aria-label="${T('View', '보기 방식')}"><button type="button" data-mode="card" aria-pressed="${mode === 'card'}">${T('Cards', '카드 보기')}</button><button type="button" data-mode="list" aria-pressed="${mode === 'list'}">${T('List', '목록 보기')}</button></div>`;
   const fit = cardFitter(words, wordCard, front);
+  /* Words join the review list once round 1 is read, so stopping halfway still brings them back tomorrow. */
+  const register = () => { const added = registerWords(id); if (added) toast(T(`${added} terms added`, `${added}개 단어를 단어장에 등록했습니다`)); };
   const startBtn = `<button class="btn primary" type="button" data-go>${T('Round 2: quick recall', '2회차: 빠르게 떠올리기')} →</button>`;
   const draw = () => {
     S.kbd = null;
-    const head = unitHead('vocab', T('Round 1: read each card once. Rounds 2 and 3 are quick recall.', '1회차: 카드를 한 장씩 읽으세요. 뜻 → 품사 → 예문 순서로 보면 돼요. 이어서 2 · 3회차는 단어만 보고 빠르게 떠올려요.')) + `<div class="row" style="justify-content:space-between">${toolbar()}<span class="small muted">${n}${T(' terms', '개 단어')}</span></div>`;
+    const head = unitHead('vocab', vocabSteps(0)) + `<div class="row" style="justify-content:space-between">${toolbar()}<span class="small muted">${n}${T(' terms', '개 단어')}</span></div>`;
     if (mode === 'list') {
       S.fit = null;
       el.innerHTML = head + `<div class="wlist">${words.map(w => wordCard(w)).join('')}</div><div class="row">${startBtn}</div>`;
@@ -1890,32 +1903,30 @@ function unitVocab(el, d, id) {
       S.kbd = e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } else if (e.key === 'ArrowRight') move(1); else if (e.key === 'ArrowLeft') move(-1); };
     }
     el.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => { if (mode === b.dataset.mode) return; mode = b.dataset.mode; flipped = false; draw(); }));
-    el.querySelector('[data-go]')?.addEventListener('click', () => quick(2, shuffle(words)));
+    el.querySelector('[data-go]')?.addEventListener('click', () => { register(); quick(2, shuffle(words)); });
   };
   /* Rounds 2 and 3: word only, about 3 seconds to recall, self-rated. "Again" brings the card back three cards later.
      Several short passes beat one long read for recognition speed, which is what TOEIC tests. */
   const quick = (round, list) => {
     S.kbd = null; const miss = [];
-    el.innerHTML = unitHead('vocab', T('Recall the meaning within about 3 seconds, then rate yourself.', '단어만 보고 3초 안에 뜻을 떠올린 뒤 스스로 채점하세요. 모르면 "다시 볼래요"를 누르세요. 3장 뒤에 다시 나와요.')) + '<div id="vq"></div>';
+    el.innerHTML = unitHead('vocab', vocabSteps(1, round)) + '<div id="vq"></div>';
     cardSession(el.querySelector('#vq'), list, {label: T('Round ' + round, round + '회차'), back: wordCardQuick, hint: T('About 3 seconds. Tap to check.', '3초 안에 뜻을 떠올리고 카드를 누르세요.'),
       onFirst: (w, ok) => { if (!ok) miss.push(w); },
       onDone: () => {
         const box = document.createElement('div'); box.className = 'stack';
         const next = round === 2
           ? `${miss.length ? `<button class="btn primary" type="button" data-r3="miss">${T('Round 3: missed only', '3회차: 다시 본 단어만')} (${miss.length})</button>` : ''}<button class="btn ${miss.length ? '' : 'primary'}" type="button" data-r3="all">${T('Round 3: all, reshuffled', '3회차: 전체 섞어서')}</button><button class="btn ghost" type="button" data-start>${T('Skip to check', '확인 퀴즈로 바로')}</button>`
-          : `<button class="btn primary" type="button" data-start>${T(`Add ${n} terms and start check`, `${n}개 단어장 등록 · 확인 퀴즈`)}</button>`;
+          : `<button class="btn primary" type="button" data-start>${T('Start word-form check', '품사 변형 퀴즈 시작')}</button>`;
         box.innerHTML = `<div class="summary"><div class="eyebrow">${T('Round ' + round + ' done', round + '회차 완료')}</div><div class="row"><span class="score">${list.length - miss.length} / ${list.length}</span><span class="muted">${T('recalled on first try', '처음에 바로 떠올린 단어')}</span></div>${miss.length ? `<p class="small muted">${T('Again', '다시 본 단어')}: ${miss.map(w => esc(w.word)).join(' · ')}</p>` : ''}</div><div class="row">${next}</div>`;
-        el.innerHTML = unitHead('vocab'); el.appendChild(box);
+        el.innerHTML = unitHead('vocab', vocabSteps(round === 2 ? 1 : 2, round === 2 ? 3 : 0)); el.appendChild(box);
         box.querySelectorAll('[data-r3]').forEach(b => b.addEventListener('click', () => quick(3, shuffle(b.dataset.r3 === 'miss' ? miss : words))));
         box.querySelectorAll('[data-start]').forEach(b => b.addEventListener('click', start));
       }});
   };
 
   const start = () => {
-    S.kbd = null;
-    const added = registerWords(id);
-    if (added) toast(T(`${added} terms added`, `${added}개 단어를 단어장에 등록했습니다`));
-    const box = document.createElement('div'); el.innerHTML = unitHead('vocab', T('Pick the correct word form.', '빈칸에 들어갈 알맞은 형태를 고릅니다.')); el.appendChild(box);
+    S.kbd = null; register();
+    const box = document.createElement('div'); el.innerHTML = unitHead('vocab', vocabSteps(2)); el.appendChild(box);
     runQuiz(box, shuffle(words.filter(w => w.drill)), {
       build: w => ({tag: w.word, prompt: `<div class="en">${blank(w.drill.sentence)}</div>`, options: w.drill.options, answer: w.drill.answer,
         explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(w.drill.why)}</dd></dl>`}),
@@ -1924,7 +1935,7 @@ function unitVocab(el, d, id) {
         const inf = d.inference || [];
         if (!inf.length) return finishUnit(el, id, 'vocab', {score: [c, res.length]}, sum1);
         /* Inference comes after the cards: the bases (comply, assign...) and today's suffixes are now known, so it is transfer, not guessing. */
-        const box2 = document.createElement('div'); el.innerHTML = unitHead('vocab', T('New words, built from parts you know. Guess the meaning.', '방금 익힌 단어와 오늘 배운 접미사로 만든 처음 보는 단어예요. 쪼개서 뜻을 추론하세요.')); el.appendChild(box2);
+        const box2 = document.createElement('div'); el.innerHTML = unitHead('vocab', vocabSteps(3)); el.appendChild(box2);
         runQuiz(box2, inf, {
           build: inferenceBuild,
           onAnswer: (q, ok, idx, ms, u) => { if (!ok || u) recordWrong(q.id, id, 'inference', '접사 추론', idx, q.answer, ok && u); },
