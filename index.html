@@ -1442,7 +1442,11 @@ function homeNotice(nm) {
   const e = entryOf(S.today), behind = behindCount(), diagDone = !!(S.diag && S.diag.result);
   if (!available(nm.day)) return notice(T(`Module ${nm.n} is being prepared. Practice and missed items are open meanwhile.`, `${nm.n}일차(${nm.day}) 콘텐츠가 아직 없습니다. Claude 세션에서 "다음 주 콘텐츠 추가"를 요청해 주세요. 그동안은 복습을 진행할 수 있습니다.`), `<a class="btn" href="#review">${T('Practice', '복습하기')}</a>`);
   /* Shown until the placement check is done, whatever the module progress. */
-  if (!diagDone && S.diagContent) return notice(T('Take the placement check (about 35 minutes). It sets the difficulty of upcoming modules.', '진단 테스트(약 35분)를 아직 풀지 않았어요. 결과로 다음 과정(12/3~)의 난이도 비율을 정하니, 이번 주 안에 풀어 주세요.'), `<a class="btn" href="#diag">${T('Start placement check', '진단 테스트 시작')}</a>`);
+  if (!diagDone && S.diagContent) {
+    const dr = diagDraft(S.diagContent), left = dr ? diagSections(S.diagContent).filter(s => !dr[s.k]).length : 0;
+    if (dr) return notice(T(`Placement check: ${left} sections left. Resume where you stopped.`, `진단 테스트가 ${left}개 영역 남았어요. 멈춘 영역부터 이어서 풀어 주세요.`), `<a class="btn" href="#diag">${T('Resume', '이어서 풀기')}</a>`);
+    return notice(T('Take the placement check (about 35 minutes). It sets the difficulty of upcoming modules.', '진단 테스트(약 35분)를 아직 풀지 않았어요. 결과로 다음 과정(12/3~)의 난이도 비율을 정하니, 이번 주 안에 풀어 주세요.'), `<a class="btn" href="#diag">${T('Start placement check', '진단 테스트 시작')}</a>`);
+  }
   if (behind > 1 || (behind === 1 && nm.date !== S.today)) return notice(T(`${behind} modules are past their target date. Continue in order from the module below.`, `계획보다 ${behind}개 모듈이 밀려 있습니다. 아래 모듈부터 순서대로 하면 됩니다. 하루에 2개를 몰아서 하기보다 복습을 빼먹지 않는 쪽이 점수에 유리합니다.`));
   if (e && e.type === 'light') return notice(T('Light day: review only.', '가벼운 학습일입니다. 새 진도는 나가지 않고 단어 복습 10~20개만 합니다.'), `<a class="btn" href="#review">${T('Practice', '복습 시작')}</a>`);
   if (e && e.type === 'weekend') return notice(T('No module is scheduled today.', '주말이라 학습 일정이 없습니다. 공부하신다면 복습 · 오답 위주로 하세요.'), `<a class="btn" href="#review">${T('Practice', '복습')}</a>`, 'info');
@@ -1525,7 +1529,7 @@ function checkCard() {
   const done = !!(S.diag && S.diag.result);
   return `<article class="ccard ${done ? 'done-thumb' : 'is-cur'}">
     <a href="#diag" tabindex="-1" aria-hidden="true">${thumb('✓', T('PLACEMENT', '진단'), 'check')}</a>
-    <div class="ccard-title"><a class="t" href="#diag">${T('Placement Check', '진단 테스트')}</a><a class="btn sm ${done ? '' : 'primary'}" href="#diag">${done ? T('Result', '결과 보기') : T('Start', '시작')}</a></div>
+    <div class="ccard-title"><a class="t" href="#diag">${T('Placement Check', '진단 테스트')}</a><a class="btn sm ${done ? '' : 'primary'}" href="#diag">${done ? T('Result', '결과 보기') : diagDraft(S.diagContent) ? T('Resume', '이어서') : T('Start', '시작')}</a></div>
     <div class="meta"><span>40 ${T('items', '문항')}</span><span class="sep"></span><span>~25${T('m', '분')}</span><span class="sep"></span>${ring(done ? 100 : 0)}<span>${done ? 100 : 0}%</span></div>
     <p class="desc">${T('Grammar, vocabulary and listening. Sets the difficulty mix of the modules that follow.', 'Part 5 20문항 · 어휘 10문항 · LC 10문항. 결과로 다음 과정의 쉬움 · 보통 · 어려움 비율을 정합니다. 1일차 전에 한 번 풉니다.')}</p>
     <div class="foot-row"><span class="pill">${T('Course', '과정')}</span>${done ? `<span class="small muted">${md(S.diag.result.date)}</span>` : `<span class="small"><b style="color:var(--accent)">${T('Start here', '여기서 시작')}</b></span>`}</div>
@@ -2247,6 +2251,19 @@ function diagSections(g) {
     hasSet(g, 'lc3') && {k: 'lc3', t: 'LC Part 3', n: g.lc3.items.length, time: audio ? T('heard once', '한 번 듣기') : T('script', '스크립트'), note: T('Conversation', '대화 1세트')},
   ].filter(Boolean);
 }
+const diagSrc = g => ({p5: g.part5, p6: g.p6 && g.p6.items, p7: g.p7 && g.p7.items, vocab: g.vocab, lc: g.lc, lc3: g.lc3 && g.lc3.items});
+/* Each finished section is kept in diag/draft, so leaving midway resumes at the next section instead of starting over
+   (a second pass over the same items would inflate the score). A section left halfway starts again, because its set time would no longer mean anything. */
+function diagDraft(g) {
+  const d = S.diag && S.diag.draft; if (!g || !d || !d.secs) return null;
+  const src = diagSrc(g), out = {};
+  Object.entries(d.secs).forEach(([k, s]) => {
+    const list = src[k]; if (!list || !s || !s.items) return;
+    const res = s.items.map(r => ({it: list.find(q => q.id === r.id), ok: r.ok, ms: r.ms, unsure: !!r.unsure})).filter(r => r.it);
+    if (res.length === list.length) out[k] = {res, block: s.total ? {total: s.total, used: s.used} : null, raw: s};
+  });
+  return Object.keys(out).length ? out : null;
+}
 async function viewDiag(retake) {
   const g = await loadDiag();
   view().innerHTML = `<div class="stack"><section class="card stack" id="dg"></section>${footHTML()}</div>`;
@@ -2255,36 +2272,46 @@ async function viewDiag(retake) {
   const prev = S.diag && S.diag.result;
   if (prev && !retake) return diagResult(el, prev);
   const secs = diagSections(g), total = secs.reduce((a, s) => a + s.n, 0);
+  const draft = diagDraft(g), doneN = draft ? secs.filter(s => draft[s.k]).length : 0;
   el.innerHTML = `<div class="stack" style="gap:4px"><span class="eyebrow">${T('Placement check', '진단 테스트')}</span><h2>${T('Find your starting level', '현재 수준 확인')}</h2></div>
     <p>${T('Results set the difficulty mix of upcoming modules. Time limits stay at test pace.', '결과로 다음 과정의 쉬움 · 보통 · 어려움 비율과 파트별 출발점을 정합니다. 제한 시간은 실전 속도 그대로입니다. 모르는 문제는 오래 붙잡지 말고 가장 그럴듯한 보기를 고르고 "모름"을 누르세요.')}</p>
     <div class="tbl-wrap"><table><tr><th>${T('Section', '영역')}</th><th></th><th class="num">${T('Items', '문항')}</th><th>${T('Time', '시간')}</th></tr>
-      ${secs.map((s, i) => `<tr><td>${i + 1}. ${esc(s.t)}</td><td class="muted">${esc(s.note)}</td><td class="num">${s.n}</td><td>${esc(s.time)}</td></tr>`).join('')}
+      ${secs.map((s, i) => `<tr><td>${i + 1}. ${esc(s.t)}</td><td class="muted">${esc(s.note)}</td><td class="num">${s.n}</td><td>${draft && draft[s.k] ? `<span class="chip ok">${T('Done', '완료')}</span>` : esc(s.time)}</td></tr>`).join('')}
       <tr><td><b>${T('Total', '합계')}</b></td><td></td><td class="num"><b>${total}</b></td><td>${T('about 35 min', '약 35분')}</td></tr></table></div>
-    <div class="row"><button class="btn primary" data-go>${T('Start', '시작')}</button>${prev ? `<button class="btn" data-back>${T('Back to result', '이전 결과 보기')}</button>` : ''}</div>`;
+    <div class="row">${draft ? `<button class="btn primary" data-go="resume">${T(`Resume (${doneN} of ${secs.length} done)`, `이어서 풀기 (${secs.length}개 영역 중 ${doneN}개 완료)`)}</button><button class="btn ghost" data-go="new">${T('Start over', '처음부터')}</button>` : `<button class="btn primary" data-go="new">${T('Start', '시작')}</button>`}${prev ? `<button class="btn" data-back>${T('Back to result', '이전 결과 보기')}</button>` : ''}</div>`;
   el.querySelector('[data-back]')?.addEventListener('click', () => diagResult(el, prev));
-  el.querySelector('[data-go]').addEventListener('click', () => {
-    const out = {}; let si = 0;
+  el.querySelectorAll('[data-go]').forEach(btn => btn.addEventListener('click', () => {
+    const out = {}, blocks = {}, keep = {}; let si = 0;
+    if (btn.dataset.go === 'resume' && draft) Object.entries(draft).forEach(([k, v]) => { out[k] = v.res; blocks[k] = v.block; keep[k] = v.raw; });
+    /* Section results go to the draft as soon as the section ends. */
+    const done = (k, res, block) => {
+      out[k] = res; blocks[k] = block || null;
+      keep[k] = {items: res.map(r => ({id: r.it.id, ok: r.ok, ms: r.ms, unsure: !!r.unsure})), used: block ? block.used : null, total: block ? block.total : null};
+      Store.put('diag', 'draft', {date: S.today, secs: keep});
+      next();
+    };
     const box = s => {
       el.innerHTML = `<div class="stack" style="gap:2px"><span class="eyebrow">${T('Placement check', '진단 테스트')} · ${si} / ${secs.length}</span><h2>${esc(s.t)} <span class="muted small" style="font-weight:400">${esc(s.note)}</span></h2></div>`;
       const b = document.createElement('div'); el.appendChild(b); return b;
     };
     const rec = (kind, type) => (q, ok, idx, ms, u) => { if (!ok || u) recordWrong(q.id, 'diag', kind, typeof type === 'function' ? type(q) : type, idx, q.answer, ok && u); };
     const next = () => {
+      while (si < secs.length && out[secs[si].k]) si++;
       if (si >= secs.length) return finish();
       const s = secs[si++], b = box(s);
       if (s.k === 'p5') runQuiz(b, g.part5, {blockSec: s.n * 20,
         build: q => ({tag: `${q.area} · ${lvName(q.level)}`, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: p5Explain(q)}),
-        onAnswer: rec('part5', q => q.type), onFinish: (res, block) => { out.p5 = res; out.block = block; next(); }});
-      if (s.k === 'p6') runQuiz(b, g.p6.items, {blockSec: s.n * 30, build: p6Build(g.p6), onAnswer: rec('p6', q => 'Part 6 · ' + q.type), onFinish: (res, block) => { out.p6 = res; out.p6block = block; next(); }});
-      if (s.k === 'p7') runQuiz(b, g.p7.items, {blockSec: s.n * 60, build: p7Build(g.p7), onAnswer: rec('p7', q => 'Part 7 · ' + q.type), onFinish: (res, block) => { out.p7 = res; out.p7block = block; next(); }});
+        onAnswer: rec('part5', q => q.type), onFinish: (res, block) => done('p5', res, block)});
+      if (s.k === 'p6') runQuiz(b, g.p6.items, {blockSec: s.n * 30, build: p6Build(g.p6), onAnswer: rec('p6', q => 'Part 6 · ' + q.type), onFinish: (res, block) => done('p6', res, block)});
+      if (s.k === 'p7') runQuiz(b, g.p7.items, {blockSec: s.n * 60, build: p7Build(g.p7), onAnswer: rec('p7', q => 'Part 7 · ' + q.type), onFinish: (res, block) => done('p7', res, block)});
       if (s.k === 'vocab') runQuiz(b, g.vocab, {
         build: q => ({tag: q.source === 'TSL' ? T('TOEIC list', '토익 어휘') : T('Core list', '일반 핵심 어휘'),
           prompt: `<div class="row"><span class="big">${esc(q.word)}</span><span class="chip accent">${esc(posLabel(q.pos))}</span>${speakBtn(q.word)}</div>`,
           options: q.options, answer: q.answer, explain: () => q.why ? `<p>${esc(q.why)}</p>` : ''}),
-        onAnswer: rec('vocab', '어휘'), onFinish: res => { out.vocab = res; next(); }});
-      if (s.k === 'lc') runQuiz(b, g.lc, {build: q => lcBuild(q), onAnswer: rec('lc', 'Part 2'), onFinish: res => { out.lc = res; next(); }});
+        onAnswer: rec('vocab', '어휘'), onFinish: res => done('vocab', res)});
+      if (s.k === 'lc') runQuiz(b, g.lc, {build: q => lcBuild(q), onAnswer: rec('lc', 'Part 2'), onFinish: res => done('lc', res)});
       if (s.k === 'lc3') {
-        const start = () => runQuiz(b, g.lc3.items, {build: lc3Build(g.lc3, false), onAnswer: rec('lc3', q => 'Part 3 · ' + q.type), onFinish: res => { out.lc3 = res; next(); }});
+        const start = () => runQuiz(b, g.lc3.items, {build: lc3Build(g.lc3, false), onAnswer: rec('lc3', q => 'Part 3 · ' + q.type), onFinish: res => done('lc3', res)});
         if (!hasVoice()) return start();
         b.innerHTML = `<p>${T('Read the questions first. The conversation plays once, as in the test; answer while you listen.', '실전처럼 문제를 먼저 읽어 두세요. 대화는 한 번만 재생되고, 듣는 동안 답을 고릅니다.')}</p>
           <ol class="clean preview">${g.lc3.items.map(q => `<li class="en">${esc(q.q)}</li>`).join('')}</ol>
@@ -2297,21 +2324,26 @@ async function viewDiag(retake) {
       const all = p5.filter(r => r.ok).length / Math.max(1, p5.length);
       const band = BANDS.find(b => all < b.max);
       const sc = rs => rs ? [rs.filter(r => r.ok).length, rs.length] : null;
+      /* Sections carried over without timing (restored records) leave the time out rather than show 0:00. */
+      const tm = k => blocks[k] && blocks[k].used != null ? {usedSec: Math.round(blocks[k].used / 1000), targetSec: blocks[k].total} : {};
+      const restored = Object.keys(keep).filter(k => keep[k].restored);
       const doc = {date: S.today, at: new Date().toISOString(), version: 2,
-        p5: {score: sc(p5), byLevel, byArea, usedSec: Math.round(out.block.used / 1000), targetSec: out.block.total},
-        p6: out.p6 ? {score: sc(out.p6), usedSec: Math.round(out.p6block.used / 1000), targetSec: out.p6block.total} : null,
-        p7: out.p7 ? {score: sc(out.p7), usedSec: Math.round(out.p7block.used / 1000), targetSec: out.p7block.total} : null,
+        p5: {score: sc(p5), byLevel, byArea, ...tm('p5')},
+        p6: out.p6 ? {score: sc(out.p6), ...tm('p6')} : null,
+        p7: out.p7 ? {score: sc(out.p7), ...tm('p7')} : null,
         vocab: {score: sc(out.vocab), bySource: tally(out.vocab, 'source')},
         lc: {score: sc(out.lc), byLevel: tally(out.lc, 'level')},
         lc3: out.lc3 ? {score: sc(out.lc3)} : null,
         band: band.ratio, bandNote: band.f,
+        ...(restored.length ? {restored, restoredFrom: keep[restored[0]].restored} : {}),
         items: ['p5', 'p6', 'p7', 'vocab', 'lc', 'lc3'].flatMap(k => (out[k] || []).map(r => ({id: r.it.id, ok: r.ok, ms: r.ms, unsure: !!r.unsure})))};
       Store.put('diag', 'result', doc);
+      Store.put('diag', 'draft', {secs: null});
       logPatch(l => { l.diag = {p5: doc.p5.score, p6: doc.p6 && doc.p6.score, p7: doc.p7 && doc.p7.score, vocab: doc.vocab.score, lc: doc.lc.score, lc3: doc.lc3 && doc.lc3.score, band: doc.band}; });
       diagResult(el, doc);
     };
     next();
-  });
+  }));
 }
 function diagResult(el, r) {
   const row = (label, v) => `<tr><td>${esc(label)}</td><td class="num">${v ? v[0] + ' / ' + v[1] : ''}</td><td class="num">${v ? pct(v) + '%' : ''}</td></tr>`;
@@ -2321,13 +2353,14 @@ function diagResult(el, r) {
   /* Part-level starting points. Small sets (3~4 items) only show a direction, so the label says so. */
   const level = (v, small) => { if (!v) return ''; const p = pct(v); const lab = p >= 75 ? T('Strong', '강점') : p >= 55 ? T('On track', '보통') : T('Needs work', '보강 필요'); const cls = p >= 75 ? 'ok' : p >= 55 ? 'accent' : 'warn'; return `<span class="chip ${cls}">${lab}</span>${small ? ` <span class="muted small">${T('few items', '문항 적음 · 참고용')}</span>` : ''}`; };
   const parts = [['Part 5', r.p5 && r.p5.score, false], ['Part 6', r.p6 && r.p6.score, true], ['Part 7', r.p7 && r.p7.score, true], [T('Vocabulary', '어휘'), r.vocab && r.vocab.score, false], ['LC Part 2', r.lc && r.lc.score, false], ['LC Part 3', r.lc3 && r.lc3.score, true]].filter(x => x[1]);
-  const t = (label, x) => x && x.targetSec ? `<p class="small ${x.usedSec > x.targetSec ? '' : 'muted'}">${label} ${T('time', '소요 시간')} ${fmtT(x.usedSec)} / ${T('target', '목표')} ${fmtT(x.targetSec)}${x.usedSec > x.targetSec ? ` · <b style="color:var(--bad)">${T('over', '초과')} ${fmtT(x.usedSec - x.targetSec)}</b>` : ''}</p>` : '';
+  const t = (label, x) => x && x.targetSec && x.usedSec != null ? `<p class="small ${x.usedSec > x.targetSec ? '' : 'muted'}">${label} ${T('time', '소요 시간')} ${fmtT(x.usedSec)} / ${T('target', '목표')} ${fmtT(x.targetSec)}${x.usedSec > x.targetSec ? ` · <b style="color:var(--bad)">${T('over', '초과')} ${fmtT(x.usedSec - x.targetSec)}</b>` : ''}</p>` : '';
   el.innerHTML = `<div class="stack" style="gap:4px"><span class="eyebrow">${T('Placement check', '진단 테스트')} · ${md(r.date)}</span><h2>${T('Your result', '진단 결과')}</h2></div>
     <div class="banner info"><p><b>${T('Recommended mix (easy : medium : hard)', '추천 난이도 비율 (쉬움 : 보통 : 어려움)')} ${esc(r.band)}</b><br>${esc(T(band.w, band.f))}. ${T('Based on overall Part 5 accuracy.', 'Part 5 전체 정답률 기준(55% 미만 · 55~75% · 75% 이상)이며, Claude 가 다음 과정 콘텐츠를 만들 때 반영합니다.')}</p></div>
     <section class="stack" style="gap:8px"><h3>${T('By part', '파트별 출발점')}</h3>
       <div class="tbl-wrap"><table><tr><th>${T('Part', '파트')}</th><th class="num">${T('Correct', '정답')}</th><th class="num">%</th><th>${T('Starting point', '판정')}</th></tr>
       ${parts.map(([l, v, small]) => `<tr><td>${esc(l)}</td><td class="num">${v[0]} / ${v[1]}</td><td class="num">${pct(v)}%</td><td>${level(v, small)}</td></tr>`).join('')}</table></div>
-      ${t('Part 5', r.p5)}${t('Part 6', r.p6)}${t('Part 7', r.p7)}</section>
+      ${t('Part 5', r.p5)}${t('Part 6', r.p6)}${t('Part 7', r.p7)}
+      ${r.restored && r.restored.length ? `<p class="small muted">${T(`${r.restored.length} sections were carried over from the ${md(r.restoredFrom)} attempt (missed items in the notebook); their times were not recorded.`, `${r.restored.map(k => ({p5: 'Part 5', p6: 'Part 6', p7: 'Part 7', vocab: '어휘', lc: 'LC Part 2', lc3: 'LC Part 3'})[k] || k).join(' · ')}는 ${md(r.restoredFrom)} 응시 기록(오답노트)으로 채운 결과라 소요 시간이 없습니다.`)}</p>` : ''}</section>
     <details class="disc"><summary>${T('Details', '상세 (Part 5 난이도 · 영역, 어휘, LC)')}</summary>
     <div class="grid" style="margin-top:12px">
       <div class="stack"><h3>Part 5 · ${T('by level', '난이도별')}</h3><div class="tbl-wrap"><table>${head}${[1, 2, 3].map(l => row(lvName(l), r.p5.byLevel[l])).join('')}${row(T('Total', '전체'), r.p5.score)}</table></div>${t('Part 5', r.p5) && ''}</div>
