@@ -16,16 +16,19 @@
         "examples": [
           {
             "base": "secure (a)",
+            "baseKo": "안전한 · 확보된",
             "derived": "security (n)",
             "ko": "보안"
           },
           {
             "base": "available (a)",
+            "baseKo": "이용할 수 있는",
             "derived": "availability (n)",
             "ko": "이용 가능성"
           },
           {
             "base": "productive (a)",
+            "baseKo": "생산적인",
             "derived": "productivity (n)",
             "ko": "생산성"
           }
@@ -39,16 +42,19 @@
         "examples": [
           {
             "base": "aware (a)",
+            "baseKo": "알고 있는",
             "derived": "awareness (n)",
             "ko": "인식"
           },
           {
             "base": "effective (a)",
+            "baseKo": "효과적인",
             "derived": "effectiveness (n)",
             "ko": "효과, 유효성"
           },
           {
             "base": "willing (a)",
+            "baseKo": "기꺼이 하는",
             "derived": "willingness (n)",
             "ko": "의향, 기꺼이 하는 마음"
           }
@@ -62,16 +68,19 @@
         "examples": [
           {
             "base": "approve (v)",
+            "baseKo": "승인하다",
             "derived": "approval (n)",
             "ko": "승인"
           },
           {
             "base": "propose (v)",
+            "baseKo": "제안하다",
             "derived": "proposal (n)",
             "ko": "제안(서)"
           },
           {
             "base": "renew (v)",
+            "baseKo": "갱신하다",
             "derived": "renewal (n)",
             "ko": "갱신"
           }
@@ -85,16 +94,19 @@
         "examples": [
           {
             "base": "proceed (v)",
+            "baseKo": "진행하다",
             "derived": "procedure (n)",
             "ko": "절차"
           },
           {
             "base": "short (a)",
+            "baseKo": "짧은 · 부족한",
             "derived": "shortage (n)",
             "ko": "부족"
           },
           {
             "base": "cover (v)",
+            "baseKo": "덮다 · 보장하다 · 다루다",
             "derived": "coverage (n)",
             "ko": "보장 범위, 보도"
           }
@@ -108,16 +120,19 @@
         "examples": [
           {
             "base": "partner (n)",
+            "baseKo": "협력자 · 동업자",
             "derived": "partnership (n)",
             "ko": "제휴, 협력 관계"
           },
           {
             "base": "leader (n)",
+            "baseKo": "지도자",
             "derived": "leadership (n)",
             "ko": "지도력, 리더십"
           },
           {
             "base": "member (n)",
+            "baseKo": "회원",
             "derived": "membership (n)",
             "ko": "회원 자격, 회원권"
           }
@@ -131,16 +146,19 @@
         "examples": [
           {
             "base": "employ (v)",
+            "baseKo": "고용하다",
             "derived": "employer (n) · employee (n)",
             "ko": "고용주 · 직원"
           },
           {
             "base": "consult (v)",
+            "baseKo": "상담하다 · 참고하다",
             "derived": "consultant (n)",
             "ko": "컨설턴트, 자문 위원"
           },
           {
             "base": "special (a)",
+            "baseKo": "특별한",
             "derived": "specialist (n)",
             "ko": "전문가"
           }

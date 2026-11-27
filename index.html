@@ -1792,7 +1792,7 @@ function unitAffix(el, d, id) {
   el.innerHTML = unitHead('affix', esc(a.title || '')) + `
     ${a.intro ? `<p>${nl(a.intro)}</p>` : ''}
     <div>${(a.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div>
-      <div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div>
+      <div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)}${x.baseKo ? ` <span class="muted">${esc(x.baseKo)}</span>` : ''} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div>
       ${it.tip ? `<div class="tip">${esc(it.tip)}</div>` : ''}</div>`).join('')}</div>
     ${a.traps && a.traps.length ? `<div class="trap"><b>${T('Watch out', '함정')}</b><ul class="clean">${a.traps.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>` : ''}
     <p class="small muted">${T('The word-part inference check comes after Key Terms, so you can use the new terms as bases.', '접사 추론 퀴즈는 다음 단원(새 단어)을 익힌 뒤에 나와요. 오늘 배운 접미사와 새 단어를 재료로 처음 보는 단어를 추론해요.')}</p>
@@ -2631,7 +2631,7 @@ function notesWrong(head) {
 function notesAffix(head) {
   const days = Object.values(S.days).sort((a, b) => a.id < b.id ? -1 : 1);
   view().innerHTML = `<div class="stack">${head}${days.map(d => `<section class="card stack"><div class="eyebrow">${T('Module', '')} ${d.day}${T('', '일차')} · ${esc(d.affix?.title || '')}</div>
-    ${(d.affix?.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div><div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div></div>`).join('')}</section>`).join('') || '<div class="empty">콘텐츠가 없습니다.</div>'}${footHTML()}</div>`;
+    ${(d.affix?.items || []).map(it => `<div class="affix-item"><div class="row"><span class="affix-tag ${esc(it.kind || 'suffix')}">${esc(it.affix)}</span><span>${esc(it.meaning)}</span></div><div class="ex-list">${(it.examples || []).map(x => `<span>${esc(x.base)}${x.baseKo ? ` <span class="muted">${esc(x.baseKo)}</span>` : ''} → <b>${esc(x.derived)}</b> <span class="muted">${esc(x.ko)}</span></span>`).join('')}</div></div>`).join('')}</section>`).join('') || '<div class="empty">콘텐츠가 없습니다.</div>'}${footHTML()}</div>`;
 }
 
 const LINKS = [

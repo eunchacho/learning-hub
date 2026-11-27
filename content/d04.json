@@ -16,16 +16,19 @@
         "examples": [
           {
             "base": "final (a)",
+            "baseKo": "마지막의 · 최종의",
             "derived": "finalize (v)",
             "ko": "마무리하다 · 확정하다"
           },
           {
             "base": "priority (n)",
+            "baseKo": "우선 사항",
             "derived": "prioritize (v)",
             "ko": "우선순위를 정하다"
           },
           {
             "base": "modern (a)",
+            "baseKo": "현대의",
             "derived": "modernize (v)",
             "ko": "현대화하다"
           }
@@ -39,16 +42,19 @@
         "examples": [
           {
             "base": "simple (a)",
+            "baseKo": "간단한",
             "derived": "simplify (v)",
             "ko": "간소화하다"
           },
           {
             "base": "just (a)",
+            "baseKo": "정당한 · 공정한",
             "derived": "justify (v)",
             "ko": "정당화하다"
           },
           {
             "base": "class (n)",
+            "baseKo": "종류 · 등급",
             "derived": "classify (v)",
             "ko": "분류하다"
           }
@@ -62,16 +68,19 @@
         "examples": [
           {
             "base": "wide (a)",
+            "baseKo": "넓은",
             "derived": "widen (v)",
             "ko": "넓히다"
           },
           {
             "base": "strength (n)",
+            "baseKo": "힘 · 강점",
             "derived": "strengthen (v)",
             "ko": "강화하다"
           },
           {
             "base": "short (a)",
+            "baseKo": "짧은 · 부족한",
             "derived": "shorten (v)",
             "ko": "줄이다 · 단축하다"
           }
@@ -85,16 +94,19 @@
         "examples": [
           {
             "base": "able (a)",
+            "baseKo": "할 수 있는",
             "derived": "enable (v)",
             "ko": "가능하게 하다"
           },
           {
             "base": "sure (a)",
+            "baseKo": "확실한",
             "derived": "ensure (v)",
             "ko": "보장하다 · 확실히 하다"
           },
           {
             "base": "power (n)",
+            "baseKo": "힘 · 권한",
             "derived": "empower (v)",
             "ko": "권한을 부여하다"
           }
@@ -108,16 +120,19 @@
         "examples": [
           {
             "base": "active (a)",
+            "baseKo": "활동적인 · 적극적인",
             "derived": "activate (v)",
             "ko": "활성화하다"
           },
           {
             "base": "motive (n)",
+            "baseKo": "동기",
             "derived": "motivate (v)",
             "ko": "동기를 부여하다"
           },
           {
             "base": "origin (n)",
+            "baseKo": "기원 · 출처",
             "derived": "originate (v)",
             "ko": "비롯되다 · 시작되다"
           }
@@ -131,16 +146,19 @@
         "examples": [
           {
             "base": "approximate (a)",
+            "baseKo": "대략의",
             "derived": "approximately (ad)",
             "ko": "대략"
           },
           {
             "base": "temporary (a)",
+            "baseKo": "일시적인",
             "derived": "temporarily (ad)",
             "ko": "일시적으로"
           },
           {
             "base": "cost (n)",
+            "baseKo": "비용",
             "derived": "costly (a)",
             "ko": "비용이 많이 드는 (명사 + ly 형용사)"
           }

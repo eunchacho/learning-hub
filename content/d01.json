@@ -16,16 +16,19 @@
         "examples": [
           {
             "base": "decide (v)",
+            "baseKo": "결정하다",
             "derived": "decision (n)",
             "ko": "결정"
           },
           {
             "base": "expand (v)",
+            "baseKo": "확장하다",
             "derived": "expansion (n)",
             "ko": "확장"
           },
           {
             "base": "promote (v)",
+            "baseKo": "승진시키다 · 홍보하다",
             "derived": "promotion (n)",
             "ko": "승진 · 판촉"
           }
@@ -39,16 +42,19 @@
         "examples": [
           {
             "base": "register (v)",
+            "baseKo": "등록하다",
             "derived": "registration (n)",
             "ko": "등록"
           },
           {
             "base": "reserve (v)",
+            "baseKo": "예약하다",
             "derived": "reservation (n)",
             "ko": "예약"
           },
           {
             "base": "confirm (v)",
+            "baseKo": "확인하다",
             "derived": "confirmation (n)",
             "ko": "확인"
           }
@@ -62,16 +68,19 @@
         "examples": [
           {
             "base": "agree (v)",
+            "baseKo": "동의하다",
             "derived": "agreement (n)",
             "ko": "합의 · 계약"
           },
           {
             "base": "ship (v)",
+            "baseKo": "배송하다",
             "derived": "shipment (n)",
             "ko": "배송(품)"
           },
           {
             "base": "require (v)",
+            "baseKo": "요구하다",
             "derived": "requirement (n)",
             "ko": "요구 사항"
           }
@@ -85,16 +94,19 @@
         "examples": [
           {
             "base": "attend (v)",
+            "baseKo": "참석하다",
             "derived": "attendance (n)",
             "ko": "출석 · 참석"
           },
           {
             "base": "perform (v)",
+            "baseKo": "수행하다 · 공연하다",
             "derived": "performance (n)",
             "ko": "성과 · 공연"
           },
           {
             "base": "refer (v)",
+            "baseKo": "참고하다 · 언급하다",
             "derived": "reference (n)",
             "ko": "참고 · 추천서"
           }

@@ -16,16 +16,19 @@
         "examples": [
           {
             "base": "afford (v)",
+            "baseKo": "(비용을) 감당할 수 있다",
             "derived": "affordable (a)",
             "ko": "가격이 적당한"
           },
           {
             "base": "rely (v)",
+            "baseKo": "의지하다",
             "derived": "reliable (a)",
             "ko": "믿을 수 있는"
           },
           {
             "base": "access (n)",
+            "baseKo": "접근 · 이용",
             "derived": "accessible (a)",
             "ko": "접근 가능한"
           }
@@ -39,16 +42,19 @@
         "examples": [
           {
             "base": "innovate (v)",
+            "baseKo": "혁신하다",
             "derived": "innovative (a)",
             "ko": "혁신적인"
           },
           {
             "base": "attract (v)",
+            "baseKo": "끌어들이다",
             "derived": "attractive (a)",
             "ko": "매력적인"
           },
           {
             "base": "extend (v)",
+            "baseKo": "연장하다 · 넓히다",
             "derived": "extensive (a)",
             "ko": "광범위한"
           }
@@ -62,16 +68,19 @@
         "examples": [
           {
             "base": "number (n)",
+            "baseKo": "수 · 숫자",
             "derived": "numerous (a)",
             "ko": "수많은"
           },
           {
             "base": "success (n)",
+            "baseKo": "성공",
             "derived": "successful (a)",
             "ko": "성공한"
           },
           {
             "base": "care (n)",
+            "baseKo": "주의 · 관심",
             "derived": "careless (a)",
             "ko": "부주의한"
           }
@@ -85,16 +94,19 @@
         "examples": [
           {
             "base": "profession (n)",
+            "baseKo": "직업 · 전문직",
             "derived": "professional (a)",
             "ko": "전문적인, 직업의"
           },
           {
             "base": "addition (n)",
+            "baseKo": "추가",
             "derived": "additional (a)",
             "ko": "추가의"
           },
           {
             "base": "economy (n)",
+            "baseKo": "경제",
             "derived": "economic (a) · economical (a)",
             "ko": "경제의 · 절약하는"
           }
@@ -108,16 +120,19 @@
         "examples": [
           {
             "base": "signify (v)",
+            "baseKo": "의미하다 · 나타내다",
             "derived": "significant (a)",
             "ko": "상당한, 중요한"
           },
           {
             "base": "confide (v)",
+            "baseKo": "신뢰하다 · 털어놓다",
             "derived": "confident (a)",
             "ko": "자신 있는, 확신하는"
           },
           {
             "base": "depend (v)",
+            "baseKo": "의존하다 · 달려 있다",
             "derived": "dependent (a)",
             "ko": "의존하는"
           }
@@ -131,16 +146,19 @@
         "examples": [
           {
             "base": "mandate (n)",
+            "baseKo": "명령 · 권한",
             "derived": "mandatory (a)",
             "ko": "의무적인"
           },
           {
             "base": "satisfy (v)",
+            "baseKo": "만족시키다",
             "derived": "satisfactory (a)",
             "ko": "만족스러운"
           },
           {
             "base": "advise (v)",
+            "baseKo": "조언하다",
             "derived": "advisory (a)",
             "ko": "자문의"
           }

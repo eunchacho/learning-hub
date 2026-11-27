@@ -16,16 +16,19 @@
         "examples": [
           {
             "base": "satisfy (v)",
+            "baseKo": "만족시키다",
             "derived": "satisfied (a)",
             "ko": "만족한"
           },
           {
             "base": "disappoint (v)",
+            "baseKo": "실망시키다",
             "derived": "disappointed (a)",
             "ko": "실망한"
           },
           {
             "base": "interest (v)",
+            "baseKo": "관심을 끌다",
             "derived": "interested (a)",
             "ko": "관심 있는"
           }
@@ -39,16 +42,19 @@
         "examples": [
           {
             "base": "satisfy (v)",
+            "baseKo": "만족시키다",
             "derived": "satisfying (a)",
             "ko": "만족스러운"
           },
           {
             "base": "disappoint (v)",
+            "baseKo": "실망시키다",
             "derived": "disappointing (a)",
             "ko": "실망스러운"
           },
           {
             "base": "confuse (v)",
+            "baseKo": "혼란스럽게 하다",
             "derived": "confusing (a)",
             "ko": "혼란스러운"
           }
@@ -62,16 +68,19 @@
         "examples": [
           {
             "base": "qualify (v)",
+            "baseKo": "자격을 얻다 · 자격을 주다",
             "derived": "qualified (a)",
             "ko": "자격을 갖춘"
           },
           {
             "base": "experience (n · v)",
+            "baseKo": "경험 · 경험하다",
             "derived": "experienced (a)",
             "ko": "경험이 풍부한"
           },
           {
             "base": "attach (v)",
+            "baseKo": "첨부하다 · 붙이다",
             "derived": "attached (a)",
             "ko": "첨부된"
           }
@@ -85,16 +94,19 @@
         "examples": [
           {
             "base": "economy (n)",
+            "baseKo": "경제",
             "derived": "economic (a)",
             "ko": "경제의"
           },
           {
             "base": "economy (n)",
+            "baseKo": "경제",
             "derived": "economical (a)",
             "ko": "절약하는, 비용이 적게 드는"
           },
           {
             "base": "history (n)",
+            "baseKo": "역사",
             "derived": "historic (a)",
             "ko": "역사적으로 중요한"
           }
@@ -108,16 +120,19 @@
         "examples": [
           {
             "base": "respect (n · v)",
+            "baseKo": "존경 · 존중하다",
             "derived": "respectful (a)",
             "ko": "공손한, 존중하는"
           },
           {
             "base": "respect (n · v)",
+            "baseKo": "존경 · 존중하다",
             "derived": "respective (a)",
             "ko": "각각의"
           },
           {
             "base": "respect (n · v)",
+            "baseKo": "존경 · 존중하다",
             "derived": "respectable (a)",
             "ko": "존경할 만한; 상당한"
           }
@@ -131,16 +146,19 @@
         "examples": [
           {
             "base": "sense (n)",
+            "baseKo": "감각 · 분별",
             "derived": "sensitive (a)",
             "ko": "민감한; 기밀의"
           },
           {
             "base": "sense (n)",
+            "baseKo": "감각 · 분별",
             "derived": "sensible (a)",
             "ko": "분별 있는, 합리적인"
           },
           {
             "base": "depend (v)",
+            "baseKo": "의존하다 · 달려 있다",
             "derived": "dependent (a)",
             "ko": "의존하는 (on)"
           }
