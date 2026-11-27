@@ -1004,7 +1004,7 @@ function srsAnswer(id, ok) {
 /* unsure = answered correctly but marked "모름" (a lucky guess), so it still goes to the notebook. */
 function recordWrong(qid, day, kind, type, mine, answer, unsure) {
   const cur = S.wrong[qid];
-  const doc = cur ? {...clone(cur), tries: (cur.tries || 1) + 1, resolved: false, last: S.today, mine, unsure: !!unsure, stage: 0, next: addDays(S.today, 1)}
+  const doc = cur ? {...clone(cur), tries: (cur.tries || 1) + 1, rev: revOf(cur) + 1, resolved: false, last: S.today, mine, unsure: !!unsure, stage: 0, next: addDays(S.today, 1)}
     : {qid, day, kind, type: type || '', date: S.today, last: S.today, mine, answer, resolved: false, tries: 1, unsure: !!unsure, stage: 0, next: addDays(S.today, 1)};
   Store.put('wrong', qid, doc);
 }
@@ -1040,13 +1040,15 @@ function openFix(qid) {
 document.addEventListener('click', e => { const b = e.target.closest('[data-fix]'); if (b) openFix(b.dataset.fix); });
 /* Missed items come back on a spaced schedule (1 → 3 → 7 days). Three correct retries in a row clear an item. */
 const WRONG_GAP = [1, 3, 7];
+/* Retries so far: picks the next variant. Older docs without rev count misses after the first plus correct retries. */
+const revOf = w => w.rev ?? ((w.tries || 1) - 1 + (w.stage || 0));
 function dueWrong() { return Object.values(S.wrong).filter(w => !w.resolved && (!w.next || w.next <= S.today)).sort((a, b) => (a.next || a.date) < (b.next || b.date) ? -1 : 1); }
 function resolveWrong(qid) {
   const c = S.wrong[qid]; if (!c) return;
-  const stage = (c.stage || 0) + 1;
+  const stage = (c.stage || 0) + 1, rev = revOf(c) + 1;
   Store.put('wrong', qid, stage >= WRONG_GAP.length
-    ? {...clone(c), stage, resolved: true, resolvedAt: S.today, last: S.today}
-    : {...clone(c), stage, next: addDays(S.today, WRONG_GAP[stage]), last: S.today});
+    ? {...clone(c), stage, rev, resolved: true, resolvedAt: S.today, last: S.today}
+    : {...clone(c), stage, rev, next: addDays(S.today, WRONG_GAP[stage]), last: S.today});
 }
 
 /* ---------- tts ---------- */
@@ -1720,7 +1722,7 @@ function markUnitNav(id, k) {
 /* Warm-up = due words, then due missed items (up to 10). Both come back on their own schedule, so nothing has to be remembered. */
 function unitReview(el, d, id) {
   const due = dueWords().length, wd = dueWrong().length;
-  el.innerHTML = unitHead('review', T('Spaced review of terms and missed items that are due today.', '오늘 차례가 된 단어와 오답을 다시 풉니다. 단어는 맞히면 박스가 올라가고 틀리면 1번 박스로, 오답은 1일 · 3일 · 7일 뒤에 다시 나오고 세 번 연속 맞히면 해결됩니다.')) +
+  el.innerHTML = unitHead('review', T('Spaced review of terms and missed items that are due today.', '오늘 차례가 된 단어와 오답을 다시 풉니다. 단어는 맞히면 박스가 올라가고 틀리면 1번 박스로 돌아갑니다. 오답은 1일 · 3일 · 7일 뒤에 같은 규칙의 다른 문장으로 나오고, 세 번 연속 맞히면 해결됩니다.')) +
     (due || wd ? `<div class="tbl-wrap"><table><tr><th>${T('Step', '순서')}</th><th class="num">${T('Due', '오늘 대상')}</th></tr><tr><td>1. ${T('Terms', '단어 복습')}</td><td class="num">${due}</td></tr><tr><td>2. ${T('Missed items', '오답 다시 풀기')}</td><td class="num">${Math.min(10, wd)}${wd > 10 ? ` / ${wd}` : ''}</td></tr></table></div><div class="row"><button class="btn primary" data-go>${T('Start review', '복습 시작')}</button></div>`
       : `<div class="empty">${T('Nothing due today. New terms from Unit 3 become due tomorrow.', '오늘 복습할 단어와 오답이 없습니다. 3단원(새 단어)에서 등록한 단어와 오늘 틀린 문제는 다음 날부터 여기에 나옵니다.')}</div><div class="row"><button class="btn primary" data-skip>${T('Mark complete', '완료로 표시')}</button></div>`);
   el.querySelector('[data-skip]')?.addEventListener('click', () => finishUnit(el, id, 'review', {score: [0, 0]}));
@@ -2561,18 +2563,48 @@ async function viewNotes(tab) {
   document.getElementById('bx').addEventListener('change', draw);
   document.getElementById('wt').addEventListener('click', e => { const tr = e.target.closest('tr[data-id]'); if (!tr) return; const w = findWord(tr.dataset.id); if (w) { const wd = document.getElementById('wd'); wd.innerHTML = wordCard(w); wd.scrollIntoView({block: 'nearest', behavior: 'smooth'}); } });
 }
-function wrongBuild({f}) {
-  const q = f.q;
-  if (f.kind === 'p6') return p6Build(f.set)(q);
-  if (f.kind === 'p7') return p7Build(f.set)(q);
-  if (f.kind === 'lc3') return lc3Build(f.set, true)(q);
-  if (f.kind === 'part5') return {tag: q.type, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: p5Explain(q)};
-  if (f.kind === 'inference') return inferenceBuild(q);
-  if (f.kind === 'vocab') return {tag: T('Vocabulary', '어휘'), prompt: `<span class="big">${esc(q.word)}</span>`, options: q.options, answer: q.answer, explain: () => q.why ? `<p>${esc(q.why)}</p>` : ''};
-  if (f.kind === 'colloc') return {tag: q.kind, timer: 5, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: collocExplain(q)};
-  return {tag: 'Part ' + q.part, prompt: q.part === 1 ? `<div class="scene">${esc(q.scene)}</div>` : `<div class="en">${esc(q.prompt)}</div>`, options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd>${q.trap ? `<dt>${T('Trap', '함정')}</dt><dd>${esc(q.trap)}</dd>` : ''}</dl>`};
+/* Missed items come back as variants (same rule, new sentence) rather than the item itself, so a retry checks the rule and not the
+   remembered answer. Order: written variants in content/variants.json, cycling by retry count; then an already-seen Part 5 item
+   of the same type; the original only when neither exists. */
+async function loadVariants() {
+  if (S.variants) return S.variants;
+  try { const r = await fetch('content/variants.json', {cache: 'no-cache'}); S.variants = r.ok ? await r.json() : {}; } catch (e) { S.variants = {}; }
+  return S.variants;
 }
-function wrongQuiz(box, items, onFinish) {
+const baseType = t => String(t || '').replace(/^Part 6 · /, '').replace(/\s*\(.*\)$/, '');
+function siblingOf(w, n) {
+  if (w.kind !== 'part5' && w.kind !== 'p6') return null;
+  const open = new Set(Object.values(S.wrong).filter(x => !x.resolved).map(x => x.qid));
+  const seen = id => id.startsWith('diag-') || unitDone(id.slice(0, 3), 'part5');
+  const pool = [...((S.diagContent && S.diagContent.part5) || []), ...Object.values(S.days).flatMap(d => d.part5 || [])]
+    .filter(q => q.id !== w.qid && !open.has(q.id) && seen(q.id));
+  const exact = pool.filter(q => q.type === String(w.type || '').replace(/^Part 6 · /, ''));
+  const list = exact.length ? exact : pool.filter(q => baseType(q.type) === baseType(w.type));
+  return list.length ? list[n % list.length] : null;
+}
+function retryItem(w, f) {
+  const n = revOf(w), vs = (S.variants && S.variants[w.qid]) || [];
+  if (vs.length) { const k = n % vs.length, v = vs[k]; return {kind: v.as || 'part5', q: v, set: v.set, qid: `${w.qid}-v${k + 1}`}; }
+  const s = siblingOf(w, n);
+  if (s) return {kind: 'part5', q: s, qid: s.id};
+  return {...f, qid: w.qid};
+}
+function wrongBuild({r}) {
+  const q = r.q, cfg = (() => {
+    if (r.kind === 'p6') return p6Build(r.set)(q);
+    if (r.kind === 'p7') return p7Build(r.set)(q);
+    if (r.kind === 'lc3') return lc3Build(r.set, true)(q);
+    if (r.kind === 'part5') return {tag: q.type, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: p5Explain(q)};
+    if (r.kind === 'inference') return inferenceBuild(q);
+    if (r.kind === 'vocab') return {tag: T('Vocabulary', '어휘'), prompt: `<span class="big">${esc(q.word)}</span>`, options: q.options, answer: q.answer, explain: () => q.why ? `<p>${esc(q.why)}</p>` : ''};
+    if (r.kind === 'colloc') return {tag: q.kind, timer: 5, prompt: `<div class="en">${blank(q.q)}</div>`, options: q.options, answer: q.answer, explain: collocExplain(q)};
+    return {tag: 'Part ' + q.part, prompt: q.part === 1 ? `<div class="scene">${esc(q.scene)}</div>` : `<div class="en">${esc(q.prompt)}</div>`, options: q.options, answer: q.answer, explain: () => `<dl><dt>${T('Why', '근거')}</dt><dd>${esc(q.why)}</dd>${q.trap ? `<dt>${T('Trap', '함정')}</dt><dd>${esc(q.trap)}</dd>` : ''}</dl>`};
+  })();
+  return {...cfg, qid: r.qid};
+}
+async function wrongQuiz(box, items, onFinish) {
+  await Promise.all([loadVariants(), loadDiag(), loadAllDays()]);
+  items = items.map(it => ({...it, r: retryItem(it.w, it.f)}));
   runQuiz(box, items, {
     build: wrongBuild,
     onAnswer: (it, ok, idx, ms, u) => { if (ok && !u) resolveWrong(it.w.qid); else recordWrong(it.w.qid, it.w.day, it.w.kind, it.w.type, idx, it.w.answer, ok && u); },
@@ -2586,7 +2618,7 @@ function notesWrong(head) {
   view().innerHTML = `<div class="stack">${head}
     <section class="card stack" id="wb">
       <p>${T('Due today', '오늘 다시 풀 오답')} <b>${due.length}</b> · ${T('open', '미해결')} ${open.length} · ${T('resolved', '해결')} ${doneN}</p>
-      <p class="small muted">${T('Missed items return after 1, 3 and 7 days. Three correct retries in a row clear an item.', '틀린 문제는 1일 · 3일 · 7일 뒤에 다시 나옵니다. 세 번 연속 맞히면 해결로 넘어갑니다. 틀린 직후에 바로 다시 푸는 것보다 하루 뒤에 푸는 쪽이 오래 기억됩니다.')}</p>
+      <p class="small muted">${T('Missed items return after 1, 3 and 7 days. Three correct retries in a row clear an item.', '틀린 문제는 1일 · 3일 · 7일 뒤에 같은 규칙의 다른 문장(변형 문제)으로 다시 나옵니다. 답을 외워서가 아니라 규칙으로 풀어야 맞힐 수 있고, 세 번 연속 맞히면 해결로 넘어갑니다.')}</p>
       <div class="tbl-wrap"><table><tr><th>${T('Next', '다음 차례')}</th><th>${T('Type', '유형')}</th><th>${T('Item', '문제')}</th><th>${T('Progress', '진행')}</th><th class="num">${T('Misses', '틀린 횟수')}</th></tr>${open.map(w => { const f = findQuestion(w.qid); const txt = f ? (f.q.q || f.q.prompt || f.q.word || f.q.scene || '') : w.qid; const isDue = !w.next || w.next <= S.today; return `<tr><td class="num">${isDue ? `<b style="color:var(--accent)">${T('Today', '오늘')}</b>` : md(w.next)}</td><td>${esc(w.type || w.kind)}${w.unsure ? ` <span class="chip">${T('unsure', '모름')}</span>` : ''}</td><td>${blank(String(txt).slice(0, 90))}</td><td>${stageDots(w)}</td><td class="num">${w.tries || 1}</td></tr>`; }).join('') || `<tr><td colspan="5" class="muted">${T('No open items.', '미해결 오답이 없습니다.')}</td></tr>`}</table></div>
       <div class="row">${due.length ? `<button class="btn primary" data-go="due">${T('Retry due items', '오늘 차례 풀기')} (${due.length})</button>` : ''}${open.length > due.length ? `<button class="btn" data-go="all">${T('Retry all open', '미해결 전체 풀기')} (${open.length})</button>` : ''}</div>
     </section>${footHTML()}</div>`;
